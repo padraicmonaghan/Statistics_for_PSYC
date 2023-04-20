@@ -1,0 +1,18 @@
+---
+title: " Statistics for Psychologists"
+page-layout: article
+anchor-sections: false
+listing:
+  id: links
+  template: links.ejs
+  contents: guide.yml
+image: "Images/icon.png"
+  
+---
+
+Welcome to Lancaster University's Department of Psychology modules on Statistics for Psychologists. Here you will find all the module worksheets, along with the data and necessary files for completion of the labs.
+
+You can access the Department's R server at psy-rstudio.lancaster.ac.uk. Remember you will need to be on campus, or access via the VPN.
+
+::: {#guide-links .column-screen-inset-right style="max-width: 400px;"}
+:::

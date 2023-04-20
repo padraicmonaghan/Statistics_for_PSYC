@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics for Psychologists – week4</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Statistics for Psychologists</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../PSYC121/week1.html" aria-current="page">PSYC121</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC122/week1.html">PSYC122</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC214/week1.html">PSYC214</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC401/week1.html">PSYC401</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC402/week1.html">PSYC402</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources.html">Resources</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PSYC121</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week1.html" class="sidebar-item-text sidebar-link">Week 1 - Introduction to PSYC121</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week2.html" class="sidebar-item-text sidebar-link">Week 2: Descriptive statistics in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week3.html" class="sidebar-item-text sidebar-link">Week 3: DVs and IVs in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week4.html" class="sidebar-item-text sidebar-link active">Week 4: Customisation of graphs, and z-scores</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week5.html" class="sidebar-item-text sidebar-link">Week 5: Class test</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week6.html" class="sidebar-item-text sidebar-link">Week 6: Sampling, probability and binomial tests</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week7.html" class="sidebar-item-text sidebar-link">Week 7: Filtering data and testing means (one-sample t-test)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week8.html" class="sidebar-item-text sidebar-link">Week 8: Related-samples t-tests, plotting means and SE bars</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week9.html" class="sidebar-item-text sidebar-link">Week 9: Unrelated-samples t-test and Power</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">PSYC122</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  TBC
+  </li>
+          <li class="sidebar-item">
+  TBD
+  </li>
+          <li class="sidebar-item">
+  TBE
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#week-4-customisation-of-graphs-and-z-scores" id="toc-week-4-customisation-of-graphs-and-z-scores" class="nav-link active" data-scroll-target="#week-4-customisation-of-graphs-and-z-scores">Week 4: Customisation of graphs, and z-scores</a>
+  <ul class="collapse">
+  <li><a href="#pre-lab-work" id="toc-pre-lab-work" class="nav-link" data-scroll-target="#pre-lab-work">Pre-lab work</a></li>
+  <li><a href="#r-studio-tasks" id="toc-r-studio-tasks" class="nav-link" data-scroll-target="#r-studio-tasks">R Studio tasks</a></li>
+  <li><a href="#section-1---customisation-of-data-plots" id="toc-section-1---customisation-of-data-plots" class="nav-link" data-scroll-target="#section-1---customisation-of-data-plots">Section 1 - Customisation of data plots</a></li>
+  <li><a href="#section-2-z-scores" id="toc-section-2-z-scores" class="nav-link" data-scroll-target="#section-2-z-scores">Section 2: z-scores</a>
+  <ul class="collapse">
+  <li><a href="#z-scores-1" id="toc-z-scores-1" class="nav-link" data-scroll-target="#z-scores-1">z-scores 1</a></li>
+  <li><a href="#z-scores-2-using-z-score-tables" id="toc-z-scores-2-using-z-score-tables" class="nav-link" data-scroll-target="#z-scores-2-using-z-score-tables">z-scores 2 Using z-score tables</a></li>
+  <li><a href="#z-scores-3-applying-z-scores-to-inferential-problems" id="toc-z-scores-3-applying-z-scores-to-inferential-problems" class="nav-link" data-scroll-target="#z-scores-3-applying-z-scores-to-inferential-problems">z-scores 3 Applying z-scores to inferential problems</a></li>
+  <li><a href="#extra-activity" id="toc-extra-activity" class="nav-link" data-scroll-target="#extra-activity">Extra activity</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="week-4-customisation-of-graphs-and-z-scores" class="level1">
+<h1>Week 4: Customisation of graphs, and z-scores</h1>
+<blockquote class="blockquote">
+<p>Written by John Towse &amp; Tom Beesley</p>
+</blockquote>
+<section id="pre-lab-work" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lab-work">Pre-lab work</h2>
+<ul>
+<li><p>Complete materials from sessions in previous week (materials from week 1 /2 / 3 remain fully available for anyone who wants them). Consolidate what we have already covered.</p></li>
+<li><p>This week - again, there’s a learnr tutorial to follow and help prep for what we are covering: <a href="https://ma-rconnect.lancs.ac.uk/W4LabPrep/" target="_blank">You can find it here</a>.</p></li>
+<li><p>Make sure you have access to the <code>week4.zip</code> file for the RStudio server.<a href="files/Week_4/week_4.zip">You can get the file here</a>.</p></li>
+<li><p>If you create a folder and upload the file into RStudio before the lab class you’ll be even more ready to follow along!</p></li>
+</ul>
+</section>
+<section id="r-studio-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="r-studio-tasks">R Studio tasks</h2>
+<p>Last week we introduced two different ways to get descriptive information about a variable / column of scores investigated as a function of a separate piece of information. In others words, describe the DV a function of an IV</p>
+<p>Students were generally very good at utilising each of these;</p>
+<p><code>aggregate(x = DV, by = list(IV), FUN = mean)</code></p>
+<p>and</p>
+<p><code>tibble %&gt;% group_by(IV) %&gt;% summarise(mean_estimate = mean(DV))</code></p>
+<p>[tibble = technical name for the data in R]}</p>
+<p>This week, we’re focusing on how you can edit or customise a graph to be more useful to a viewer.</p>
+</section>
+<section id="section-1---customisation-of-data-plots" class="level2">
+<h2 class="anchored" data-anchor-id="section-1---customisation-of-data-plots">Section 1 - Customisation of data plots</h2>
+<p>Step 1. Set up a folder for this week in the R Project that you created last week.</p>
+<p>Step 2. Bring the <code>week4.zip</code> file into R Studio server. Like last week, upload the zip file, and load in the data file. Launch the week_4 R script as before.</p>
+<p>{If you’ve done Step 1 &amp;2 already as a pre-lab preparation, super, pat yourself on the back, skip these steps an move on)}</p>
+<p>Step 3. Once again, we’re gong to be using commands from the tidyverse library (the pipe operator is one example) so we need to ensure that it’s active. Run the command</p>
+<p><code>library(tidyverse)</code></p>
+<p>Step 4. Read in the datafiles that will be on the server. There’s already a script line for this, you just need to change the file name (see the comments for advice on this)</p>
+<p>Step 5. We’ve provided a suggestion of how you can complete the visualisation challenge task from week 3.</p>
+<p>Step 6. Customize you graph work. We’ve provided some suggestions about adding titles and labels for your graph. Edit and play with the script lines to make them useful to you and to understand how they work.</p>
+<ul>
+<li>Try change the text, the colours, and so on of the graphs.</li>
+<li>Add comments for yourself about what the different commands do. The idea is to learn by trying different things out (changing values, taking out elements of the command, putting other is) and record for yourself.</li>
+<li>If you are struggling or not sue, try look at help files.</li>
+</ul>
+</section>
+<section id="section-2-z-scores" class="level2">
+<h2 class="anchored" data-anchor-id="section-2-z-scores">Section 2: z-scores</h2>
+<blockquote class="blockquote">
+<p>Hint / Reminder: Sketch a normal (z score) distribution and mark the mean/mode, and mark off the relevant parts of the question so you know what you are trying to achieve and how to interpret any calculations you make.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Hint/ Reminder 2. For questions 6 &amp; 7, remember that from the week 4 lecture material, typically in psychology we use the 5% level as a cutoff to decide, in broadly described terms, whether something is extreme or unlikely vs.&nbsp;at least somewhat plausible or likely.</p>
+</blockquote>
+<section id="z-scores-1" class="level3">
+<h3 class="anchored" data-anchor-id="z-scores-1">z-scores 1</h3>
+<p>z-score distributions</p>
+<p>Q1. What is the relationship between the sign of a z-score and its position in a distribution?</p>
+<p>Q2. If a distribution has a mean of 100 and a standard deviation of 10, what is the raw score equivalent to a z-score of 1.96?</p>
+<p>Q3. If a distribution has a mean of 157 and a standard deviation of 19, what is the raw score equivalent to a z-score of 1?</p>
+</section>
+<section id="z-scores-2-using-z-score-tables" class="level3">
+<h3 class="anchored" data-anchor-id="z-scores-2-using-z-score-tables">z-scores 2 Using z-score tables</h3>
+<p>Q4. What proportion of scores lie between the mean and a z-score of 0.5?</p>
+<p>Q5. What is the combined proportion of scores lying between z=-1.2 and z=.85?</p>
+</section>
+<section id="z-scores-3-applying-z-scores-to-inferential-problems" class="level3">
+<h3 class="anchored" data-anchor-id="z-scores-3-applying-z-scores-to-inferential-problems">z-scores 3 Applying z-scores to inferential problems</h3>
+<p>Q6. A Neuropsychologist has presented a test of face recognition to 200 neurotypical participants and finds that the scores are normally distributed with a mean of 85 and the standard deviation of 12. Two brain-damaged patients are also given the test. The one with right hemisphere brain damage scored 58 and the one with left hemisphere damage scored 67.</p>
+<ol type="1">
+<li><p>What is the z score of the right hemisphere patient when compared to the neurotypical group?</p></li>
+<li><p>What proportion of neurotypical participants score lower that this patient?</p></li>
+<li><p>Is this patient likely to belong to the population of neurotypical participants? (justify your answer)</p></li>
+<li><p>What is the z score of the left hemisphere patient when compared to the neurotypical group?</p></li>
+<li><p>What proportion of neurotypical participants score lower than this patient?</p></li>
+<li><p>Is this patient likely to belong to the population of neurotypical participants? (justify your answer)</p></li>
+</ol>
+</section>
+<section id="extra-activity" class="level3">
+<h3 class="anchored" data-anchor-id="extra-activity">Extra activity</h3>
+<p>Come back to this afterwards for some extra practice if you want:</p>
+<p>Q7. Tom Bunion has completed a huge research study and measured the foot size of men and women and found each to be normally distributed. The men have a mean size of 55 with a standard deviation of 5 and the women a mean of 33 and a standard deviation of 5. Joanna Toes has foolishly measured two individuals but forgotten to note their gender. These have foot sizes of 37 and 47. To which gender is each more likely to belong? What evidence is there for this?</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
+      <div class="nav-footer-center">Link 1</div>
+    <div class="nav-footer-right">GithubLink</div>
+  </div>
+</footer>
+
+
+
+</body></html>

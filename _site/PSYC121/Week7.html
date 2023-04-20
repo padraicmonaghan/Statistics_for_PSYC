@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics for Psychologists – week7</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Statistics for Psychologists</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../PSYC121/Week1.html" aria-current="page">PSYC121</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC122/Week1.html">PSYC122</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC214/Week1.html">PSYC214</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC401/Week1.html">PSYC401</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC402/Week1.html">PSYC402</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources.html">Resources</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PSYC121</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week1.html" class="sidebar-item-text sidebar-link">Week 1 - Introduction to PSYC121</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week2.html" class="sidebar-item-text sidebar-link">Week 2: Descriptive statistics in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week3.html" class="sidebar-item-text sidebar-link">Week 3: DVs and IVs in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week4.html" class="sidebar-item-text sidebar-link">Week 4: Customisation of graphs, and z-scores</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week5.html" class="sidebar-item-text sidebar-link">Week 5: Class test</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week6.html" class="sidebar-item-text sidebar-link">Week 6: Sampling, probability and binomial tests</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week7.html" class="sidebar-item-text sidebar-link active">Week 7: Filtering data and testing means (one-sample t-test)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week8.html" class="sidebar-item-text sidebar-link">Week 8: Related-samples t-tests, plotting means and SE bars</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/Week9.html" class="sidebar-item-text sidebar-link">Week 9: Unrelated-samples t-test and Power</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">PSYC122</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  TBC
+  </li>
+          <li class="sidebar-item">
+  TBD
+  </li>
+          <li class="sidebar-item">
+  TBE
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#week-7-filtering-data-and-testing-means-one-sample-t-test" id="toc-week-7-filtering-data-and-testing-means-one-sample-t-test" class="nav-link active" data-scroll-target="#week-7-filtering-data-and-testing-means-one-sample-t-test">Week 7: Filtering data and testing means (one-sample t-test)</a>
+  <ul class="collapse">
+  <li><a href="#pre-lab-work" id="toc-pre-lab-work" class="nav-link" data-scroll-target="#pre-lab-work">Pre-lab work</a></li>
+  <li><a href="#rstudio-tasks" id="toc-rstudio-tasks" class="nav-link" data-scroll-target="#rstudio-tasks">RStudio tasks</a>
+  <ul class="collapse">
+  <li><a href="#plotting-and-filtering" id="toc-plotting-and-filtering" class="nav-link" data-scroll-target="#plotting-and-filtering">Plotting and filtering</a></li>
+  <li><a href="#one-sample-t-test" id="toc-one-sample-t-test" class="nav-link" data-scroll-target="#one-sample-t-test">One-sample t-test</a></li>
+  <li><a href="#practising-filtering" id="toc-practising-filtering" class="nav-link" data-scroll-target="#practising-filtering">Practising filtering</a></li>
+  </ul></li>
+  <li><a href="#sample-size-size-of-effect-and-the-one-sample-t-test" id="toc-sample-size-size-of-effect-and-the-one-sample-t-test" class="nav-link" data-scroll-target="#sample-size-size-of-effect-and-the-one-sample-t-test">Sample size, size of effect, and the one sample t-test</a></li>
+  <li><a href="#week-7-quiz" id="toc-week-7-quiz" class="nav-link" data-scroll-target="#week-7-quiz">Week 7 Quiz</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="week-7-filtering-data-and-testing-means-one-sample-t-test" class="level1">
+<h1>Week 7: Filtering data and testing means (one-sample t-test)</h1>
+<blockquote class="blockquote">
+<p>Written by Tom Beesley &amp; John Towse</p>
+</blockquote>
+<p>Today we will look in a bit more detail at people’s estimates of the average UK salary. We will first plot this data using <code>geom_histogram()</code> and also <code>geom_boxplot()</code>. When we do this, we’ll see that there are some unusual values, and we’ll need to do a bit of <strong>data wrangling</strong> to remove them, using the <code>filter()</code> command. We’ll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we’ll continue to develop our skills in <strong>data visualisation</strong> by exploring <code>geom_density()</code> plots.</p>
+<section id="pre-lab-work" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lab-work">Pre-lab work</h2>
+<ul>
+<li><p>There is an <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_Week_7_labprep/" target="_blank">online tutorial</a>. Please make every attempt to complete this before the lab!</p></li>
+<li><p>Create a folder for Week 7</p></li>
+<li><p>Download the <a href="files/Week_7/Week_7.zip">Week_7.zip</a> and upload it into this new folder in RStudio Server.</p></li>
+</ul>
+</section>
+<section id="rstudio-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-tasks">RStudio tasks</h2>
+<section id="plotting-and-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-and-filtering">Plotting and filtering</h3>
+<ol type="1">
+<li><p>Open the Week_7_script and run the <code>library</code>, <code>options</code> commands. The <code>options</code> command is new. It is very cryptic and you don’t need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation. Add a <code>read_csv()</code> command to get the data - you’ve done this every week, so this should be familiar.</p></li>
+<li><p>Complete the <code>geom_histogram()</code> code to plot the distribution of salary data. Try setting <code>bins=20</code> within your <code>geom_histogram()</code> code. Play around with the number of bins for the histogram.</p></li>
+<li><p>OK - we’ve got some pretty funky values here! Some people think the average salary is over £400,000!!! Well, maybe they just added too many zeros (let’s give them the benefit of the doubt). Quite often when we get our “raw” data, it contains weird values like this that we need to consider removing. Let’s run the <code>arrange()</code> code now to see what exactly those high values are.</p></li>
+<li><p>We’ll need to remove these high values to get a better sense of the distribution. Let’s use a <code>filter()</code> command to do this. We need to make a decision about what values to exclude. In later labs we’ll look at a more systematic process of removing <em>outliers</em>, but for now, let’s just remove any that are over £200,000. Edit the <code>filter()</code> command to keep only those estimates that are <em>below</em> £200,000 (&lt;). Remember that the filter command <em>keeps</em> the data that is <em>TRUE</em> according to the expression.</p></li>
+<li><p>STOP! OK, <strong>this next bit is very important</strong>. If you completed that last step correctly you’ll see an output in the console showing a “tibble” (a data frame) which has 194 rows and 5 columns. However, your object has not actually changed in the environment. This will still be showing as 197 observations (row). So the filter command will take out those large estimations, but we haven’t actually changed the data object. To do this we need to assign (<code>&lt;-</code>)the result of our filter command to the object. To do this, you need to put in some code at the start of this small chunk of code you’ve just run, so that the result of your commands will be assigned to the object (you can make this the same object name you’ve been using -overwrite it-, or call it a new name).</p></li>
+<li><p>When you run this command again you should see the (new) object has changed to 194 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you’re using a new object for the filtered data, you’ll need to edit the code to reflect that). .</p></li>
+<li><p>And as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.</p></li>
+</ol>
+</section>
+<section id="one-sample-t-test" class="level3">
+<h3 class="anchored" data-anchor-id="one-sample-t-test">One-sample t-test</h3>
+<p>We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let’s test that.</p>
+<ol start="8" type="1">
+<li><p>First, let’s calculate the mean and sd of the column.</p></li>
+<li><p>Now we can compute a t-statistic and check whether this mean is significantly different from the expected mean. We do this with <code>t.test()</code>. Edit the code on this line to conduct a one-sample t-test. You need to provide <strong>the sample of data on which you want to conduct the test</strong>, and the <strong>expected mean under the null hypothesis</strong>. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and <strong>note the p value</strong>. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p &lt; .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a <em>significant result</em>.</p></li>
+<li><p>What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.</p></li>
+</ol>
+<p><img src="files/Week_7/ttable.png" class="img-fluid"></p>
+</section>
+<section id="practising-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="practising-filtering">Practising filtering</h3>
+<ol start="11" type="1">
+<li>Filtering can also be useful for selecting certain sub-sets of our data. In the script we have given you an example of how we select a sub-set of data based on two conditions from two different columns:</li>
+</ol>
+<p><code>data_set_name %&gt;% filter(home_location_in_UK == "NW" &amp; sibling_order == "oldest")</code></p>
+<p>We have given you a few different columns to look at and to use in practicing your filter commands:</p>
+<p><code>sibling_order</code>: what position in age was the respondent within their siblings <code>home_location</code>: UK / Asia / Europe, etc <code>home_location_in_UK</code>: NW, NE, etc (NA is non-UK residents) <code>attention_check</code>: respondents were asked “click strongly agree to show you are paying attention” - some people failed this!!!</p>
+<p>Complete the following filters. We’ve put in <strong>()</strong> the number of rows you should see in the resulting object</p>
+<ol start="12" type="1">
+<li><p>Just those people who come from the North East (16 rows)</p></li>
+<li><p>Those people who come from Wales and are the middle child within their siblings (2 rows)</p></li>
+<li><p>Those people passed the attention check, are from the UK, and are an only child (21 rows)</p></li>
+<li><p>Those people who are NOT from the North West; you’ll need to use <code>!=</code> (84 rows)</p></li>
+<li><p>Those people who failed the attention check (that is, did not say strongly agree) (14 rows)</p></li>
+<li><p>Those people who are from the South East or (<code>|</code>) the South West (38 rows)</p></li>
+</ol>
+</section>
+</section>
+<section id="sample-size-size-of-effect-and-the-one-sample-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="sample-size-size-of-effect-and-the-one-sample-t-test">Sample size, size of effect, and the one sample t-test</h2>
+<p>In the lecture this week, Tom used an application to show the process of sampling data. You can access this application at the link below. There are three “parameters” you can change in this:</p>
+<ul>
+<li><p><strong>The true mean of the effect:</strong> Think of this like the bias that was set up in your deck of cards last week. There is some true state out there in the world, and we are going to draw samples from a distribution of data that has a mean that equals this value. If you make this 100, then the true mean is equal to that under the null hypothesis (there is no effect).</p></li>
+<li><p><strong>The standard deviation of the data:</strong> This sets how variable the data are in this population. If the data are more variable, then our samples will produce estimations that are less accurate of the true mean value.</p></li>
+<li><p><strong>The sample size:</strong> How many observations are drawn in the sample. These are represented by the yellow circles in the plot.</p></li>
+</ul>
+<p>Each time you draw a sample the data points are plotted in yellow and the mean of the sample is marked with the red line. The application also runs a one-sample t-test against the expected mean under the null hypothesis, of 100. The null hypothesis is also represented by the static distribution presented in grey, centred on 100.</p>
+<p>Things to try:</p>
+<ol type="1">
+<li><p>Start with a sample size of 10, and a mean of the effect of 110 (SD = 15). How often do you get a significant result (p &lt; .05) when you draw a new sample?</p></li>
+<li><p>Now try changing the mean of the effect to 120. Does this increase or decrease the likelihood of getting significant results? What about changing to 130?</p></li>
+<li><p>Now keep the mean effect constant (say 110), but increase the sample size. Try 5, then 10, 15, and so on. Does this increase or decrease the likelihood of getting significant results?</p></li>
+<li><p>Set the mean of the effect to 100 and the sample size to 10. Keep drawing new samples, noting each time the p value. You will evenutally get a p value of &lt; .05. What type of error is this?</p></li>
+</ol>
+<p><a href="https://ma-rconnect.lancs.ac.uk/one_sample_t" target="_blank"><strong>Click here for the one-sample t-test application</strong></a></p>
+</section>
+<section id="week-7-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="week-7-quiz">Week 7 Quiz</h2>
+<p>You can access a set of quiz questions related to this week <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_7_quiz/" target="_blank">here.</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
+      <div class="nav-footer-center">Link 1</div>
+    <div class="nav-footer-right">GithubLink</div>
+  </div>
+</footer>
+
+
+
+</body></html>

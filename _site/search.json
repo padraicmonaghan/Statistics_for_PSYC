@@ -1,0 +1,359 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistics for Psychologists",
+    "section": "",
+    "text": "You can access the Department’s R server at psy-rstudio.lancaster.ac.uk. Remember you will need to be on campus, or access via the VPN.\n\n\n\n\n\n\n\n\n\n\n\n\nPSYC121\n\nStatistics for Psychologists\n\n\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\nPSYC122\n\nStatistics for Psychologists\n\n\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\nPSYC214\n\nStatistics for Psychologists\n\n\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\nPSYC234\n\nStatistics for Psychologists\n\n\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\nPSYC401\n\nStatistics for Psychologists\n\n\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\nPSYC402\n\nStatistics for Psychologists\n\n\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "PSYC121/Week1.html",
+    "href": "PSYC121/Week1.html",
+    "title": "Statistics for Psychologists",
+    "section": "",
+    "text": "Written by John Towse & Tom Beesley\n\n\n\nFor each lab session that you have been scheduled to attend, please come “prepared’. By this we mean\n\nYou have watched the lecture video, made notes, and developed questions where you have them.\nYou have worked through the online “prelab” preparation materials - Here is the one for Week 1\nYou read the lab sheet (this one) to get a sense of what we’re going to be doing, and you anticipate potential problems so that you can focus on these in the session.\n\nThe lecture is designed to deliver important ideas and procedures for learning about analysis. Pre-lab material is then designed to help consolidate this learning, or enhance, expand and apply it in ways that set the scene for the lab session activity.We want to prepare you to be ready to go in the session itself and make the most of your time there.\nWant additional support? Keep in mind that the Department has endorsed and will use the Statistics textbook by David Howell called “Fundamental statistics for the behavioral sciences”\nThe book covers principles of statistics as well as some tutorials on using R. You can access a library copy from the library pages\n\n\n\n\n\n\nWhen you arrive, make sure you have checked-in to your Analysis session in the Levy lab. All students are required by the University to confirm attendance at taught session\nStaff will remind you of this in your class.\n\n\n\n\nHere’s a simple task for you to complete as a group around each of the workstations;\nYou will be given a pair of dice\n\nWorking in pairs, one person rolls both dice.\nAdd up the total on each of them and have someone record that total (if you don’t have some spare paper or a pen, use your computer)\nRepeat those steps 20 times.\nThen swap over your roles (the person rolling the dice, the person recording the outcome)\nOnce everyone at the workstation has had a turn at this, each person should attempt to work out (a) the mean and (b) the median of their dice roll total.\nCheck each others working, and discuss any differences or problems you have.\n\nAre all your answers the same? Why / why not? If not, are they very different or very similar?\n\n\n\n\n\nR and RStudio is the software that we will be using to explore and learn about analysis in your Psychology degree. It’s a computational engine: a very snazzy calculator that you should see as your friend and ally in the journey to understand and appreciate psychology. It sits alongside what we teach about the concepts and interpretation of statistical analysis.\nR is the core software, RStudio is the interface for interacting with it. Put another way, R is the engine, RStudio is the cockpit.\nLike even a simplest calculator, it just does what you ask (at least when you ask nicely!) but it requires the user to know what they want from it and to understand what it is telling you. A calculator can’t help a kid get the right answer to a multiplication problem if they don’t know the difference between multiplication and division and addition etc. And whilst a calculator is brilliant at doing the number crunching (and as a bonus, R Studio can help with turning the numbers into beautiful graphs and images too), even a calculator requires a thoughtful person to take the answers and make sensible interpretations from them.\nTherefore, we need to learn both about the concepts of statistical analysis on the one hand, and the processing of statistical information -through R- on the other. The lectures will provide the starting point and the direction for statistical concepts, whilst these analysis labs provide the more practical experiences in how to use R, and how to make R your ally. Over the next year, in these labs we will increasingly be using RStudio to focus on the latter, processing side, which will allow you to focus your energies on the conceptual side and its relevance for appreciating psychology.\n\n\n\nFor Lancaster University Psychology Students in 2022, we will be learning about R Studio through a simple but powerful web server architecture. That is, through the power of the internet, you can access and use R Studio by logging into a free account that we have provided and we will maintain for your use.\n\nHere’s a little secret: There are several different ways to access RStudio. For example, you can download a copy of the software onto your computer, or use a Virtual Machine set up to run a copy. There’s nothing to stop you having your local copy, but please note - we can’t support your own version through lab classes. We’re using the web server to make sure everyone has the same, controlled experience.\n\nYou will have received an email with your account information to log onto From a computer on the campus wifi, you can access R Studio at:\nLancaster Psychology R Studio Server\nAt the login screen, use your university username (e.g., bloggsj)\nYour password for R Studio is: [password here]\nAs it says in the subject line, please keep your account details safe!\n\n\n\nWhen RStudio starts, it will look something like this: \nRStudio has three panels or windows: there are tabs for Console (taking up the left hand side), Environment (and History top right) , Current file (bottom right). You will also see a 4th window for a script or set of commands you develop, also (on the left hand side).\n\n\n\nThe first thing we want to do in RStudio is to create a folder for this week so that we can put the relevant material there and keep it tidy.\nFrom the lower-right panel of RStudio, click the files tab.\nSelect the “new folder” option and create a new folder (eg “week 1”)\nClick on that folder to open it\nNext, we’ve prepared some instructions for RStudio to use - this is called a “script”. So we need to get this script into the server for you to explore and play with\n\nDownload the “zip” file by clicking this link\nFind the location of the file on your computer and check it is saved as a “.zip” file\nReturn to RStudio\nClick “Upload”\nClick choose file and find the file on your computer.\nSelect the file and click “Open”. Click “OK”\n\nYou should now see the files extracted in the directory. If you receive an “unexpected server error” please try this process in a different browser. If you still have trouble, send your username to t.beesley@lancaster.ac.uk for support.\nYou should now have the script available in RStudio.\nUse “Save…As” to create a new version of the script. By doing this, you’ll be able to have a “before” and “after” version of the script and can go back over the changes\nIn the script, select or highlight the first line of text, which is this one:\n\n\n\n5 + 5\n\nand “run” this line. That tells RStudio to carry out the instruction.\nYou should see that in the console tab, RStudio calculates the answer to this incredibly hard maths challenge! (amazing huh? OK, maybe not *that* amazing…).\n\n\n\nUse your imagination – add a new line to the script and ask a different simple arithmetic question of your own choosing! What happens?\n\n\n\nIn this week’s analysis lecture, we looked at measures of central tendency and how to calculate them. So let’s get R to do these calculations also!\nFirst, we tell R about the data used in the lecture. We’ve already created the instruction that will do exacly this and it is in the script, so run this line from the script\n\nweek_1_lecture_data <- c(7,8,8,7,3,1,6,9,3,8)\n\nThis creates an “object” called week_1_lecture_data. We can then perform calculations on this object. For example, we can find the mean by running the following command (use the script to do this)\n\nmean(week_1_lecture_data)\n\nCheck the answer is the same we found in the lecture (it should be 6!).\nNext, let’s ask for the median by running this line from the script:\n\nmedian(week_1_lecture_data)\n\nThis also should be the answer from the lecture (7)\nR doesn’t have a single corresponding command for the mode, but we can use the block of code in the script for this that starts and ends with the “getmode” text (there are 6 lines of text)\nThis is just a bit of clever jiggery-pokery that gets the mode. What does R say the mode is?\n\n\n\nHow can you get RStudio to verify / check the dice calculations that you attempted earlier? Think about how you might solve this problem, on the basis of what we have covered so far.\nWe will discuss this in class and attempt to get RStudio to check your answers. In doing so, annotate the script (add notes for you - not RStudio) using the “#” command\n\n\n\n\n\n\nMake sure you save a copy of the script that you have been working on by the end of the session. This provides you with the record - the digital trace - on what you have done. And it means you can come back and repeat any of the work you have performed.\nEnd your session on the RStudio server, this logs you out of the server and stops any ongoing activities and tasks you have set up, maybe in the background.\n\nThere is a red “power” button near the top right of the R studio window (do ask for help if you can’t find it). It’s a good habit to get into to turn the session off\n\n\n\n\nIn the Howell text book on statistics, there’s some R code on descriptive statistics. It is included in the script for you to look at and play with.\nin your own time and think about the following:\n\nIn R, “<-” is the assignment operator as in the command we used:\n\nPSYC121_week_1_data <- c(7,8,8,7,3,1,6,9,3,8)\n\nWe create the variable label on the left (Analysis_week1_data) and we give it those numbers on the right. The nameAnalysis_week1_data` is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.\n\nThroughout this year, we’ll use the convention of the “underscore” to separate words in labels (it_makes_them_easier_to_read than ifyoudidn’thaveanyspaces)\n\n\n\n\n\nAfter every block of teaching in part-1 analysis (specifically, we mean in week 5, week 10, week 15 and week 20) there will be a class test. This will assess your knowledge and your understanding of the material that has been covered.\nThe class test will comprise a set of Multiple Choice Questions (and the set of questions will be different for each student, as the test will involve random selection from a larger pool) under timed conditions.\nIn order to help you get (a) a broad or basic feel for the sort of questions you might get in the class test (b) self-review your progress through the term, we will provide MCQs each week for you to attempt.\nSo these are for your benefit… you can take the questions when you choose to, and the learnr quiz will provide feedback on the answers your provide. Just bear in mind:\n\nWe place a set of questions at the end of the learnr pages so that you can attempt these at the end of each week, after you’ve completed lab activities, follow-up work, weekly Q&As etc. But it’s up to you when you answer the questions\nThese are meant as indicative questions. There’s no point in learning/ memorising these questions (they won’t be on the quiz!) and our advice is to reflect on how the teaching and content links to the sorts of questions that get posed.\n\n\n\n\nIn order to learn about psychology and data analysis techniques, we need data! Rather than rely too much on artificial data (certainly it is sometimes useful to say “Here are a bunch of numbers and this is what we can do with them” – think about the R Studio example for this week’s lab) for the most part, we prefer to draw on datasets that are a bit more engaging and meaningful that you have a stake in yourself! By using a common data set, that we can return to over the year, we can also build up familiarity and confidence in the data and remove a potential obstacle to thinking about the more important analysis part.\nSo a key task will be for everyone to have a go at taking our online survey, and contribute to a dataset that can be used throughout the year.\nWe would like you to complete the survey via your Department Sona system account. This way, you will receive a research credit for doing so, to “jump start” your credit account.\nThe sona system is can be accessed by following this link"
+  },
+  {
+    "objectID": "PSYC122/Week3.html",
+    "href": "PSYC122/Week3.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC122/Week1.html",
+    "href": "PSYC122/Week1.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week1.html",
+    "href": "PSYC214/Week1.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week1.html",
+    "href": "PSYC401/Week1.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week1.html",
+    "href": "PSYC402/Week1.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC121/Week8.html",
+    "href": "PSYC121/Week8.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC121/Week9.html",
+    "href": "PSYC121/Week9.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC121/Week2.html",
+    "href": "PSYC121/Week2.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC121/Week3.html",
+    "href": "PSYC121/Week3.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC121/Week7.html",
+    "href": "PSYC121/Week7.html",
+    "title": "Statistics for Psychologists",
+    "section": "",
+    "text": "Written by Tom Beesley & John Towse\n\nToday we will look in a bit more detail at people’s estimates of the average UK salary. We will first plot this data using geom_histogram() and also geom_boxplot(). When we do this, we’ll see that there are some unusual values, and we’ll need to do a bit of data wrangling to remove them, using the filter() command. We’ll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we’ll continue to develop our skills in data visualisation by exploring geom_density() plots.\n\n\n\nThere is an online tutorial. Please make every attempt to complete this before the lab!\nCreate a folder for Week 7\nDownload the Week_7.zip and upload it into this new folder in RStudio Server.\n\n\n\n\n\n\n\nOpen the Week_7_script and run the library, options commands. The options command is new. It is very cryptic and you don’t need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation. Add a read_csv() command to get the data - you’ve done this every week, so this should be familiar.\nComplete the geom_histogram() code to plot the distribution of salary data. Try setting bins=20 within your geom_histogram() code. Play around with the number of bins for the histogram.\nOK - we’ve got some pretty funky values here! Some people think the average salary is over £400,000!!! Well, maybe they just added too many zeros (let’s give them the benefit of the doubt). Quite often when we get our “raw” data, it contains weird values like this that we need to consider removing. Let’s run the arrange() code now to see what exactly those high values are.\nWe’ll need to remove these high values to get a better sense of the distribution. Let’s use a filter() command to do this. We need to make a decision about what values to exclude. In later labs we’ll look at a more systematic process of removing outliers, but for now, let’s just remove any that are over £200,000. Edit the filter() command to keep only those estimates that are below £200,000 (<). Remember that the filter command keeps the data that is TRUE according to the expression.\nSTOP! OK, this next bit is very important. If you completed that last step correctly you’ll see an output in the console showing a “tibble” (a data frame) which has 194 rows and 5 columns. However, your object has not actually changed in the environment. This will still be showing as 197 observations (row). So the filter command will take out those large estimations, but we haven’t actually changed the data object. To do this we need to assign (<-)the result of our filter command to the object. To do this, you need to put in some code at the start of this small chunk of code you’ve just run, so that the result of your commands will be assigned to the object (you can make this the same object name you’ve been using -overwrite it-, or call it a new name).\nWhen you run this command again you should see the (new) object has changed to 194 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you’re using a new object for the filtered data, you’ll need to edit the code to reflect that). .\nAnd as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.\n\n\n\n\nWe now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let’s test that.\n\nFirst, let’s calculate the mean and sd of the column.\nNow we can compute a t-statistic and check whether this mean is significantly different from the expected mean. We do this with t.test(). Edit the code on this line to conduct a one-sample t-test. You need to provide the sample of data on which you want to conduct the test, and the expected mean under the null hypothesis. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and note the p value. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p < .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a significant result.\nWhat is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.\n\n\n\n\n\n\nFiltering can also be useful for selecting certain sub-sets of our data. In the script we have given you an example of how we select a sub-set of data based on two conditions from two different columns:\n\ndata_set_name %>% filter(home_location_in_UK == \"NW\" & sibling_order == \"oldest\")\nWe have given you a few different columns to look at and to use in practicing your filter commands:\nsibling_order: what position in age was the respondent within their siblings home_location: UK / Asia / Europe, etc home_location_in_UK: NW, NE, etc (NA is non-UK residents) attention_check: respondents were asked “click strongly agree to show you are paying attention” - some people failed this!!!\nComplete the following filters. We’ve put in () the number of rows you should see in the resulting object\n\nJust those people who come from the North East (16 rows)\nThose people who come from Wales and are the middle child within their siblings (2 rows)\nThose people passed the attention check, are from the UK, and are an only child (21 rows)\nThose people who are NOT from the North West; you’ll need to use != (84 rows)\nThose people who failed the attention check (that is, did not say strongly agree) (14 rows)\nThose people who are from the South East or (|) the South West (38 rows)\n\n\n\n\n\nIn the lecture this week, Tom used an application to show the process of sampling data. You can access this application at the link below. There are three “parameters” you can change in this:\n\nThe true mean of the effect: Think of this like the bias that was set up in your deck of cards last week. There is some true state out there in the world, and we are going to draw samples from a distribution of data that has a mean that equals this value. If you make this 100, then the true mean is equal to that under the null hypothesis (there is no effect).\nThe standard deviation of the data: This sets how variable the data are in this population. If the data are more variable, then our samples will produce estimations that are less accurate of the true mean value.\nThe sample size: How many observations are drawn in the sample. These are represented by the yellow circles in the plot.\n\nEach time you draw a sample the data points are plotted in yellow and the mean of the sample is marked with the red line. The application also runs a one-sample t-test against the expected mean under the null hypothesis, of 100. The null hypothesis is also represented by the static distribution presented in grey, centred on 100.\nThings to try:\n\nStart with a sample size of 10, and a mean of the effect of 110 (SD = 15). How often do you get a significant result (p < .05) when you draw a new sample?\nNow try changing the mean of the effect to 120. Does this increase or decrease the likelihood of getting significant results? What about changing to 130?\nNow keep the mean effect constant (say 110), but increase the sample size. Try 5, then 10, 15, and so on. Does this increase or decrease the likelihood of getting significant results?\nSet the mean of the effect to 100 and the sample size to 10. Keep drawing new samples, noting each time the p value. You will evenutally get a p value of < .05. What type of error is this?\n\nClick here for the one-sample t-test application\n\n\n\nYou can access a set of quiz questions related to this week here."
+  },
+  {
+    "objectID": "PSYC121/Week6.html",
+    "href": "PSYC121/Week6.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC121/Week4.html",
+    "href": "PSYC121/Week4.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week8.html",
+    "href": "PSYC401/Week8.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week9.html",
+    "href": "PSYC401/Week9.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week2.html",
+    "href": "PSYC401/Week2.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week3.html",
+    "href": "PSYC401/Week3.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week7.html",
+    "href": "PSYC401/Week7.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week6.html",
+    "href": "PSYC401/Week6.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC401/Week4.html",
+    "href": "PSYC401/Week4.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week8.html",
+    "href": "PSYC234/Week8.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week9.html",
+    "href": "PSYC234/Week9.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week1.html",
+    "href": "PSYC234/Week1.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week2.html",
+    "href": "PSYC234/Week2.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week3.html",
+    "href": "PSYC234/Week3.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week7.html",
+    "href": "PSYC234/Week7.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week6.html",
+    "href": "PSYC234/Week6.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC234/Week4.html",
+    "href": "PSYC234/Week4.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC122/Week8.html",
+    "href": "PSYC122/Week8.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC122/Week9.html",
+    "href": "PSYC122/Week9.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC122/Week2.html",
+    "href": "PSYC122/Week2.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC122/Week7.html",
+    "href": "PSYC122/Week7.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC122/Week6.html",
+    "href": "PSYC122/Week6.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC122/Week4.html",
+    "href": "PSYC122/Week4.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week8.html",
+    "href": "PSYC402/Week8.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week9.html",
+    "href": "PSYC402/Week9.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week2.html",
+    "href": "PSYC402/Week2.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week3.html",
+    "href": "PSYC402/Week3.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week7.html",
+    "href": "PSYC402/Week7.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week6.html",
+    "href": "PSYC402/Week6.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC402/Week4.html",
+    "href": "PSYC402/Week4.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week8.html",
+    "href": "PSYC214/Week8.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week9.html",
+    "href": "PSYC214/Week9.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week2.html",
+    "href": "PSYC214/Week2.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week3.html",
+    "href": "PSYC214/Week3.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week7.html",
+    "href": "PSYC214/Week7.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week6.html",
+    "href": "PSYC214/Week6.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "PSYC214/Week4.html",
+    "href": "PSYC214/Week4.html",
+    "title": "Statistics_for_PSYC",
+    "section": "",
+    "text": "Hi"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  }
+]

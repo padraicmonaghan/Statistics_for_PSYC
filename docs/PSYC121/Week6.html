@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics for Psychologists – week6</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Statistics for Psychologists</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../PSYC121/week1.html" aria-current="page">PSYC121</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC122/week1.html">PSYC122</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC214/week1.html">PSYC214</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC401/week1.html">PSYC401</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC402/week1.html">PSYC402</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources.html">Resources</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PSYC121</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week1.html" class="sidebar-item-text sidebar-link">Week 1 - Introduction to PSYC121</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week2.html" class="sidebar-item-text sidebar-link">Week 2: Descriptive statistics in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week3.html" class="sidebar-item-text sidebar-link">Week 3: DVs and IVs in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week4.html" class="sidebar-item-text sidebar-link">Week 4: Customisation of graphs, and z-scores</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week5.html" class="sidebar-item-text sidebar-link">Week 5: Class test</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week6.html" class="sidebar-item-text sidebar-link active">Week 6: Sampling, probability and binomial tests</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week7.html" class="sidebar-item-text sidebar-link">Week 7: Filtering data and testing means (one-sample t-test)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week8.html" class="sidebar-item-text sidebar-link">Week 8: Related-samples t-tests, plotting means and SE bars</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week9.html" class="sidebar-item-text sidebar-link">Week 9: Unrelated-samples t-test and Power</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">PSYC122</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  TBC
+  </li>
+          <li class="sidebar-item">
+  TBD
+  </li>
+          <li class="sidebar-item">
+  TBE
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#week-6-sampling-probability-and-binomial-tests" id="toc-week-6-sampling-probability-and-binomial-tests" class="nav-link active" data-scroll-target="#week-6-sampling-probability-and-binomial-tests">Week 6: Sampling, probability and binomial tests</a>
+  <ul class="collapse">
+  <li><a href="#pre-lab-work" id="toc-pre-lab-work" class="nav-link" data-scroll-target="#pre-lab-work">Pre-lab work</a></li>
+  <li><a href="#card-sampling-task" id="toc-card-sampling-task" class="nav-link" data-scroll-target="#card-sampling-task">Card sampling task</a>
+  <ul class="collapse">
+  <li><a href="#set-up-and-instructions" id="toc-set-up-and-instructions" class="nav-link" data-scroll-target="#set-up-and-instructions">Set up and instructions:</a></li>
+  </ul></li>
+  <li><a href="#rstudio-tasks" id="toc-rstudio-tasks" class="nav-link" data-scroll-target="#rstudio-tasks">RStudio tasks</a>
+  <ul class="collapse">
+  <li><a href="#read-in-the-csv-data-file" id="toc-read-in-the-csv-data-file" class="nav-link" data-scroll-target="#read-in-the-csv-data-file">Read in the csv data file</a></li>
+  <li><a href="#take-a-look-at-the-data" id="toc-take-a-look-at-the-data" class="nav-link" data-scroll-target="#take-a-look-at-the-data">Take a look at the data</a></li>
+  <li><a href="#create-a-boxplot-of-the-phone-data" id="toc-create-a-boxplot-of-the-phone-data" class="nav-link" data-scroll-target="#create-a-boxplot-of-the-phone-data">Create a boxplot of the phone data</a></li>
+  <li><a href="#create-a-density-plot-andor-hisotgram-of-the-phone-data" id="toc-create-a-density-plot-andor-hisotgram-of-the-phone-data" class="nav-link" data-scroll-target="#create-a-density-plot-andor-hisotgram-of-the-phone-data">Create a density plot and/or hisotgram of the phone data</a></li>
+  <li><a href="#plot-the-relationship-between-estimated-and-actual-phone-use" id="toc-plot-the-relationship-between-estimated-and-actual-phone-use" class="nav-link" data-scroll-target="#plot-the-relationship-between-estimated-and-actual-phone-use">Plot the relationship between estimated and actual phone use</a></li>
+  <li><a href="#binomial-test-of-the-accuracy-of-phone-use-estimates" id="toc-binomial-test-of-the-accuracy-of-phone-use-estimates" class="nav-link" data-scroll-target="#binomial-test-of-the-accuracy-of-phone-use-estimates">Binomial test of the accuracy of phone use estimates</a></li>
+  <li><a href="#more-things-to-try-with-your-scatter-plot" id="toc-more-things-to-try-with-your-scatter-plot" class="nav-link" data-scroll-target="#more-things-to-try-with-your-scatter-plot">More things to try with your scatter plot</a></li>
+  </ul></li>
+  <li><a href="#week-6-quiz" id="toc-week-6-quiz" class="nav-link" data-scroll-target="#week-6-quiz">Week 6 Quiz</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="week-6-sampling-probability-and-binomial-tests" class="level1">
+<h1>Week 6: Sampling, probability and binomial tests</h1>
+<blockquote class="blockquote">
+<p>Written by Tom Beesley &amp; John Towse</p>
+</blockquote>
+<section id="pre-lab-work" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lab-work">Pre-lab work</h2>
+<ul>
+<li><p>Ensure you have watched the lecture for Week 6.</p></li>
+<li><p>There is a learnr tutorial to complete which will help you to think about <strong>binomial tests</strong>. You : <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/" target="_blank">You can find it here</a>.</p></li>
+<li><p>Set up a new folder in RStudio and upload the files from the <a href="files/Week_6/Week_6.zip">Week 6 zip file</a></p></li>
+<li><p>If you create a folder and upload the file into RStudio before the lab class you’ll be even more ready to follow along!</p></li>
+</ul>
+</section>
+<section id="card-sampling-task" class="level2">
+<h2 class="anchored" data-anchor-id="card-sampling-task">Card sampling task</h2>
+<p><img src="files/Week_6/cards.jpg" class="img-fluid"></p>
+<p>In the first task this week we will look at the sampling of events and we will apply the basic statistical test of the binomial test: <code>binom.test()</code></p>
+<p>Each table has a set of cards. These will be 13 red cards and 13 black cards - please check your set to ensure you have the right number of each colour (it doesn’t matter what suit the cards are).</p>
+<p>In this task we will be drawing samples from the deck, and trying to tell whether the deck is biased towards red or black. Think of the cards as the population of scores out there in world, and when you can only see back of the cards, that data is unobserved.</p>
+<p>As an experimenter we are trying to estimate what is true about the world, and in order to do this we need to draw a sample. So each time you draw a card, you are observing one data point from the population, and based on a collection of data (the sample) you are going to draw an inference about what is true about the population.</p>
+<section id="set-up-and-instructions" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-and-instructions">Set up and instructions:</h3>
+<ol type="1">
+<li><p>One person on each table should act as the “world” (the dealer). Congratulations, you are God. That is, this person will determine what is true about the state of things in the world. In this example, that means they control what is contained in the deck of cards. For each experiment, secretly remove some cards from the deck and place those face down. It’s important that no one sees what these cards are. For example, you might take out 5 red cards, so that 13 black and 8 red are left; this deck is now biased to black. Or you might take out 3 red and 3 black; this deck is not biased.</p></li>
+<li><p>The remaining people (1 or more) will act as the experimenters. Your job is to draw samples and work out whether you think the deck is biased or not towards either red or black.</p></li>
+<li><p>For each experiment, go through the following steps:</p></li>
+</ol>
+<ul>
+<li><p>The world removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the deck ready to start the “experiment”.</p></li>
+<li><p>The experimenters “pre-register” their sample size. That is, they state how many cards they are going to draw.</p></li>
+<li><p>Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.</p></li>
+<li><p>Mark down whether the card was red or black in <a href="files/Week_6/Week_6_card_logbook.docx">your logbook</a></p></li>
+<li><p>The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.</p></li>
+<li><p>At the end of each experiment, the experimenters should draw a conclusion based initially on their own “gut feeling” about the data. Do you think the deck was biased towards red, black, or was it unbiased?</p></li>
+<li><p>As a group, use RStudio to run a <code>binom.test()</code> to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it’s up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p></li>
+<li><p>The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?</p></li>
+</ul>
+<ol start="4" type="1">
+<li><p>Repeat all steps in part 3 again for a new experiment, <strong>making sure that you try different parameters for the experiment</strong>. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p></li>
+<li><p>Once you’ve conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things:</p></li>
+</ol>
+<ul>
+<li><p>were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was &gt; .05)?</p></li>
+<li><p>were there times when the deck was actually biased, but you failed to prove this with your experiment (you failed to see p &lt; .05)? Do you remember what this type of error is called?</p></li>
+<li><p>were there times when the deck was <em>not</em> biased, but the test result suggested it was (p &lt; .05)? Do you remember what type of error this is called?</p></li>
+</ul>
+</section>
+</section>
+<section id="rstudio-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-tasks">RStudio tasks</h2>
+<p>For the second exercise today we will take a look at the phone data again. If you haven’t already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).</p>
+<section id="read-in-the-csv-data-file" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-the-csv-data-file">Read in the csv data file</h3>
+<p>You should know how to do this by now. But if not, try searching “csv” at the top. Remember that what you name your data set is important for the following commands.</p>
+</section>
+<section id="take-a-look-at-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="take-a-look-at-the-data">Take a look at the data</h3>
+<p>There are lots of ways to get a quick look at the data. Here are a few useful ones (some you’ve come across, some that might be new): <code>glimpse()</code>, <code>summary()</code>, <code>View()</code>, <code>head()</code>.</p>
+</section>
+<section id="create-a-boxplot-of-the-phone-data" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-boxplot-of-the-phone-data">Create a boxplot of the phone data</h3>
+<p>Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.</p>
+</section>
+<section id="create-a-density-plot-andor-hisotgram-of-the-phone-data" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-density-plot-andor-hisotgram-of-the-phone-data">Create a density plot and/or hisotgram of the phone data</h3>
+<p>It’s very easy to convert the boxplot code into either a density plot (<code>geom_density()</code>) or a histogram (<code>geom_histogram()</code>). Have a play around with these different types of graphs. Which one communicates the spread of the data most clearly? Is it better to plot these on the x or y axis?</p>
+</section>
+<section id="plot-the-relationship-between-estimated-and-actual-phone-use" class="level3">
+<h3 class="anchored" data-anchor-id="plot-the-relationship-between-estimated-and-actual-phone-use">Plot the relationship between estimated and actual phone use</h3>
+<p>So far we’ve looked at the phone use estimate and the actual phone use separately. But if people are at all accurate in their estimates, we’d expect these two things to be related (those people who use their phone more probably know they do). Let’s use a scatter plot to see if this relationship exists in our data. In <code>ggplot()</code> we can do with with <code>geom_point()</code>. Each point on the graph needs an x and y value, so with the code you’ve been given, you just need to add in the two variables we want to plot.</p>
+<ul>
+<li>Is there a relationship between these variables?</li>
+<li>How would you describe this relationship in words?</li>
+</ul>
+</section>
+<section id="binomial-test-of-the-accuracy-of-phone-use-estimates" class="level3">
+<h3 class="anchored" data-anchor-id="binomial-test-of-the-accuracy-of-phone-use-estimates">Binomial test of the accuracy of phone use estimates</h3>
+<p>So did people overestimate or underestimate their phone use on average? We have given you a column called <em>accuracy</em> which simply says whether each participant underestimated or overestimated. Add your dataset name to this code to use the <code>count()</code> function to get the total who overestimated and underestimated. With these totals, you have enough information to run a binomial test:</p>
+<ul>
+<li>for this test focus on the totals for “underestimate” and “overestimate” (for simplicity we can ignore people who were “accurate” and the NA values)</li>
+<li>These give you your first two parameters for <code>binom.test()</code></li>
+<li>to get the probability, we consider the null hypothesis</li>
+<li>that is what’s the probability of overestimating or underestimating under the null hypothesis?</li>
+<li>what is the result of the binomial test?</li>
+<li>You can also include the <em>UK_region</em> within your count, and then run binomial tests on these sub-groups. Do you find any interesting reuslts? What issues might we have with running the <code>binom.test()</code> on these sub groups?</li>
+</ul>
+</section>
+<section id="more-things-to-try-with-your-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="more-things-to-try-with-your-scatter-plot">More things to try with your scatter plot</h3>
+<p>We can customise our plot even further:</p>
+<ul>
+<li>Try adding/changing the <code>size =</code> within <code>geom_point()</code> to make the points bigger or smaller (values from .1 to 30)</li>
+<li>Try adding/changing the <code>alpha =</code> within <code>geom_point()</code> to make the points transparent (try values between 0.1 and 1)</li>
+<li>try adding <code>colour =</code> within <code>ggplot(aes( ))</code> to <em>map</em> the colour to the ‘UK_region’ variable.</li>
+<li>you can change the colours used by ggplot by adding <code>+ scale_colour_brewer()</code> to your plot code. Within this, try setting the pallete parameter to one of these options (e.g., <code>scale_colour_brewer(palette = "Set3")</code>)</li>
+</ul>
+<p><img src="files/Week_6/brewer_cols.png" class="img-fluid"></p>
+<ul>
+<li>remember you can add labels using <code>+labs()</code></li>
+<li>remember you can set a new theme, such as <code>+ theme_minimal()</code></li>
+</ul>
+</section>
+</section>
+<section id="week-6-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-quiz">Week 6 Quiz</h2>
+<p>You can access a set of quiz questions related to this week <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_6_Quiz/" target="_blank">here.</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
+      <div class="nav-footer-center">Link 1</div>
+    <div class="nav-footer-right">GithubLink</div>
+  </div>
+</footer>
+
+
+
+</body></html>

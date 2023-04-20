@@ -1,0 +1,64 @@
+project:
+  type: website
+  output-dir: docs
+
+
+website:
+  title: "Statistics for Psychologists"
+  logo: "Images/icon.png"
+  favicon: "Images/favicon.png"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: PSYC121/week1.qmd
+        text: PSYC121
+      - href: PSYC122/week1.qmd
+        text: PSYC122
+      - href: PSYC214/week1.qmd
+        text: PSYC214
+      - href: PSYC401/week1.qmd
+        text: PSYC401      
+      - href: PSYC402/week1.qmd
+        text: PSYC402
+      - href: resources.qmd
+        text: Resources
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "PSYC121"
+        contents:
+          - PSYC121/week1.qmd
+          - PSYC121/week2.qmd
+          - PSYC121/week3.qmd
+          - PSYC121/week4.qmd
+          - PSYC121/week5.qmd
+          - PSYC121/week6.qmd
+          - PSYC121/week7.qmd
+          - PSYC121/week8.qmd
+          - PSYC121/week9.qmd
+      - section: "PSYC122"
+        contents: 
+          - TBC
+          - TBD
+          - TBE
+          
+  page-footer:
+    left: "Website developed by Matthew Ivory"
+    center: "Link 1"
+    right: "GithubLink"
+
+format:
+  html:
+    theme: default
+    css: styles.css
+    code-overflow: wrap
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
+    toc: true
+
+editor: source
+

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics for Psychologists – week9</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Statistics for Psychologists</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../PSYC121/week1.html" aria-current="page">PSYC121</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC122/week1.html">PSYC122</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC214/week1.html">PSYC214</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC401/week1.html">PSYC401</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC402/week1.html">PSYC402</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources.html">Resources</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PSYC121</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week1.html" class="sidebar-item-text sidebar-link">Week 1 - Introduction to PSYC121</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week2.html" class="sidebar-item-text sidebar-link">Week 2: Descriptive statistics in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week3.html" class="sidebar-item-text sidebar-link">Week 3: DVs and IVs in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week4.html" class="sidebar-item-text sidebar-link">Week 4: Customisation of graphs, and z-scores</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week5.html" class="sidebar-item-text sidebar-link">Week 5: Class test</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week6.html" class="sidebar-item-text sidebar-link">Week 6: Sampling, probability and binomial tests</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week7.html" class="sidebar-item-text sidebar-link">Week 7: Filtering data and testing means (one-sample t-test)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week8.html" class="sidebar-item-text sidebar-link">Week 8: Related-samples t-tests, plotting means and SE bars</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week9.html" class="sidebar-item-text sidebar-link active">Week 9: Unrelated-samples t-test and Power</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">PSYC122</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  TBC
+  </li>
+          <li class="sidebar-item">
+  TBD
+  </li>
+          <li class="sidebar-item">
+  TBE
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#week-9-unrelated-samples-t-test-and-power" id="toc-week-9-unrelated-samples-t-test-and-power" class="nav-link active" data-scroll-target="#week-9-unrelated-samples-t-test-and-power">Week 9: Unrelated-samples t-test and Power</a>
+  <ul class="collapse">
+  <li><a href="#pre-lab-work-online-tutorial" id="toc-pre-lab-work-online-tutorial" class="nav-link" data-scroll-target="#pre-lab-work-online-tutorial">Pre-lab work: online tutorial</a></li>
+  <li><a href="#rstudio-tasks" id="toc-rstudio-tasks" class="nav-link" data-scroll-target="#rstudio-tasks">RStudio tasks</a>
+  <ul class="collapse">
+  <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data">Exploring the data</a></li>
+  <li><a href="#visualising-relationships-in-the-data" id="toc-visualising-relationships-in-the-data" class="nav-link" data-scroll-target="#visualising-relationships-in-the-data">Visualising relationships in the data</a></li>
+  <li><a href="#using-z-scores-to-remove-outliers" id="toc-using-z-scores-to-remove-outliers" class="nav-link" data-scroll-target="#using-z-scores-to-remove-outliers">Using z-scores to remove outliers</a></li>
+  </ul></li>
+  <li><a href="#unrelated-samples-t-test" id="toc-unrelated-samples-t-test" class="nav-link" data-scroll-target="#unrelated-samples-t-test">Unrelated samples t-test</a></li>
+  <li><a href="#power-and-effect-size-d-calculations" id="toc-power-and-effect-size-d-calculations" class="nav-link" data-scroll-target="#power-and-effect-size-d-calculations">Power and effect size (d) calculations</a></li>
+  <li><a href="#week-9-quiz" id="toc-week-9-quiz" class="nav-link" data-scroll-target="#week-9-quiz">Week 9 Quiz</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="week-9-unrelated-samples-t-test-and-power" class="level1">
+<h1>Week 9: Unrelated-samples t-test and Power</h1>
+<blockquote class="blockquote">
+<p>Written by Tom Beesley &amp; John Towse</p>
+</blockquote>
+<section id="pre-lab-work-online-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lab-work-online-tutorial">Pre-lab work: online tutorial</h2>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p><strong>Getting ready for the lab class</strong></p>
+<p>Create a folder for Week 9. and download the <a href="files/Week_9/week_9.zip">week_9.zip</a> file and upload it into this new folder in RStudio Server.</p>
+</section>
+<section id="rstudio-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-tasks">RStudio tasks</h2>
+<section id="exploring-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-the-data">Exploring the data</h3>
+<p>In this class we will be exploring some data on people’s estimations on aspects of the UK population. We asked people 4 different questions:</p>
+<blockquote class="blockquote">
+<p>Out of every 100 people, about how many do you think are:</p>
+</blockquote>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Christian?</li>
+<li>Muslim?</li>
+<li>Over the age of 65?</li>
+</ol>
+</blockquote>
+<p>We also asked a related question about immigration:</p>
+<blockquote class="blockquote">
+<p>What percentage of the UK population do you think are immigrants to this country? (i.e.&nbsp;not born in UK)</p>
+</blockquote>
+<ol type="1">
+<li><p>Read in the data “data_wk9.csv” using <code>read_csv()</code>.</p></li>
+<li><p>Take a look at the summary statistics for all of the columns in our data using <code>summary()</code></p></li>
+<li><p>At this stage you could try using <code>ggplot()</code> with <code>geom_histogram()</code> (hint: not sure? look at last week) or <code>geom_density()</code> to explore the different columns.</p></li>
+<li><p>You may be tempted at this stage to apply the <code>filter()</code> commands to remove any outliers. If so, yes, that’s entirely sensible. But note that we are going to remove outliers a little further into our tasks after we’ve first done some visualisation.</p></li>
+</ol>
+</section>
+<section id="visualising-relationships-in-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="visualising-relationships-in-the-data">Visualising relationships in the data</h3>
+<p>To what extent are people’s estimations of these population parameters related? Let’s look at this by plotting these data as <code>geom_point()</code>:</p>
+<ol type="1">
+<li><p>Complete the code to add one numeric column in the data to x and another numeric column to y. You can pick any of the columns you like, but it’s important that you understand what research question you are asking with your choice. For example, you might be asking “Do people who estimate there are more Christians in the population also think there are more people over the age of 65?”</p></li>
+<li><p>Note the general pattern in the data. Is there a <em>postive relationship</em>: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a <em>negative relationship</em>: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernable relationship at all?</p></li>
+<li><p>Copy the code and edit it to explore relationships between the other numeric variables, each time noting the research question you are asking, and discussing on your table what kind of relationship you can see in the data.</p></li>
+</ol>
+</section>
+<section id="using-z-scores-to-remove-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="using-z-scores-to-remove-outliers">Using z-scores to remove outliers</h3>
+<ol type="1">
+<li><p>You may have noticed that there are some fairly extreme values in some of these numeric estimations of the population. As we’ve discussed in previous weeks, these outlier values can be problematic when we run our statistical tests, so (like last week) we probably want to control their influence by removing them. As you saw in your online tutorial, we can convert the data to z scores, and then remove z values above and below certain values.</p></li>
+<li><p>Let’s create a “z-transform column” called <em>z_imm</em> for the estimates of the percentage of immigrants. Complete the code you have been given by adding the relevant variable (column) name to the code. You may want to create a new data object at this point.</p></li>
+<li><p>View the new data object to check this column has been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check it conforms to what we know about z-scores (e.g., <code>mean()</code> should be very close to 0, <code>sd()</code> = 1). Note, if you want to change the output in r from scientific notation to non-scientific notation, you can run the command <code>options(scipen=999)</code>.</p></li>
+<li><p>We know from our lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:</p></li>
+</ol>
+<p><img src="files/Week_9/z_score_figure.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li><p>Let’s consider an outlier any value that has a z of 2.5 (a conventional cutoff). Plot a histogram of the <em>z_imm</em> column in order to inspect whether there are data that are above 2.5 or below -2.5.</p></li>
+<li><p>Add a filter command to remove the values in the <em>z_imm</em> column are greater than 2.5 or less than -2.5.</p></li>
+</ol>
+</section>
+</section>
+<section id="unrelated-samples-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="unrelated-samples-t-test">Unrelated samples t-test</h2>
+<p>We have also included a categorical variable in our data this week, which is one you have seen before in our analysis classes: the home location in the UK of the respondent, <code>home_location_in_UK</code>. For this data object we have included only those responses from those people from the “North” (NW and NE) and those from the “South” (SW and SE). Other respondents from elsewhere have been removed from the data. We can therefore look at whether people’s home location determines their population estimations.</p>
+<ol type="1">
+<li><p>First we will look at the mean population estimations, split by home location. To do this, complete the <code>group_by()</code> and <code>summarise()</code> commands to give the mean estimates of the proportion of muslims in the population by home location. You don’t need to edit the <code>N = n()</code> line - this provides the number of participants at each level of the <em>home_location_in_UK</em> variable.</p></li>
+<li><p>What do the means suggest? Do people in the North and South give different estimations?</p></li>
+<li><p>Let’s test if these differences are real. First, it is worth noting that many more respondents originate from the North than from the South (see the <em>N</em> column in the summary). We have unequal sample sizes, and potentially unequal variances. Run the <code>var.test()</code> code to check if the variances of the two samples are similar (homogeneity of variance). If this test produces a p value less that .05, then the variances in the two samples are unequal. That will have consequences for how we run the <code>t-test()</code> in the next step.</p></li>
+<li><p>Now let’s run the t-test. This week we are comparing data from different samples of participants (those who are from the North and South). We need to tell the t-test that the data are NOT paired (<code>paired = FALSE</code>). The result of the <code>var.test()</code> in the last step will tell you whether the <code>var.equal</code> value should be <code>TRUE</code> or <code>FALSE</code>. Set <code>var.equal = FALSE</code> or <code>var.equal = TRUE</code> depending on whether the variances are equal. When you’re happy with the parameters, run the t-test. What result did you get and what does this mean? Discuss this with your table, or with the staff in the lab.</p></li>
+<li><p>In that t-test we looked at the <em>pop_est_muslim</em> variable, but we can do this test for all of our population estimates. Copy the code to run another <code>var.test()</code> and <code>t.test()</code>, for the <em>pop_est_christian</em> variable. Note the t and p values; What do these tell us about the relationship between music preference and social media use? You can also run two further tests on the other population estimations.</p></li>
+</ol>
+</section>
+<section id="power-and-effect-size-d-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="power-and-effect-size-d-calculations">Power and effect size (d) calculations</h2>
+<ol type="1">
+<li><p>We saw in last week’s lab tasks that there was a significant effect in our Stroop task data: participants were faster to say the colour names of the compatible list compared to the incompatible list (there were significant differences with the control list too). We will now use these data to calculate an <strong>effect size</strong> (<em>Cohen’s d</em>) for the t-statistic that we observed in that test.</p></li>
+<li><p>Import the stroop data. We have reduced the data down to just the <em>compatible</em> and <em>incompatible</em> conditions.</p></li>
+<li><p>Run the <code>cohens_d()</code> code to calculate the effect size, which is reported as <em>effsize</em>. You can ignore any negative sign, taking note of the absolute value.</p></li>
+<li><p>We already know that this large effect size was significant with our large sample of participants. What might we have expected with a much smaller sample size? Use the <code>pwr.t.test()</code> function to add in the effect size that you calculated (Cohen’s d) and set the <em>N</em> to 20. What <strong>power</strong> would we have achieved with this sample size, to detect this large effect? Discuss with your table, or staff, what this power means.</p></li>
+<li><p>Let’s say we wanted our next experiment to have an 80% chance of finding an effect at least as large as the one we found. Complete the <code>pwr.t.test()</code> function to work out the minimum sample size we would need to achieve power of .8, with this effect size.</p></li>
+<li><p>Let’s say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task (this is a real “stressor task” people use!). We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be detected in our experiment. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?</p></li>
+</ol>
+</section>
+<section id="week-9-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="week-9-quiz">Week 9 Quiz</h2>
+<p>You can access a set of quiz questions related to this week <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_9_quiz/" target="_blank">here.</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
+      <div class="nav-footer-center">Link 1</div>
+    <div class="nav-footer-right">GithubLink</div>
+  </div>
+</footer>
+
+
+
+</body></html>

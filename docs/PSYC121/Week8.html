@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistics for Psychologists – week8</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Statistics for Psychologists</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../PSYC121/week1.html" aria-current="page">PSYC121</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC122/week1.html">PSYC122</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC214/week1.html">PSYC214</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC401/week1.html">PSYC401</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../PSYC402/week1.html">PSYC402</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources.html">Resources</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">PSYC121</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week1.html" class="sidebar-item-text sidebar-link">Week 1 - Introduction to PSYC121</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week2.html" class="sidebar-item-text sidebar-link">Week 2: Descriptive statistics in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week3.html" class="sidebar-item-text sidebar-link">Week 3: DVs and IVs in RStudio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week4.html" class="sidebar-item-text sidebar-link">Week 4: Customisation of graphs, and z-scores</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week5.html" class="sidebar-item-text sidebar-link">Week 5: Class test</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week6.html" class="sidebar-item-text sidebar-link">Week 6: Sampling, probability and binomial tests</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week7.html" class="sidebar-item-text sidebar-link">Week 7: Filtering data and testing means (one-sample t-test)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week8.html" class="sidebar-item-text sidebar-link active">Week 8: Related-samples t-tests, plotting means and SE bars</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC121/week9.html" class="sidebar-item-text sidebar-link">Week 9: Unrelated-samples t-test and Power</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">PSYC122</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  TBC
+  </li>
+          <li class="sidebar-item">
+  TBD
+  </li>
+          <li class="sidebar-item">
+  TBE
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#week-8-related-samples-t-tests-plotting-means-and-se-bars" id="toc-week-8-related-samples-t-tests-plotting-means-and-se-bars" class="nav-link active" data-scroll-target="#week-8-related-samples-t-tests-plotting-means-and-se-bars">Week 8: Related-samples t-tests, plotting means and SE bars</a>
+  <ul class="collapse">
+  <li><a href="#pre-lab-work-online-tutorial" id="toc-pre-lab-work-online-tutorial" class="nav-link" data-scroll-target="#pre-lab-work-online-tutorial">Pre-lab work: online tutorial</a></li>
+  <li><a href="#rstudio-tasks" id="toc-rstudio-tasks" class="nav-link" data-scroll-target="#rstudio-tasks">RStudio Tasks</a>
+  <ul class="collapse">
+  <li><a href="#calculating-means-and-ses" id="toc-calculating-means-and-ses" class="nav-link" data-scroll-target="#calculating-means-and-ses">Calculating means and SEs</a></li>
+  <li><a href="#running-related-samples-t-tests" id="toc-running-related-samples-t-tests" class="nav-link" data-scroll-target="#running-related-samples-t-tests">Running related samples t-tests</a></li>
+  <li><a href="#plotting-the-means-and-ses" id="toc-plotting-the-means-and-ses" class="nav-link" data-scroll-target="#plotting-the-means-and-ses">Plotting the means and SEs</a></li>
+  <li><a href="#saving-your-work" id="toc-saving-your-work" class="nav-link" data-scroll-target="#saving-your-work">Saving your work</a></li>
+  </ul></li>
+  <li><a href="#week-8-quiz" id="toc-week-8-quiz" class="nav-link" data-scroll-target="#week-8-quiz">Week 8 Quiz</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="week-8-related-samples-t-tests-plotting-means-and-se-bars" class="level1">
+<h1>Week 8: Related-samples t-tests, plotting means and SE bars</h1>
+<blockquote class="blockquote">
+<p>Written by Tom Beesley &amp; John Towse</p>
+</blockquote>
+<p>Today we will take a look at summarising means and standard errors (SEs) from our data. We will look at how we plot these together on the one graph (using <code>ggplot()</code> commands that allow us to share mappings between different geoms. We will explore our data on the famous “Stroop Task” and we will use a related-samples t-test to examine the differences between the means of our different conditions in this task.</p>
+<section id="pre-lab-work-online-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lab-work-online-tutorial">Pre-lab work: online tutorial</h2>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_8" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p><strong>Getting ready for the lab class</strong></p>
+<ol type="1">
+<li>Create a folder for Week 8 and download the <a href="files/Week_8/Week_8_v2.zip">Week_8.zip</a> file and upload it into this new folder in RStudio Server.</li>
+</ol>
+</section>
+<section id="rstudio-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-tasks">RStudio Tasks</h2>
+<section id="calculating-means-and-ses" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-means-and-ses">Calculating means and SEs</h3>
+<p>The “Stroop Effect” is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a “compatible” stimulus like <span style="color:green"><strong>GREEN</strong></span>, and a much more difficult task for an “incompatible” stimulus like <span style="color:red"><strong>BLUE</strong></span>. We can’t help but read the text - it has seemingly become an automatic process.</p>
+<p><img src="files/Week_8/stroop.png" class="img-fluid"> In this task we will calculate the means and standard errors of the means and then we will then plot them using ggplot(). First though, we’ll need to inspect the data and maybe do a bit of data wrangling by using our <code>filter()</code> command.</p>
+<ol type="1">
+<li><p>Open the script “Week_8_script.R” (see prep work)</p></li>
+<li><p>Run the <code>library</code> and add a <code>read_csv</code> line to read in the data set. Call your data something meaningful (perhaps <em>data_w8</em> or <em>data_stroop</em> but maybe not <em>bestest_most_fantastic_data_on_the_stroop_test_eva_init</em>)</p></li>
+<li><p>View the data with <code>View(data)</code>. You will see that the data are a little different from the data we have worked with previously. We have an <em>pID</em> variable, which gives a unique number for each person and each person has 3 rows. This is because the different conditions of the Stroop task reflect a <strong>within-subjects variable</strong> (related samples). For data like this it is often useful to have them arranged in what is referred to as “long format”, with multiple rows for each response the participant provides. For the current data that means we have a variable called <em>condition</em>, which is our IV, and one called <em>time</em> which is our DV.</p></li>
+<li><p>Let’s look at the distribution of <em>time</em> (our DV) as a function of <em>condition</em>. Complete the next chunk of code by mapping <em>x</em> to <em>time</em> and <em>fill</em> to <em>condition</em> for our <code>geom_density()</code> plot. You can play around with the <em>alpha</em> parameter, setting it to a value between 0 and 1 - note that this is done OUTSIDE of the <code>aes()</code> command.</p></li>
+<li><p>We seem to have some outlier values at both the high and the low ends. It’s probably best if we remove data for the whole participant if their <em>average</em> time is unusual. To do that, we’ll need to create a new column. Here we will introduce you to a new function called <code>mutate()</code>. This function will create a new variable (column) from an old one. Run this next block of code (you don’t need to edit this one) to create the new column, <em>avg_time</em>. We are using this in combination with <code>group_by(pID)</code> because we want to calculate the average time for each participant. Use <code>view()</code> to take a look at the data to check the column has been created correctly.</p></li>
+<li><p>Edit the <code>geom_histogram()</code> code to plot the distribution of values in the new <em>avg_time</em> column.</p></li>
+<li><p>We now need the filter out the values in our data that we feel are unusual. Like last week, we will do this (for now) in a fairly unprincipled manner, by “eyeballing” the data (next week we’ll consider something a bit more “scientific”). Complete the filter command so that it removes both the very low values in the <em>avg_time</em> column, and also those that are very high. Because you want to filter out low AND high values, you are using an <strong>AND</strong> expression (<strong>&amp;</strong>). You will therefore need to enter in two numerical values, based on your assessment of the histogram produced for Q6. Note that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object?</p></li>
+<li><p>Check the new distribution of average times after this filter has been applied to the data.</p></li>
+</ol>
+</section>
+<section id="running-related-samples-t-tests" class="level3">
+<h3 class="anchored" data-anchor-id="running-related-samples-t-tests">Running related samples t-tests</h3>
+<p>We have seen in our density plots that the reaction times (DV) look different in the three different Stroop conditions (our IV). But now we need to look at whether there are <strong>statistically significant differences</strong> between the means of the three conditions.</p>
+<p>To do this, we will first summarise the mean time taken by each condition in the Stroop task. <a href="#group_by">Remember from Week 3</a> that we can use <code>group_by()</code> and <code>summarise()</code> to get summary stats (e.g., mean, sd) at each level of the IV. That’s what we want to do now:</p>
+<ol type="1">
+<li><p>Edit the <code>group_by()</code> code to specify the IV and the <code>summarise()</code> to calculate the <code>mean()</code> of our DV. If you do this correctly, you’ll get three values - a mean value for each level (condition) of our IV. Do these means reflect what you would expect in the Stroop task?</p></li>
+<li><p>Next we need to test if these differences between our means are real. To do that, we can run a related samples t-test; remember that the data for each level of the IV in this experiment came from the same person. We must use a <code>filter()</code> to restrict the data to just two levels of the IV: the <em>condition</em> column/variable in the data. This is because a related samples t-test looks at the difference between two means (and only two), so the column we use for the t-test needs to have just two levels of the IV (two of the conditions).</p></li>
+<li><p>The filter command is already set up to restrict the data to two of the conditions. Note that the filter uses an “|” symbol, which means “or”, because we want the data that <strong>is the same as</strong> (==) one condition OR <strong>is the same as</strong> (==) the other condition.</p></li>
+<li><p>Run the t-test on this selection of data, to compare the means from these two levels of the IV. Is the result significant? Note the t-value and the p-value.</p></li>
+<li><p>Write out a statement to express this result. Here’s a template you can use, where you need to edit the bits in the []:</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>“There [was a / was no] significant difference between the [describe the variables that were compared], t([degrees of freedom here]) = [t value here], p &lt; [p value here].”</p>
+</blockquote>
+<ol start="6" type="1">
+<li>With 3 levels to the IV <em>condition</em> there are 3 possible comparisons we can make (1 vs.&nbsp;2; 1 vs.&nbsp;3; 2 vs.&nbsp;3). Complete all three tests, by copying and pasting the commands, editing each to make a different filter selection, and then to run the t-test. Write out a report statement (Q5) for each of your comparisons.</li>
+</ol>
+</section>
+<section id="plotting-the-means-and-ses" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-the-means-and-ses">Plotting the means and SEs</h3>
+<ol type="1">
+<li>In Task 2 you calculated the means for each condition in the Stroop task. We’ve seen in lectures that “standard error” provides an estimate of how variable that mean will be across the samples we collect. A very typical way to plot a mean value is to plot it with the standard error of the mean (SEM):</li>
+</ol>
+<p><img src="files/Week_8/error_bars.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>The code from Task 2-Q1 will give the mean. We will now complete the second line of this code to give the standard error values. TO do this, you simply need to add the correct variable (DV) to the <code>sd()</code> command to calculate the SE values (note that you don’t need to put anything in <code>n()</code>, as this simply calculates how many rows there are).</p></li>
+<li><p>View the new object summary object you have created. Check that the means and SEs are different for the 3 conditions. If they are the same, you probably summarised the wrong column!</p></li>
+<li><p>We will now plot these 3 mean values in a figure. Let’s use <code>geom_point()</code> so that our means and SEs look a bit like the figure above. Complete the ggplot command to plot our summarised value called <em>stroop_mean</em> (y), as a function of the IV, <em>condition</em> (x).</p></li>
+<li><p>Now we need to add some “error bars” which provide a visual guide as to how much uncertainty we have in our mean value. Edit the code for the <code>ggplot()</code> command to plot both <code>geom_point()</code> (same as Q4) and <code>geom_errorbar</code>. You will need to calculate a <code>ymin</code> and a <code>ymax</code> value. Use the illustration above to work out how to combine the mean value and the SE value (hint: add or subtract) to create the right <code>ymin</code> and <code>ymax</code>.</p></li>
+</ol>
+<p>EXTRA: These next steps can be completed to practice customising your plot</p>
+<ol start="6" type="1">
+<li><p>Add a <code>labs()</code> layer to the plot to change the axis titles, and the title of the plot.</p></li>
+<li><p>Change the theme of the plot (e.g., <code>theme_void()</code>)</p></li>
+<li><p>Map the <em>fill</em> aesthetic to the variable <em>stroop_condition</em>. You can do this for <code>geom_point</code> or <code>geom_errorbar</code> or both at once by putting it in the <code>aes()</code> within the <code>ggplot()</code> command.</p></li>
+<li><p>Manually change the colours of the columns with using <code>scale_fill_brewer()</code>. Take a look at the Week 6 (6.3.7) for instructions on setting colours.</p></li>
+<li><p>Try changing your <code>geom_point()</code> to <code>geom_col</code>.</p></li>
+</ol>
+</section>
+<section id="saving-your-work" class="level3">
+<h3 class="anchored" data-anchor-id="saving-your-work">Saving your work</h3>
+<p><strong>Scripts:</strong> By now you are hopefully getting used to editing and working within the script. As you know, to save a script, you simply click the save icon, or press ctrl+S (cmd+s on a mac).</p>
+<p><strong>Plots:</strong> To save a graph you have produced, click the “Export” button in the plot window, then “Save as Image”. You can resize the graph and give it an appropriate filename. If you’ve set the working directory correctly, then the new file should appear in the current folder.</p>
+<p><strong>Data:</strong> The data objects you create (in the Environment) only exist within RStudio, and are temporary (with a script and the csv file, you can always redo the analysis). But what if you want to use the data elsewhere? For example you may want to share the data with your project (PEP?) supervisor. To do this, we need to write the data to a csv file (like those we use to import the data). You can do this with the following command: <code>write_csv(the_data_object, "the_filename.csv")</code>.</p>
+<p><strong>Exporting from RStudio:</strong> The above save operations save files to a folder within RStudio Server. At some stage you will need to get these files out of RStudio Server, for example if you need a graph for your report, or you need to share the data or the scripts. Or maybe you want to make the csv file available to other researchers. To get files out of RStudio, simply select the files you want in the Files pane, click “More” and then “Export”. Selecting multiple files will produce a “.zip” file, which will need to be “unzipped” on your computer to access the individual files (<a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc" target="_blank">instructions for Windows</a> and <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp2528/mac" target="_blank">instructions for Mac</a>)</p>
+</section>
+</section>
+<section id="week-8-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="week-8-quiz">Week 8 Quiz</h2>
+<p>You can access a set of quiz questions related to this week <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_8_Quiz/" target="_blank">here.</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
+      <div class="nav-footer-center">Link 1</div>
+    <div class="nav-footer-right">GithubLink</div>
+  </div>
+</footer>
+
+
+
+</body></html>
