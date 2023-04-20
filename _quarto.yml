@@ -11,15 +11,15 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: PSYC121/Week1.qmd
+      - href: PSYC121/index.qmd
         text: PSYC121
-      - href: PSYC122/Part1.qmd
+      - href: PSYC122/index.qmd
         text: PSYC122
-      - href: PSYC214/Week1.qmd
+      - href: PSYC214/index.qmd
         text: PSYC214
-      - href: PSYC401/Week1.qmd
+      - href: PSYC401/index.qmd
         text: PSYC401      
-      - href: PSYC402/Week1.qmd
+      - href: PSYC402/index.qmd
         text: PSYC402
       - href: Resources/index.qmd
         text: Resources
