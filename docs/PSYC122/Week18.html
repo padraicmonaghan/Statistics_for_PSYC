@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists – week18</title>
+<title>Statistics for Psychologists - Linear Model Part 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC122/index.html">PSYC122</a></li><li class="breadcrumb-item"><a href="../PSYC122/Week18.html">PSYC122 <em>Part 2</em> Week 18</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC122/index.html">PSYC122</a></li><li class="breadcrumb-item"><a href="../PSYC122/Week18.html">Linear Model Part 2</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -217,73 +217,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Part1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../PSYC122/Part2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../PSYC122/references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../PSYC122/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Summary</span></a>
+ <span class="menu-text">Introduction to Part 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: Correlation</span></a>
+ <span class="menu-text">Correlation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: Correlation 2</span></a>
+ <span class="menu-text">Correlation Part 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: The linear model</span></a>
+ <span class="menu-text">The Linear Model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 14: Chi-square</span></a>
+ <span class="menu-text">Chi-Square</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC122/Part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Part 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC122 <em>Part 2</em> Week 16</span></a>
+ <span class="menu-text">Data Visualisation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC122 <em>Part 2</em> Week 17</span></a>
+ <span class="menu-text">Linear Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week18.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">PSYC122 <em>Part 2</em> Week 18</span></a>
+ <span class="menu-text">Linear Model Part 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC122 <em>Part 2</em> Week 19</span></a>
+ <span class="menu-text">Linear Model Part 3</span></a>
   </div>
 </li>
       </ul>
@@ -556,8 +544,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-week-18-intro" id="toc-sec-week-18-intro" class="nav-link active" data-scroll-target="#sec-week-18-intro">PSYC122 <em>Part 2</em> Week 18</a></li>
-  <li><a href="#our-learning-goals" id="toc-our-learning-goals" class="nav-link" data-scroll-target="#our-learning-goals">Our learning goals</a></li>
+  <li><a href="#our-learning-goals" id="toc-our-learning-goals" class="nav-link active" data-scroll-target="#our-learning-goals">Our learning goals</a></li>
   <li><a href="#sec-w18-resources-intro" id="toc-sec-w18-resources-intro" class="nav-link" data-scroll-target="#sec-w18-resources-intro">Your resources</a></li>
   <li><a href="#lectures-video-recordings" id="toc-lectures-video-recordings" class="nav-link" data-scroll-target="#lectures-video-recordings">Lectures: video recordings</a>
   <ul class="collapse">
@@ -583,10 +570,24 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Linear Model Part 2</h1>
+<p class="subtitle lead">Written by Rob Davies</p>
+</div>
 
 
-<section id="sec-week-18-intro" class="level2">
-<h2 class="anchored" data-anchor-id="sec-week-18-intro">PSYC122 <em>Part 2</em> Week 18</h2>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <p>Welcome to your overview of the materials you will work with in <strong>PSYC122 Week 18</strong>.</p>
 <p>We will complete four classes in weeks 16-19. These classes are designed to help students to revise and put into practice some of the key ideas and skills you have been developing in the first year research methods modules <em>PSYC121, PSYC123 and PSYC124</em>.</p>
 <p>We will do this in the context of a live research project with potential real world impacts: the <strong>Clearly understood</strong> project.</p>
@@ -610,7 +611,6 @@ Important
 </ol>
 </div>
 </div>
-</section>
 <section id="our-learning-goals" class="level2">
 <h2 class="anchored" data-anchor-id="our-learning-goals">Our learning goals</h2>
 <p>In Week 18, we aim to further develop skills in <em>analyzing</em> and in <em>visualizing</em> psychological data.</p>
@@ -842,7 +842,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We show you how to do everything you need to do in the lab activity (<a href="#sec-w18-activity">Section&nbsp;7</a>) in the <code>how-to</code> guide.</p>
+<p>We show you how to do everything you need to do in the lab activity (<a href="#sec-w18-activity">Section&nbsp;6</a>) in the <code>how-to</code> guide.</p>
 <ul>
 <li>Start by looking at the <code>how-to</code> guide to understand what steps you need to follow in the lab activity.</li>
 </ul>

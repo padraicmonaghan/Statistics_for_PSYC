@@ -4,7 +4,6 @@ subtitle: Written by Rob Davies
 order: 6
 ---
 
-
 Welcome to our overview of the materials and activities you will work with in **PSYC122 Part 2**.
 
 We will complete a series of four classes which will run in **weeks 16-19**.
