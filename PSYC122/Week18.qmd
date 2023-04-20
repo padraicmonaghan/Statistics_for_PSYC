@@ -1,4 +1,8 @@
-## PSYC122 *Part 2* Week 18 {#sec-week-18-intro}
+---
+title: Linear Model Part 2
+subtitle: Written by Rob Davies
+order: 9
+---
 
 ```{r}
 #| warning: false

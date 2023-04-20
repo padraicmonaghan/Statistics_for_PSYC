@@ -1,6 +1,8 @@
-# Week 11: Correlation
-
-> Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
+---
+title: Correlation
+subtitle: Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
+order: 2
+---
 
 Today we will take a look at correlation as a measure of association between two numerical variables. We will create scatterplots to visualise correlations, we will run a correlation analysis and we will practise interpreting and reporting the results.
 

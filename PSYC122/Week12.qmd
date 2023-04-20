@@ -1,6 +1,8 @@
-# Week 12: Correlation 2
-
-> Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
+---
+title: Correlation Part 2
+subtitle: Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
+order: 3
+---
 
 Today we will continue a look at correlation as a measure of association between two numerical variables. We will review assumptions associated with correlation, discuss some issues important to be aware of when interpreting correlation results and finally, we'll talk about intercorrelation.
 

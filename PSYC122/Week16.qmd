@@ -1,3 +1,8 @@
+---
+title: Data Visualisation
+subtitle: Written by Rob Davies
+order: 7
+---
 ## PSYC122 *Part 2* Week 16 {#sec-week-16-intro}
 
 ```{r}

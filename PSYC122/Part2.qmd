@@ -1,4 +1,9 @@
-# Preface {.unnumbered}
+---
+title: Introduction to Part 2
+subtitle: Written by Rob Davies
+order: 6
+---
+
 
 Welcome to our overview of the materials and activities you will work with in **PSYC122 Part 2**.
 

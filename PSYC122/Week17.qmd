@@ -1,3 +1,8 @@
+---
+title: Linear Models
+subtitle: Written by Rob Davies
+order: 8
+---
 ## PSYC122 *Part 2* Week 17 {#sec-week-17-intro}
 
 ```{r}

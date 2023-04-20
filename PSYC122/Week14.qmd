@@ -1,6 +1,9 @@
-# Week 14: Chi-square
+---
+title: Chi-Square
+subtitle: Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
+order: 5
+---
 
-> Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
 
 This week we will focus on Chi-square as a measure of association between categorical variables.
 
