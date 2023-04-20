@@ -1,0 +1,372 @@
+## PSYC122 *Part 2* Week 17 {#sec-week-17-intro}
+
+```{r}
+#| warning: false
+#| echo: false
+library(ggeffects)
+library(ggExtra)
+library(ggridges)
+library(kableExtra)
+library(patchwork)
+library(tidyverse)
+```
+
+```{r}
+#| warning: false
+#| echo: false
+study.one <- read_csv("study-one-general-participants.csv")  
+study.two <- read_csv("study-two-general-participants.csv")
+```
+
+Welcome to your overview of the materials you will work with in **PSYC122 Week 17**.
+
+We will complete four classes in weeks 16-19.
+These classes are designed to help students to revise and put into practice some of the key ideas and skills you have been developing in the first year research methods modules *PSYC121, PSYC123 and PSYC124*.
+
+We will do this in the context of a live research project with potential real world impacts: the **Clearly understood** project.
+
+- Our focus will be on **what makes it easy or difficult for people to understand written health information**.
+
+::: callout-important
+In the week 17 class, we will aim to answer the research question:
+
+1. What person attributes predict success in understanding?
+:::
+
+## Our learning goals
+
+In Week 17, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
+
+::: callout-tip
+- In psychological science, research questions like our question can be examined using linear models.
+:::
+
+When we do these analyses, we will need to think about how we report the results:  
+
+- we usually need to report information about the kind of model we specify;
+- we will need to report the nature of the association estimated in our model;
+- and we usually need to decide, is the association significant?
+- does the association reflect a positive or negative relationship between outcome and predictor?
+- is the association we see in our sample data relatively strong or weak?
+
+::: callout-tip
+- We will aim to build skills in producing professional-looking plots for our audiences. 
+:::
+
+At every stage, as we work, we will visualize the data to:
+
+- Understand the shape of the relationships we may observe or predict.
+
+## Your resources {#sec-w17-resources-intro}
+
+You will see -- below -- links to the lectures, information about the data we will analyze, and an explanation of the activities.
+
+All the links to the lectures, and everything you need for your practical work class can *also* be found under the **Week 17 resources** section title, on Moodle:
+
+[Link to Moodle](https://modules.lancaster.ac.uk/course/view.php?id=38180#section-10)
+
+## Lectures: video recordings
+
+The lecture material for this week is presented in four short parts.
+
+Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
+(You will need to be on campus or logged in to the university VPN to get access to the videos.)
+
+[Part 1 of 4; about 19 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=5c751906-33d0-4ebd-a49d-afb000ec09ce)
+
+[Part 2 of 4; about 11 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=d9d5ade2-e10c-4e14-b938-afb000f2634c)
+
+[Part 3 of 4; about 9 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=44dfb2c3-80d3-4fa6-8978-afb000f63c17)
+
+[Part 4 of 4; about 15 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=4a20cb70-618c-4bf3-999a-afb000f9bdcf)
+
+The lectures have two main areas of focus.
+
+**1. Understanding the scientific process**
+
+I outline the steps through which a psychological scientist may progress, in logic and practice, from research questions to hypotheses to analyses.
+
+I rehearse some of the key points I have discussed, previously, in order to build a framework in which you can understand how we go from:
+
+- a set of concerns -- here: *What makes it easy or difficult to understand written health information?* 
+- through choices about what data to collect, and how
+- to specific questions, and then predictions
+- that we can test using linear models.
+
+We are learning data analysis methods.
+But the key point is that we use these methods in the context of a research project with concerns, aims, methodological assumptions, and choices.
+This is generally true so the aim is to present a concrete example of how research works.
+
+As part of the discussion, I raise questions you might want to consider.
+These questions -- and questions you can originate for yourselves -- are also part of the context for our data analysis, because they help to inform how you interpret or evaluate the results.
+These questions are examples of the **critical evaluation** that you will need to develop through your studies.
+
+**2. The linear model**
+
+We look at how the linear model can be used to address research questions in the context of the **Clearly understood** health comprehension project.
+But I aim to outline some general ideas about why we use the linear model technique, and how it works.
+I build on work you have done with Margriet Groen in earlier PSYC122 classes, so that we can *strengthen* understanding, and *extend skills*.
+
+::: callout-tip
+To work with the recordings:
+
+- Watch the video parts right through.
+- Use the printable versions of the slides (provided on Moodle) to make notes.
+- Try out the coding exercises in the how-to and the workbook (see @sec-w17-resources) to see for yourself how you can construct visualizations and do analyses.
+:::
+
+In the lecture, I talk about how we use the linear model to estimate the association between (1.) an outcome like mean accuracy of understanding and (2.) a predictor like vocabulary knowledge: estimating the association as the *expected change* in the *average outcome* given variation in the predictor.
+
+In the plot on the right of @fig-ridges, we show the distribution curve of mean (comprehension) accuracy scores observed at each value of vocabulary.
+You can see that the middle -- the average -- of each distribution, marked by a line, increases as we go from left (low scores) to right (high scores).
+
+```{r}
+#| label: fig-ridges
+#| fig-cap: "Plots showing the association between the outcome mean accuracy of understanding a predictor, vocabulary knowledge. Both plots show the same data. The plot on the right is modified to show how accuracy of understanding varies between individuals in the sample with the sample vocabulary test scores"
+#| fig-alt: "The figure shows two scatterplots. In both, points represent scores on measures of mean accuracy of understanding and on Shipley vocabulary knowledge. Both plots represent the same data. In the plot on the left, a line indicates the trend where increasing vocabulary scores are associated with higher levels of comprehension accuracy, on average. In the plot on the right, vertical density curves are superimposed on the spread of points at each vocabulary score level. The vertical location of the midline in each curve can be seen to trend upwards for increasing vocabulary." 
+#| fig-width: 9
+#| fig-height: 5
+#| warning: false
+#| message: false
+#| echo: false
+p.ridges <- study.one %>%
+  ggplot(aes(y = SHIPLEY, x = mean.acc, group = SHIPLEY)) +
+  stat_density_ridges(
+    quantile_lines = TRUE, quantiles = 2, 
+    rel_min_height = 0.15,
+    jittered_points = TRUE, position = "raincloud",
+    scale = .7,
+    alpha = 0.6, fill = "lightgrey", colour = "darkred") +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) + 
+  coord_flip() +
+  xlim(0, 1.1) + ylim(20, 40) +
+  ylab("Vocabulary (Shipley)") + xlab("Mean accuracy")
+
+p.scatter <- study.one %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 1.5, alpha = .5) +
+  geom_smooth(size = 1.5, colour = "darkred", method = "lm", se = FALSE) +
+  xlim(20, 40) + ylim(0, 1.1) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+p.scatter + p.ridges
+```
+
+In the lecture, I talk about how the information we get from a linear model allows us to *predict* the way in which outcome values may vary (increase or decrease), given different values in the predictor variable.
+
+We could form a prediction line anywhere but the linear model helps us to estimate the prediction ("best fit") line that minimizes the differences between observed and predicted outcomes: *the residuals*, as shown in @fig-lm-show-model-residuals.
+
+```{r}
+#| label: fig-lm-show-model-residuals
+#| fig-cap: "Plot showing the prediction of mean accuracy of understanding, given information about participant vocabulary knowledge, with lines drawn to show the difference between observed outcomes (shown in orange-red) and predicted outcomes (shown as black circles on the blue line) for each vocabulary test score value in our sample"
+#| fig-alt: "The figure shows a scatterplot in which the points represent scores on measures of mean accuracy of understanding and on Shipley vocabulary knowledge. A blue line is drawn to indicate the predicted increase in mean accuracy of understanding, given information about participant vocabulary knowledge. Predicted outcomes are shown as black circles on the blue line) for each vocabulary test score value in our sample. Observed sample data points are drawn in orange-red and are more red if they are further away from the prediction line. The difference between observed and predicted accuracy scores are represented with light grey vertical lines."
+#| fig-width: 4.5
+#| fig-height: 4.5
+#| warning: false
+#| message: false
+#| echo: false
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one)
+# -- then
+study.one$predicted <- predict(fit)   # Save the predicted values
+study.one$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(study.one, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed 
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+The lectures end with a discussion of the critical information you must identify and extract when you view the summary of a linear model results.
+
+I then show you how to report the results.
+I give you examples of the conventional language you can use to report your results.
+
+::: callout-tip
+In reporting linear model results, we need to explain what they tell us about the association between outcome and predictor variables.
+:::
+
+We can use visualization to help us to interpret the model estimates.
+In the how-to guide and in the lab activity workbook (see @sec-w17-resources), we look at how you can draw prediction plots, given model estimates.
+
+### Links to other classes
+
+We do not provide further reading for this class but you will find it helpful to revise some of the key ideas you have been learning about, in PSYC122 and in other modules.
+
+- The lectures in *PSYC123* on: (week 2) reliability and validity; (week 3) experimental design, especially between-subjects studies and individual differences; and (week 9) precise hypotheses.
+- The lecture in *PSYC122* (week 13) introducing the linear model. 
+
+### Pre-lab activity 1
+
+In weeks 16-19, we will be working together on a research project to investigate how people vary in their response to health advice.
+
+Completing the project involves collecting responses from PSYC122 students.
+
+To enter your responses, we invite you to complete a short survey.
+
+Complete the survey by clicking on the link [here](https://lancasteruni.eu.qualtrics.com/jfe/form/SV_6SDgBLz8RrMR3oy)
+
+::: callout-tip
+In our week 19 class activity, we will analyze the data we collect here.
+:::
+
+#### Survey information
+
+The survey asks you to:
+
+- complete some questions about who you are;
+- and then answer some questions about what you know about some English words, about what you know about health matters, and about how you approach reading.
+
+The survey then asks you to:
+
+- read five short extracts from patient information leaflets about different kinds of health issue;
+- respond to some multiple choice questions about each extract;
+- and rate how well you think you understand the advice.
+
+The survey should take about 20 minutes to complete.
+Some people will take less time, and some people might take a little more time.
+
+Taking part in the survey is **completely voluntary**.
+You can stop at any time without completing the survey if you do not want to finish it.
+If you do not want to do the survey, you can do an alternative activity (see below).
+
+All responses will be recorded completely anonymously.
+
+### Pre-lab activity 1 alternative
+
+If you do not want to complete the survey, we invite you to read the pre-registered research plan for the *PSYC122 health advice* research project.
+
+[Read the project pre-registration](https://osf.io/p6fsc/)
+
+## Pre-lab activity 2: Getting ready for the lab class
+
+### Get your files ready {#sec-w17-resources}
+
+Download the [122-22-w17_for-students.zip](files/122-22-w17_for-students.zip) files you need and upload them to your RStudio Server.
+
+The folder includes the data files:
+
+- `study-one-general-participants.csv`
+- `study-two-general-participants.csv`
+
+and the *code files*:
+
+- `2022-23-PSYC122-w17-how-to.R`
+- `2022-23-PSYC122-w17-workbook.R`
+
+You will use `2022-23-PSYC122-w17-workbook.R` in the lab activity practical class.
+
+*Alternatively*, you can instead download the resources you need from the week 17 section of the Moodle page for the PSYC122 module:
+
+[Link to Moodle](https://modules.lancaster.ac.uk/course/view.php?id=38180#section-10)
+
+#### What is in the how-to and workbook.R files?
+
+::: callout-important
+- Our aim is to make sure you can work with code, and write notes *in* the .R files.
+:::
+
+In the `workbook.R` file you use for the lab activity, we identify tasks and questions, and leave you spaces where you can write code or answers.
+
+In both the .R files:
+
+- `2022-23-PSYC122-w17-how-to.R`
+- `2022-23-PSYC122-w17-workbook.R`
+
+we will take things *step-by-step*.
+
+::: callout-tip
+- Make sure you start at the top of the `.R` file and work your way, in order, through each task.
+- Complete each task before you move on to the next task.
+:::
+
+The `how-to` guide comprises an .R file `2022-23-PSYC122-w17-how-to.R` with code and advice.
+The code in the .R file was written to work with the data file:
+
+- `study-one-general-participants.csv`.
+
+::: callout-tip
+We show you how to do everything you need to do in the lab activity (@sec-w17-activity) in the `how-to` guide.
+
+- Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
+:::
+
+## Lab activity {#sec-w17-activity}
+
+In the lab activity .R file `2022-23-PSYC122-w17-workbook.R`, you will work with data from a study about how people respond to guidance about a variety of health topics (general topics):
+
+- `study-two-general-participants.csv`
+
+The data are similar in format to the response data we are collecting as part of the PSYC122 project.
+
+### Tasks
+
+In the activity, we are going to work through the following tasks.
+
+1. Empty the R environment -- using `rm(list=ls())`
+2. Load relevant libraries -- using `library()`
+3. Read in the data file -- using `read_csv()`
+4. Inspect the data -- using `head()` and `summary()`
+5. Visualize the distribution of values -- using `geom_histogram()`
+6. Edit the appearance of the histogram plots, using `binwidth`, `theme_bw()`, `labs()`, `xlim()` and `geom_vline()`
+7. Visualize the potential association between the values of two variables by producing a scatterplot using `geom_point()`
+8. Edit the appearance of the scatterplots by using the `geom_point()` arguments `alpha`, `size`, `colour`, and `shape`, and by changing the axis limits using `xlim()` and `ylim()`.
+9. Revise how you test the associations between pairs of variables through correlation analyses using `cor.test()`
+10. Examine the predictive relation between outcome and predictor variables using  `lm()`
+11. Visualize the model predictions -- using `geom_abline()` and information from the model results
+
+The activity `2022-23-PSYC122-w17-workbook.R` file takes you through the tasks, one by one.
+
+::: callout-tip
+If you are unsure about what you need to do, look in `2022-23-PSYC122-w17-how-to.R`.
+:::
+
+In the `how-to`, you will see that you can match a task in the `activity` to the same task in the `how-to`.
+The `how-to` shows you what function you need and how you should write the function code.
+You will need to change the names of the dataset or the variables to complete the tasks in the activity.
+
+### What is in the data files
+
+Each of the data files we will work with has a similar structure.
+
+You can see the columns:
+
+- `participant_ID` participant code
+- `mean.acc` average accuracy of response to questions testing understanding of health guidance
+- `mean.self` average self-rated accuracy of understanding of health guidance
+- `study` varianble coding for what study the data were collected in
+- `AGE` age in years
+- `HLVA` health literacy test score
+- `SHIPLEY` vocabulary knowledge test score
+- `FACTOR3` reading strategy survey score
+- `GENDER` gender code
+- `EDUCATION` education level code
+- `ETHNICITY` ethnicity (Office National Statistics categories) code
+
+### Answers {#sec-w17-answers}
+
+::: callout-tip
+You can now download the answers version of the activity workbook .R [here](files/2022-23-PSYC122-w17-workbook-answers.R).
+:::
+
+The answers version presents my answers for questions, and some extra information where that is helpful.

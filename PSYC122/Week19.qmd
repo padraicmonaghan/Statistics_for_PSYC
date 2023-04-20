@@ -1,0 +1,295 @@
+## PSYC122 *Part 2* Week 19 {#sec-week-19-intro}
+
+```{r}
+#| warning: false
+#| echo: false
+library(ggeffects)
+library(ggExtra)
+library(ggridges)
+library(kableExtra)
+library(patchwork)
+library(tidyverse)
+```
+
+Welcome to your overview of the materials and guidance you will work with in **PSYC122 Week 19**.
+
+We have completed four classes in weeks 16-19.
+These classes are designed to help students to revise and put into practice some of the key ideas and skills you have been developing in the first year research methods modules *PSYC121, PSYC122, PSYC123 and PSYC124*.
+
+We have been doing this in the context of a live research project with potential real world impacts: the **Clearly understood** project.
+
+- Our focus will be on **what makes it easy or difficult for people to understand written health information**.
+
+::: callout-important
+In the week 19 class, we will answer **two research questions**:
+
+1. What person attributes predict success in understanding?
+2. Can people accurately evaluate whether they correctly understand written
+:::
+
+We will be revisiting some of the ideas and techniques you have seen introduced in previous classes.
+And we will be extending your development with some new ideas, to strengthen your skills.
+
+::: callout-note
+I have said that our aim in these classes is to contribute new findings from the data we collect together.
+
+- **That time is now.**
+:::
+
+The PSYC122 health comprehension survey is now closed, and we will focus our practical work in week 19 on analyzing the data we have collected.
+
+## Our learning goals
+
+In Week 19, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
+
+We will use linear models to estimate the association between predictors and outcomes in order to answer our research questions.
+
+::: callout-tip
+What is new, here, is that we will compare the results from different studies to critically examine questions relating to *results reproducibility*:
+
+- Do we see the same results when similar methods are used to collect data to address the same questions?
+:::
+
+We shall be focusing our analysis work on response data *contributed by PSYC122 students*.
+
+- But we will critically examine whether the results of our analyses of PSYC122 data are or are not similar to the results of the analyses of data collected in other studies.
+
+When we do linear models, as you have seen, we usually need to report:  
+
+- information about the model;
+- if the effects of the predictors are significant, and what the estimates of the effects tell us;
+- overall, how well the model works to predict observed outcomes in our data.
+
+In describing the impacts of predictors, we need to think about:
+
+- the direction of the effect -- do values of the outcome variable *increase* or *decrease* given increasing values of the predictor?
+- the size of the effect -- *how much* do values of the outcome variable *increase* or *decrease* given increasing values of the predictor?
+
+::: callout-tip
+In assessing *results reproducibility*, therefore, we may focus here on:
+
+1. Whether an effect is or is not significant in the datasets we are comparing;
+2. Whether the estimate of the coefficient for the slope of the effect has similar sign (positive or negative) or size (the value of the coefficient).
+:::
+
+## Resources for you
+
+You will see -- below -- links to the lectures, information about the data we will analyze, and an explanation of the activities.
+
+All the links to the lectures, and everything you need for your practical work class can *also* be found under the **Week 19 resources** section title, on Moodle:
+
+[Link to Moodle](https://modules.lancaster.ac.uk/course/view.php?id=38180#section-10)
+
+## Lectures: video recordings
+
+The lecture material for this week is presented in four short parts.
+
+Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
+(You will need to be on campus or logged in to the university VPN to get access to the videos.)
+
+[Part 1 of 4; about 15 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=0e35b8e9-dd4f-4fb7-a88e-afbe010b250a)
+
+[Part 2 of 4; about 13 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=6d20197c-6559-463b-8672-afbe011e2371)
+
+[Part 3 of 4; about 20 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=30c2ff78-40b9-4cf8-8650-afbe012398fb)
+
+[Part 4 of 4; about 20 minutes](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=a66baccd-f044-45f0-85af-afbe012bbc03)
+
+The lectures have three main areas of focus.
+
+**1. Thinking critically about how people vary, and about the robustness and generalizability of results in psychological science**
+
+We shall proceed to answer our research questions with the data we have collected with the help of PSYC122 students.
+As we do this, we should reflect on where the data come from -- the fact that people vary, and results vary -- and we should consider, critically, questions concerning key ideas:
+
+- **Methods reproducibility** -- Will a different researcher be able to get the same results if they analyze the same data?
+- **Results reproducibility** -- Will we get the same results if we collect new data using the same procedure?
+
+These questions are part of our motivation for recommending open science practices.
+
+**2. What the PSYC122 data tell us: the possible answers to our research questions**
+
+We have been working to develop understanding and skills using example questions, tasks and data developed within the health comprehension **Clearly understood** project.
+PSYC122 students contributed their responses to a version of the survey we have been using to collect data to find answers to our research questions.
+In our practical work, we will be examining the PSYC122 data but as we do so we should understand that *no one* study in psychological science will give us definitive answers to any interesting question about people and what they do.
+In the lecture, we reflect on how data from different studies -- using the same methods, with the same aims -- may nevertheless vary: 
+
+- vary in the data distributions
+- and vary in the results that analyses indicate.
+
+Critically evaluating results across a series of studies, or replication attempts, is part of the process of accumulating evidence to build insight in psychological science, given measurement under uncertainty and limits in our samples.
+
+**3. Growing in independence, working with free open R**
+
+R is *free open source software*.
+This is critical to ensuring that when we do analyses with psychological data we can usefully share data and code in ways that help to build evidence and insight in psychological science.
+
+But there is a bigger benefit: the vast, free, *R knowledge ecosystem*.
+
+::: callout-tip
+*Every* problem you ever have: 
+
+- someone has had it before
+- solved it
+- and written a blog (or tweet or toot) or recorded a YouTube or TikTok about it
+:::
+
+In the week 19 lecture, and in the practical materials, we start to look at how you can locate and use the information you need to do data analysis.
+But it is important that you recognize two things:
+
+::: callout-important
+- Everything you need is out there, you just need to learn how to find it.
+- Sharing knowledge about R represents a new way to share scientific information: maybe this -- not books or journals -- is the future.
+:::
+
+### The lectures: the implications of our results, the revolution in open science and being a part of the revolution
+
+Last, we set up questions for you to consider:
+
+- What are the results of our analyses with the new data?
+- What are the implications for health communication?
+
+Then we step back, and consider how we are learning to work in terms of the modern workflow, and the on-going revolution in open science, and how people now build and share knowledge.
+
+## Pre-lab activity 1
+
+In weeks 16-19, we have been working together on a research project to investigate how people vary in their response to health advice.
+Completing the project involved collecting responses from PSYC122 students.
+In our class activities, this week, we will analyze the data we collected up to Monday 7th. March.
+
+The link to the survey is here, for your information:
+
+[here](https://lancasteruni.eu.qualtrics.com/jfe/form/SV_6SDgBLz8RrMR3oy)
+
+**The survey is now officially closed.**
+
+Also or your information, you can read the pre-registered research plan for the *PSYC122 health advice* research project, here:
+
+[Read the project pre-registration](https://osf.io/p6fsc/)
+
+Looking at the survey or at the pre-registration are entirely optional activities.
+
+## Pre-lab activity 2: Getting ready for the lab class
+
+### Get your files ready {#sec-w19-resources}
+
+Download the [122-22-w19_for-students.zip](files/122-22-w19_for-students.zip) files you need and upload them to your RStudio Server.
+
+The folder includes the data files:
+
+- `study-one-general-participants.csv`
+- `study-two-general-participants.csv`
+
+**As well as the data compiled from 2022-23 PSYC122 students**
+
+- `2022-23_PSYC122-subjects.csv`
+
+As well as the *code files*:
+
+- `2022-23-PSYC122-w19-how-to.R`
+- `2022-23-PSYC122-w19-workbook.R`
+
+You will use `2022-23-PSYC122-w19-workbook.R` in the lab activity practical class.
+
+*Alternatively*, you can instead download the resources you need from the week 189 section of the Moodle page for the PSYC122 module:
+
+[Link to Moodle](https://modules.lancaster.ac.uk/course/view.php?id=38180#section-10)
+
+#### What is in the how-to and workbook.R files?
+
+::: callout-important
+- Our aim is to make sure you can work with code, and write notes *in* the .R files.
+:::
+
+In the `workbook.R` file you use for the lab activity, we identify tasks and questions, and leave you spaces where you can write code or answers.
+
+In both the .R files:
+
+- `2022-23-PSYC122-w19-how-to.R`
+- `2022-23-PSYC122-w19-workbook.R`
+
+we will take things *step-by-step*.
+
+::: callout-tip
+- Make sure you start at the top of the `.R` file and work your way, in order, through each task.
+- Complete each task before you move on to the next task.
+:::
+
+The `how-to` guide comprises an .R file `2022-23-PSYC122-w19-how-to.R` with code and advice.
+The code in the .R file was written to work -- this week -- with two data files:
+
+- `study-one-general-participants.csv`.
+- `study-two-general-participants.csv`.
+
+This is so that you can learn how to:
+
+- analyse data from more than one study;
+- compare the results from the analyses of data from different studies to assess the robustness or generalizability of findings.
+
+::: callout-tip
+We show you how to do everything you need to do in the lab activity (@sec-w19-activity) in the `how-to` guide.
+
+- Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
+:::
+
+## Lab activity {#sec-w19-activity}
+
+In the lab activity .R file `2022-23-PSYC122-w19-workbook.R`, you will work with data from two studies about how people respond to guidance about a variety of health topics (general topics):
+
+- `study-two-general-participants.csv` which you have already seen before;
+- `2022-23_PSYC122-subjects.csv` which is new, comprising the responses contributed by 2022-23 PSYC122 students.
+
+### Tasks
+
+In the activity, we are going to work through the following tasks.
+
+1. Empty the R environment -- using `rm(list=ls())`
+2. Load relevant libraries -- using `library()`: notice we use some new ones here
+3. Read in the data files -- using `read_csv()`
+4. Inspect the data -- using `head()` and `summary()`
+5. Plot the distributions of some key variables
+6. Learn how to produce grids of plots, showing them side-by-side, for easy comparison
+7. Work to produce grids of plots to consolidate skills
+8. Produce scatterplots to examine potential associations
+9. Produce grids of scatterplots, showing them side-by-side to allow comparison of potential associations
+10. Examine the association between accuracy of understanding and *rated* accuracy using `cor.test()`
+11. Work out how to locate useful online information about R functions or libraries
+12. Estimate the way in which an outcome may vary, given different values in a predictor variable -- using  `lm()`
+13. Do this analysis using the *2022-23 PSYC122* data, and evaluate the robustness of results across a series of studies
+14. Practise visualizing model predictions using `ggpredict()`
+
+The `2022-23-PSYC122-w19-workbook.R` file takes you through the tasks, one by one.
+
+If you are unsure about what you need to do, check in the `how-to` guide: look at the advice in `2022-23-PSYC122-w19-how-to.R`.
+
+You will see that you can match a task in the `activity` to the same task in the `how-to`.
+The `how-to` shows you what function you need and how you should write the function code.
+You will need to change the names of the dataset or the variables to complete the tasks in the activity.
+
+This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in working with data in psychological science.
+
+### What is in the data files
+
+Each of the data files we will work with has a similar structure.
+
+You can see the columns:
+
+- `participant_ID` participant code
+- `mean.acc` average accuracy of response to questions testing understanding of health guidance
+- `mean.self` average self-rated accuracy of understanding of health guidance
+- `study` varianble coding for what study the data were collected in
+- `AGE` age in years
+- `HLVA` health literacy test score
+- `SHIPLEY` vocabulary knowledge test score
+- `FACTOR3` reading strategy survey score
+- `GENDER` gender code
+- `EDUCATION` education level code
+- `ETHNICITY` ethnicity (Office National Statistics categories) code
+
+### Answers
+
+::: callout-tip
+You can now download the answers version of the activity workbook .R [here](files/2022-23-PSYC122-w19-workbook-answers.R).
+:::
+
+The answers version presents my answers for questions, and some extra information where that is helpful.

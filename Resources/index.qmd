@@ -1,0 +1,9 @@
+---
+title: "Accessing the R Server"
+---
+
+About this site
+
+```{r}
+1 + 1
+```
