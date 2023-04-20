@@ -1,6 +1,8 @@
-# Week 3: DVs and IVs in RStudio
-
-> Written by John Towse & Tom Beesley
+---
+title: DVs and IVs in RStudio
+subtitle: Written by John Towse & Tom Beesley
+order: 3
+---
 
 ## Pre-lab work
 

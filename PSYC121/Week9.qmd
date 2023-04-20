@@ -1,3 +1,9 @@
+---
+title: Unrelated-samples t-test and Power
+subtitle: Written by Tom Beesley & John Towse
+order: 9
+---
+
 ```{r eval=FALSE, include=FALSE}
 library(tidyverse)
 load("survey_raw.RData")
@@ -15,9 +21,6 @@ write_csv(data_wk9, file = "files/Week_9/data_wk9.csv")
 
 ```
 
-# Week 9: Unrelated-samples t-test and Power
-
-> Written by Tom Beesley & John Towse
 
 ## Pre-lab work: online tutorial
 

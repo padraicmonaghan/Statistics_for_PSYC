@@ -1,6 +1,8 @@
-# Week 7: Filtering data and testing means (one-sample t-test)
-
-> Written by Tom Beesley & John Towse
+---
+title: Filtering data and testing means (one-sample t-test)
+subtitle: Written by Tom Beesley & John Towse
+order: 7
+---
 
 ```{r eval=FALSE, include=FALSE}
 library(tidyverse)

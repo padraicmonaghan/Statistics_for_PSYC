@@ -1,6 +1,8 @@
-# Week 4: Customisation of graphs, and z-scores
-
-> Written by John Towse & Tom Beesley
+---
+title: Customisation of graphs, and z-scores
+subtitle: Written by John Towse & Tom Beesley
+order: 4
+---
 
 ## Pre-lab work
 

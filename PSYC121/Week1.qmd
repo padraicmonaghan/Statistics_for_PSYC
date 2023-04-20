@@ -1,6 +1,8 @@
-# Week 1 - Introduction to PSYC121
-
-> Written by John Towse & Tom Beesley
+---
+title: Introduction to PSYC121
+subtitle: Written by John Towse & Tom Beesley
+order: 1
+---
 
 
 ## Analysis labs and 'pre-lab' activity
@@ -13,7 +15,7 @@ For each lab session that you have been scheduled to attend, please come "prepar
 
 -   You read the lab sheet (this one) to get a sense of what we're going to be doing, and you anticipate potential problems so that you can focus on these in the session.
 
-The lecture is designed to deliver important ideas and procedures for learning about analysis. Pre-lab material is then designed to help consolidate this learning, or enhance, expand and apply it in ways that set the scene for the lab session activity.We want to prepare you to be ready to go in the session itself and make the most of your time there.
+The lecture is designed to deliver important ideas and procedures for learning about analysis. Pre-lab material is then designed to help consolidate this learning, or enhance, expand and apply it in ways that set the scene for the lab session activity. We want to prepare you to be ready to go in the session itself and make the most of your time there.
 
 Want additional support? Keep in mind that the Department has endorsed and will use the Statistics textbook by David Howell called "**Fundamental statistics for the behavioral sciences**"
 

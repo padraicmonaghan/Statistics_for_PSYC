@@ -1,6 +1,9 @@
-# Week 6: Sampling, probability and binomial tests
+---
+title: Sampling, probability and binomial tests
+subtitle: Written by Tom Beesley & John Towse
+order: 6
+---
 
-> Written by Tom Beesley & John Towse
 
 ## Pre-lab work
 

@@ -1,3 +1,7 @@
-# Week 5: Class test
+---
+title: Class test
+subtitle: Written by John Towse & Tom Beesley
+order: 5
+---
 
 No materials!

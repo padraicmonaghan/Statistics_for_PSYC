@@ -5,7 +5,7 @@ project:
 
 website:
   title: "Statistics for Psychologists"
-  logo: "Images/icon.png"
+  image: "Images/icon.png"
   favicon: "Images/favicon.png"
   navbar:
     left:
@@ -13,7 +13,7 @@ website:
         text: Home
       - href: PSYC121/Week1.qmd
         text: PSYC121
-      - href: PSYC122/Week1.qmd
+      - href: PSYC122/Part1.qmd
         text: PSYC122
       - href: PSYC214/Week1.qmd
         text: PSYC214
@@ -21,29 +21,28 @@ website:
         text: PSYC401      
       - href: PSYC402/Week1.qmd
         text: PSYC402
-      - href: resources.qmd
+      - href: Resources/index.qmd
         text: Resources
   sidebar:
-    style: "docked"
+    style: "floating"
     search: true
     contents:
       - section: "PSYC121"
-        contents:
-          - PSYC121/Week1.qmd
-          - PSYC121/Week2.qmd
-          - PSYC121/Week3.qmd
-          - PSYC121/Week4.qmd
-          - PSYC121/Week5.qmd
-          - PSYC121/Week6.qmd
-          - PSYC121/Week7.qmd
-          - PSYC121/Week8.qmd
-          - PSYC121/Week9.qmd
+        contents: PSYC121/*
       - section: "PSYC122"
-        contents: 
-          - TBC
-          - TBD
-          - TBE
-          
+        contents: PSYC122/*
+      - section: "PSYC214"
+        contents: PSYC214/*
+      - section: "PSYC234"
+        contents: PSYC234/*
+      - section: "PSYC401"
+        contents: PSYC401/*
+      - section: "PSYC402"
+        contents: PSYC402/* 
+      - section: "Resources"
+        contents: Resources/*  
+        
+        
   page-footer:
     left: "Website developed by Matthew Ivory"
     center: "Link 1"
@@ -51,7 +50,8 @@ website:
 
 format:
   html:
-    theme: default
+    theme: 
+      - default
     css: styles.css
     code-overflow: wrap
     grid:
