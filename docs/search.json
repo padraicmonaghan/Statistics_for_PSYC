@@ -410,7 +410,7 @@
     "href": "index.html",
     "title": "Statistics for Psychologists",
     "section": "",
-    "text": "Warning\n\n\n\nThis website is under construction. Tread carefully.\n\n\n\nWelcome\nWelcome to Lancaster University’s Department of Psychology modules on Statistics for Psychologists. In the sidebar, you will find a complete list of all the statistics modules that are currently offered. This is your one-stop shop for all the lab materials you need for working with R and statistics.\n\n\nAccessing the R Server\nYou can access the Department’s R server at psy-rstudio.lancaster.ac.uk. Remember you will need to be on campus, or access via the VPN.\nHere are detailed instructions for accessing workbench.\n\n\nOther Methods of Access\nHere I list the other methods of accessing R, via local install and the benefits and drawbacks here."
+    "text": "Warning\n\n\n\nThis website is under construction. Tread carefully.\n\n\n\nWelcome\nWelcome to Lancaster University’s Department of Psychology modules on Statistics for Psychologists. In the sidebar, you will find a complete list of all the statistics modules that are currently offered. This is your one-stop shop for all the lab materials you need for working with R and statistics.\n\n\nAccessing the R Server\nYou can access the Department’s R server at psy-rstudio.lancaster.ac.uk. Remember you will need to be on campus, or access via the VPN.\nHere are detailed instructions for accessing workbench.\n\n\nOther Methods of Access\nHere I list the other methods of accessing R, via local install and the benefits and drawbacks here.\n\n\n\n\n Back to top"
   },
   {
     "objectID": "PSYC122/Week18.html",
@@ -513,9 +513,9 @@
   {
     "objectID": "PSYC122/index.html",
     "href": "PSYC122/index.html",
-    "title": "Statistics for Psychologists",
+    "title": "Statistics for Psychologists II",
     "section": "",
-    "text": "Empty"
+    "text": "Welcome\nThis is filler text introducing students to the course in general. Perhaps what’s expected of them, the course aims, and other information of use.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in est non nisi eleifend vulputate a et magna. Mauris vulputate felis lacus, ut bibendum lectus sollicitudin vel. Integer vestibulum arcu et risus vestibulum, in ullamcorper magna consectetur. Donec ut tempus enim, at vulputate libero. Integer porta metus eget elit cursus, sit amet hendrerit ipsum facilisis. Maecenas mollis, elit gravida ornare tempus, est lectus mattis velit, et commodo nunc lectus eu enim. Aenean luctus, felis ac sodales accumsan, dolor nunc euismod lorem, vel vulputate ipsum orci quis ipsum. Quisque placerat, velit vitae dictum feugiat, lectus lorem rutrum ligula, at fringilla ex enim consectetur felis. Aliquam erat volutpat. Nunc a nisi eget ex ornare dictum.\n\n\nCourse Contacts\n\n\n\n\nEmail Address\n\n\n\n\nTom Beesley\nt.beesley at lancaster dot ac dot uk\n\n\nJohn Towse\nj.towse at lancaster dot ac dot uk\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "PSYC122/Week12.html",
@@ -1332,9 +1332,9 @@
   {
     "objectID": "PSYC402/index.html",
     "href": "PSYC402/index.html",
-    "title": "Analysing and Interpreting Psychological Data II - PSYC402",
+    "title": "Analysing and Interpreting Psychological Data I",
     "section": "",
-    "text": "This is a collection of tuition material written for Psychology postgraduates at Lancaster University. At the moment the content represents the “lab materials” for the PSYC402 module. They feature tuition of programming with R, building on the skills you developed last term.\n\n\nSome parts should be completed before you attend the lab session (watching lectures, reading chapters, pre-lab activities). All the links to the different materials and activities are also in the ‘to-do list’ for the relevant week on Moodle."
+    "text": "Welcome\nThis is filler text introducing students to the course in general. Perhaps what’s expected of them, the course aims, and other information of use.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in est non nisi eleifend vulputate a et magna. Mauris vulputate felis lacus, ut bibendum lectus sollicitudin vel. Integer vestibulum arcu et risus vestibulum, in ullamcorper magna consectetur. Donec ut tempus enim, at vulputate libero. Integer porta metus eget elit cursus, sit amet hendrerit ipsum facilisis. Maecenas mollis, elit gravida ornare tempus, est lectus mattis velit, et commodo nunc lectus eu enim. Aenean luctus, felis ac sodales accumsan, dolor nunc euismod lorem, vel vulputate ipsum orci quis ipsum. Quisque placerat, velit vitae dictum feugiat, lectus lorem rutrum ligula, at fringilla ex enim consectetur felis. Aliquam erat volutpat. Nunc a nisi eget ex ornare dictum.\n\n\nCourse Contacts\n\n\n\n\nEmail Address\n\n\n\n\nTom Beesley\nt.beesley at lancaster dot ac dot uk\n\n\nJohn Towse\nj.towse at lancaster dot ac dot uk\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "PSYC402/index.html#analysis-labs-and-pre-lab-work",
@@ -1804,5 +1804,26 @@
     "title": "Statistics for Psychologists",
     "section": "",
     "text": "Hi"
+  },
+  {
+    "objectID": "PSYC121/index.html",
+    "href": "PSYC121/index.html",
+    "title": "Statistics for Psychologists I",
+    "section": "",
+    "text": "Welcome\nThis is filler text introducing students to the course in general. Perhaps what’s expected of them, the course aims, and other information of use.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in est non nisi eleifend vulputate a et magna. Mauris vulputate felis lacus, ut bibendum lectus sollicitudin vel. Integer vestibulum arcu et risus vestibulum, in ullamcorper magna consectetur. Donec ut tempus enim, at vulputate libero. Integer porta metus eget elit cursus, sit amet hendrerit ipsum facilisis. Maecenas mollis, elit gravida ornare tempus, est lectus mattis velit, et commodo nunc lectus eu enim. Aenean luctus, felis ac sodales accumsan, dolor nunc euismod lorem, vel vulputate ipsum orci quis ipsum. Quisque placerat, velit vitae dictum feugiat, lectus lorem rutrum ligula, at fringilla ex enim consectetur felis. Aliquam erat volutpat. Nunc a nisi eget ex ornare dictum.\n\n\nCourse Contacts\n\n\n\n\nEmail Address\n\n\n\n\nTom Beesley\nt.beesley at lancaster dot ac dot uk\n\n\nJohn Towse\nj.towse at lancaster dot ac dot uk\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "PSYC214/index.html",
+    "href": "PSYC214/index.html",
+    "title": "Statistics for Psychologists",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "PSYC401/index.html",
+    "href": "PSYC401/index.html",
+    "title": "Analysing and Interpreting Psychological Data I",
+    "section": "",
+    "text": "Welcome\nThis is filler text introducing students to the course in general. Perhaps what’s expected of them, the course aims, and other information of use.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in est non nisi eleifend vulputate a et magna. Mauris vulputate felis lacus, ut bibendum lectus sollicitudin vel. Integer vestibulum arcu et risus vestibulum, in ullamcorper magna consectetur. Donec ut tempus enim, at vulputate libero. Integer porta metus eget elit cursus, sit amet hendrerit ipsum facilisis. Maecenas mollis, elit gravida ornare tempus, est lectus mattis velit, et commodo nunc lectus eu enim. Aenean luctus, felis ac sodales accumsan, dolor nunc euismod lorem, vel vulputate ipsum orci quis ipsum. Quisque placerat, velit vitae dictum feugiat, lectus lorem rutrum ligula, at fringilla ex enim consectetur felis. Aliquam erat volutpat. Nunc a nisi eget ex ornare dictum.\n\n\nCourse Contacts\n\n\n\n\nEmail Address\n\n\n\n\nTom Beesley\nt.beesley at lancaster dot ac dot uk\n\n\nJohn Towse\nj.towse at lancaster dot ac dot uk\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   }
 ]

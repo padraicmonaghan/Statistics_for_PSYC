@@ -1,5 +1,5 @@
 ---
-title: Statistics for Psychologists I
+title: "Statistics: from association to modelling causality"
 subtitle: "Course coordinators: Tom Beesley, John Towse"
 email-obfuscation: javascript
 

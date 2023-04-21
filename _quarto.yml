@@ -7,38 +7,54 @@ website:
   title: "Statistics for Psychologists"
   image: "Images/icon.png"
   favicon: "Images/favicon.png"
+  page-navigation: true
+  back-to-top-navigation: true
+
+  repo-url: https://github.com/M1V0/Statistics_for_PSYC
+  repo-actions: [edit, issue]
+  
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: PSYC121/index.qmd
-        text: PSYC121
-      - href: PSYC122/index.qmd
-        text: PSYC122
-      - href: PSYC214/index.qmd
-        text: PSYC214
-      - href: PSYC401/index.qmd
-        text: PSYC401      
-      - href: PSYC402/index.qmd
-        text: PSYC402
-      - href: Resources/index.qmd
-        text: Resources
+      #- text: Home
+      #  file: index.qmd
+      - text: "PSYC121"
+        file: PSYC121/index.qmd
+      - text: PSYC122
+        file: PSYC122/index.qmd
+      - text: PSYC214
+        file: PSYC214/index.qmd
+      - text: PSYC234
+        file: PSYC234/index.qmd
+      - text: PSYC401      
+        file: PSYC401/index.qmd
+      - text: PSYC402
+        file: PSYC402/index.qmd
+      - text: Resources
+        file: Resources/index.qmd
   sidebar:
+  
+    collapse-level: 1
     style: "floating"
-    search: true
+    
     contents:
       - section: "PSYC121"
         contents: PSYC121/*
+        
       - section: "PSYC122"
         contents: PSYC122/*
+        
       - section: "PSYC214"
         contents: PSYC214/*
+        
       - section: "PSYC234"
         contents: PSYC234/*
+        
       - section: "PSYC401"
         contents: PSYC401/*
+        
       - section: "PSYC402"
         contents: PSYC402/* 
+        
       - section: "Resources"
         contents: Resources/*  
         
@@ -46,7 +62,9 @@ website:
   page-footer:
     left: "Website developed by Matthew Ivory"
     center: "Link 1"
-    right: "GithubLink"
+    right:       
+      - icon: github
+        href: https://github.com/M1V0
 
 format:
   html:
