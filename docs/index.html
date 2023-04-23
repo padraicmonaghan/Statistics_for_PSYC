@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists - Statistics for Psychologists</title>
+<title>Statistics for Psychologists</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="index.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -278,50 +279,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./PSYC214/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./PSYC214/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./PSYC214/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./PSYC214/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week4</span></a>
+  <a href="./PSYC214/Week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Revision of One-Factor ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./PSYC214/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week6</span></a>
+ <span class="menu-text">6. Introduction to Factorial Designs and Interactions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./PSYC214/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week7</span></a>
+ <span class="menu-text">7. Two-Factor Between-Participants ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./PSYC214/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week8</span></a>
+ <span class="menu-text">8. Two-Factor Mixed and Within-Participants ANOVA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./PSYC214/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week9</span></a>
+ <span class="menu-text">9. Three-Factor ANOVA</span></a>
   </div>
 </li>
       </ul>
@@ -537,7 +520,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
   <li><a href="#accessing-the-r-server" id="toc-accessing-the-r-server" class="nav-link" data-scroll-target="#accessing-the-r-server">Accessing the R Server</a></li>
-  <li><a href="#other-methods-of-access" id="toc-other-methods-of-access" class="nav-link" data-scroll-target="#other-methods-of-access">Other Methods of Access</a></li>
+  <li><a href="#faqs-and-common-troubleshooting" id="toc-faqs-and-common-troubleshooting" class="nav-link" data-scroll-target="#faqs-and-common-troubleshooting">FAQs and Common Troubleshooting</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -561,6 +544,11 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/LUPsychology.svg" class="img-fluid figure-img" alt="University Logo"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -571,7 +559,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This website is under construction. Tread carefully.</p>
+<p>This website is under construction. Not all data is in place, and not all modules are filled out. Pages should be in place, but some are filler. If the pages have names in the sidebar, then you’re able to explore these as examples.</p>
 </div>
 </div>
 <section id="welcome" class="level1">
@@ -581,11 +569,75 @@ Warning
 <section id="accessing-the-r-server" class="level1">
 <h1>Accessing the R Server</h1>
 <p>You can access the Department’s R server at <a href="psy-rstudio.lancaster.ac.uk" title="Remember to connect with the VPN if you're off campus!">psy-rstudio.lancaster.ac.uk</a>. Remember you will need to be on campus, or access via the VPN.</p>
-<p>Here are detailed instructions for accessing workbench.</p>
+<p>Here are detailed instructions for accessing workbench. This isn’t written yet as it’s possible we will switch to SSO before the next academic year, in which case, lorem ipsum.</p>
 </section>
-<section id="other-methods-of-access" class="level1">
-<h1>Other Methods of Access</h1>
-<p>Here I list the other methods of accessing R, via local install and the benefits and drawbacks here.</p>
+<section id="faqs-and-common-troubleshooting" class="level1">
+<h1>FAQs and Common Troubleshooting</h1>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne" data-anchor-id="faqs-and-common-troubleshooting">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        I can't access the server. It just loads and loads and then times out.
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Use the VPN, or be on campus. Instructions for accessing the VPN are found here.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        My code doesn't work and keeps giving me errors. How do I fix this?
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Welcome to programming, this is 90% of what writing code is like. Getting better at programming is understanding how to solve problems and how to effectively use resources. StackOverflow is a good example of a resource.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Is the server down?
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Hopefully not. Check your internet connection first, perhaps check with others if they can access it too. If not, don't panic. Get in touch with THIS IS WHERE WE MAY NEED A CENTRALISED COMMUNICATION SERVICE LIKE A SHARED MAILBOX WITH FORWARDING SET UP?</div>
+    </div>
+  </div>
+  
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+        Is there another way to use Rstudio without the R server?
+      </button>
+    </h2>
+    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Yes!
+      
+      You can also install R and Rstudio onto your own computer which has its advantages and disadvantages to using the R server. You can install R and Rstudio directly from Posit [here](https://posit.co/download/rstudio-desktop/), who develop and maintain Rstudio. You will need to install both, R is the programming language and Rstudio is the interface between you and the computer that runs R.
+
+The advantage of having your own installation of R and Rstudio (just referred to as Rstudio from here on in) is that *you* control the settings completely. You can install new packages, set defaults, use specific versions of R and its libraries. In short, you have complete control over what you can do, which will lead to you becoming a better, more well-rounded data scientist (when we use R, we are data scientists as well as psychologists. You can wear many hats of expertise!).
+
+The disadvantage is that *you* are in control. If something goes wrong or doesn't install properly, it is up to you to resolve. As a department, we strongly recommend that you use the R server as your means of accessing Rstudio as we know that the server works, we have tested the teaching materials with the server and in labs we can help troubleshoot because we know that the versiond of R, the libraries, etc. are handled by us, we look after it so that you don't have to. A multitude of things can go wrong with a personal installation and you will need to fix this (which is part of being a well-rounded data scientist). If you ask for help with a local install, the first thing we will ask is "does it work on the R server?", if the answer is yes, then we can give some pointers but we cannot fix it for you (in my personal experience, I once spent 8+ hours of actively trying to fix a single issue with my Rstudio \[okay, so it was quite complex an issue, but the point remains\]).
+
+As you see, the advantage and disadvantage are intrinsically linked. From a teaching perspective, we cannot try and problem solve every person's individual and unique setup of Rstudio, there simply isn't enough time in a week. Yet the benefit of having your own version means you are totally unrestricted in what you can do with R, if you can imagine it, there is probably a set of libraries and functions that can help. If there isn't, you can make them!
+
+It is your choice for how to use Rstudio, but we recommend that you use the R server for the materials that we teach, but we provide this to complement and enhance the teaching experience. If you want to go beyond what is in the worksheets, then installing and using your own version of Rstudio is a very good first step.</div>
+    </div>
+  </div>
+  
+      <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+        Where can I learn more about R and Rstudio outside of the labs?
+      </button>
+    </h2>
+    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Great question. We can recommend looking at these books, R4DS, Advanced R, etc.</div>
+    </div>
+  </div>
+  
+</div>
 
 
 </section>
@@ -821,11 +873,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
-    <div class="nav-footer-center">Link 1</div>
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./Staff/index.html">For Staff</a>
+  </li>  
+</ul>
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/M1V0">
+    <a class="nav-link" href="https://github.com/M1V0/Statistics_for_PSYC">
       <i class="bi bi-github" role="img">
 </i> 
     </a>

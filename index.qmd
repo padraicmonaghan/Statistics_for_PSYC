@@ -1,16 +1,15 @@
 ---
-title: " Statistics for Psychologists"
+title: "Statistics for Psychologists"
 page-layout: article
 anchor-sections: false
-#listing:
-#  id: links
-#  template: links.ejs
-#  contents: guide.yml
 image: "Images/icon.png"
+css: index.css
 ---
 
+![](Images/LUPsychology.svg){fig-alt="University Logo" fig-align="center"}
+
 ::: callout-warning
-This website is under construction. Tread carefully.
+This website is under construction. Not all data is in place, and not all modules are filled out. Pages should be in place, but some are filler. If the pages have names in the sidebar, then you're able to explore these as examples.
 :::
 
 # Welcome
@@ -19,10 +18,76 @@ Welcome to Lancaster University's Department of Psychology modules on Statistics
 
 # Accessing the R Server
 
-You can access the Department's R server at [psy-rstudio.lancaster.ac.uk](psy-rstudio.lancaster.ac.uk "Remember to connect with the VPN if you're off campus!"). Remember you will need to be on campus, or access via the VPN. 
+You can access the Department's R server at [psy-rstudio.lancaster.ac.uk](psy-rstudio.lancaster.ac.uk "Remember to connect with the VPN if you're off campus!"). Remember you will need to be on campus, or access via the VPN.
 
-Here are detailed instructions for accessing workbench.
+Here are detailed instructions for accessing workbench. This isn't written yet as it's possible we will switch to SSO before the next academic year, in which case, lorem ipsum.
 
-# Other Methods of Access
+# FAQs and Common Troubleshooting
 
-Here I list the other methods of accessing R, via local install and the benefits and drawbacks here.
+```{=html}
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        I can't access the server. It just loads and loads and then times out.
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Use the VPN, or be on campus. Instructions for accessing the VPN are found here.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        My code doesn't work and keeps giving me errors. How do I fix this?
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Welcome to programming, this is 90% of what writing code is like. Getting better at programming is understanding how to solve problems and how to effectively use resources. StackOverflow is a good example of a resource.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Is the server down?
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Hopefully not. Check your internet connection first, perhaps check with others if they can access it too. If not, don't panic. Get in touch with THIS IS WHERE WE MAY NEED A CENTRALISED COMMUNICATION SERVICE LIKE A SHARED MAILBOX WITH FORWARDING SET UP?</div>
+    </div>
+  </div>
+  
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+        Is there another way to use Rstudio without the R server?
+      </button>
+    </h2>
+    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Yes!
+      
+      You can also install R and Rstudio onto your own computer which has its advantages and disadvantages to using the R server. You can install R and Rstudio directly from Posit [here](https://posit.co/download/rstudio-desktop/), who develop and maintain Rstudio. You will need to install both, R is the programming language and Rstudio is the interface between you and the computer that runs R.
+
+The advantage of having your own installation of R and Rstudio (just referred to as Rstudio from here on in) is that *you* control the settings completely. You can install new packages, set defaults, use specific versions of R and its libraries. In short, you have complete control over what you can do, which will lead to you becoming a better, more well-rounded data scientist (when we use R, we are data scientists as well as psychologists. You can wear many hats of expertise!).
+
+The disadvantage is that *you* are in control. If something goes wrong or doesn't install properly, it is up to you to resolve. As a department, we strongly recommend that you use the R server as your means of accessing Rstudio as we know that the server works, we have tested the teaching materials with the server and in labs we can help troubleshoot because we know that the versiond of R, the libraries, etc. are handled by us, we look after it so that you don't have to. A multitude of things can go wrong with a personal installation and you will need to fix this (which is part of being a well-rounded data scientist). If you ask for help with a local install, the first thing we will ask is "does it work on the R server?", if the answer is yes, then we can give some pointers but we cannot fix it for you (in my personal experience, I once spent 8+ hours of actively trying to fix a single issue with my Rstudio \[okay, so it was quite complex an issue, but the point remains\]).
+
+As you see, the advantage and disadvantage are intrinsically linked. From a teaching perspective, we cannot try and problem solve every person's individual and unique setup of Rstudio, there simply isn't enough time in a week. Yet the benefit of having your own version means you are totally unrestricted in what you can do with R, if you can imagine it, there is probably a set of libraries and functions that can help. If there isn't, you can make them!
+
+It is your choice for how to use Rstudio, but we recommend that you use the R server for the materials that we teach, but we provide this to complement and enhance the teaching experience. If you want to go beyond what is in the worksheets, then installing and using your own version of Rstudio is a very good first step.</div>
+    </div>
+  </div>
+  
+      <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+        Where can I learn more about R and Rstudio outside of the labs?
+      </button>
+    </h2>
+    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Great question. We can recommend looking at these books, R4DS, Advanced R, etc.</div>
+    </div>
+  </div>
+  
+</div>
+```

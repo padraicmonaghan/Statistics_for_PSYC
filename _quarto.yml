@@ -5,7 +5,6 @@ project:
 
 website:
   title: "Statistics for Psychologists"
-  image: "Images/icon.png"
   favicon: "Images/favicon.png"
   page-navigation: true
   back-to-top-navigation: true
@@ -14,6 +13,7 @@ website:
   repo-actions: [edit, issue]
   
   navbar:
+    #logo: "Images/icon.png"
     left:
       #- text: Home
       #  file: index.qmd
@@ -61,15 +61,18 @@ website:
         
   page-footer:
     left: "Website developed by Matthew Ivory"
-    center: "Link 1"
+    center: 
+      - text: For Staff
+        href: Staff/index.qmd
     right:       
       - icon: github
-        href: https://github.com/M1V0
+        href: https://github.com/M1V0/Statistics_for_PSYC
 
 format:
   html:
     theme: 
       - default
+      - custom.scss
     css: styles.css
     code-overflow: wrap
     grid:

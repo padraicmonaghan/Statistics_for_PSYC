@@ -2,6 +2,7 @@
 title: Statistics for Group Comparisons
 subtitle: "Course coordinators: Tom Beesley, John Towse"
 email-obfuscation: javascript
+order: 1
 
 #listing:
 #  id: links

@@ -1,0 +1,11 @@
+---
+title: Staff Information
+subtitle: Matthew Ivory
+order: 1
+---
+
+Hi. This will have some documents/information on how to set up the materials for Quarto and have it push to the website.
+
+It'll have a .zip for the basic folder structure required for easy integration of the materials into the rest.
+
+May even have the instructor files? Although obviously students will click a "For Staff" button, so maybe it needs to be on an invisible link.
