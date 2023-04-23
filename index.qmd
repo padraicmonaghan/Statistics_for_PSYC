@@ -4,6 +4,7 @@ page-layout: article
 anchor-sections: false
 image: "Images/icon.png"
 css: index.css
+filters: [remove_title.lua]
 ---
 
 ![](Images/LUPsychology.svg){fig-alt="University Logo" fig-align="center"}
