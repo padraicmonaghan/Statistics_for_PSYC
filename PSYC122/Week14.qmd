@@ -1,5 +1,5 @@
 ---
-title: Chi-Square
+title: 4. Chi-Square
 subtitle: Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
 order: 5
 ---

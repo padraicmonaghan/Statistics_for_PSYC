@@ -1,5 +1,5 @@
 ---
-title: Descriptive statistics in RStudio
+title: 2. Descriptive statistics in RStudio
 subtitle: Written by John Towse & Tom Beesley
 order: 2
 ---

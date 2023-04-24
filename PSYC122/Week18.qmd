@@ -1,5 +1,5 @@
 ---
-title: Linear Model Part 2
+title: 8. Linear Model Part 2
 subtitle: Written by Rob Davies
 order: 9
 ---

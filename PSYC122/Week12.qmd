@@ -1,5 +1,5 @@
 ---
-title: Correlation Part 2
+title: 2. Correlation Part 2
 subtitle: Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
 order: 3
 ---

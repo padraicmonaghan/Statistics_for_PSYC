@@ -1,5 +1,5 @@
 ---
-title: Data Visualisation
+title: 6. Data Visualisation
 subtitle: Written by Rob Davies
 order: 7
 ---

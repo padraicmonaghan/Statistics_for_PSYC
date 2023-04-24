@@ -1,5 +1,5 @@
 ---
-title: Related-samples t-tests, plotting means and SE bars
+title: 8. Related-samples t-tests, plotting means and SE bars
 subtitle: Written by Tom Beesley & John Towse
 order: 8
 ---

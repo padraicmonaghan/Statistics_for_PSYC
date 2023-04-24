@@ -1,5 +1,5 @@
 ---
-title: Sampling, probability and binomial tests
+title: 6. Sampling, probability and binomial tests
 subtitle: Written by Tom Beesley & John Towse
 order: 6
 ---

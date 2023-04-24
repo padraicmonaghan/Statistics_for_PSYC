@@ -1,5 +1,5 @@
 ---
-title: DVs and IVs in RStudio
+title: 3. DVs and IVs in RStudio
 subtitle: Written by John Towse & Tom Beesley
 order: 3
 ---

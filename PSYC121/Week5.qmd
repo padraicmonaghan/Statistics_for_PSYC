@@ -1,5 +1,5 @@
 ---
-title: Class test
+title: 5. Class test
 subtitle: Written by John Towse & Tom Beesley
 order: 5
 ---

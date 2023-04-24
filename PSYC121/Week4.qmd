@@ -1,5 +1,5 @@
 ---
-title: Customisation of graphs, and z-scores
+title: 4. Customisation of graphs, and z-scores
 subtitle: Written by John Towse & Tom Beesley
 order: 4
 ---

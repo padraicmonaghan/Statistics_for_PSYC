@@ -1,5 +1,5 @@
 ---
-title: Unrelated-samples t-test and Power
+title: 9. Unrelated-samples t-test and Power
 subtitle: Written by Tom Beesley & John Towse
 order: 9
 ---

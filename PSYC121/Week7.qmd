@@ -1,5 +1,5 @@
 ---
-title: Filtering data and testing means (one-sample t-test)
+title: 7.Filtering data and testing means (one-sample t-test)
 subtitle: Written by Tom Beesley & John Towse
 order: 7
 ---

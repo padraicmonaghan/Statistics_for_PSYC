@@ -1,5 +1,5 @@
 ---
-title: Linear Models
+title: 7. Linear Models
 subtitle: Written by Rob Davies
 order: 8
 ---
