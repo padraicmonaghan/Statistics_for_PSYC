@@ -1,8 +1,30 @@
 ---
-title: 2. Data Manipulation
+title: 2. Manipulating data
 subtitle: Written by Padraic Monaghan
 order: 3
 ---
+
+# Preparation
+
+- Watch Lecture week2 [part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1990483), [slides here](ppt/wk2/PSYC401 Lecture week2 part1 handout.pptx)
+
+- [part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1990544), [slides here](ppt/wk2/PSYC401 Lecture week2 part2 handout.pptx) 
+
+- [part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1990550), [slides here](ppt/wk2/PSYC401 Lecture week2 part3 handout.pptx)
+
+- Take [the quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921422) on the lecture material (not assessed).
+
+- Work through the practical workbook with your group, in the practical folder. You can find our answers to the practical 1 week1 in there as well - but it's probably better to access that after watching the lectures for this week.
+
+- Attend the practical on Wednesday.
+
+- Pop into the drop in (optional) on Thursday.
+
+- Complete and submit [Assignment 1](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921424) by Friday (8pm) of week 2. [Data file here](data/Wk2 assignment.zip)
+
+- Optionally, watch [Brian Nosek's keynote](https://modules.lancaster.ac.uk/mod/url/view.php?id=1921426) at the 2018 British Psychological Society conference on the replicability crisis.
+
+{{< video https://www.youtube.com/watch?v=q1JoKB7luPU&ab_channel=TheBritishPsychologicalSociety >}}
 
 # Part One: Reproduce the week 2 p3 lecture material
 

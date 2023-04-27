@@ -1,14 +1,35 @@
 ---
-title: 1. Introduction to R
+title: 1. Introducing Data
 subtitle: Written by Padraic Monaghan
 order: 2
 ---
 
+# Preparation
+
+- Watch [Lecture week1 part1](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=1dc8e654-b996-4d2d-917c-adac00d6e6fd). Slides [here](ppt/wk1/PSYC401 Lecture week1 part1 handout.pptx)
+
+- Watch [Lecture week1 part2](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=2d1319ad-9f0b-4ec7-865f-ac4c00b40487), stop halfway through and do the [Lecture week1 part2 quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921414) (not assessed), go back and watch the end of Lecture week 1 part2. [slides here](ppt/wk1/PSYC401 Lecture week1 part2 handout.pptx)
+
+- Watch [Lecture week1 part3](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=273c848e-9c9a-459e-9e61-ac45015f7929).
+
+- Take the [quiz on the lecture material](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921415) (not assessed).
+
+- Work through the practical workbook in a group (...don't worry about groups yet, we will form them at the first practical, for now you can work on the practical workbook individually, or with anyone else on the course you are in touch with!)
+
+- Attend the practical on Wednesday.
+
+- Pop into the drop in (optional) on Thursday, if you'd like extra support for the practical materials, or have questions about the lecture material.
+
+- Optionally, watch the [lecture by Tim Harford](https://www.facebook.com/watch/live/?ref=watch_permalink&v=827528201352006) on the importance of understanding statistics.
+
+
 In your group, work through this workbook, note any problems and questions you have, and come prepared to the online practical class to go through the tasks and ask your questions.
 
-The first part of this workbook reproduces what you saw in the week 1 part 3 lecture.
-The second part gives you some more exercises in using R studio for finding means, standard deviations, z scores, and drawing histograms.
-The third part explores some more tasks you can do to practise exploring what R studio can do.
+- The first part of this workbook reproduces what you saw in the week 1 part 3 lecture.
+
+- The second part gives you some more exercises in using R studio for finding means, standard deviations, z scores, and drawing histograms.
+
+- The third part explores some more tasks you can do to practise exploring what R studio can do.
 
 # Part One: repeat the steps from lecture 1 part 3
 

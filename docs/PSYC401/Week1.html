@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists - 1. Introduction to R</title>
+<title>Statistics for Psychologists - 1. Introducing Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC401/index.html">PSYC401</a></li><li class="breadcrumb-item"><a href="../PSYC401/Week1.html">1. Introduction to R</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC401/index.html">PSYC401</a></li><li class="breadcrumb-item"><a href="../PSYC401/Week1.html">1. Introducing Data</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -415,37 +415,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">1. Introduction to R</span></a>
+ <span class="menu-text">1. Introducing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Data Manipulation</span></a>
+ <span class="menu-text">2. Manipulating data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Workbook 3</span></a>
+ <span class="menu-text">3. Drawing graphs from data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Worksheet 4</span></a>
+ <span class="menu-text">4. Testing nominal data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Worksheet 5</span></a>
+ <span class="menu-text">5. Testing differences between groups</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week6</span></a>
+ <span class="menu-text">6. Open data and your research report</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -559,7 +559,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-one-repeat-the-steps-from-lecture-1-part-3" id="toc-part-one-repeat-the-steps-from-lecture-1-part-3" class="nav-link active" data-scroll-target="#part-one-repeat-the-steps-from-lecture-1-part-3">Part One: repeat the steps from lecture 1 part 3</a>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
+  <li><a href="#part-one-repeat-the-steps-from-lecture-1-part-3" id="toc-part-one-repeat-the-steps-from-lecture-1-part-3" class="nav-link" data-scroll-target="#part-one-repeat-the-steps-from-lecture-1-part-3">Part One: repeat the steps from lecture 1 part 3</a>
   <ul class="collapse">
   <li><a href="#task-one-open-rstudio" id="toc-task-one-open-rstudio" class="nav-link" data-scroll-target="#task-one-open-rstudio">Task One: Open Rstudio</a>
   <ul class="collapse">
@@ -586,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">1. Introduction to R</h1>
+<h1 class="title">1. Introducing Data</h1>
 <p class="subtitle lead">Written by Padraic Monaghan</p>
 </div>
 
@@ -602,8 +603,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="preparation" class="level1">
+<h1>Preparation</h1>
+<ul>
+<li><p>Watch <a href="https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=1dc8e654-b996-4d2d-917c-adac00d6e6fd">Lecture week1 part1</a>. Slides <a href="ppt/wk1/PSYC401 Lecture week1 part1 handout.pptx">here</a></p></li>
+<li><p>Watch <a href="https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=2d1319ad-9f0b-4ec7-865f-ac4c00b40487">Lecture week1 part2</a>, stop halfway through and do the <a href="https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921414">Lecture week1 part2 quiz</a> (not assessed), go back and watch the end of Lecture week 1 part2. <a href="ppt/wk1/PSYC401 Lecture week1 part2 handout.pptx">slides here</a></p></li>
+<li><p>Watch <a href="https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=273c848e-9c9a-459e-9e61-ac45015f7929">Lecture week1 part3</a>.</p></li>
+<li><p>Take the <a href="https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921415">quiz on the lecture material</a> (not assessed).</p></li>
+<li><p>Work through the practical workbook in a group (…don’t worry about groups yet, we will form them at the first practical, for now you can work on the practical workbook individually, or with anyone else on the course you are in touch with!)</p></li>
+<li><p>Attend the practical on Wednesday.</p></li>
+<li><p>Pop into the drop in (optional) on Thursday, if you’d like extra support for the practical materials, or have questions about the lecture material.</p></li>
+<li><p>Optionally, watch the <a href="https://www.facebook.com/watch/live/?ref=watch_permalink&amp;v=827528201352006">lecture by Tim Harford</a> on the importance of understanding statistics.</p></li>
+</ul>
 <p>In your group, work through this workbook, note any problems and questions you have, and come prepared to the online practical class to go through the tasks and ask your questions.</p>
-<p>The first part of this workbook reproduces what you saw in the week 1 part 3 lecture. The second part gives you some more exercises in using R studio for finding means, standard deviations, z scores, and drawing histograms. The third part explores some more tasks you can do to practise exploring what R studio can do.</p>
+<ul>
+<li><p>The first part of this workbook reproduces what you saw in the week 1 part 3 lecture.</p></li>
+<li><p>The second part gives you some more exercises in using R studio for finding means, standard deviations, z scores, and drawing histograms.</p></li>
+<li><p>The third part explores some more tasks you can do to practise exploring what R studio can do.</p></li>
+</ul>
+</section>
 <section id="part-one-repeat-the-steps-from-lecture-1-part-3" class="level1">
 <h1>Part One: repeat the steps from lecture 1 part 3</h1>
 <section id="task-one-open-rstudio" class="level2">
@@ -1067,7 +1085,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="../PSYC401/Week2.html" class="pagination-link">
-        <span class="nav-page-text">2. Data Manipulation</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">2. Manipulating data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

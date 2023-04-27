@@ -1,9 +1,29 @@
 ---
-title: 5. Worksheet 5
+title: 5. Testing differences between groups
 subtitle: Written by Padraic Monaghan
 order: 6
 
 ---
+
+# Preparation
+
+- Watch Lecture [week5 part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2007173), [slides here](ppt/wk5/PSYC401 Lecture week5 p1.pptx)
+
+- [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2007174), [slides here](ppt/wk5/PSYC401 Lecture week5 p2.pptx). Please note I say week 6 in the lectures, but I mean week 5. Sorry about that! It is week 5, be assured.
+
+- Take [the quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921449) (not assessed) on the lecture materials.
+
+- Work through the materials below.
+
+- Attend the practical.
+
+- Pop into the drop in (optional). Please note this is in Levy Lab - do come along with any questions at all on the workbooks so far.
+
+- Optionally, if you can give us your (anonymised) [feedback](https://modules.lancaster.ac.uk/mod/feedback/view.php?id=1921451) on how the course is going from your perspective, that would be very welcome.
+
+- Also optionally, read the articles on the importance of statistical understanding and insights from good data visualisation.
+  - [How scientists can be better at statistics](https://modules.lancaster.ac.uk/mod/url/view.php?id=2007180)
+  - [Florence Nightingale and data visualisation](https://modules.lancaster.ac.uk/mod/url/view.php?id=2007186)
 
 # Part 1: Revision
 

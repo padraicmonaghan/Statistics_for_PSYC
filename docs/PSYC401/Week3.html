@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists - 3. Workbook 3</title>
+<title>Statistics for Psychologists - 3. Drawing graphs from data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC401/index.html">PSYC401</a></li><li class="breadcrumb-item"><a href="../PSYC401/Week3.html">3. Workbook 3</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC401/index.html">PSYC401</a></li><li class="breadcrumb-item"><a href="../PSYC401/Week3.html">3. Drawing graphs from data</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -415,37 +415,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Introduction to R</span></a>
+ <span class="menu-text">1. Introducing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Data Manipulation</span></a>
+ <span class="menu-text">2. Manipulating data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">3. Workbook 3</span></a>
+ <span class="menu-text">3. Drawing graphs from data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Worksheet 4</span></a>
+ <span class="menu-text">4. Testing nominal data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Worksheet 5</span></a>
+ <span class="menu-text">5. Testing differences between groups</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week6</span></a>
+ <span class="menu-text">6. Open data and your research report</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -559,7 +559,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1-revision-from-last-week" id="toc-part-1-revision-from-last-week" class="nav-link active" data-scroll-target="#part-1-revision-from-last-week">Part 1: Revision from last week</a>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
+  <li><a href="#part-1-revision-from-last-week" id="toc-part-1-revision-from-last-week" class="nav-link" data-scroll-target="#part-1-revision-from-last-week">Part 1: Revision from last week</a>
   <ul class="collapse">
   <li><a href="#task-1-describe-and-load-the-data-set-you-found-for-your-take-home-task" id="toc-task-1-describe-and-load-the-data-set-you-found-for-your-take-home-task" class="nav-link" data-scroll-target="#task-1-describe-and-load-the-data-set-you-found-for-your-take-home-task">Task 1: Describe and load the data set you found for your take-home task</a></li>
   <li><a href="#task-2-load-in-the-data-draw-a-histogram-find-means-and-standard-deviations" id="toc-task-2-load-in-the-data-draw-a-histogram-find-means-and-standard-deviations" class="nav-link" data-scroll-target="#task-2-load-in-the-data-draw-a-histogram-find-means-and-standard-deviations">Task 2: Load in the data, draw a histogram, find means and standard deviations</a></li>
@@ -586,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">3. Workbook 3</h1>
+<h1 class="title">3. Drawing graphs from data</h1>
 <p class="subtitle lead">Written by Padraic Monaghan</p>
 </div>
 
@@ -602,6 +603,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="preparation" class="level1">
+<h1>Preparation</h1>
+<ul>
+<li><p>Watch <a href="">Lecture week3 part1</a>, <a href="ppt/wk3/PSYC401 Lecture week3 part1 handout.pptx">slides here</a></p></li>
+<li><p>Have a go at the <a href="https://modules.lancaster.ac.uk/mod/url/view.php?id=1921429">Gent Vocabulary test</a>, and record your score.</p></li>
+<li><p>Have another go at the <a href="https://modules.lancaster.ac.uk/mod/url/view.php?id=1921429">Gent Vocabulary test</a>, and record your score again.</p></li>
+<li><p>Have a go at the <a href="https://modules.lancaster.ac.uk/mod/resource/view.php?id=1921430">Shipley Vocabulary test</a>, and record your score. <a href="https://modules.lancaster.ac.uk/mod/resource/view.php?id=1921431">Scoring sheet here</a></p></li>
+<li><p>Fill in your vocabulary scores into <a href="https://modules.lancaster.ac.uk/mod/questionnaire/view.php?id=1921432">our course database</a>: What is your vocabulary?</p></li>
+<li><p>Watch <a href="https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1992365">Lecture week3 part2</a>, <a href="ppt/wk3/PSYC401 Lecture week3 part2 handout.pptx">slides here</a>.</p></li>
+<li><p>Watch <a href="https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1998979">Lecture week3 part3</a>, <a href="ppt/wk3/PSYC401 Lecture week3 part3 handout.pptx">slides here</a>.</p></li>
+<li><p>Do the <a href="https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921435">quick quiz</a>.</p></li>
+<li><p>Go through the Practical week3 workbook below.</p></li>
+<li><p>Attend the practical.</p></li>
+<li><p>Pop into the drop in (optional).</p></li>
+</ul>
+<p>And hey presto, that’s all done!</p>
+</section>
 <section id="part-1-revision-from-last-week" class="level1">
 <h1>Part 1: Revision from last week</h1>
 <section id="task-1-describe-and-load-the-data-set-you-found-for-your-take-home-task" class="level2">
@@ -1096,12 +1114,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../PSYC401/Week2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Data Manipulation</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Manipulating data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../PSYC401/Week4.html" class="pagination-link">
-        <span class="nav-page-text">4. Worksheet 4</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">4. Testing nominal data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
