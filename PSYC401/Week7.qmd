@@ -1,1 +1,21 @@
-Hi
+---
+title: Is it morning or day?
+---
+# POC
+
+This is a proof of concept that we can hide/autoshow information. It is a bit clunky and requires some javascript functions, but theoretically only requires updating once a year and then a simple copy-paste of information. 
+
+## This is hidden content based on hours
+
+```{=html}
+<div class='open_wk1'>Success! It is morning!</div>
+<div class='closed_wk1'>This is hidden!</div>
+<br/>
+```
+
+## The below is only available between different hours
+
+```{=html}
+<div class='open_wk2'>Success! It is afternoon!</div>
+<div class='closed_wk2'>This is hidden!</div>
+```

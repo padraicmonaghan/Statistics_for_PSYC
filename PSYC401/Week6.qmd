@@ -22,7 +22,7 @@ Before class: take a look at the video lectures (in 3 parts) in which I explain 
   - [Slides here - html version](https://modules.lancaster.ac.uk/mod/resource/view.php?id=2012803)
   
 
-Optionally: you can read a book chapter Introduction: why? we wrote to explain in-depth our thinking behind the exercise -- this may interest those with an interest in doing research, open science, and the motivation for the good practice we advise.
+Optionally: you can read a book chapter [Introduction: why?]() we wrote to explain in-depth our thinking behind the exercise -- this may interest those with an interest in doing research, open science, and the motivation for the good practice we advise.
 
 -- You do not need to read this but we hope it presents a deeper understanding for why the exercise is useful, and why we teach and work with open science practices.
 

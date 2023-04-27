@@ -15,7 +15,7 @@ This website is under construction. Not all data is in place, and not all module
 
 # Welcome
 
-Welcome to Lancaster University's Department of Psychology modules on Statistics for Psychologists. In the sidebar, you will find a complete list of all the statistics modules that are currently offered. This is your one-stop shop for all the lab materials you need for working with R and statistics.
+Welcome to Lancaster University's Department of Psychology **2022/2023** modules on Statistics for Psychologists. In the sidebar, you will find a complete list of all the statistics modules that are currently offered. This is your one-stop shop for all the lab materials you need for working with R and statistics.
 
 # Accessing the R Server
 
