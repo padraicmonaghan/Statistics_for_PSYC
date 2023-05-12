@@ -1,9 +1,6 @@
 ---
-title: "Accessing the R Server"
+title: "Previous Conent"
 ---
+This page will have links to previous years content, so that students can still go through stored content. 
 
-About this site
-
-```{r}
-1 + 1
-```
+We would only need to keep two or three years worth as once they leave it isn't imperative they have access to the old material, and they can see the new stuff if needed.

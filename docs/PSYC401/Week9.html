@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists – week9</title>
+<title>Statistics for Psychologists - 9. Predicting behaviour: The linear model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../PSYC402/index.html" rel="next">
+<link href="../PSYC401/Week10.html" rel="next">
 <link href="../PSYC401/Week8.html" rel="prev">
 <link href="../Images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -123,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC401/index.html">PSYC401</a></li><li class="breadcrumb-item"><a href="../PSYC401/Week9.html">Week9</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC401/index.html">PSYC401</a></li><li class="breadcrumb-item"><a href="../PSYC401/Week9.html">9. Predicting behaviour: The linear model</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -324,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC234/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week1</span></a>
+ <span class="menu-text">1. Review of correlation, simple regression and demonstration of multiple regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -418,20 +452,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../PSYC401/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Is it morning or day?</span></a>
+  <a href="../PSYC401/Week7proper.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Hypotheses, measurement and associations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week8</span></a>
+ <span class="menu-text">8. Independent study week; data visualisation and making the most of R knowledge</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC401/Week9.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week9</span></a>
+ <span class="menu-text">9. Predicting behaviour: The linear model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC401/Week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Developing the linear model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC401/Week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Is it morning or day?</span></a>
   </div>
 </li>
       </ul>
@@ -519,16 +565,833 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a>
+  <ul class="collapse">
+  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
+  </ul></li>
+  <li><a href="#part-one-how-to" id="toc-part-one-how-to" class="nav-link" data-scroll-target="#part-one-how-to">Part One: How To</a>
+  <ul class="collapse">
+  <li><a href="#task-1-set-up" id="toc-task-1-set-up" class="nav-link" data-scroll-target="#task-1-set-up">Task 1: Set-up</a></li>
+  <li><a href="#task-2-load-data" id="toc-task-2-load-data" class="nav-link" data-scroll-target="#task-2-load-data">Task 2: Load data</a></li>
+  <li><a href="#task-3-use-histograms-to-examine-the-distributions-of-variables" id="toc-task-3-use-histograms-to-examine-the-distributions-of-variables" class="nav-link" data-scroll-target="#task-3-use-histograms-to-examine-the-distributions-of-variables">Task 3: Use histograms to examine the distributions of variables</a></li>
+  <li><a href="#task-4-use-grids-of-histograms-to-examine-the-distributions-of-variables" id="toc-task-4-use-grids-of-histograms-to-examine-the-distributions-of-variables" class="nav-link" data-scroll-target="#task-4-use-grids-of-histograms-to-examine-the-distributions-of-variables">Task 4: Use grids of histograms to examine the distributions of variables</a></li>
+  <li><a href="#task-5.-now-draw-scatterplots-to-examine-associations-between-variables" id="toc-task-5.-now-draw-scatterplots-to-examine-associations-between-variables" class="nav-link" data-scroll-target="#task-5.-now-draw-scatterplots-to-examine-associations-between-variables">Task 5. Now draw scatterplots to examine associations between variables</a></li>
+  <li><a href="#task-6-use-correlation-to-to-answer-the-research-questions" id="toc-task-6-use-correlation-to-to-answer-the-research-questions" class="nav-link" data-scroll-target="#task-6-use-correlation-to-to-answer-the-research-questions">Task 6: Use correlation to to answer the research questions</a></li>
+  <li><a href="#task-7-use-a-linear-model-to-to-answer-the-research-questions" id="toc-task-7-use-a-linear-model-to-to-answer-the-research-questions" class="nav-link" data-scroll-target="#task-7-use-a-linear-model-to-to-answer-the-research-questions">Task 7: Use a linear model to to answer the research questions</a></li>
+  <li><a href="#task-8-use-a-linear-model-to-generate-predictions" id="toc-task-8-use-a-linear-model-to-generate-predictions" class="nav-link" data-scroll-target="#task-8-use-a-linear-model-to-generate-predictions">Task 8: Use a linear model to generate predictions</a></li>
+  </ul></li>
+  <li><a href="#part-two-the-workbook" id="toc-part-two-the-workbook" class="nav-link" data-scroll-target="#part-two-the-workbook">Part Two: The Workbook</a>
+  <ul class="collapse">
+  <li><a href="#task-9-set-up" id="toc-task-9-set-up" class="nav-link" data-scroll-target="#task-9-set-up">Task 9: Set-up</a></li>
+  <li><a href="#task-10-load-data" id="toc-task-10-load-data" class="nav-link" data-scroll-target="#task-10-load-data">Task 10: Load data</a></li>
+  <li><a href="#task-11-use-histograms-to-examine-the-distributions-of-variables" id="toc-task-11-use-histograms-to-examine-the-distributions-of-variables" class="nav-link" data-scroll-target="#task-11-use-histograms-to-examine-the-distributions-of-variables">Task 11: Use histograms to examine the distributions of variables</a></li>
+  <li><a href="#task-12-use-grids-of-histograms-to-examine-the-distributions-of-variables" id="toc-task-12-use-grids-of-histograms-to-examine-the-distributions-of-variables" class="nav-link" data-scroll-target="#task-12-use-grids-of-histograms-to-examine-the-distributions-of-variables">Task 12: Use grids of histograms to examine the distributions of variables</a></li>
+  <li><a href="#task-13-now-draw-scatterplots-to-examine-associations-between-variables" id="toc-task-13-now-draw-scatterplots-to-examine-associations-between-variables" class="nav-link" data-scroll-target="#task-13-now-draw-scatterplots-to-examine-associations-between-variables">Task 13: Now draw scatterplots to examine associations between variables</a></li>
+  <li><a href="#task-14-use-correlation-to-to-answer-the-research-questions" id="toc-task-14-use-correlation-to-to-answer-the-research-questions" class="nav-link" data-scroll-target="#task-14-use-correlation-to-to-answer-the-research-questions">Task 14: Use correlation to to answer the research questions</a></li>
+  <li><a href="#task-15-use-a-linear-model-to-to-answer-the-research-questions" id="toc-task-15-use-a-linear-model-to-to-answer-the-research-questions" class="nav-link" data-scroll-target="#task-15-use-a-linear-model-to-to-answer-the-research-questions">Task 15: Use a linear model to to answer the research questions</a></li>
+  <li><a href="#task-16-use-a-linear-model-to-generate-predictions" id="toc-task-16-use-a-linear-model-to-generate-predictions" class="nav-link" data-scroll-target="#task-16-use-a-linear-model-to-generate-predictions">Task 16: Use a linear model to generate predictions</a></li>
+  <li><a href="#task-17-optional-extension-use-community-information-to-figure-things-out" id="toc-task-17-optional-extension-use-community-information-to-figure-things-out" class="nav-link" data-scroll-target="#task-17-optional-extension-use-community-information-to-figure-things-out">Task 17: Optional extension: Use community information to figure things out</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC401/Week9.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">9. Predicting behaviour: The linear model</h1>
+<p class="subtitle lead">Written by Rob Davies</p>
+</div>
 
 
-<p>Hi</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="preparation" class="level1">
+<h1>Preparation</h1>
+<section id="lectures" class="level2">
+<h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
+<ul>
+<li><a href="https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023165">Part 1 - questions, assumptions, predictions</a></li>
+<li><a href="https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023166">Part 2 - linear models as prediction methods</a></li>
+<li><a href="https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023170">Part 3 - errors of prediction, residuals</a></li>
+<li><a href="https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023171">Part 4 - identifying and reporting model test information</a></li>
+</ul>
+<p>– All slides are <a href="https://modules.lancaster.ac.uk/mod/resource/view.php?id=2023084">here (html)</a>, and <a href="data/PSYC401_wk9/401-linear-model-intro-printable.docx">here (.docx)</a></p>
+<p>– Each part is about 15 minutes in length. I have labelled lectures so you know what is in each.</p>
+<ul>
+<li><p>Work through the materials for the Practical below: this week introduces the linear model.</p></li>
+<li><p>The motivation for providing you with a how-to and a workbook section is that you can learn and progress to do the practical work with more support (in the how-to) and then room to try things (in the workbook).</p></li>
+<li><p>Attend the practical.</p></li>
+<li><p>Test yourself using the <a href="https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921465">quiz (not assessed)</a>.</p></li>
+<li><p>Optionally, if you can <a href="https://modules.lancaster.ac.uk/mod/feedback/view.php?id=2023259">give us your (anonymised) feedback</a> on how the course is going from your perspective, that would be very welcome.</p></li>
+</ul>
+</section>
+</section>
+<section id="part-one-how-to" class="level1">
+<h1>Part One: How To</h1>
+<p>In Week 9, we aim to <em>further</em> develop skills in visualizing and testing the associations between variables in psychological data. In weeks 9-10, we do this in the context of working with the linear model</p>
+<p>We do this to learn how to answer research questions like:</p>
+<ol type="1">
+<li>What person attributes predict success in understanding?</li>
+<li>Can people accurately evaluate whether they correctly understand written health information?</li>
+</ol>
+<p>These kinds of research questions can often be answered through analyses using linear models. We will use linear models to estimate the association between predictors and outcomes</p>
+<p>When we do these analyses, we will need to think about how we report the results: we usually need to report information about the kind of model we specify; and we will need to report the nature of the association estimated in our model; we usually need to decide, is the association significant? does the association reflect a positive or negative relationship between outcome and predictor? is the association we see in our sample data relatively strong or weak?</p>
+<p>We will consolidate and extend learning on data visualization: – Use histograms to examine the distributions of variables. – Develop our capacity to edit the histograms – Use scatterplots to examine the relationships we may observe or predict – Develop our capacity to edit the scatterplots</p>
+<p>The idea is that as we work, we will develop skills in producing appealing plots for professional audiences</p>
+<section id="task-1-set-up" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-set-up">Task 1: Set-up</h2>
+<ol type="1">
+<li><p>Run this code to empty the R environment: <code>rm(list=ls())</code></p></li>
+<li><p>Run this code to load relevant libraries</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"patchwork"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this how-to guide, we use data from a 2020 study of the response of adults from a UK national sample to written health information: <code>study-one-general-participants.csv</code></p>
+</section>
+<section id="task-2-load-data" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-load-data">Task 2: Load data</h2>
+<ol start="3" type="1">
+<li>Read in the data file we will be using: <code>study-one-general-participants.csv</code>. We use the <code>read_csv()</code> function to read the data file into R</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>study.one <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"study-one-general-participants.csv"</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>consolidate: there should be no surprises here</p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Inspect the data file. Use the <code>summary()</code> or <code>head()</code> functions to take a look</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(study.one)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(study.one)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><code>head()</code> will give you the top few rows of any dataset you have read into R. <code>head(...)</code> is a function, and you put the name of the dataset inside the brackets to view it.</p></li>
+<li><p><code>summary()</code> will give you either descriptive statistics for variable columns classified as numeric or will tell you that columns in the dataset are not numeric. <code>summary()</code> is also a function and, again, you put the name of the dataset inside the brackets to view it</p></li>
+</ul>
+</section>
+<section id="task-3-use-histograms-to-examine-the-distributions-of-variables" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-use-histograms-to-examine-the-distributions-of-variables">Task 3: Use histograms to examine the distributions of variables</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>revision: practice to strengthen skills</p>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Draw histograms to examine the distributions of variables. Use <code>ggplot()</code> with <code>geom_histogram()</code></li>
+</ol>
+<ul>
+<li>When we create a plot, we take things step-by-step</li>
+<li>Here’s an example: run the line of code and see the result in the Plots window in R-Studio</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>These are the steps: – <code>ggplot(...)</code> you tell R you want to make a plot using the <code>ggplot()</code> function – <code>ggplot(data = study.one ...)</code> you tell R you want to make a plot with the ‘study.one’ data – <code>ggplot(..., aes(x = mean.acc))</code> you tell R that you want to make a plot with the variable ‘mean.acc’. Here, you specify the aesthetic mapping, <code>x = mean.acc</code> – <code>ggplot(...) + geom_histogram()</code> you tell R you want to plot values of ‘mean.acc’ as a histogram</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>revision: make sure you are confident about doing these things</p>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Practice editing the appearance of the plot step-by-step</li>
+</ol>
+<p>If we break the plot code into steps, it will make it easier to read, and it will make it easier to add edits e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We are going to revise editing: – the appearance of the bars using <code>binwidth =</code> – the colour of the background using <code>theme_bw()</code> – the appearance of the labels using <code>labs()</code></p>
+<p>Then we are going to try some new moves: – setting the x-axis limits to reflect the full range of possible scores on the x-axis variable – add annotation here, a vertical line indicating the sample average for a variable</p>
+<ol type="a">
+<li>the appearance of the bars using <code>binwidth</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li>the colour of the background using <code>theme_bw()</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="a">
+<li>the appearance of the labels using <code>labs()</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"mean accuracy"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>introduce: make some new moves</p>
+</div>
+</div>
+<ol start="4" type="a">
+<li>setting the x-axis limits using <code>x.lim()</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Vocabulary (SHIPLEY)"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">40</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="a">
+<li>add a vertical line to show the mean value</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Vocabulary (SHIPLEY)"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one<span class="sc">$</span>SHIPLEY), <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>– We can define the limits on the x-axis and on the y-axis. See ggplot reference information on setting limits <a href="https://ggplot2.tidyverse.org/reference/lims.html">here</a></p>
+<p>It is often useful to do this: – because we want to show the audience where the sample values are distributed compared to where they <em>could</em> be distributed, given the measure – this makes sense e.g.&nbsp;if you want to see the relative age distribution of a sample compared to the population – because we want plots, shown side by side to be directly comparable and because we want to give the audience a more accurate picture of the data</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>revision: make sure you are confident about doing these things</p>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Notice that we set the binwidth to 5: experiment and try different numbers. The binwidth number, if you are producing a histogram, will have to be a number larger than the potential minimum and smaller than the potential maximum for the variable you are plotting</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Vocabulary (SHIPLEY)"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Vocabulary (SHIPLEY)"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Vocabulary (SHIPLEY)"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>)   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In general, the larger (wider) the binwidth, the less detail you see about the distribution of values in the variable. Whether or not you want to present detail is then a question concerning your communication aims: do you want to give an impression, or identify a specific detail?</p>
+<p>Notice that we used the <code>geom_vline()</code> in: <code>geom_vline(xintercept = mean(study.one$SHIPLEY), colour = "red", size = 1.5)</code> to plot a vertical line at the location on the x-axis we define.</p>
+<p>We do this in the steps: 1. <code>geom_vline(...)</code> draw a vertical line; 2. <code>...xintercept...</code> draw the line so it hits the x-axis (intercepts the x-axis); 3. <code>...xintercept = mean(study.one$SHIPLEY...</code> defined by the mean of the variable <code>mean(study.one$SHIPLEY)</code> 4. <code>...colour = "red", size = 1.5...</code> make the line red and one and a half times the default thickness</p>
+<p>The ggplot() reference information for this new geom is <a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">here</a></p>
+</section>
+<section id="task-4-use-grids-of-histograms-to-examine-the-distributions-of-variables" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-use-grids-of-histograms-to-examine-the-distributions-of-variables">Task 4: Use grids of histograms to examine the distributions of variables</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>introduce: make some new moves</p>
+</div>
+</div>
+<p>One of the convenient and powerful things about R plotting code is that you can create a series of plots and put them together in a grid of plots for easy comparison: we do that here</p>
+<p>We will use the patchwork library: <a href="https://patchwork.data-imaginist.com/articles/patchwork.html">check it out</a></p>
+<ol start="8" type="1">
+<li>Create multiple plots and show them all together in a grid to allow comparison. We will need to do things in stages: (1.) make plots (2.) put them together</li>
+</ol>
+<ul>
+<li>We are going to use the patchwork library to create the grids so you need to make sure you have already done this at the top of your script:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"patchwork"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>First make some plots: each time, assign the plot object a name, like this:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p.shipley <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY)) <span class="sc">+</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Vocabulary (SHIPLEY)"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>)   </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>p.mean.acc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mean accuracy"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>) </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>p.age <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> AGE)) <span class="sc">+</span> </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (years)"</span>, <span class="at">y =</span> <span class="st">"frequency count"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice the steps: 1. <code>p.... &lt;- ggplot(...)</code> create a plot using <code>ggplot()</code>, give the plot a name 2. <code>...x = ...</code> define the x-axis variable (aesthetic) mapping 3. <code>...binwidth = ...</code> you may need to adjust the binwidth for each variable 4. <code>...labs(x = )...</code> and adjust the labels</p>
+<p>– Then put the plots together in a grid to allow comparison of the distributions of the variables <code>p.shipley + p.mean.acc + p.age</code></p>
+<p>For this to work well, the plot window needs to be wide</p>
+<p>Notice that presenting grids of plots is a powerful way to enable your audience to do efficient comparisons between variables or relationships It is a common tactic in data visualization in business, research and journalism and is discussed in terms of visualizations with names like grids, lattices, trellises or small multiples</p>
+<p>Notice also that we are doing something different here: we create plot objects but do not show or print the plots out in a separate move, we put the plot objects together in a grid of plots and show <em>that</em>.</p>
+<p>This is a very powerful aspect of coding plots in R because it means you can create complex plots with multiple elements to communicate the message you need to communicate to your audience Here, we are using this capacity to allow the audience to view and inspect the distributions of multiple different variables at the same time</p>
+</section>
+<section id="task-5.-now-draw-scatterplots-to-examine-associations-between-variables" class="level2">
+<h2 class="anchored" data-anchor-id="task-5.-now-draw-scatterplots-to-examine-associations-between-variables">Task 5. Now draw scatterplots to examine associations between variables</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>consolidation: should be no surprises here</p>
+</div>
+</div>
+<ol start="9" type="1">
+<li>Create a scatterplot to examine the association between some variables. We are working with <code>geom_point()</code> and you need x and y aesthetic mappings</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This plot shows: the possible association between x-axis variable ‘SHIPLEY’ and y-axis variable ‘mean.acc’</p>
+<p>The plot code moves through the following steps:<br>
+– <code>ggplot(...)</code> make a plot – <code>ggplot(data = study.one, ...)</code> with the ‘study.one’ dataset – <code>ggplot(...aes(x = SHIPLEY, y = mean.acc))</code> using two aesthetic mappings:<code>x = SHIPLEY</code> map ‘SHIPLEY’ values to x-axis (horizontal, left to right) positions <code>y = mean.acc</code> map ‘mean.acc’ values to y-axis (vertical, bottom to top) positions – <code>geom_point()</code> show the mappings as points</p>
+<ol start="10" type="1">
+<li><p>Now do scatterplots with any pair of numeric variables you like. Remember what we saw with <code>summary()</code>, not every variable consists of numbers</p></li>
+<li><p>Edit the appearance of the plot step-by-step</p></li>
+</ol>
+<p>We are going to revising edits to: – the appearance of the points using <code>alpha</code>, <code>size</code>, <code>shape</code>, and <code>colour</code> – the colour of the background using <code>theme_bw()</code> – the appearance of the labels using <code>labs()</code></p>
+<p>We are then going to try out some new moves: – Set the x-axis and y-axis limits to the potential minimum-maximum ranges of the variables we plot. Here, “potential” references the fact that e.g.&nbsp;SHIPLEY scores can start at 0 (a person gets 0 responses correct) and has a maximum of 40 (a person could get all responses correct, for up to 40 items)</p>
+<p>– the appearance of the points using <code>alpha</code>, <code>size</code>, <code>shape</code> and <code>colour</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>– the colour of the background using <code>theme_bw()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>– the appearance of the labels using <code>labs()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>introduce: make some new moves</p>
+</div>
+</div>
+<p>– set the axis limits</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that I set the x-axis limits to the minimum (0) and maximum (40) possible values for the <code>SHIPLEY</code> variable. I set the y-axis limits to the minimum (0) and maximum (1) possible values for the mean accuracy variable <code>mean.acc</code></p>
+<p>It is generally a good idea to show the minimum value (the origin) for each variable. Not doing this i.e.&nbsp;showing a more narrow slice of the sample range is an easy way to exaggerate the strength of associations or to imply incorrectly the breadth in variation</p>
+<p>You can change the transparency (<code>alpha</code>), <code>size</code>, <code>colour</code> and <code>shape</code> of important parts of a plot Here, we are changing the appearance of the points. But you can also change the transparency (<code>alpha</code>), <code>size</code>, <code>colour</code> and <code>shape</code> of reference lines added to a plot</p>
+<p>The ggplot geom_point() reference information is <a href="https://ggplot2.tidyverse.org/reference/geom_point.html">here</a> where you can see some examples of the edits we have done</p>
+<p>– Some useful information about shape options is <a href="http://www.cookbook-r.com/Graphs/Shapes_and_line_types/">here</a> – Some useful information about shape options is <a href="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)">here</a></p>
+<p>Now experiment!</p>
+</section>
+<section id="task-6-use-correlation-to-to-answer-the-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="task-6-use-correlation-to-to-answer-the-research-questions">Task 6: Use correlation to to answer the research questions</h2>
+<div class="callout-import">
+<p>revision: make sure you are confident about doing these things</p>
+</div>
+<p>One of our research questions is: What person attributes predict success in understanding?</p>
+<ol start="12" type="1">
+<li>Examine the correlation between mean accuracy (<code>mean.acc</code>) and vocabulary (<code>SHIPLEY</code>). We use <code>cor.test()</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.one<span class="sc">$</span>SHIPLEY, study.one<span class="sc">$</span>mean.acc, <span class="at">method =</span> <span class="st">"pearson"</span>,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q1. What is r, the correlation coefficient?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>r = 0.334406</p>
+</div>
+</div>
+</div>
+<p>Q2. Is the correlation significant? :::{.callout-warning icon=“false” collapse=“true”} ## Answer r is significant, p &lt; .05 :::</p>
+<p>Q3. What are the values for t and p for the significance test for the correlation?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>t = 4.5855, p = 8.846e-06</p>
+</div>
+</div>
+</div>
+<p>Q4. What do you conclude is the answer to the research question, given the correlation results?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vocabulary and mean.acc are positively correlated suggesting that as SHIPLEY scores increase so also do mean.acc scores</p>
+</div>
+</div>
+</div>
+</section>
+<section id="task-7-use-a-linear-model-to-to-answer-the-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="task-7-use-a-linear-model-to-to-answer-the-research-questions">Task 7: Use a linear model to to answer the research questions</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>introduce: make some new moves</p>
+</div>
+</div>
+<p>One of our research questions is: What person attributes predict success in understanding?</p>
+<ol start="13" type="1">
+<li>Examine the relation between outcome mean accuracy (mean.acc) and predictor vocabulary (SHIPLEY). We use <code>lm()</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> study.one)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that we do the linear model in the steps:</p>
+<p>– <code>model &lt;- lm(...)</code> fit the model using <code>lm(...)</code>, give the model a name here, we call it “model” – <code>...lm(mean.acc ~ SHIPLEY...)</code> tell R you want a model of the outcome ‘mean.acc’ predicted (<code>~</code>) by the predictor ‘SHIPLEY’ – <code>...data = study.one)</code> tell R that the variables you name in the formula live in the ‘study.one’ dataset – <code>summary(model)</code> ask R for a summary of the model you called “model”</p>
+<p>Notice: R has a general formula syntax: outcome ~ predictor <em>or</em> y ~ x and uses the same format across a number of different functions each time, the left of the tilde symbol ~ is some output or outcome and the right of the tilde ~ is some input or predictor or set of predictors</p>
+<p>If you look at the model summary you can answer the following questions</p>
+<p>Q5. What is the estimate for the coefficient of the effect of the predictor, SHIPLEY?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>0.01050</p>
+</div>
+</div>
+</div>
+<p>Q6. Is the effect significant?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It is significant, p &lt; .05</p>
+</div>
+</div>
+</div>
+<p>Q7. What are the values for t and p for the significance test for the coefficient?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>t = 4.585, p = 8.85e-06</p>
+</div>
+</div>
+</div>
+<p>Q8. What do you conclude is the answer to the research question, given the linear model results?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The model slope estimate suggests that as SHIPLEY scores increase so also do mean.acc scores</p>
+</div>
+</div>
+</div>
+</section>
+<section id="task-8-use-a-linear-model-to-generate-predictions" class="level2">
+<h2 class="anchored" data-anchor-id="task-8-use-a-linear-model-to-generate-predictions">Task 8: Use a linear model to generate predictions</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>introduce: make some new moves</p>
+</div>
+</div>
+<ol start="14" type="1">
+<li>We can use the model we have just fitted to plot the model predictions. We are going to draw a scatterplot and add a line showing the predictions, given the model intercept and effect coefficient estimates</li>
+</ol>
+<p>First fit a model and get a summary:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> study.one)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q9. What is the coefficient estimate for the intercept?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>0.44914</p>
+</div>
+</div>
+</div>
+<p>Q10. What is the coefficient estimate for the slope of SHIPLEY?</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>0.01050</p>
+</div>
+</div>
+</div>
+<p>Second, use the <code>geom_abline()</code> function to draw the line:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fl">0.44914</span>, <span class="at">slope =</span> <span class="fl">0.01050</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can see that all we do is: add the geom_abline(…) function and in that, add information about the intercept and the slope. See reference information <a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">here</a></p>
+<p>Note that we can get the prediction line drawn for us automatically, as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">colour =</span> <span class="st">"purple"</span>, <span class="at">alpha =</span> .<span class="dv">2</span>, <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fl">0.44914</span>, <span class="at">slope =</span> <span class="fl">0.01050</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here, I turned the points off by commenting them out, adding to the start of the line And I added geom_smooth(method = ‘lm’, …) to draw a prediction line You can compare the red prediction line I drew using the model estimates with the purple line I used geom_smooth() to draw automatically to see that they are identical</p>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">This</a> shows you something of what geom_smooth() does. It is very useful:</p>
+</section>
+</section>
+<section id="part-two-the-workbook" class="level1">
+<h1>Part Two: The Workbook</h1>
+<p>In Week 9, we aim to <em>further</em> develop skills in visualizing and testing the associations between variables in psychological data</p>
+<p>In weeks 9-10, we do this in the context of working with the linear model</p>
+<p>We do this to learn how to answer research questions like:</p>
+<ol type="1">
+<li>What person attributes predict success in understanding?</li>
+<li>Can people accurately evaluate whether they correctly understand written health information?</li>
+</ol>
+<p>These kinds of research questions can often be answered through analyses using linear models We will use linear models to estimate the association between predictors and outcomes</p>
+<p>When we do these analyses, we will need to think about how we report the results:<br>
+we usually need to report information about the kind of model we specify; and we will need to report the nature of the association estimated in our model; we usually need to decide, is the association significant? does the association reflect a positive or negative relationship between outcome and predictor? is the association we see in our sample data relatively strong or weak?</p>
+<p>We will consolidate and extend learning on data visualization: Use histograms to examine the distributions of variables Develop our capacity to edit the histograms Use scatterplots to examine the relationships we may observe or predict Develop our capacity to edit the scatterplots</p>
+<p>The idea is that as we work, we will develop skills in producing appealing plots for professional audiences</p>
+<section id="task-9-set-up" class="level2">
+<h2 class="anchored" data-anchor-id="task-9-set-up">Task 9: Set-up</h2>
+<ol type="1">
+<li><p>Run this code to empty the R environment: <code>rm(list=ls())</code></p></li>
+<li><p>Run this code to load relevant libraries</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"patchwork"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this workbook, we use data from a second 2020 study of the response of adults from a UK national sample to written health information: <code>study-two-general-participants.csv</code></p>
+</section>
+<section id="task-10-load-data" class="level2">
+<h2 class="anchored" data-anchor-id="task-10-load-data">Task 10: Load data</h2>
+<ol start="3" type="1">
+<li>Read in the first data file we will be using:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>study.two.gen <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"study-two-general-participants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Inspect the data file. Use the summary() or head() functions to take a look. Even though you have done this before, you will want to do it again, here, and pay particular attention to what you see, for the numeric variables, in the information about the <code>minimum (Min.)</code> and <code>maximum (Max.)</code> values for the variables</li>
+</ol>
+</section>
+<section id="task-11-use-histograms-to-examine-the-distributions-of-variables" class="level2">
+<h2 class="anchored" data-anchor-id="task-11-use-histograms-to-examine-the-distributions-of-variables">Task 11: Use histograms to examine the distributions of variables</h2>
+<ol start="5" type="1">
+<li>Draw histograms to examine the distributions of variables. Use <code>ggplot()</code> with <code>geom_histogram()</code></li>
+</ol>
+<p>When we create a plot, we take things step-by-step. Here’s an example: run the line of code and see the result in the Plots window in R-Studio</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>Practice editing the appearance of the plot step-by-step. Choose whichever numeric variable from the study.two.gen dataset you please. Use the line-by-line format to break the plot code into steps. it will make it easier to read, and it will make it easier to add edits e.g.</li>
+</ol>
+<p>We are going to revise editing: – the appearance of the bars using <code>binwidth</code> – the colour of the background using <code>theme_bw()</code> – the appearance of the labels using <code>labs()</code></p>
+<p>Then we are going to try some new moves: – setting the x-axis limits to reflect the full range of possible scores on the x-axis variable – add annotation here, a vertical line indicating the sample average for a variable</p>
+<p>Q1. Edit the appearance of the bars by specifying a <code>binwidth</code> value</p>
+<p>Q2. Then add an edit to the appearance of the background using <code>theme_bw()</code></p>
+<p>Q3. Then add an edit to the appearance of the labels using <code>labs()</code></p>
+<p>Q4. Now add an edit by setting the x-axis limits using <code>x.lim()</code></p>
+<p>Q5. Then add an edit to draw a vertical line to show the mean value of the variable you are plotting</p>
+<p>Q6. Can you find information on how to define the limits on the x-axis and on the y-axis?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>##Hint You can see the information in this week’s how-to but try a search online for “ggplot reference xlim”</p>
+</div>
+</div>
+</div>
+<p>Q7. Can you find information on how to a reference line?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>##Hint You can see the information in this week’s how-to but try a search online for “ggplot reference vline”</p>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Does the <code>binwidth</code> value you are using for the histogram help you to see information about the distribution of values in the variable i.e.&nbsp;the general pattern (where is there a peak, what skew etc.)? You probably need to try different values: the final value will be subjective, depending on your impression.</li>
+</ol>
+</section>
+<section id="task-12-use-grids-of-histograms-to-examine-the-distributions-of-variables" class="level2">
+<h2 class="anchored" data-anchor-id="task-12-use-grids-of-histograms-to-examine-the-distributions-of-variables">Task 12: Use grids of histograms to examine the distributions of variables</h2>
+<ol start="8" type="1">
+<li>Create multiple plots showing the distributions of different variables and then plot them together in a grid to allow comparison between variables. We will need to do things in stages: first make plots, then put them together</li>
+</ol>
+<p>Q8. Can you:</p>
+<ol type="a">
+<li>draw a histogram plot to show the distributions of the variables in the ‘study.two.gen’ dataset ‘SHIPLEY’ ‘HLVA’ and ‘AGE’</li>
+<li>assign a name to each plot object you create using <code>&lt;-</code>. See example code in the how-to for how to do this. Give each plot a different name e.g.&nbsp;for the histogram for <code>SHIPLEY</code> scores, you could use the name <code>p.shipley</code> (p.&nbsp;for plot). When you create plots like this, they <em>will not</em> appear at first in the R-Studio Plots window, that happens when you do Q9.</li>
+</ol>
+<p>Q9. Can you now put the plots together in a grid for comparison? See example code in the how-to for how to do this: you need to add the plots together using the names you gave them</p>
+<p>– For this to work well, the plot window needs to be wide – Notice that presenting grids of plots is a powerful way to enable your audience to do efficient comparisons between variables or relationships. It is a common tactic in data visualization in business, research and journalism and is discussed in terms of visualizations with names like grids, lattices, trellises or small multiples.</p>
+<p>– Notice also that we are doing something different here: we create plot objects but do not show or print the plots out in a separate move, we put the plot objects together in a grid of plots and show <em>that</em></p>
+<p>– This is a very powerful aspect of coding plots in R because it means you can create complex plots with multiple elements to communicate the message you need to communicate to your audience. Here, we are using this capacity to allow the audience to view and inspect the distributions of multiple different variables at the same time</p>
+</section>
+<section id="task-13-now-draw-scatterplots-to-examine-associations-between-variables" class="level2">
+<h2 class="anchored" data-anchor-id="task-13-now-draw-scatterplots-to-examine-associations-between-variables">Task 13: Now draw scatterplots to examine associations between variables</h2>
+<ol start="9" type="1">
+<li><p>Create a scatterplot to examine the association between the outcome ‘mean.acc’ and each of three numeric potential predictor variables ‘SHIPLEY’ ‘HLVA’ and ‘AGE’. We are working with <code>geom_point()</code> and you need x and y aesthetic mappings. The outcome variable ‘mean.acc’ has to be mapped to the y-axis using “…y = …”</p></li>
+<li><p>Edit the appearance of <em>each and every</em> plot step-by-step. You may want to use the same plot appearance choices for all plots because a consistent appearance is generally neater and easier for your audience to process. You can find links to reference information on colour and shape options in the how-to guide:</p></li>
+</ol>
+<p>– use the information to make the plots pleasing in appearance to you. Do not be afraid to copy then paste code you re-use. But be careful that things like axis values are sensible for each variable</p>
+<p>Q10. First, edit the appearance of the points using <code>alpha</code>, <code>size</code>, <code>shape</code>, and <code>colour</code></p>
+<p>Q11. Then edit the colour of the background using <code>theme_bw()</code></p>
+<p>Q12. Then edit the appearance of the labels using <code>labs()</code></p>
+<p>Q13. Then set the x-axis and y-axis limits to the minimum-maximum ranges of the variables you are plotting. For these plots the y-axis limits will be the same because the outcome stays the same. But the x-axis limits will be different for each different predictor variable. The minimum value will always be 0.</p>
+<ol start="11" type="1">
+<li><p>Make a grid of scatterplots so that you can compare the association between predictor and outcome variables for the different predictor variables you have been examining. As you did before with the histograms, first create a set of scatterplot objects, then produce a grid of the plots, adding each plot by name.</p></li>
+<li><p>Now you have a grid of plots to look at: use it to compare the apparent association between the predictor and outcome variables under consideration here. I am going to ask some questions, next, that rely on your subjective impression given what you see in the plots. Do not worry that there is no “right” answer here. What we are doing is helping you to build experience so that you can develop an intuitive sense of patterns</p></li>
+</ol>
+<p>Q14. Which predictor variables do or do not show an identifiable association with the outcome?</p>
+<p>Q15. What do you see that leads you to this conclusion?</p>
+<p>Q16. Refer back to the histograms you produced earlier: is there anything salient about the distributions you plotted that may be relevant, here, to your understanding of why you may or may not be able to identify an association between the outcome and any one of the predictor variables?</p>
+</section>
+<section id="task-14-use-correlation-to-to-answer-the-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="task-14-use-correlation-to-to-answer-the-research-questions">Task 14: Use correlation to to answer the research questions</h2>
+<p>One of our research questions is: What person attributes predict success in understanding?</p>
+<ol start="13" type="1">
+<li>Examine the correlations between the outcome variable and potential predictor variables. We have been drawing scatterplots to examine the associations between the outcome ‘mean.acc’ and each of the predictor variables ‘SHIPLEY’, ‘HLVA’ and ‘AGE’. We will look at these variables ‘SHIPLEY’, ‘HLVA’ and ‘AGE’. We use <code>cor.test()</code>. You need to run three separate correlations: – between mean accuracy and SHIPLEY – between mean accuracy and HLVA and – between mean accuracy and AGE</li>
+</ol>
+<p>Q17. What is r, the coefficient for the correlation between ‘mean.acc’ and ‘SHIPLEY’?</p>
+<p>Q18. Is the correlation between ‘mean.acc’ and ‘HLVA’ significant?</p>
+<p>Q19. What are the values for t and p for the significance test for the correlation between ‘mean.acc’ and ‘AGE’?</p>
+<p>Q20. For which pair of outcome-predictor variables is the correlation the largest?</p>
+<p>Q21. What is the sign or direction of each of the correlations?</p>
+<p>Q22. Some correlations will be larger than others: using what you see in the scatterplots, and what you saw in the histograms, can you offer an explanation in terms of the distribution of values, or the apparent pattern of scatterplot points for why some correlation coefficients are larger than others? Here, we are again seeking to train your intuitions</p>
+</section>
+<section id="task-15-use-a-linear-model-to-to-answer-the-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="task-15-use-a-linear-model-to-to-answer-the-research-questions">Task 15: Use a linear model to to answer the research questions</h2>
+<p>One of our research questions is: What person attributes predict success in understanding?</p>
+<ol start="14" type="1">
+<li>Examine the relation between outcome mean accuracy (mean.acc) and each of the predictors: ‘SHIPLEY’, ‘HLVA’ and ‘AGE’. Use <code>lm()</code>. Run three separate <code>lm()</code> analyses, all with ‘mean.acc’ as the outcome but each with one predictor variable. See the how-to for example code that does what you need to do</li>
+</ol>
+<p>Notice that we do the linear model in the steps: – <code>model &lt;- lm(...)</code> fit the model using <code>lm()</code>, give the model a name here, we call it “model” – <code>...lm(mean.acc ~ SHIPLEY...)</code> tell R you want a model of the outcome ‘mean.acc’ predicted (<code>~</code>) by the predictor ‘SHIPLEY’ – <code>...data = study.two.gen)</code> tell R that the variables you name in the formula live in the ‘study.two.gen’ dataset – <code>summary(model)</code> ask R for a summary of the model you called “model”</p>
+<p>Notice that R has a general formula syntax: outcome ~ predictor <em>or</em> y ~ x and uses the same format across a number of different functions each time, the left of the tilde symbol ~ is some output or outcome and the right of the tilde ~ is some input or predictor or set of predictors</p>
+<p>If you look at the model summary you can answer the following questions</p>
+<p>Q23. What is the estimate for the coefficient of the effect of the predictor ‘HLVA’ on ‘mean.acc’?</p>
+<p>Q24. Is the effect significant?</p>
+<p>Q25. What are the values for t and p for the significance test for the coefficient?</p>
+<p>Q26. How would you describe in words the shape or direction of the association between ‘HLVA’ and ‘mean.acc’?</p>
+<p>Q27. How how would you describe the relations apparent between the predictor and outcome in all three models?</p>
+</section>
+<section id="task-16-use-a-linear-model-to-generate-predictions" class="level2">
+<h2 class="anchored" data-anchor-id="task-16-use-a-linear-model-to-generate-predictions">Task 16: Use a linear model to generate predictions</h2>
+<ol start="15" type="1">
+<li>We can use the model we have just fitted to plot the model predictions. We are going to draw a scatterplot and add a line showing the predictions, given the model intercept and effect coefficient estimates. First fit a model and get a summary: model the relationship betweeen ‘mean.acc’ and ‘HLVA’</li>
+</ol>
+<p>Q28. What is the coefficient estimate for the intercept?</p>
+<p>Q29. What is the coefficient estimate for the slope of HLVA (see earlier)?</p>
+<p>Second, use the <code>geom_point()</code> to draw a scatterplot and <code>geom_abline()</code> function to draw the prediction line representing the association between this outcome and predictor</p>
+<p>See reference information <a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">here</a></p>
+</section>
+<section id="task-17-optional-extension-use-community-information-to-figure-things-out" class="level2">
+<h2 class="anchored" data-anchor-id="task-17-optional-extension-use-community-information-to-figure-things-out">Task 17: Optional extension: Use community information to figure things out</h2>
+<ol start="16" type="1">
+<li>Experienced users of R know that they can take advantage of the vast community resources that people post online, for free, to help others: use the ggplot reference line information you found in answer to Q.7 to work out how to draw a horizontal line in your plot hint: Task 16 In the how-to guide, you can see an example of how to draw a vertical line using geom_vline() where you set the position of the line by specifying an x-axis value. Here, you will need to look at the ggplot online information on drawing reference lines to find a code example for drawing a horizontal line. You will need to specify, now, a y-axis position and that position will need to make sense, given how the heights of the bars vary, for the variable you are using, in the plot you are developing e.g.&nbsp;something like. You will need to add a line of code, and “make sense” means: choose a number for the y-axis location of the line thatis larger than the minimum and smaller than the maximum of the heights of the bars in the plot</li>
+</ol>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -767,12 +1630,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../PSYC401/Week8.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week8</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8. Independent study week; data visualisation and making the most of R knowledge</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../PSYC402/index.html" class="pagination-link">
-        <span class="nav-page-text">PSYC402</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../PSYC401/Week10.html" class="pagination-link">
+        <span class="nav-page-text">10. Developing the linear model</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -786,7 +1649,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <a class="nav-link" href="../Staff/index.html">For Staff</a>
   </li>  
 </ul>
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC401/Week9.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

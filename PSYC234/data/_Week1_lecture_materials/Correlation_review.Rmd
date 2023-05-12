@@ -1,0 +1,161 @@
+---
+title: "Correlation_Review"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Introduction text within the R Markdown document
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+### Read in the data
+
+This is a reduced set of values retrieved from Margriet's first lecture in January 2021, where she demonstrated simple correlation.
+
+```{r cars}
+d <- read_csv("Covariance_Data.csv") # calling my dataframe d to save typing!
+```
+
+### Correlation review 
+
+Correlations are associations between a pair of variables. Two numerical variables are needed to compute a correlation.
+
+```{r pressure, echo=FALSE}
+summary(d)
+```
+
+All variables are showing as numerical at this point  - we know this because the summary prints out min and max values.  This is of course wrong for the `Participant_ID` variable - but we aren't going to work with that variable in the following.
+
+#### Formulae for longhand calculations
+
+Margriet walked you through a calculation of variance and covariance to give you the values needed to compute a Pearson's *r* by hand:
+Here are the formulae again:
+
+Variance:
+
+$$
+\frac{\Sigma(X-\bar{X})^2}{N-1}
+$$
+and of course, the standard deviation of a variable is the square root of variance:
+
+$$
+\sqrt\frac{\Sigma(X-\bar{X})^2}{N-1}
+$$
+
+Covariance:
+
+$$
+\frac{\Sigma(X-\bar{X})(Y-\bar{Y})}{N-1}
+$$
+And to compute a Pearson's r (a bivariate correlation of two numerical variables), we need the following formula:
+
+Pearson's r:
+
+$$
+r = \frac{covariance}{(sd_x)(sd_y)}
+$$
+#### Longhand calculations
+
+We need two variables to complete an example:
+
+Lets choose `Performance` and `IQ`.
+
+We can use commands in the base R package to generate the values we need to compute the correlation long hand:
+
+```{r}
+# mean values
+Perf_Av <- mean(d$Performance)
+IQ_Av <- mean(d$IQ)
+
+# variance values
+Perf_var <- var(d$Performance)
+IQ_var <- var(d$IQ)
+
+# standard deviation values
+Perf_sd <- sd(d$Performance)
+IQ_sd <- sd(d$IQ)
+```
+
+Lets hard code our number of paired observations also:
+
+```{r}
+N <- nrow(d)
+```
+
+All we need now is the covariance values.  Let's look at the formula once more:
+
+$$
+\frac{\Sigma(X-\bar{X})(Y-\bar{Y})}{N-1}
+$$
+Let *X* represent the `Performance` variable and *Y* represent the `IQ` variable.  The steps to calculate the top line of the fraction will then be:
+
+ 1. subtract the mean of the Performance variable from every observation of Performance
+ 2. subtract the mean of the IQ variable from every observation of IQ
+ 3. multiply those paired values together
+ 4. add those product values all together
+ 
+We can perform each of those steps and add new columns to our `d` dataset as we go, so you can see what is happening along the way:
+ 
+```{r}
+# new columns containing deviations of the observations from the variable mean
+d$P_dev <- d$Performance-Perf_Av # subtract the mean of the performance variable from every observation of performance
+d$IQ_dev <- d$IQ-IQ_Av # subtract the mean of the IQ variable from every observation of IQ
+
+# new column that multiplies P_dev and IQ_dev
+d$P_IQ <- d$P_dev*d$IQ_dev # multiply those paired values together
+
+P_IQ_sum <- sum(d$P_IQ) # add those product values all together
+```
+
+Now we have all the values we need to be able to compute (a) the covariance of the `performance` and `IQ` variables, and then Pearson's *r* for the strength and direction of the association between the two variables.
+
+To compute the covariance, we simply divide our `P_IQ_sum` variable by `N-1`.  Note how I wrap the entire command in brackets which is a quicker way to ask R to print the output
+
+```{r}
+# compute the covariance
+(PIQ_cov <- P_IQ_sum/(N-1))
+```
+So the covariance is showing as -2.41 to 2.d.p.  Now we can compute Pearson's *r* using the formula (also shown above)
+Pearson's r:
+
+$$
+r = \frac{covariance}{(sd_x)(sd_y)}
+$$
+so we divide the `PIQ_cov` value by the product of `Perf_sd` and `IQ_sd`
+```{r}
+(PIQ_r <- PIQ_cov/(Perf_sd*IQ_sd))
+```
+R base packages has functions to do this with one line:
+
+calculate the covariance of `Performance` and `IQ` using the `cov()` function from base R
+
+```{r}
+(PIQ_cov_base <- cov(d$Performance, d$IQ)) # as you can see it is the same as our longhand value PIQ_cov
+```
+
+and the correlation value using the `cor()` function from base R
+
+```{r}
+(cor(d$Performance, d$IQ))
+```
+Lets plot the values of `Performance` and `IQ` with that line that shows the correlation value
+
+```{r}
+plot(d$IQ, d$Performance) # call the plot using base package function of plot()
+abline(lm(d$Performance ~ d$IQ), col = "blue") # add the line using the `lm` function
+```
+#### Interpretation of the relationship
+
+Our research question here concerned the relationship between job performance and measures of IQ.  Our analysis does not show any relationship to speak of between the two variables.  Pearson's *r* for the association is -0.02,  a value extremely close to zero. If we were to interpret that value, we could say that there is an indication of a negative relationship - higher IQ values are associated with lower job performance, but the strength of the value is so low to zero, it is practically useless to say this.
+
+Remember that correlation is described by two dimensions:  Strength and Direction.  Direction is indicated by either a positive or negative sign to the value.  Posiitive relationships indicate and increase in X values in tandem with an increase in Y values; a negative relationship indicates an increase in X values in tandem with a decrease in Y values (or vice versa).  Strength of relationship is indicated by the value.  Pearson's *r* ranges from -1 to +1 with 0 indicating no relationship.  Values that are closer to the extreme values of -1 and +1 indicate stronger relationships, while values that move closer to 0 indicate a weakening of the relationship.
+
+Jacob Cohen described and *r* of +/- 0.1 - 0.3 as small; +/- 0.31 - 0.5 as medium; +/- 0.51 - 0.7 as large and anything above that as very large.  As Margriet also noted, these are benchmarks,  sometimes referred to as "T-shirt" effect sizes, however they can be useful when you are beginning to think about relationships and effect sizes for practical uses.
+
+

@@ -1,0 +1,364 @@
+---
+title: "Simple_Regression_Review"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(effects)
+library(broom)
+```
+
+Regression models are wonderfully flexible.  There are several variants of the basic model which are also the beginning of many other types of models which you may learn about if you go beyond an undergraduate degree! While we cover the basics in the next ten weeks, this is only the beginning.
+
+
+### Read in the data
+
+This is a reduced set of values retrieved from Margriet's first lecture in January 2021.  We used these to review correlation.  We will use them again to review simple regression
+
+```{r cars}
+d <- read_csv("~/Documents/Lecture_1/Covariance_Data.csv") # calling my dataframe d to save typing!
+```
+
+### Simple regression review 
+
+Regression is an extension of a correlation analysis.  Instead of having two numerical variables for which we describe an association or a relationship, we denote one of the variables a predictor and the other variable the outcome. When both continuous variables are standardised (explained later), the regression coefficient for the slope ($b$) is equivalent to Pearson's *r*.
+
+Additionally, the predictor variable need not be a continuous variable.  If your only predictor in a simple regression is a binary variable - one with two possible discrete responses - then a simple regression is equivalent to an independent t-test.  
+
+A regression analysis will find the best possible set of values that *predict* values of the outcome variable given the observed values.
+
+#### Model for simple regression
+
+There is an equation for regression:
+
+$$
+Y_i = a + b*X_i+e_i
+$$
+Where:
+
+ - $Y_i$ is the outcome variable - the values to be predicted.  Sometimes called the *criterion* variable.
+ - $X_i$ is the predictor variable.  
+   - In ANOVA terms $Y_i$ is the dependent variable and $X_i$ is the independent variable.  
+ - $a$ is the intercept term;
+   - In ANOVA terms $a$ is the grand mean.
+ - $b$ is the slope of change in $Y$ - how $Y$ changes with unit increases in $X$:
+   - when $b$ = 1, a 1 unit increase in $X$ predicts a 1 unit increase in $Y$
+   - when $b$ < 1, the rate of change between $Y$ and $X$ is slow and the slope is shallower
+   - when $b$ > 1, the rate of change between $Y$ and $X$ is faster and the slope is steeper
+   - the sign of $b$ tells the direction of the effect - positive or negative
+ - $e_i$ is the error term,  the distance of each data point from the line of best fit or the difference of the observed value of $Y$ from the *fitted* / *predicted* value of $Y$
+ 
+Up until now, your statistics learning has been involved in null hypothesis significance testing.  The null hypothesis for a regression analysis is that the value of the slope is zero or in other words,  the regression coefficient for $b$ is 0.
+
+In simple regression, where only one predictor is used,  we can estimate the slope ($\hat{b}$) with a formula:
+$$
+\hat{b} = \frac{\Sigma(X_i*Y_i)- (N*\bar{X}*\bar{Y})}{\Sigma(X^2- (N*{X^2})}
+$$
+and we can estimate the value of the intercept ($\hat{a}$):
+
+$$
+\hat{a} = \bar{Y} - \hat{b}*\bar{X}
+$$
+and we can estimate the predicted values of each observation of $Y_i$:
+
+$$
+\hat{Y_i} = \hat{a}+\hat{b}*X_i
+$$
+and then we can estimate the error term ($\hat{e_i}$):
+$$
+\hat{e_i} = Y_i - \hat{Y_i}
+$$
+#### Longhand calculations
+
+We need two variables to complete an example:
+
+Lets choose `Performance` and `IQ`.  Just as we did in the correlation review.  It is more intuitive to have `IQ` predict `Performance` so let `IQ` be $X$ and `Performance` be $Y$.
+
+##### Slope term
+
+Lets start with estimating the slope term ($\hat{b}$):
+$$
+\hat{b} = \frac{\Sigma(X_i*Y_i)- (N*\bar{X}*\bar{Y})}{\Sigma{X^2}- (N*\bar{X^2})}
+$$
+We need several values: observations on $X$ and $Y$, the number of paired observations ($N$), the mean values of $X$ and $Y$ ($\bar{X}$, $\bar{Y}$) and squared values of $X$ ($X^2$) and squared value of mean of $X$ ($\bar{X^2}$). We can use commands in the base R package to generate the values we need to compute the slope term long hand:
+
+```{r}
+# number of paired observations in the dataset
+N <- nrow(d)
+
+# mean values
+Perf_Av <- mean(d$Performance)
+IQ_Av <- mean(d$IQ)
+
+# squared values of X
+d$IQ_sq <- d$IQ*d$IQ # create a new column for each observation
+
+# squared value of mean of X
+IQ_Av_sq <- IQ_Av*IQ_Av
+```
+
+ The steps to calculate the top line of the formula will then be:
+
+ 1. multiply `IQ` and `Performance` values together
+ 2. add all the values from step 1 together
+ 3. multiply number of observations by the mean of `IQ` and the mean of `Performance`
+ 4. subtract step 3 from step 2
+
+ 
+We can perform each of those steps and add new columns where needed to our `d` dataset, so you can see what is happening along the way:
+
+```{r}
+d$IQP <- d$IQ*d$Performance # multiply `IQ` and `Performance` values together
+
+IQP_sum <- sum(d$IQP) # add all the values from step 1 together
+
+Av_IQP_N <- N * IQ_Av * Perf_Av # multiply number of observations by the mean of `IQ` and the mean of `Performance`
+
+(Num <- IQP_sum - Av_IQP_N) # subtract step 3 from step 2 and print out result: this is the numerator of the fraction
+```
+So the value for the top line of the fraction - the numerator is -28.92308
+ 
+Now for the bottom line of the fraction:
+
+The steps to calculate the bottom line of the formula will then be:
+
+ 1. square each `IQ` value (calculated earlier under `IQ_sq`)
+ 2. sum the squared `IQ` values
+ 3. multiply number of observations by the squared mean of `IQ`
+ 4. subtract step 3 from step 2
+ 
+```{r}
+IQ_sqsum <- sum(d$IQ_sq) # sum the squared `IQ` values
+
+IQ_Av_sqN <- IQ_Av_sq * N # multiply number of observations by the squared mean of `IQ`
+
+den <- IQ_sqsum - IQ_Av_sqN
+```
+
+Now we have all the values we need to be able to compute the slope term. Simply divide `Num` by `den`
+
+```{r}
+(slope <- Num/den) # remember that wrapping a command in brackets is automatic print out of value
+```
+
+##### Estimating the intercept
+
+estimate the value of the intercept ($\hat{a}$):
+
+
+$$
+\hat{a} = \bar{Y} - \hat{b}*\bar{X}
+$$
+We have the terms we need:  mean of `Performance` $\bar{Y}$, the slope term $\hat{b}$ and the mean of `IQ` $\bar{X}$
+
+```{r}
+(intercept <- Perf_Av - (slope * IQ_Av))
+```
+The intercept term = 76.19 (2 d.p).
+
+##### Estimating predicted Job Performance values
+
+estimate the predicted values of each observation of $Y_i$
+
+$$
+\hat{Y_i} = \hat{a}+\hat{b}*X_i
+$$
+We need to do this for every observation of $Y$.  We have the values we need - we have the intercept $\hat{a}$, the slope term $\hat{b}$ and each observed value of `IQ` $X_i$. We will call the variable for predicted vales for $Y$, $Y_pred$ in a new column of the `d` dataset.
+
+```{r}
+d$Y_Pred <- intercept + (slope*d$IQ)
+```
+
+##### Estimating the error term
+
+estimating the error term ($\hat{e_i}$)
+$$
+\hat{e_i} = Y_i - \hat{Y_i}
+$$
+Again, we have the terms we need:  the observed values of `Performance` $Y_i$ and the predicted values of `Performance` \hat{Y_i} in the variable `Y_Pred`.  We will call the variable for the error term `error` in a new column in of the `d` dataset
+
+```{r}
+d$error <- d$Performance - d$Y_Pred
+```
+
+We have calculated each term of the regression equation by hand.  The `lm()` function does this for us in one very simple formula.
+
+```{r}
+(m1 <- lm(Performance ~ IQ, d))
+```
+The model printout is fairly economical.  We get the model repeated, and the regression coefficients of the intercept and the `IQ` predictor.  The intercept shows a different value from the longhand intercept term, however the IQ slope value is identical.
+
+If we plug the values from the lm() model into the regression equation we get:
+
+$$
+Y_i = 79.03 - 0.01 * IQ + e_i
+$$
+We are subtracting the predictor value because the regression coefficient has a minus sign, and a pair of signs that is positive and negative becomes a negative operator.
+
+##### Checking whether the model is signficant by hand
+
+Strangely maybe, regression models are testing for significance using the F distribution and the F-test, for which we need sums of squares and degrees of freedom.  You will be familiar with these from your ANOVA practice.
+
+The sums of squares needed to calculate the F-test for simple regression are:
+
+$$
+SS_{total} = \Sigma{Y_i^2}
+$$
+which is `d$Performance` values squared and summed: 
+```{r}
+d$P_sq <- d$Performance*d$Performance #`Performance` values squared
+SS_total <- sum(d$P_sq) # sum of squared performance values
+```
+
+and
+$$
+SS_{error} = \Sigma{e_i^2}
+$$
+which is `d$error` values squared and summed
+```{r}
+d$error_sq <- d$error * d$error #`d$error` values squared
+SS_error <- sum(d$error_sq) # sum of squared error values
+```
+
+and 
+$$
+SS_{a} = N * {\bar{Y}}^2
+$$
+which is number of paired observations multiplied by squared mean value of `Performance`
+```{r}
+SS_a <- N * (Perf_Av*Perf_Av)
+```
+
+and
+$$
+SS_{b} = SS_{total} - SS_a - SS_{error}
+$$
+which is
+```{r}
+SS_b <- SS_total - SS_a - SS_error
+```
+
+
+Corresponding degrees of freedom are:
+
+  - one constant value of $a$ is calculated = $df_a$ = 1
+  - one value of $b$ is determined = $df_b$ = 1
+  - $df_{error}$ is always N - (other dfs)
+
+lets hard code these now:
+  
+```{r}
+dfa <- 1
+dfb <- 1
+dferror <- N - (dfa +dfb)
+```
+
+  
+Just as in ANOVA we can use the sums of squares and corresponding degrees of freedom to calculate mean square terms, $MS_a$, $MS_b$ and $MS_{error}$ and ultimately a model F value:
+
+```{r}
+(MS_a <- SS_a/dfa)
+(MS_b <- SS_b/dfb)
+(MS_e <- SS_error/dferror)
+```
+Now we have the Mean square terms we can calculate the Fa and Fb values.  We can calculate an F value for both the intercept and the slope.  We are not generally interested in the significance of the F value for the intercept term (Fa), only the slope term (Fb).
+
+```{r}
+(Fa <- MS_a/MS_e)
+(Fb <- MS_b/MS_e)
+```
+So, remember the null hypothesis for the regression model is whether the slope term (b) is different from zero.  We have calculated the observed Fb term and now we can compare this to a critical F with 1 degree of freedom in the numerator (MSa) and 11 degrees of freedom in the denominator (MSe).  And, just as in ANOVA, we reject the null hypothesis if $F_{observed}$ > $F_{critical}$.
+
+
+#### Interpretation of the relationship
+
+$F_{critical}$ for df = (1, 11) at the .05 level = 4.84.  This means that $F_{observed}$ is not larger than $F_{critical}$ so we fail to reject the null hypothesis.  The slope term is not different from zero.
+
+When the $F_b$ is not significant then $b$ = 0 may be true.  The data do not demonstrate any tendency for larger values of $X$ to be associated with smaller or larger values of $Y$.  For this sample, IQ and job performance  appear to be causally unrelated.  This is a very small sample, however, maybe there is a small effect but this sample is too small to detect it.
+
+Remember that correlation is described by two dimensions:  Strength and Direction.  Direction is indicated by either a positive or negative sign to the value.  Posiitive relationships indicate and increase in X values in tandem with an increase in Y values; a negative relationship indicates an increase in X values in tandem with a decrease in Y values (or vice versa).  Strength of relationship is indicated by the value.  Pearson's *r* ranges from -1 to +1 with 0 indicating no relationship.  Values that are closer to the extreme values of -1 and +1 indicate stronger relationships, while values that move closer to 0 indicate a weakening of the relationship.
+
+Jacob Cohen described and *r* of +/- 0.1 - 0.3 as small; +/- 0.31 - 0.5 as medium; +/- 0.51 - 0.7 as large and anything above that as very large.  As Margriet also noted, these are benchmarks,  sometimes referred to as "T-shirt" effect sizes, however they can be useful when you are beginning to think about relationships and effect sizes for practical uses.
+
+##### Using the power of R
+
+Earlier, we used the `lm()` function to perform this calculation for us:
+
+```{r}
+(m1 <- lm(Performance ~ IQ, d)) # I call this m1 because it has one predictor
+```
+If we call the `summary()` of m1, we should get some information that is of use as to the significance of the model:
+
+```{r}
+summary(m1)
+```
+You can see from this print out that the F-statistic is listed as 0.006384 - so there are some differences between hand and automatic calculations, probably due to rounding throughout the long hand calculations - however they are both very close to zero and the conclusion remains the same.
+
+Plotting the effect (or lack of it) is very simple if we are not too worried about being pretty.
+
+```{r}
+plot(predictorEffect("IQ", m1))
+```
+
+Plotting it in this way, also allows us, with a simple additional argument to the plot call, to see the partial residuals - thereby checking that we have residual values that are normally distributed - I think the pink line probably tells us that we do not!  We should be looking for an alternative way to analyse these two variables....or some transformations!
+
+```{r}
+plot(predictorEffect("IQ", m1, partial.residuals = TRUE))
+```
+
+##### Checking that assumptions of linear regression are not violated
+
+We can collect some diagnostic measures to help with assumption checking using the `augment()` function from the `broom` package:
+
+```{r}
+(m1_metrics <- augment(m1))
+```
+
+Columns 1 and 2 are our two variables. `fitted` and `residuals` are the `Y_pred` and the `error` values we calculated long hand above.  The final four columns we use below with some explanation.  Plus, with this information, we can plot the residuals a little more poshly:
+
+```{r}
+ggplot(m1_metrics, aes(IQ, Performance)) +
+  geom_point() +
+  stat_smooth(method = lm, se = FALSE) +
+  geom_segment(aes(xend = IQ, yend = .fitted), color = "red", size = 0.3) +
+        theme_bw()
+```
+
+Every regression model is built upon the following assumptions:
+
+  1. The relationship between $X$ and $Y$ is assumed to be linear (additive)
+  2. The residual errors are normally distributed
+  3. The residuals have constant variance (homoscedasticity)
+  4. The residuals are not correlated (assumption of independence)
+  
+```{r}
+par(mfrow = c(2, 2)) # display plots in a 2 x 2 panel
+plot(m1) # plot diagnostic plots for m1
+```
+**Residuals vs Fitted**: "fitted" here means the predicted values. We want the pink line to align pretty closely with the horizontal dashed line.  The graph here isn't great and may indicate non-linearity between the two variables.
+
+We could try a log(x) transformation on the predictor coerce the residuals to show greater linearity
+
+**Normal Q-Q**: If the residual points (open circles) follow the dashed line, you can assume the residuals are normally distributed
+
+**Scale-Location**: This is checking for constant variance in the residuals - not much here.  A good indication would be a horizontal pink line with equally spread points.  Our graph is not good.
+
+We could also use a log(y) transformation on the outcome variable to help here.
+
+**Residuals vs Leverage** - are there any points that are having a large influence on the regression results.  They will be numbered and you can then inspect them in your data file. Observations that show standardised residuals (see the table above) above 3 would be problematic.  As would observations of a hat value above $2(p+1)/n$ where $p$ = is the number of predictors and $n$ = is the number of observations
+
+```{r}
+p <- 1
+(m1_hat <- (2*(p+1))/N)  # model hat value
+```
+By this reckoning, observation number 4 and 13 are slightly above the hat value for the model.  These two values may have a high leverage on the regression results.
+
+Checking for observations that are influential follows a similar pattern:  observations that exceed the *Cook's distance* value = $4/(n-p-1)$ are likely to have high influence and the regression results may change if you exclude them.  In the presence of such observations that exceed Cook's distance, unless you know the observation are errors, you probably need to estimate the model without the observations and report both sets of results.
+
+```{r}
+(m1_Cooks <- 4/(N-p-1)) # model Cook's distance value
+```
+Again, observations 4 and 13 are looking influential.  Time to inspect, possibly exclude and rerun!

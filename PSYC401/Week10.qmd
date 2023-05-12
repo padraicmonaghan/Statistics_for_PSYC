@@ -1,0 +1,928 @@
+---
+title: 10. Developing the linear model
+subtitle: Written by Rob Davies
+order: 11
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# Preparation
+
+## Lectures
+
+- [Part 1 - aims, assumptions, coding linear models](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2026078)
+- [Part 2 - coding, thinking about, and reporting linear models with multiple predictors](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2026079)
+- [Part 3 - critically evaluating the results of analyses involving linear models](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2026084)
+- [Part 4 - linear model is very flexible, powerful and general](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2026081)
+
+- All slides are [here (html)](https://modules.lancaster.ac.uk/mod/resource/view.php?id=2026086), and [here (.docx)](data/PSYC401_wk10/401-linear-model-develop-printable-edit.docx)
+
+- Each part is about 15 minutes in length. I have labelled lectures so you know what is in each.
+
+- Work through the materials for the Practical below
+
+- The motivation for providing you with a how-to and a workbook section is that you can learn and progress to do the practical work with more support (in the how-to) and then room to try things (in the workbook).
+
+- Attend the practical.
+
+- Test yourself using the [quiz (not assessed)](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2029455).
+
+- Optionally, if you can [give us your (anonymised) feedback](https://modules.lancaster.ac.uk/mod/feedback/view.php?id=2026089) on how the course is going from your perspective, that would be very welcome.
+
+# Part One: How To
+
+ In Week 10, we aim to *further* develop skills in working with the linear model, and in visualizing and testing the associations between variables in psychological data
+
+We do this to learn how to answer research questions like:
+-- What person attributes predict success in understanding?
+-- Can people accurately evaluate whether they correctly understand written health information?
+
+ These kinds of research questions can often be answered through analyses using linear models. We will use linear models to estimate the association between predictors and outcomes
+
+ When we do these analyses, we will need to think about how we report the results:  we usually need to report information about the kind of model we specify;and we will need to report the nature of the associations estimated in our model; we usually need to decide, is the association between the outcome and any one predictor significant? Does that association reflect a positive or negative relationship between the outcome and that predictor?are the associations we see in sample data relatively strong or weak?
+
+
+ We will consolidate and extend learning on data visualization:
+-- Use scatterplots to examine the relationships we may observe or predict
+-- Generate predictions given model estimates of slope coefficients
+
+## Task 1: Set-up 
+
+
+1. Run this code to empty the R environment: `rm(list=ls())`
+
+
+2. Run this code to load relevant libraries
+
+```{r}
+library("ggeffects")
+library("patchwork")
+library("psych")
+library("tidyverse")
+```
+
+
+In this how-to guide, we use a collection of data, drawing together data from a series of studies, completed by BSc and MSc students, as replications of the clearly-understood health comprehension project investigations: `2022-12-08_all-studies-subject-scores.csv`
+
+## Task 2: Load data 
+
+3. Read in the data file we will be using: 
+```{r}
+all.studies.subjects <- read_csv("2022-12-08_all-studies-subject-scores.csv", 
+                                 col_types = cols(
+                                   ResponseId = col_factor(),
+                                   study = col_factor(),
+                                   EDUCATION = col_factor(),
+                                   GENDER = col_factor(),
+                                   ETHNICITY = col_factor(),
+                                   NATIVE.LANGUAGE = col_factor()
+                                 )
+                                )
+```
+
+ Notice what we are doing here:
+-- `all.studies.subjects <- read_csv("2022-12-08_all-studies-subject-scores.csv" ..)` reads in the dataset we name, the .csv
+--  col_types = cols(
+   ResponseId = col_factor(),
+   ... tells R how to handle some of the variables in the dataset: the variables that are listed
+   
+-- notice: not all of the variables are categorical or nominal variables that we want R to recognize as factors.
+
+-- We embed one function `cols()` *inside* another function `read_csv()` and that means at the end we need to *close* the brackets
+
+ See [here for further information](https://robayedavies.github.io/PSYC401-book/visualization.htmlsec-ricketts-process-data)
+
+4. Inspect the data file. In previous how-to guides I have advised you to use the `summary()` or `head()` functions to look at the data. Here, we use the `describe()` function from the 'psych' library 
+
+```{r}
+describe(all.studies.subjects)
+```
+
+In psychological research reports, we sometimes see table summaries of the  predictor or outcome variables in the dataset being analysed. The `describe()` function in 'psych' is a convenient way to get the descriptive statistics that psychologists commonly report: the mean and standard deviation (SD),  minimum (min) and maximum (max)
+
+
+5. Get descriptive statistics for only the variables you want and get only the descriptive statistics you need. We are going to do this in two steps: 
+-- we select the variables we care about
+-- we get just the descriptive statistics we want for those variables
+
+6. First, I am going to do the steps using %>% pipes: 
+not everyone likes coding this way so later I'll do it in the old style
+
+```{r}
+all.studies.subjects %>%
+  select(mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3) %>%
+  describe(skew = FALSE)
+```
+
+ These are the steps:
+-- `all.studies.subjects %>%` - you tell R to use the 'all.studies.subjects' dataset, 
+then use `%>%` to ask R to take those data to the next step (ie to `%>%` pipe it)
+-- `select(mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3) %>%` - you tell R to select just those variables in 'all.studies.subjects' you name and pipe %>% them to the next step
+-- `describe(...)` - you tell R to give you descriptive statistics for the variables you have selected
+--`describe(skew = FALSE)` - critically, you add the argument "skew = FALSE" to turn off the option in `describe()` to report skew, kurtosis because we do not typically see these statistics reported in psychology
+
+
+Not everyone likes coding this way so now I'll do the same thing in the old style
+
+```{r}
+all.studies.subjects.select <- select(all.studies.subjects, 
+                           mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3)
+describe(all.studies.subjects.select, skew = FALSE)
+```
+
+Notice: we can do exactly the same thing in two different but related ways. Use the way that (a) works and (b) you prefer
+
+Which should you prefer? You may reflect on how easy the code is to write, read, understand and use
+
+Here is an [explanation](https://r4ds.had.co.nz/pipes.html) for how to use pipes %>% when you code and why it may be helpful to do so:
+ 
+Note we are not going to require the use of pipes in PSYC401, but they can help to make your code more readable and editable when it gets complez.
+
+Notice: we modify here how the function `describe()` works by adding an argument `describe(skew = FALSE)`
+
+We have been doing this kind of move, already, by adding arguments to e.g. specify point colour in `ggplot()` code
+
+As your skills advance, so your preferences on how you want R to work for you will become more specific. Thus, for example, you can modify the outputs from functions so that you get exactly what you want
+
+The information on the options available to you for any argument can be found in different kinds of places
+
+
+You can get a guide to the 'psych' library [here](http://personality-project.org/r/psych/vignettes/intro.pdf)
+Every "official" R library has a technical manual on the central R resource CRAN, 
+ and the manual for 'psych' can be found [here](https://cran.r-project.org/web/packages/psych/psych.pdf) where you can see information on the functions the library provides, and how you can use each function
+
+This is the information you see if you ask for help in R for a function e.g.
+`?describe`
+or
+`help(describe)`
+
+'psych' is written by William Revelle who provides a lot of useful resources [here](http://personality-project.org/r/psych/)
+
+## Task 3: Use a linear model to to answer the research questionsone predictor 
+
+We start by revising how to use `lm()` with one predictor --
+
+
+One of our research questions is: What person attributes predict success in understanding?
+
+6. Examine the relation between outcome mean accuracy (mean.acc) and health literacy (HLVA). We use lm()
+
+```{r}
+
+model <- lm(mean.acc ~ HLVA, data = all.studies.subjects)
+summary(model)
+```
+  
+If you look at the model summary you can answer the following questions  
+
+Q1. What is the estimate for the coefficient of the effect of the predictor, HLVA?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+0.041188 
+:::
+
+Q2. Is the effect significant?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+It is significant, p < .05
+:::
+
+Q3. What are the values for t and p for the significance test for the coefficient?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+*t* = 12.94, *p* = <2e-16
+:::
+
+Q4. What do you conclude is the answer to the research question, given the 
+ linear model results?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+The model slope estimate suggests that as HLVA scores increase so also do mean.acc scores
+:::
+
+Q5. What is the F-statistic for the regression? Report F, DF and the p-value.
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+F-statistic: 167.5 on 1 and 559 DF,  p-value: < 2.2e-16
+:::
+
+Q6. Is the regression significant?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+Yes: the regression is significant.
+:::
+Q7. What is the Adjusted R-squared?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+Adjusted R-squared:  0.2292
+:::
+
+Q8. Explain in words what this R-squared value indicates?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+The R-squared suggests that 23% of outcome variance can be explained  by the model
+:::
+
+revision: use a linear model to generate predictions --
+
+
+7. We can use the model we have just fitted to plot the model predictions. We are going to draw a scatterplot and add a line showing the predictions, given the model intercept and effect coefficient estimates
+
+Q9. What is the coefficient estimate for the intercept?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+0.414250
+:::
+
+Q10. What is the coefficient estimate for the slope of HLVA?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+0.041188
+:::
+
+Use the `geom_abline()` function to draw the prediction line:
+
+```{r}
+ggplot(data = all.studies.subjects, aes(x = HLVA, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2,)   +
+  geom_abline(intercept = 0.414250, slope = 0.041188, colour = "red", size = 1.5) +
+  theme_bw() +
+  labs(x = "Health literacy (HLVA)", y = "mean accuracy") +
+  xlim(0, 16) + ylim(0, 1)
+```
+  
+You can see that all we do is: add the `geom_abline(...)` function and in that, add information about the intercept and the slope. See reference information [here](https://ggplot2.tidyverse.org/reference/geom_abline.html)    
+
+## Task 4: Use a linear model to to answer the research questions multiple predictors 
+
+One of our research questions is: What person attributes predict success in understanding?
+
+8. Examine the relation between outcome mean accuracy (mean.acc) and multiple predictors including:
+
+-- health literacy (HLVA); 
+-- vocabulary (SHIPLEY); 
+-- AGE; 
+-- reading strategy (FACTOR3)
+
+We use `lm()`, as before, but now specify each variable listed here by variable name
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE, data = all.studies.subjects)
+summary(model)
+```
+
+Notice that we do the linear model in the steps:
+
+- `model <- lm(...)` - fit the model using `lm(...)`, give the model a name here, we call it "model"
+- `...lm(mean.acc ~ HLVA...)` - tell R you want a model of the outcome 'mean.acc' predicted (~) by the predictors: 'HLVA', 'SHIPLEY', 'FACTOR3', 'AGE'. Note that we use the variable names as they appear in the dataset, and that each predictor variable is separated from the next by a plus sign
+- `...data = all.studies.subjects)` - tell R that the variables you name in the formula live in the 'all.studies.subjects' dataset
+- `summary(model)` - ask R for a summary of the model you called "model"
+
+Notice: R has a general formula syntax: outcome ~ predictor *or* y ~ x and uses the same format across a number of different functions each time, the left of the tilde symbol ~ is some output or outcome and the right of the tilde ~ is some input or predictor or set of predictors
+
+If you look at the model summary you can answer the following questions  
+
+Q11. What is the estimate for the coefficient of the effect of the predictor, 'HLVA;, in *this* model?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+0.0274954 
+:::
+
+Q12. Is the effect significant?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+It is significant, p < .05
+:::
+
+Q13. What are the values for t and p for the significance test for the coefficient?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+t = 8.470, p = < 2e-16
+:::
+
+Q14. What do you conclude is the answer to the research question, given the linear model results?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+The model slope estimate 0.0274954 suggests that as HLVA scores increase so also do mean.acc scores
+:::
+
+Q15. How is the coefficient estimate for the HLVA slope similar or different, comparing this model with multiple predictors to the previous model with one predictor?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+It can be seen that the HLVA estimate in the two models is different in that it is a bit smaller in the model with multiple predictors compared to the model with one predictor. The HLVA estimate is similar in that it remains positive, it is about the same size
+
+Notice that:
+- The estimate of the coefficient of any one predictor can be expected to vary depending on the presence of other predictors.
+- This is one reason why we need to be transparent about why we choose to use the predictors we include in our model.
+- The lecture for week 9 discusses this concern in relation to the motivation for good open science practices.
+:::
+  
+Q16. Can you report the estimated effect of SHIPLEY (the measure of vocabulary)?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+The effect of vocabulary knowledge (SHIPLEY) on mean accuracy of 
+ understanding is significant (estimate = 0.01, t = 7.30, p < .001)
+ indicating that increasing skill is associated with increasing accuracy
+:::
+
+Q17.Can you report the model and the model fit statistics?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (HLVA),  reading strategy (FACTOR3), vocabulary (SHIPLEY) and AGE (years) as predictors.The model is significant overall, with F(4, 556) = 85.17, p< .001, and explains 38% of variance (adjusted R2 = 0.38).
+:::
+
+## Task 5: Plot predictions from linear models with multiple predictors 
+
+9. Plot linear model predictions for one of the predictors. Previously, we used `geom_abline()`, specifying intercept and slope estimates, to draw model predictions. Here, we use functions that are very helpful when we need to plot model predictions for a predictor, for models where we have multiple predictors, and we have to take into account the influence on outcomes of the other predictors
+  
+We do this in three steps:
+- We first fit a linear model of the outcome, given our predictors. We save information about the model
+- We use the ggpredict() function from the 'ggeffects' library to take the information about the model and create a set of predictions we can use for plotting
+- We plot the model predictions (marginal effects plots)
+
+
+These steps proceed as follows:-
+
+
+- We first fit a linear model of the outcome, given our predictors
+
+```{r}
+
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE, data = all.studies.subjects)
+```
+
+:::{.callout-note}
+## Code explanation
+
+- `model <- lm(...)` - we fit the model using `lm(...)`, give the model a name here, we call it "model"
+- `...lm(mean.acc ~ HLVA...)` tell R you want a model of the outcome 'mean.acc' predicted (`~`) by the predictors 'HLVA', 'SHIPLEY', 'FACTOR3', 'AGE'
+- Notice: when we use lm() to fit the model, R creates a set of information about the model, including estimates. We give that set of information a name, and we use that name, next, to access the model information
+:::
+
+- We use the `ggpredict()` function from the 'ggeffects' library to take  
+ the information about the model and create a set of predictions we can use for 
+ plotting  
+ 
+```{r}
+ 
+dat <- ggpredict(model, "HLVA")
+```
+
+:::{.callout-note}
+## Code explanation
+
+- `dat <- ggpredict(...)` - We ask R to create a set of predictions, and we give that set of predictions a name 'dat'
+- `... ggpredict(model, "HLVA")` - We tell R what model information it should use (from 'model'), and which predictor variable we need predictions for 'HLVA'
+:::
+
+- We plot the model predictions (marginal effects plots)
+
+```{r}
+plot(dat)
+```
+
+
+10. Edit the appearance of the marginal effect (prediction) plot as you can with any ggplot object
+
+```{r}
+
+p.model <- plot(dat)
+
+p.model +
+  geom_point(data = all.studies.subjects, 
+             aes(x = HLVA, y = mean.acc), size = 1.5, alpha = .75, colour = "lightgreen") +
+  geom_line(size = 1.5) +
+  ylim(0, 1.1) + xlim(0, 16) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.25)),
+    plot.title = element_text(size = rel(1.4))
+  ) +
+  xlab("Health literacy (HLVA)") + ylab("Mean accuracy") +
+  ggtitle("Effect of health literacy on mean comprehension accuracy")
+```
+
+:::{.callout-note}
+## Code explanation
+
+Notice that we do this in stages, as we have done for other kinds of plots:
+
+- `p.model <- plot(dat)` - we create a plot object, which we call 'p.model'
+- `p.model + ` - we then set up the first line of a series of lines, starting with the name of the plot, 'p.model' and a `+` to show we are going to add some edits
+- `geom_point(data = all.studies.subjects, aes(x = HLVA, y = mean.acc) ...)` - we first add the raw data points showing the observed HLVA and mean.acc for each person in our sample
+- `geom_point(... size = 1.5, alpha = .75, colour = "lightgreen") +` - we modify the appearance of the points, then
+- `geom_line(size = 1.5) +` - we add the prediction line, using the predictions created earlier, then
+- `ylim(0, 1.1) + xlim(0, 16) +` - we set axis limits to show the full potential range of variation in each variable, then
+- `theme_bw() +` - we set the theme to black and white, then
+- `theme(...) +` - we modify the relative size of x-axis, y-axis and plot title label font, then
+- `xlab("Health literacy (HLVA)") + ylab("Mean accuracy") +` - we edit labels to make them easier to understand, then
+- `ggtitle("Effect of health literacy on mean comprehension accuracy")` - we give the plot a title
+:::
+
+11. Now produce plots that show the predictions for all the predictor variables in the model. You can create a set of plots then put them together in a grid for presentation
+
+-- The code may get pretty lengthy
+-- Adjust axis labels so for each plot we see the correct predictor as the x-axis label
+-- In each plot, first plot the original sample observations as points *then* the prediction line
+-- Give the plot titles as letters a-e so that, if you put this plot in a report, you can refer to each plot by letter in comments
+
+## Task 6: Estimate the effects of factors as well as numeric variables 
+
+We have not yet included any categorical or nominal variables as predictors but we can, and should: `lm()` can cope with any kind of variable as a predictor. There are different ways to do this, here we look at two:
+
+11. Fit a linear model including both numeric variables and categorical variables as predictors. We can inspect the data to check what variables are categorical or nominal variables factors using `summary()`
+
+```{r}
+summary(all.studies.subjects)
+```
+
+R shows factors with a count of the number of observations for each level. Include the factor NATIVE.LANGUAGE as a predictor
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE, 
+            data = all.studies.subjects)
+```
+
+
+Q18.Can you report the estimated effect of NATIVE.LANGUAGE (the 
+ coding of participant language status: English versus other)? You will need to get a summary of the model using `summary(model)`.
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+The effect of language status (NATIVE.LANGUAGE) on mean accuracy of understanding is significant (estimate = -0.09, t = -6.37, p < .001) indicating that not being a native speaker of English ('Other') is associated with lower accuracy
+:::
+
+Q19.Can you report the model and the model fit statistics?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (HLVA),  reading strategy (FACTOR3), vocabulary (SHIPLEY) and AGE (years), as well as language status as predictors The model is significant overall, with F(5, 555) = 81.09, p< .001, and explains 38% of variance (adjusted R2 = 0.42).
+:::
+
+Q16.What changes, when you compare the models with versus without NATIVE.LANGUAGE?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+If you compare the summaries, for the last two models, you can see that the proportion of variance explained, R-sq, increases to 42% (0.4221), suggesting that knowing about participant language background helps to account for their response accuracy in tests of comprehension of health advice.
+:::
+  
+R handles factors, by default, by picking one level ('English') as the reference level (or baseline) and comparing outcomes to that baseline, for each other factor level (here, 'Other'). Thus, in this model, the effect of 'NATIVE.LANGUAGE' is estimated as the difference in 'mean.acc' outcome for 'English' compared to 'Other' participants. This is why the effect is listed as: `NATIVE.LANGUAGEOther` in the model summary
+
+There are different ways to code factors for analysis. If you are doing an analysis where your data come from e.g. a factorial design (e.g. a 2 x 2 study design) then you will want to use a different coding scheme: e.g. sum or effect coding. It is easy to do this, in two steps:
+
+We first change the coding scheme:
+
+```{r}
+library(memisc) #get the memisc library
+
+contrasts(all.studies.subjects$NATIVE.LANGUAGE) #check the coding
+
+contrasts(all.studies.subjects$NATIVE.LANGUAGE) <- contr.sum(2, base = 1) #change the coding
+
+contrasts(all.studies.subjects$NATIVE.LANGUAGE) #check the coding to show you got what you want
+
+```
+
+:::{.callout-warning}
+Loading the memisc library can cause problems when using dplyr (tidyverse) functions like select: the problem is expressed as e.g. select() not being able to see variables listed for selection. You can fix this problem by restarting R or by requiring R to use `dplyr::select()`. I would normally avoid problems like this but the memisc `contr.sum()` function is too useful to ignore.
+:::
+
+-- We use the memisc library because it provides some functions that are convenient to use
+-- `contrasts(all.studies.subjects$NATIVE.LANGUAGE)` shows us the R default called dummy coding:
+
+| Other   |     |
+|---------|-----|
+| English |   0 |
+| Other   |   1 |  
+ 
+-- `contrasts(all.studies.subjects$NATIVE.LANGUAGE) <- contr.sum(2, base = 1)` - we use the `contr.sum()` function to tell R how many levels there are for the factor (2: 'NATIVE.LANGUAGE' is coded as 'Other' or 'English'), and we use `contr.sum()` function to tell R which level we want to be the reference level
+
+We then fit a linear model of the outcome, given our predictors:
+
+```{r}
+
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE, 
+            data = all.studies.subjects) #tell R you want a model of the outcome 'mean.acc' predicted (~) by the predictors 'HLVA', 'SHIPLEY', 'FACTOR3', 'AGE', 'NATIVE.LANGUAGE'
+
+summary(model) #get a model summary
+
+```
+
+
+
+Q17.What changes, when you compare the models with versus without sum coding of NATIVE.LANGUAGE?
+
+:::{.callout-warning icon="false" collapse="true"}
+## Answer
+If you compare the summaries, for the last two models, you can see that the estimate for the coefficient of 'NATIVE.LANGUAGE' changes in two ways: the name changes, from NATIVE.LANGUAGEOther to NATIVE.LANGUAGE2, reflecting the change in coding; the slope estimate changes, from -0.0900035 to -0.0450018
+
+Note: the change in the estimate happens because we go from estimating the average difference in level between 0 ('English') versus 1 ('Other'), a change of one unit to estimating the average difference in level between -1 ('English') versus 1 ('Other'), a change of 2 units
+:::
+
+Being able to change the coding of nominal or categorical variables is very useful and enables you to do ANOVA style analyses given factorial study designs e.g.
+
+```{r}
+model <- aov(lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE, 
+       data = all.studies.subjects))
+summary(model)
+```
+
+Notice: we use `aov()` to get an ANOVA summary.
+
+
+12. Fit a linear model including both numeric variables and categorical variables as predictors: and then plot the predicted effect of the factor. We first fit the model, including NATIVE.LANGUAGE then use the `ggpredict()` function to get the predictions
+
+```{r}
+
+dat <- ggpredict(model, "NATIVE.LANGUAGE")
+plot(dat)
+```
+
+You can read more about factor coding schemes [here](https://talklab.psy.gla.ac.uk/tvw/catpred/) and [here](https://phillipalday.com/stats/coding.html).
+
+
+## Optional Task: Work out how to recode factor levels 
+
+Factors categorical or nominal variables are a special kind of variable in R and there is a library of functions, forcats, you can familiarise yourself with, if you are going to be working with factors
+
+Here, we look at a common task, recoding the levels of a factor
+
+You might want to do this e.g. if you are worried about imbalances in factor level numbers
+
+- Change the ways that the levels of a factor are coded
+
+- Consider the factor EDUCATION in the all.studies.subjects dataset. Can you find out how many observations there are, of participants at each level of (self-reported) education? You can use `summary()` for this
+
+```{r}
+summary(all.studies.subjects$EDUCATION)
+
+```
+
+
+|||
+|--|-|
+|Further| Secondary |   Higher             |
+|229 |       66 |      320   |              |
+
+
+What if we think that it does not make much sense to distinguish between Further and Secondary?
+
+- Change Further and Secondary to School in the way that EDUCATION responses are coded
+
+```{r}
+
+all.studies.subjects <- all.studies.subjects %>%
+  mutate(education = fct_recode(EDUCATION,
+                                'School' = 'Further',
+                                'School' = 'Secondary'
+                                ))
+```
+
+Notice we work through the steps:
+- `all.studies.subjects <- all.studies.subjects %>%` - create a new dataset from the old dataset
+- `mutate(education = fct_recode(EDUCATION,` - create a new variable, using mutate(). I call the new variable 'education' and create the new variable by recoding the old variable 'EDUCATION', then use the function fct_recode() to do the recoding
+- *inside* fct_recode() you specify how you want the recoding to work:
+ 'School' = 'Further',
+ 'School' = 'Secondary' 
+'School' = 'Further' means: new level name = old level name
+
+Inspect what we get:
+
+```{r}
+
+
+summary(all.studies.subjects$EDUCATION)  
+summary(all.studies.subjects$education)  
+
+```
+
+Notice in the new 'education' both 'Further' and 'Secondary' are now classed as 'School'
+
+
+How do you recode ETHNICITY? Maybe we think we need to recode ETHNICITY so that we use the simplified scheme: White versus BAME like this:
+
+```{r}
+all.studies.subjects <- all.studies.subjects %>%
+  mutate(ethnicity = fct_recode(ETHNICITY,
+                                'BAME' = 'Asian',
+                                'BAME' = 'Black',
+                                'BAME' = 'Mixed',
+                                'BAME' = 'Other'
+                                ))
+```
+
+Inspect what we get:
+
+
+```{r}
+summary(all.studies.subjects$ETHNICITY)  
+summary(all.studies.subjects$ethnicity)
+```
+
+## Optional task: To examine associations comparing data from different samples 
+
+The lecture for developing the linear model includes a discussion of the ways in which the observed associations between variables or the estimated effects of  predictor variables on some outcome may differ between different studies, different samples of data
+
+To draw the plots, I used `facet_wrap`:
+
+```{r}
+
+all.studies.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 2, alpha = .5, colour = "darkgrey") +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 40) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") +
+  facet_wrap(~ study)
+```
+
+What is new here is this bit: `facet_wrap(~ study)`
+
+:::{.callout-note}
+## Code explanation
+This is how it works:
+- `facet_wrap()` - the function asks R to take the dataset and split it into subsets
+`facet_wrap(~ study)` - tells the function to split the dataset according to the different levels of a named factor: 'study'
+
+So: you need identify a factor variable to do this
+:::
+
+## Optional Task
+
+Change the factor in facet_wrap() to show how the vocabulary effect may vary between English monolinguals versus non-native speakers of English
+
+
+```{r}
+all.studies.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 2, alpha = .5, colour = "darkgrey") +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 40) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") +
+  facet_wrap(~ NATIVE.LANGUAGE)
+```
+
+
+You can read more about faceting [here](https://ggplot2.tidyverse.org/reference/facet_wrap.html)
+
+# Part Two: The workbook
+
+ In Week 10, we aim to *further* develop skills in working with the linear model, and in visualizing and testing the associations between variables in psychological data
+
+We do this to learn how to answer research questions like:
+-- What person attributes predict success in understanding?
+-- Can people accurately evaluate whether they correctly understand written health information?
+
+ These kinds of research questions can often be answered through analyses using linear models. We will use linear models to estimate the association between predictors and outcomes
+
+
+ When we do these analyses, we will need to think about how we report the results:  we usually need to report information about the kind of model we specify;and we will need to report the nature of the associations estimated in our model; we usually need to decide, is the association between the outcome and any one predictor significant? Does that association reflect a positive or negative relationship between the outcome and that predictor?are the associations we see in sample data relatively strong or weak?
+
+ We will consolidate and extend learning on data visualization: Use scatterplots to examine the relationships we may observe or predict Generate predictions given model estimates of slope coefficients
+
+
+## Task 1: Set-up 
+
+13. Run this code to empty the R environment `rm(list=ls())`                          
+
+
+14. Run this code to load relevant libraries
+
+```{r}
+library("ggeffects")
+library("patchwork")
+library("psych")
+library("tidyverse")
+```
+
+
+In this how-to guide, we use a collection of data, drawing together data from a series of studies, completed by BSc and MSc students, as replications of the clearly-understood health comprehension project investigations using "2022-12-08_all-studies-subject-scores.csv"
+
+## Task 2: Load data 
+
+
+15. Read in the data file we will be using: 2022-12-08_all-studies-subject-scores.csv using `read_csv` and col_types = cols() function to tell R how to identify nominal variables as factors within the dataset
+
+
+16. Get summary statistics for *only* the numeric variables: AGE, HLVA. Here, we use the describe() function from the 'psych' library. Here, we can do this in two steps: 
+-- we select the variables we care about
+-- we get just the descriptive statistics we want for those variables
+
+
+Q1. What is the mean health literacy (HLVA) score in this sample?
+
+Q2. What are the minimum and maximum ages in this sample?
+
+Q3. Do you see any reason to be concerned about the data in this sample? It is always a good idea to use your visualization skills to 
+ examine the distribution of variable values in a dataset
+
+## Task 3: Use a linear model to to answer the research questions one predictor 
+
+One of our research questions is: Can people accurately evaluate whether they correctly understand written 
+ health information?
+
+
+We can address this question by examining whether someone's rated evaluation of their own understanding matches their performance on a test of that understanding, and by investigating what variables predict variation in  mean self-rated accuracy
+
+Note that ratings of accuracy are ordinal data but that, here, we may choose to examine the average of participants' ratings of their own understanding of health information to keep things fairly simple
+
+For these data, participants were asked to respond to questions about health  information to get 'mean.acc' scores and were asked to rate their own understanding  of the same information
+
+If you *can* evaluate your own understanding then ratings of understanding *should* be associated with performance on tests of understanding
+
+
+17. Estimate the relation between outcome mean self-rated accuracy ('mean.self') and tested accuracy of understanding ('mean.acc'). For these data, participants were asked to respond to questions about health information to get 'mean.acc' scores and were asked to rate their own understanding of the same information. We can use `lm()` to estimate whether the ratings of accuracy actually predict the outcome tested accuracy levels
+
+
+If you look at the model summary you can answer the following questions  
+
+Q4. What is the estimate for the coefficient of the effect of the predictor 'mean.self' on the outcome 'mean.acc' in this modelo?
+
+Q5. Is the effect significant?
+
+Q6. What are the values for t and p for the significance test for the coefficient?
+
+Q7. What do you conclude is the answer to the research question, given the linear model results?
+
+Q8. What is the F-statistic for the regression? Report F, DF and the p-value.
+
+Q9. Is the regression significant?
+
+Q10. What is the Adjusted R-squared?
+
+Q11.Explain in words what this R-squared value indicates?
+
+## Task 4: Use a linear model to to answer the research questionsmultiple predictors 
+
+One of our research questions is: Can people accurately evaluate whether they correctly understand written health information?
+
+We have already looked at this question by asking whether ratings of understanding predict performance on tests of understanding
+But there is a problem with that analysisit leaves open the question:  what actually predicts ratings of understanding?
+
+We can look at that follow-up question, next
+
+
+18. Examine the relation between outcome mean self-rated accuracy ('mean.self') and multiple predictors including: health literacy ('HLVA'); vocabulary ('SHIPLEY'); 'AGE'; reading strategy ('FACTOR3'); as well as 'mean.acc'. We use lm(), as before, but now specify each variable listed  here by variable name
+
+If you look at the model summary you can answer the following questions  
+
+Q12. What predictors are significant in this model?
+
+Q13. What is the estimate for the coefficient of the effect of the predictor,  'mean.acc', in this model?
+
+Q14. Is the effect significant?
+
+Q15. What are the values for t and p for the significance test for the coefficient?
+
+Q16. What do you conclude is the answer to the follow-up question, 
+ what actually predicts ratings of understanding?
+
+## Task 5: Understanding linear model predictions by comparing one outcome-predictor relation 
+
+Next, we focus in on whether 'mean.self' predicts 'mean.acc' or, in reverse, whether 'mean.acc' predicts 'mean.self'?
+
+Note that the comparison between these models teaches us something about *what* linear models predict
+  
+
+Q17. Why do you think it appears that the slope coefficient estimate is different if you compare:
+-- the model, mean.acc ~ mean.self, versus 
+-- the model, mean.self ~ mean.acc?
+
+You want to fit two simple models here, using the verbal description in the Q14 wording. You may benefit by reflecting on the lm-intro lecture and practical materials, especially where they concern predictions
+
+Q18. Can you plot the predictions from each model? First fit the modelsgive the model objects distinct names. Then get the predictions. Then make the plots
+
+Q19. Look at the two plots side-by-side: what do you see? Look at changes in height of the prediction line, given 
+ changes in x-axis position of the line
+
+## Task 6: Estimate the effects of factors as well as numeric variables 
+
+
+We have not yet included any categorical or nominal variables as predictors but we can, and should: lm() can cope with any kind of variable as a predictor
+
+There are different ways to do this, here we ask you to use the R default method:
+
+
+19. Fit a linear model to examine what variables predict outcome mean self-rated accuracy of 'mean.self' include in the model both numeric variables and categorical variables as predictors: health literacy ('HLVA'); vocabulary ('SHIPLEY'); 'AGE'; reading strategy ('FACTOR3'); as well as 'mean.acc' and 'NATIVE.LANGUAGE'
+
+
+20. Can you report the estimated effect of 'NATIVE.LANGUAGE' (the coding of participant language status: 'English' versus 'other')? You will need to get a summary of the model
+
+21. Can you report the overall model and model fit statistics?
+
+Q20. Can you plot the predicted effect of 'NATIVE.LANGUAGE' given your model? We first fit the model, including 'NATIVE.LANGUAGE' then use the `ggpredict()` function to get the predictions
+
+Q21. The plot should give you dot-and-whisker representations of the estimated 'mean.self' for 'English' versus 'Other' participants in the dataset. What is the difference in the estimated 'mean.self' between these groups? The effect or prediction plot will show you dot-and-whisker representations of predicted outcome 'mean.self'. In these plots, the dots represent the estimated 'mean.self' while the lines (whiskers) represent confidence intervals
+
+Q22.Compare the difference in the estimated 'mean.self' between these groups, given the plot, with the coefficient estimate from the model summary: what do you see?
+
+## Optional task: Examine associations comparing data from different samples 
+
+The lecture for developing the linear model includes a discussion of the ways in which the observed associations between variables or the estimated effects of  predictor variables on some outcome may differ between different studies, different samples of data
+
+
+Change the factor in `facet_wrap()` to show how the association between 'mean.self' and 'mean.acc' can vary between the different studies in the dataset
+
+You can read more about faceting [here](https://ggplot2.tidyverse.org/reference/facet_wrap.html)
+
+You may need to edit the x-axis labeling to make it readable. Can you work out how to do that, given `ggplot()` help information? Check out the continuous scale information [here](https://ggplot2.tidyverse.org/reference/scale_continuous.html)
+
+## Optional Task: Save or export plots so that you can insert them in reports 
+
+This is something you have not seen before but it is worth exploring because
+ it may help you later with reports
+
+
+Save or export a plot that you produce, so that you can insert it in a report or presentation. There are different ways to do this, we can look at one simple example
+
+We can save the last plot we produce using the tidyverse function ggsave(): `ggsave("facet-plots.png")`. Notice, here, that:
+-- `ggsave("facet-plots...")` - we need to give the plot a name
+-- `ggsave("...png")` - and we need to tell R what format we require
+
+
+The plot is saved as a file with the name you specify, in the working directory you are using
+
+R will save the plot in the format you specify: here, I choose .png because  .png image files can be imported into Microsoft Word documents easily Notice that ggsave() will use pretty good defaults but that you can over-ride  the defaults, by adding arguments to specify the plot width, height and resolution  (in dpi)
+
+
+Check out reference information [here](https://ggplot2.tidyverse.org/reference/ggsave.html) and [here](http://www.cookbook-r.com/Graphs/Output_to_a_file/)
+
+
+Now try it for yourself: make a plot, and save it, using what you have learnt so far
+ 
+Fit a model:
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE, 
+            data = all.studies.subjects)
+```
+
+Create a set of predictions we can use for plotting  
+
+```{r}
+dat <- ggpredict(model, "FACTOR3")
+```
+
+make a plot
+
+```{r}
+p.model <- plot(dat)
+p.model +
+  geom_point(data = all.studies.subjects, 
+             aes(x = FACTOR3, y = mean.acc), size = 1.5, alpha = .75, colour = "darkgrey") +
+  geom_line(size = 1.5) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.25)),
+    plot.title = element_text(size = rel(1.4))
+  ) +
+  xlab("Reading strategy (FACTOR3)") + ylab("Mean accuracy") +
+  ggtitle("Effect of reading strategy on \n mean comprehension accuracy")
+```
+
+Save it
+
+```{r}
+ggsave("reading-strategy-prediction.png", width = 10, height = 10, units = "cm")
+```
+
+Some advice: It is often helpful to present plots that are almost square ie height about = width. This helps to present the best fit line in scatterplots in a way that is easier to perceive. We may experiment with width-height (aspect ratio) until we get something that "looks" right. Notice also that different presentation venues will require different levels if image  resolution e.g. journals may require .tiff file plots at dpi = 180 or greater
+
+# Assignment
+
+The link can be accessed [here](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921474)
+
+The data needed is downloaded [here](data/Wk10 assignment.zip)

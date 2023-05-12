@@ -1,1 +1,40 @@
-Hi
+---
+title: 1. Review of correlation, simple regression and demonstration of multiple regression
+subtitle: Emma Mills
+order: 2
+---
+
+# Lectures
+
+[Part 1](https://modules.lancaster.ac.uk/mod/url/view.php?id=1978183)
+
+[Part 2](https://modules.lancaster.ac.uk/mod/url/view.php?id=1978184)
+
+[Part 3](https://modules.lancaster.ac.uk/mod/url/view.php?id=1978185)
+
+## Materials
+
+The lecture materials, including and and R files are downloaded from [here](data/Week1_lecture_materials.zip) as a zip file. You can upload the zip file directly on to the R server and it will populate a new folder with the files and data files automatically.
+
+# Lab
+
+## What happens
+
+1. In each lab:
++ Model output, or model plot with dataset
++ In small groups, work backwards to *plan* the analysis script that produced the model output
+  + Use lab time/staff to check plan
+
+2. Independently of the lab:
++ Generate the script as a group
+  + Help each other
+  + Scrape code from all your statistics modules
+    + The internet
+    + R books
+
+3. Submit for feedback
++ Submit as group
++ Random sample of scripts will get feedback
++ No credit here – learning process as preparation for your own project!
+
+

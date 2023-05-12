@@ -1,0 +1,726 @@
+---
+title: 7. Hypotheses, measurement and associations
+subtitle: Written by Rob Davies
+order: 8
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# Preparation
+
+## Lectures
+
+- [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016857)
+- [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016858)
+- [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016860)
+- [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016863)
+- [Part 5](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016865)
+
+- All slides are [here (html)](https://modules.lancaster.ac.uk/mod/resource/view.php?id=2016871), and [here (.docx)](data/PSYC401_wk7/401-hypotheses-associations-printable-edited.docx)
+
+I have split the lecture into 5 parts, because students told us they prefer shorter segments, I split the lecture into 5 parts: most are about 15 minutes in length; part 1 is shorter; part 4 is longer. I have labelled lecture parts so you know what is in each.
+
+## Work through the materials below for the Practical
+
+- First, you can work through the how-to: this takes you through everything you need to do, step by step, with explanation comments and examples.
+
+- Second, work through the workbook: this requires you to take what you have learned and apply it with a different but related dataset.
+
+The motivation for providing you with a how-to and a workbook is that you can learn and progress to do the practical work with more support (in the how-to) and then room to try things (in the workbook).
+
+-- Attend the practical
+
+-- [Test yourself using the quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2017296) (not assessed).
+
+-- Optionally, if you can give us your (anonymised) [feedback on how the course](https://modules.lancaster.ac.uk/mod/feedback/view.php?id=2016867) is going from your perspective, that would be very welcome.
+
+# Part One: How To
+
+
+In Week 7, we aim to develop skills in visualizing and testing the associations between variables in psychological data
+
+We do this to learn how to answer research questions like:
+
+- What person attributes predict success in understanding?
+- Can people accurately evaluate whether they correctly understand written 
+health information?
+  
+These kinds of research questions can be answered using methods like correlation and linear models
+
+When we do these analyses, we will need to think about how we report the results:  
+- we usually need to report the correlation, size and direction of r
+- we usually need to decide, is the correlation significant?
+
+We will consolidate and extend learning on data visualization:
+- Use histograms to examine the distributions of variables;
+- Learn to edit the histograms
+- Use scatterplots to examine the relationships we may observe or predict
+- Learn to edit the scatterplots
+
+The idea is that as we work, we will develop skills in producing appealing plots for professional audiences 
+
+
+We will take things step-by-step and I will be explicit about when we:
+- revise -- where you have started to do things and maybe can use some practice to strengthen skills;
+- introduce -- where you are doing things that are new;
+- extend -- where you can do things that will stretch you -- where you might go beyond your current understanding 
+
+:::callout-note
+## Coding
+I will structure the code in the practical work a bit differently from what you have done until now when making plots. The reason for this change is because it will help you to keep clear what you are doing, you increase the complexity and power of the plots
+:::
+
+## Task 1: Set-up
+
+
+1. Run this code to empty the R environment: `rm(list=ls())`                         
+
+2. Load the tidyverse library: `library(tidyverse)`
+
+## Task 2: Load data
+
+-- In this how-to guide, we use data from a 2020 study of the response of adults from a UK national sample to written health information: `study-one-general-participants.csv`
+
+3. Read in the data file we will be using: 
+```{r}
+
+study-one-general-participants.csv
+```
+
+-- We use the `read_csv()` function to read the data file into R
+
+```{r}
+study.one <- read_csv("study-one-general-participants.csv")  
+
+```
+
+4. Inspect the data file
+
+::: {.callout-warning icon="false" collapse="true"}
+## Hint
+Use the summary() or head() functions to take a look
+`head(study.one)`
+`summary(study.one)`
+
+-- head() will give you the top few rows of any dataset you have read into R
+-- head(...) is a function, and you put the name of the dataset inside the brackets to
+view it
+head(study.one)
+
+-- summary() will give you either descriptive statistics for variable columns classified as numeric
+or will tell you that columns in the dataset are not numeric
+-- summary() is also a function and, again, you put the name of the dataset inside the brackets to
+view it
+summary(study.one)
+:::
+
+Q1. What is the mean of 'mean.acc'?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+0.8163  
+:::
+Q2. What class is the variable 'study'?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+character  
+:::
+Q3. Does the summary indicate if any variable has missing values (NAs)?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+No  
+:::
+
+5.Change the class or type of the variable 'study' to factors
+
+You can use the as.factor() function you have used before `study.one$study <- as.factor(study.one$study)`
+
+
+Q4. After you have done this, what information does summary() give you about the variable
+'study' using `summary(study.one)`?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+We can see the number 169 beside the word 'studyone': this tells us that there are 169
+observations, in the column, each one is a value: the word or character string 'studyone'.  
+:::
+
+
+## Task 3: Use histograms to examine the distributions of variables
+
+::: {.callout-important}
+revise: consolidate what you know
+:::
+
+6. Draw histograms to examine the distributions of variables. Use ggplot() with geom_histogram()
+
+The first time we do this, we take things step-by-step
+Here's an example: run the line of code and see the result in the Plots window in R-Studio
+
+```{r}
+ggplot(data = study.one, aes(x = mean.acc)) + geom_histogram()
+
+```
+
+These are the steps:
+- `ggplot(...)`  you tell R you want to make a plot using the `ggplot()` function
+- `ggplot(data = study.one ...)`  you tell R you want to make a plot with the `study.one` data
+- `ggplot(..., aes(x = mean.acc))`  you tell R that you want to make a plot with the variable `mean.acc` here, you specify the aesthetic mapping, `x = mean.acc`
+- `ggplot(...) + geom_histogram()`, you tell R you want to plot values of `mean.acc` as a histogram
+
+
+Q5. Did you get a message in red in the Console window in R-Studio: what does it say?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+:::
+
+Q6.  What does 'binwidth' refer to? You need to do a search online (e.g., using Google) with the keywords: "ggplot reference geom_histogram"
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+If your search gets you to this page:
+https://ggplot2.tidyverse.org/reference/geom_histogram.html  
+ you will see first a technical definition "The width of the bins. Can be specified as a numeric value ..."
+ and then you will see examples of the use of the term e.g. `ggplot(diamonds, aes(carat)) + geom_histogram(binwidth = 0.01)`. If you run the example code, it will produce a plot. Do it.
+:::
+
+It is a very good idea to get get some experience doing searches online for information about working
+with data analysisTasks.
+You will find that there is a lot of useful information, written in different ways for people with different levels of expertise.
+
+
+ Here, we are interested in working with 'binwidth' in geom_histogram(). The example gives us a hint at what we can do: we can change the appearance of the bars in the histogram. The bars in the histogram represent how often we observe, in a dataset, a grouping of similar values in a variable
+ 
+-- Larger (wider) bins count more different values as similar, so increasing binwidth will give you fewer wider bars in a histogram. 
+
+::: callout-important
+ extend: make some new moves 
+:::
+
+7. Experiment with changing the binwidth. Use `geom_histogram(binwidth = ...)` like you can see in the ggplot() reference example. Note that binwidth needs to take into account the scale of the x variable. It won't work for `mean.acc` if you make binwidth = 100
+ 
+The number will need to be something between 0 and 1 (the min and max for mean.acc)
+
+```{r}
+
+ggplot(data = study.one, aes(x = mean.acc)) + geom_histogram()
+ggplot(data = study.one, aes(x = mean.acc)) + geom_histogram(binwidth = 0.1)
+ggplot(data = study.one, aes(x = mean.acc)) + geom_histogram(binwidth = 0.2)
+ggplot(data = study.one, aes(x = mean.acc)) + geom_histogram(binwidth = 0.5)
+
+```
+
+ Q7.  What happens as you change the binwidth from, say, 0.1 to 0.2?
+ 
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+You can see that with larger binwidth numbers, fewer bars are shown, and the bars are wider 
+and taller: because they are including more observations
+:::
+
+
+## Task 4: Edit your plots to make them look good#
+
+::: callout-important
+extend: make some new moves 
+:::
+
+8.  Edit the appearance of the plot step-by-step. 
+
+ggplot() code does not all have to be on the same line
+
+If we break the plot code into steps, it will make it easier to read,
+and it will make it easier to add edits e.g.
+
+```{r}
+ggplot(data = study.one, aes(x = mean.acc)) + 
+  geom_histogram()
+```
+
+ If you run the selection of both lines, you get the code to work. Or if your text cursor (the flashing line where you type) is on either of the lines, when you run (either by clicking run, or by using CMD+Enter or Ctrl+Enter) it will run the full code section.
+
+::: {.callout-note icon="false" collapse="true"}
+## Why and when can we write code over multiple lines?
+
+R doesn't need to be told the code starts at the next line and will just continue to read the next line whenever it considers the statement as "not finished". To ensure code runs on, you need to make sure that the code doesn't "finish" on a single line. Compare the two below
+
+```{r}
+a <- 1 + 2 #line ends on 2
++ 3 # and starts on plus
+
+a <- 1 + 2 + #line ends on a plus
+3 #and starts on 3
+```
+
+So, when spreading code over multiple lines, you have to make sure that R knows something is coming, either by leaving a bracket open, or ending the line with an operator. Operators include `+`, `-`, `*`, `/`, and you can also use opening brackets of any kind `(`, `[`, `{`, or even commas, `,` and quotation marks, `"`, `'`. Try it out with any of your code you've written today.
+
+The key to remember with having run-on code is that we are using it for readability purposes, don't go mad and use a new line anytime you use an operator or comma. When you write complex code, which can often be plots, then we want to make sure it is easily readable and editable. Check out some sample code below from another project, which looks easier to read and work with?
+
+```{r}
+fviz_ca_row(CAplot, select.row = data_dept_freq_names, repel = TRUE, col.row = data_dept_freq$StudyDepartment) + labs(x = "Skill Importance (84.83%)", y = "Department (10.26%)", title = "", colour = "Department") + theme_bw() + theme(text = element_text(size = 18)) + theme(legend.position = c(.92,.92))
+```
+
+or
+
+```{r}
+fviz_ca_row(CAplot, repel = TRUE,
+            select.row = data_dept_freq_names, 
+            col.row = data_dept_freq$StudyDepartment) + 
+  labs(x = "Skill Importance (84.83%)", y = "Department (10.26%)", 
+       title = "", colour = "Department") +
+  theme_bw() +
+  theme(text = element_text(size = 18)) +
+  theme(legend.position = c(.92,.92))
+```
+
+:::
+
+ We are going to edit:
+-- the appearance of the bars using `binwidth`
+-- the colour of the background using `theme_bw()`
+-- the appearance of the labels using `labs()` as follows
+
+- the appearance of the bars using `binwidth`
+
+```{r}
+
+ggplot(data = study.one, aes(x = mean.acc)) + 
+  geom_histogram(binwidth = 0.2)
+```
+
+- the colour of the background using `theme_bw()`
+
+```{r}
+ggplot(data = study.one, aes(x = mean.acc)) + 
+  geom_histogram(binwidth = 0.2) +
+  theme_bw()
+```
+
+- the appearance of the labels using `labs()`
+
+```{r}
+ggplot(data = study.one, aes(x = mean.acc)) + 
+  geom_histogram(binwidth = 0.2) +
+  theme_bw() +
+  labs(x = "mean accuracy", y = "frequency count")
+```
+
+::: {callout-important}
+ introduce: learn to handle errors and warnings 
+:::
+
+ You can break this code by not adding a + at the end of each bit (except the last line)
+ Try it:
+ 
+```{r}
+ggplot(data = study.one, aes(x = mean.acc))
+  geom_histogram(binwidth = 0.2) +
+  theme_bw() +
+  labs(x = "mean accuracy", y = "frequency")
+```
+
+Q8.  You will get an error message in the console window, orange and grey, if you omit a + like in the example
+ what is the error message?
+ 
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+Error: Cannot add ggproto objects together. Did you forget to add this object to a ggplot object?
+Run `rlang::last_error()` to see where the error occurred.  
+:::
+
+R will give you hints  often in red  in warnings or error messages about what has gone wrong. This can be a bit frightening but usually you can fix a problem by:
+ 
+-- trial and error  try changing things to see what happens
+-- copying the error message into an online search: usually, that will get you to a blog or discussion that is helpful  
+
+Q9.  Paste the error message into Google: click on one of the results do you see any useful information?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+An explanation of the problem is shown e.g.    
+https://community.rstudio.com/t/could-anybody-help-me-cannot-add-ggproto-objects-together/11271  
+:::
+
+
+### Error messages and warning messages 
+  
+Error messages and warning messages can be a bit alarming at first. R gives you a warning message e.g. on binwidth if you made a choice 
+but R wants you to know other choices are possible
+ R gives you an error message e.g. about adding objects to a ggplot 
+object if something in the code does not work or a choice you make in the 
+code does not work
+
+ You will learn to use in the information in these messages
+ They can be frustrating because, early in your skill development, 
+it can be difficult to know how to fix the problem
+ You can almost always fix a problem through (1.) trial and error or 
+(2.) copying the message into an online search and following the advice you 
+find
+
+ If you think about it, the 'you can almost always fix a problem' 
+statement is amazing
+ The R community has many millions of people in it and many of us 
+are doing different and complex things
+ Yet the huge value of the community means that *for every problem 
+you encounter, someone else has already met that
+problem, solved it, and posted a blog online about how to fix it*
+
+  
+  
+
+## Task 5: Now draw scatterplots to examine associations between variables
+  
+:::{callout-important}
+ revision: make sure you are confident about doing these things 
+:::
+  
+ You have seen these code moves before, in previous classes: we are 
+strengthening skills by practising coding in different contexts
+
+
+9. Create a scatterplot to examine the association between some variables. We are working with geom_point() and you need x and y aesthetic mappings
+
+```{r}
+
+ggplot(data = study.one, aes(x = mean.self, y = mean.acc)) + 
+    geom_point()
+
+```
+ This plot shows:
+ the possible association between x-axis variable 'mean.self' and y-axis 
+variable 'mean.acc'
+
+ The plot code moves through the following steps:  
+-- ggplot(...)  make a plot
+-- ggplot(data = study.one, ...)  with the 'study.one' dataset
+-- ggplot(...aes(x = mean.self, y = mean.acc))  using two aesthetic mappings:x = mean.self  map 'meann.self' values to x-axis (horizontal, left to right) positions 
+-- y = mean.acc  map 'meann.acc' values to y-axis (vertical, bottom to top) positions
+-- geom_point()  show the mappings as points    
+  
+10.  Now do scatterplots with any pair of numeric variables you like. Remember what we saw with `summary()` not every variable consists of numbers  
+
+```{r}
+ggplot(data = study.one, aes(y = mean.self, x = mean.acc)) +
+    geom_point()  
+```
+
+```{r}
+ggplot(data = study.one, aes(x = AGE, y = mean.self)) +
+  geom_point()  
+
+```
+
+```{r}
+ggplot(data = study.one, aes(x = SHIPLEY, y = mean.self)) +
+  geom_point()  
+```
+
+```{r}
+ggplot(data = study.one, aes(x = HLVA, y = mean.self)) +
+  geom_point()  
+```
+
+## Task 6: Edit the scatterplots to make them look good
+
+:::callout-important
+ extend: make some new moves 
+:::
+
+11. Edit the appearance of the plot step-by-step
+
+
+ We are going to edit:
+-- the appearance of the points using alpha and size
+-- the colour of the background using theme_bw()
+-- the appearance of the labels using labs()
+ as follows
+
+- the appearance of the points using alpha and size
+
+```{r}
+ggplot(data = study.one, aes(x = HLVA, y = mean.self)) +
+  geom_point(alpha = 0.5, size = 2) 
+```
+
+- the colour of the background using `theme_bw()`
+
+```{r}
+ggplot(data = study.one, aes(x = HLVA, y = mean.self)) +
+  geom_point(alpha = 0.5, size = 2)  +
+  theme_bw()
+```
+- the appearance of the labels using `labs()`
+
+```{r}
+ggplot(data = study.one, aes(x = HLVA, y = mean.self)) +
+  geom_point(alpha = 0.5, size = 2)  +
+  theme_bw() +
+  labs(x = "HLVA", y = "mean self rated accuracy")
+```  
+
+ The arguments alpha and size can change the appearance of most geometric 
+objects (`geoms`) in ggplot:
+
+In the code example, here, we vary the `alpha` number to change how opaque or 
+transparent the points are, and we vary the `size` number to vary the size of the points
+
+
+12.  Now you experiment: edit the appearance of the plot by changing alpha and size  what about colour? Check out the ggplot reference for scatterplots
+
+ Q10.  Can you find the ggplot reference page? Do a search with the keywords "ggplot reference geom_point"
+ 
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+It is here: 
+https://ggplot2.tidyverse.org/reference/geom_point.html
+:::
+
+Q11.  Can you change the colour of the points to a colour you like? Useful information on colour can be found here:
+https://r-graphics.org/recipe-colors-setting
+http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+Here is how you do it:
+
+```{r}
+ggplot(data = study.one, aes(x = HLVA, y = mean.self)) +
+  geom_point(alpha = 0.5, size = 2, colour = "hotpink")  +
+  theme_bw() +
+  labs(x = "HLVA", y = "mean self rated accuracy")
+```
+:::
+
+Now you: experiment!
+
+## Task 7: Use correlation to to answer the research questions
+
+:::{callout-important}
+ extend: make some new moves 
+:::
+
+ One of our research questions is:
+- Can people accurately evaluate whether they correctly understand written health information?
+
+ We can answer this question by examining whether mean self-rated accuracy of understanding correlates with mean accuracy of understanding. The logic is that if we can accurately rate our own understanding (from bad to good) then that rating should be associated should be correlated with how accurately we can actually respond to questions that test that understanding
+
+13.  Examine the correlation between mean self-rated accuracy (`mean.self`) and mean accuracy (`mean.acc`). We use `cor.test()`
+
+```{r}
+cor.test(study.one$mean.acc, study.one$mean.self, method = "pearson",  alternative = "two.sided")
+```
+
+Q3.  What is r, the correlation coefficient?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+r = 0.4863771
+:::
+
+Q4.  Is the correlation significant?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+r is significant
+:::
+
+Q5.  What are the values for t and p for the significance test for the correlation?
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+t = 7.1936, p = 2.026e-11
+:::
+
+Q6.  What do you conclude, given the correlation results? Review the scatterplot you drew earlier to examine the shape of the association between these variables
+
+::: {.callout-tip icon="false" collapse="true"}
+## Answer
+`mean.acc` and `mean.self` are positively correlated suggesting that as `mean.acc` scores increase so also do `mean.self` scores
+:::
+
+
+# Part Two: The workbook
+
+In Week 7, we aim to develop skills in visualizing and testing the associations between variables in psychological data
+
+We do this to learn how to answer research questions like:
+
+1. What person attributes predict success in understanding?
+2. Can people accurately evaluate whether they correctly understand written health information?
+
+These kinds of research questions can be answered using methods like correlation and linear models
+
+When we do these analyses, we will need to think about how we report the results:  
+-- we usually need to report the correlation, size and direction of r;
+-- we usually need to decide, is the correlation significant?
+
+We will consolidate and extend learning on data visualization:
+-- Use histograms to examine the distributions of variables;
+-- Learn to edit the histograms
+-- Use scatterplots to examine the relationships we may observe or predict
+-- Learn to edit the scatterplots
+
+The idea is that as we work, we will develop skills in producing appealing plots for professional audiences  
+
+We will take things step-by-step
+
+
+ I work through the parts,Tasks and questions with similar data in Part 1. If you are unsure how to do something, check that out and then come back here
+
+## Task 8: Set-up
+
+
+1.  Run this code to empty the R environment: `rm(list=ls())`
+
+
+2.  Run this code to load relevant libraries
+
+```{r}
+library("patchwork")
+library("tidyverse")
+```
+
+In this how-to guide, we use data from *a second* 2020 study of the response of adults from a UK national sample to written health information: `study-two-general-participants.csv`
+
+## Task 9: Load data
+
+
+3.  Read in the first data file we will be using: `study-two-general-participants.csv`. Use the `read_csv()` function to read the data file into R When you read the data file in, give the data object you create a clear name e.g. `study.two.gen`
+
+Task 4  Inspect the data file
+ hint:Task 4  Use the summary() or head() functions to take a look
+
+Q1.  What is the median of `AGE`?
+
+Q2.  What class is the variable `ETHNICITY`?
+
+Q3.  Does the summary indicate if any variable has missing values (NAs)?
+
+
+5.  Change the class or type of the variable `ETHNICITY` to factor. You can use the `as.factor()` function you have used before
+
+Q4.  After you have done this, what information does `summary()` give you about the variable `ETHNICITY`?
+
+
+## Task 10: Use histograms to examine the distributions of variables
+
+6. Draw histograms to examine the distributions of variables. Use `ggplot()` with `geom_histogram()`
+
+The first time we do this, we take things step-by-step.
+
+Here's an example: run the line of code and see the result in the Plots window in R-Studio
+
+```{r}
+ggplot(data = study.two.gen, aes(x = mean.acc)) + geom_histogram()
+```
+
+
+Q5.  Did you get a message in red in the Console window in R-Studio: 
+what does it say?
+
+Q6.  Draw two different histograms to examine the distributions of two 
+different variables: `SHIPLEY` and `HLVA`
+
+Q7.  Now re-do both plots: can you change the binwidth in geom_histogram() to make the bars wider? If you are going to change `binwidth` the number you use needs to be a number larger than the minimum and smaller than the maximum for the variable. Remember, min and max values are given for each numeric variable in `summary()`
+
+Q8  How would you describe the distributions in a sentence of the distributions of the `SHIPLEY` and `HLVA` variable values for our sample?
+
+
+## Task 11: Edit your plots to make them look good
+
+8.  Edit the appearance of a histogram plot for *one numeric variable*. `ggplot()` code does not all have to be on the same line, you can create a new plot for each edit so you can see what difference your edits make.
+
+Q9.  Edit the appearance of the bars using `binwidth`
+
+Q10.  Edit the colour of the background using `theme_bw()`
+
+Q11.  Edit the appearance of the labels using `labs()`
+
+Q12.  Edit the appearance of the bars by changing the fill in `aes()`. To figure out how to do this, you will need to first look at 
+the ggplot reference information online  do a search with the keywords "ggplot reference geom_histogram" and then come back to this. The example code in the reference information is always a good place to find ideas you can use. You can ask for fill to be a specific colour e.g. "red" (use quotes)
+
+## Task 12: Now draw scatterplots to examine associations between variables
+
+9. Create a scatterplot to examine the association between some variables e.g. `HLVA` and `mean.acc`. We are working with `geom_point()` and you need x and y aesthetic mappings
+
+10.  Now do scatterplots with *every* numeric predictor variable in the `study.two.gen` dataset. You always want to use as the y-axis variable the outcome `mean.acc` so: `y = mean.acc`. Then you can use each numeric predictor variable as the x-axis variable e.g. `x = mean.self`. Remember what we saw with `summary()`: not every variable consists of numbers. If the `summary()` does not show you a mean for a variable, R does not think that variable is numeric. It can be hard to decide what an association looks like.
+
+Q13.  What is the shape (direction) of the association between `mean.self` and `mean.acc`?
+
+Q14.  What is the shape (direction) of the association between `AGE` and `mean.acc`?
+
+Q15.  What is the shape (direction) of the association between `SHIPLEY` and `mean.acc`?
+
+Q16.  What is the shape (direction) of the association between `HLVA` and `mean.acc`?
+
+Q17.  What is the shape (direction) of the association between `FACTOR3` and `mean.acc`?
+
+Q18.  What is the shape (direction) of the association between `QRITOTAL` and `mean.acc`?
+
+## Task 13: Edit the scatterplots to make them look good
+
+11.  Edit the appearance of one plot step-by-step
+
+ We are going to edit:
+-- the appearance of the points using `alpha`, `size` and `colour`
+-- the colour of the background using `theme_bw()`
+-- the appearance of the labels using `labs()` as follows
+
+
+Q19.  Change the appearance of the points using alpha, size and colour. Just like with `geom_histogram()` there is ggplot reference information for the geom you need here. Find some example code and come back here if you are unsure what to do
+
+Q20.  Edit the colour of the background using `theme_bw()`
+
+Q21.  Edit the appearance of the labels using `labs()`
+
+Q22.  Can you find the ggplot reference page? Do a search with the keywords "ggplot reference geom_point"
+
+ Now you: experiment!
+
+
+## Task 14: Use correlation to to answer the research questions
+
+13.  Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables. We use `cor.test()`
+
+Q23.  What is r (given as `cor` in the output) for the correlation between `HLVA` and `mean.acc`?
+
+Q24.  Is the correlation significant?
+
+Q25.  What are the values for t and p for the significance test for the correlation?
+
+Q26.  What do you conclude, given the correlation results? Maybe draw a scatterplot to examine the shape of the association
+
+Q27.  What is r (given as `cor` in the output) for the correlation between `mean.self` and `mean.acc`?
+
+Q28.  Is the correlation between `AGE` and `mean.acc` significant?
+
+Q29.  What are the values for t and p for the significance test for the correlation between `QRITOTAL` and `mean.acc`?
+
+Q30.  What do you conclude, given the correlation results, about the association between `SHIPLEY` and `mean.acc`?
+
+## Task 15: Optional extensions
+
+14.  One of the convenient and powerful things about R plotting code is that you can create a series of plots and put them together in a grid of plots for east comparison: we do that here. We will use the patchwork library: check it out [https://patchwork.data-imaginist.com/articles/patchwork.html](https://patchwork.data-imaginist.com/articles/patchwork.html)
+
+:::{.callout-warning collapse="true"}
+## Here`s an example  
+
+ first create two plots: give them both names
+p.AGE <- ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
+  geom_point() 
+
+p.SHIPLEY <- ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point()  
+
+ second put them together
+p.AGE  + p.SHIPLEY
+:::
+
+Now you try it: create two plots, using `QRITOTAL` and `SHIPLEY` as predictors and `mean.acc` as the outcome, then make a grid to present them side by side
+

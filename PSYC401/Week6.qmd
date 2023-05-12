@@ -16,28 +16,28 @@ We do not look at new analysis methods or code so there are _no_ new practical m
 
 Before class: take a look at the video lectures (in 3 parts) in which I explain the reasons why we do the research report, and why you can expect to benefit from the exercise.
 
+# Lectures
+
   - [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012832)
   - [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012837)
   - [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012838)
   - [Slides here - html version](https://modules.lancaster.ac.uk/mod/resource/view.php?id=2012803)
+  - [Slides - word version](data/PSYC401_wk6/401-research-report-printable.docx)
   
 
-Optionally: you can read a book chapter [Introduction: why?]() we wrote to explain in-depth our thinking behind the exercise -- this may interest those with an interest in doing research, open science, and the motivation for the good practice we advise.
+Optionally: you can read a book chapter [Introduction: why?](https://robayedavies.github.io/PSYC401-book/intro.html) we wrote to explain in-depth our thinking behind the exercise -- this may interest those with an interest in doing research, open science, and the motivation for the good practice we advise.
 
 -- You do not need to read this but we hope it presents a deeper understanding for why the exercise is useful, and why we teach and work with open science practices.
 
-Optionally: [we wrote a book chapter How?]() to describe different ways -- step-by-step -- that you can choose to do the research report. This information is not instruction, it is advice and I am happy to discuss these suggestions.
+Optionally: [we wrote a book chapter How?](https://robayedavies.github.io/PSYC401-book/how.html) to describe different ways -- step-by-step -- that you can choose to do the research report. This information is not instructional, it is advice and I am happy to discuss these suggestions.
 
 Pop into the drop in (optional). Please note this is in Levy Lab - do come along with any questions at all on the workbooks so far.
 
-Materials
-Here is a guide to the materials we share:
--- slides --
-Lecture slides -- as .html file, all parts: (download) and open in any browser, as delivered
-401-research-report-printable -- printable version of slides, as .docx for easy printing
--- optional reading --
--- You can access the reading as an online book, see link below.
--- You can access the reading as: The-research-report--why,-what-and-how.pdf -- a printable version of the book chapters, as a .pdf
 
-Assignment 3
-By the end of Week 6, please submit your Assignment 3. Assignment 3 is a little different than the previous assignments. This one provides you with a data set for you to explore, and provide the R script that you used to explore the data, together with a brief report of what you tested in the data set, why, and what you found. You will need the Assignment 3 data set, and more instructions are in Assignment 3.
+- Week 5 answers are [here](data/PSYC401_wk6/Wk5 answers.zip)
+
+- [Research report checklist](data/PSYC401_wk6/PSYC401-research-report-checklist.docx)
+
+# Assignment 3
+
+By the end of Week 6, please [submit your Assignment 3 here](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=1921459) using the data [downloaded here](data/PSYC401_wk6/assignment.zip). Assignment 3 is a little different than the previous assignments. This one provides you with a data set for you to explore, and provide the R script that you used to explore the data, together with a brief report of what you tested in the data set, why, and what you found. You will need the Assignment 3 data set, and more instructions are in Assignment 3.
