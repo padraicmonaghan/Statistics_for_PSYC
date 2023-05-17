@@ -48,7 +48,7 @@ If you're ready to begin, go to the tutorial linked to below. There is no need t
 
 #### Get your files ready
 
-Download the [122_week12_forStudents.zip](files/week12/122_week12_forStudents.zip) file and upload it into the new folder in RStudio Server you created (see last week's Pre-lab activity 4 for instructions on how to do that.
+Download the [122_week12_forStudents.zip](data/week12/122_week12_forStudents.zip) file and upload it into the new folder in RStudio Server you created (see last week's Pre-lab activity 4 for instructions on how to do that.
 
 ## Lab activities
 
@@ -87,17 +87,17 @@ d.  a and b
 
 Using the histograms and qq-plots below, which of these variables satisfies the normality assumption? Explain your answers.
 
-**Histogram non-words** ![](files/week12/hist_nonWords.png)
+**Histogram non-words** ![](images/wk2/hist_nonWords.png)
 
-**QQ-plot non-words** ![](files/week12/qq_nonWords.png)
+**QQ-plot non-words** ![](images/wk2/qq_nonWords.png)
 
-**Histogram words** ![](files/week12/hist_words.png)
+**Histogram words** ![](images/wk2/hist_words.png)
 
-**QQ-plot words** ![](files/week12/qq_words.png)
+**QQ-plot words** ![](images/wk2/qq_words.png)
 
-**Histogram vocabulary** ![](files/week12/hist_vocab.png)
+**Histogram vocabulary** ![](images/wk2/hist_vocab.png)
 
-**QQ-plot non-words** ![](files/week12/qq_vocab.png)
+**QQ-plot non-words** ![](images/wk2/qq_vocab.png)
 
 #### Question 4
 
@@ -119,7 +119,7 @@ For this exercise, you need to know that "Block 3" in the experiment tested reac
 
 Before you do anything else, when starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one. You can do this by clicking on the broom icon at the top of the environment window, or you can use the code below.
 
-> **TASK**: Use the code snippet below to clear the environment. **TIP**: If you hover your mouse over the box that includes the code snippet, a 'copy to clipboard' icon will appear in the top right corner of the box. Click that to copy the code. Now you can easily paste it into your script. ![](files/week12/copy.png)
+> **TASK**: Use the code snippet below to clear the environment. **TIP**: If you hover your mouse over the box that includes the code snippet, a 'copy to clipboard' icon will appear in the top right corner of the box. Click that to copy the code. Now you can easily paste it into your script. ![](images/wk2/copy.png)
 
 ```{r eval=FALSE}
 rm(list=ls())                            
@@ -137,7 +137,7 @@ getwd()
 
 If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the 'Files' pane, click 'More' and then on 'Set as working directory'.
 
-![](files/week12/more_workingDirectory.png)
+![](images/wk2/more_workingDirectory.png)
 
 #### Step 2: Load packages
 
@@ -256,72 +256,140 @@ When you have completed all of the lab content, you may want to check your answe
 
 1.  Correlation would be an appropriate form on analysis for researchers interested in the relationship between
 
--   
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+a.  Dog (breed) and height (cm) of owner
+b.  Speed of swimming (mph) and area of tank (cm)
+c.  Number of cows sitting and rain fall (mm)
+d.  Total llama saliva (ml) expelled and gender of visitors
+e.  b and d
 
-    a.  Dog (breed) and height (cm) of owner
-
--   
-
-    b.  Speed of swimming (mph) and area of tank (cm)
-
--   
-
-    c.  Number of cows sitting and rain fall (mm)
-
--   
-
-    d.  Total llama saliva (ml) expelled and gender of visitors
-
--   
-
-    e.  b and d
-
--   **f. b and c** **All variables in b anc c are continuous. Dog breed and gender are categorical.**
+**f. b and c** **All variables in b anc c are continuous. Dog breed and gender are categorical.**
+:::
 
 2.  When would you use Spearman's rho analysis instead of Pearson's r?
 
--   
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**b. When the data is not normally distributed**
+:::
 
-    a.  When there are clear outliers in the data
+3.  Using the histograms and qq-plots below, which of these variables satisfies the normality assumption? Explain your answers. 
 
--   **b. When the data is not normally distributed**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Vocabulary. Only for vocabulary does the histogram resemble a bell curve and do the data-points in the qq-plot fall within the dashed blue lines.**
+:::
 
--   
+4.  Why should correlation analysis not be conducted on variables with a curvilinear relationship? 
 
-    c.  When the relationship between X and Y is curvilinear
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**May be subject to a type 2 error - there actually is a relationship between variables yet we reject the null hypothesis. As the relationship is not linear, correlation analysis will not identify this.**
+:::
 
--   
-
-    d.  a and b
-
-3.  Using the histograms and qq-plots below, which of these variables satisfies the normality assumption? Explain your answers. **Vocabulary. Only for vocabulary does the histogram resemble a bell curve and do the data-points in the qq-plot fall within the dashed blue lines.**
-
-4.  Why should correlation analysis not be conducted on variables with a curvilinear relationship? **May be subject to a type 2 error  there actually is a relationship between variables yet we reject the null hypothesis. As the relationship is not linear, correlation analysis will not identify this.**
 
 ### Lab activity 2
 
-You can download the R-script that contains the code to complete lab activity 2 here: [122_wk12_labAct2.R](files/week12/122_wk12_labAct2.R).
+You can download the R-script that contains the code to complete lab activity 2 here: [122_wk12_labAct2.R](data/week12/122_wk12_labAct2.R).
 
-1.  For how many participants do we have data? **There are 166 observations, so we have data for 166 participants. You can see this in the Environment window in the top right. This does not tell us whether any of these participants have any missing data.**
+1.  For how many participants do we have data? 
 
-2.  For how many participants do we have data now that we have cleaned them up? **104 participants**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**There are 166 observations, so we have data for 166 participants. You can see this in the Environment window in the top right. This does not tell us whether any of these participants have any missing data.**
+:::
 
-3.  Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect? **People with a positive IAT_RT are considered to hold the implicit view that vaping is negative (i.e. congruent associations are quicker than incongruent associations)** What does a negative IAT_RT score reflect? **People with a negative IAT_RT are considered to hold the implicit view that vaping is positive (i.e. incongruent associations were quicker than congruent associations).** What does a higher score on the 'VapingQuestionnaireScore' mean? **Higher scores indicated a positive explicit attitude towards vaping.**
+2.  For how many participants do we have data now that we have cleaned them up? 
 
-4.  Why might these averages be useful? Why are averages not always useful in correlations? **It is always worth thinking about which averages are informative and which are not. Knowing the average explicit attitude towards vaping could well be informative. In contrast, if you are using an ordinal scale and people use the whole of the scale then the average may just tell you the middle of the scale you are using - which you already know and really isn't that informative. So it is always worth thinking about what your descriptives are calculating.**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**104 participants**
+:::
 
-5.  What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables? **Both can be considered continuous variables and at least at interval level.**
+3.  Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect? 
 
-6.  How many people had missing data? **8. Before we removed participants with missing data, we had 104 observations, now we have 96. So there must have been 8 participants without a score on one or the other variable.**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**People with a positive IAT_RT are considered to hold the implicit view that vaping is negative (i.e. congruent associations are quicker than incongruent associations)** 
+:::
 
-7.  What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed? **Yes. Both histograms resemble a normal distribution (bell curve) and the open circles in the qq-plots fall within the blue stripy lines.**
+What does a negative IAT_RT score reflect?
 
-8.  What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)? **The data look like a cloud without a clear direction. This suggests the relationship might might be weak. In terms of linearity, the scatterplot doesn't suggest any curvilinear relationships. Variance seems quite constant, but there do seem to be few people with negative IAT_RT (Implicit attitude) scores, suggesting few people held the view that vaping is positive.**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+:::
+ **People with a negative IAT_RT are considered to hold the implicit view that vaping is positive (i.e. incongruent associations were quicker than congruent associations).**
+ :::
+ 
+ What does a higher score on the 'VapingQuestionnaireScore' mean? 
+ 
+ ::: {.callout-warning icon=false collapse="true"}
+## Answer
+:::
+**Higher scores indicated a positive explicit attitude towards vaping.**
+:::
 
-9.  Do you need to calculate Pearson's r or Spearman's rho? **Pearson's r because the data do meet the assumptions.**
+4.  Why might these averages be useful? Why are averages not always useful in correlations? 
 
-10. Can you write up the results including the r, df, p-value and an interpretation? **Testing the hypothesis of a relationship between implicit and explicit attitudes towards vaping, a Pearson correlation found no significant relationship between IAT reaction times (implicit attitude) and answers on a Vaping Questionnaire (explicit attitude), *r*(94) = -.02, *p* = .822. Overall this suggests that there is no direct relationship between implicit and explicit attitudes with regard to vaping and as such our hypothesis was not supported; we cannot reject the null hypothesis.**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**It is always worth thinking about which averages are informative and which are not. Knowing the average explicit attitude towards vaping could well be informative. In contrast, if you are using an ordinal scale and people use the whole of the scale then the average may just tell you the middle of the scale you are using - which you already know and really isn't that informative. So it is always worth thinking about what your descriptives are calculating.**
+:::
 
-11. What do you conclude from the scatterplots? **The scatterplots with age suggest that age is highly skewed with only a few participants older than 25. For now, let's say we'll therefore calculate Spearman's rho, rather than Pearson's *r*. That is ok for now, but if you were analysing these data for a research project, you'd want to have a closer look at the age variable (think histogram, qq-plot, and think about either collecting more data from older participants or transforming the variable (more about that next year).**
+5.  What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables? 
 
-12. What do you conclude from the results of the correlation analysis? **No significant correlation with age was found.**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Both can be considered continuous variables and at least at interval level.**
+:::
+
+6.  How many people had missing data? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**8. Before we removed participants with missing data, we had 104 observations, now we have 96. So there must have been 8 participants without a score on one or the other variable.**
+:::
+
+7.  What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Yes. Both histograms resemble a normal distribution (bell curve) and the open circles in the qq-plots fall within the blue stripy lines.**
+:::
+
+8.  What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**The data look like a cloud without a clear direction. This suggests the relationship might might be weak. In terms of linearity, the scatterplot doesn't suggest any curvilinear relationships. Variance seems quite constant, but there do seem to be few people with negative IAT_RT (Implicit attitude) scores, suggesting few people held the view that vaping is positive.**
+:::
+
+9.  Do you need to calculate Pearson's r or Spearman's rho? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Pearson's r because the data do meet the assumptions.**
+:::
+
+10. Can you write up the results including the r, df, p-value and an interpretation? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Testing the hypothesis of a relationship between implicit and explicit attitudes towards vaping, a Pearson correlation found no significant relationship between IAT reaction times (implicit attitude) and answers on a Vaping Questionnaire (explicit attitude), *r*(94) = -.02, *p* = .822. Overall this suggests that there is no direct relationship between implicit and explicit attitudes with regard to vaping and as such our hypothesis was not supported; we cannot reject the null hypothesis.**
+:::
+
+11. What do you conclude from the scatterplots? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**The scatterplots with age suggest that age is highly skewed with only a few participants older than 25. For now, let's say we'll therefore calculate Spearman's rho, rather than Pearson's *r*. That is ok for now, but if you were analysing these data for a research project, you'd want to have a closer look at the age variable (think histogram, qq-plot, and think about either collecting more data from older participants or transforming the variable (more about that next year).**
+:::
+
+
+12. What do you conclude from the results of the correlation analysis? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**No significant correlation with age was found.**
+:::

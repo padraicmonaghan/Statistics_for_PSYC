@@ -1,11 +1,22 @@
 ---
 title: 1. Introduction to PSYC121
 subtitle: Written by John Towse & Tom Beesley
-order: 1
+order: 2
 ---
 
+# Lectures
 
-## Analysis labs and 'pre-lab' activity
+Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1982163)
+
+Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1982164)
+
+Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1982165)
+
+Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1982169)
+
+Download the lecture slides [here](data/Week_1/week 1 lecture slides.pptx)
+
+# Analysis labs and 'pre-lab' activity
 
 For each lab session that you have been scheduled to attend, please come "prepared'. By this we mean
 
@@ -21,7 +32,7 @@ Want additional support? Keep in mind that the Department has endorsed and will 
 
 The book covers principles of statistics as well as some tutorials on using R. You can access a library copy [from the library pages](https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221){target="_blank"}
 
-## Activities for this week
+# Activities for this week
 
 ## Task 1 - check-in with the University attendance register
 
@@ -31,7 +42,7 @@ Staff will remind you of this in your class.
 
 ## Task 2 - Getting dicy
 
-![](files/Week_1/dice.png){width="3in"}
+![](images/Wk1/dice.png){width="3in"}
 
 Here's a simple task for you to complete as a group around each of the workstations;
 
@@ -81,7 +92,7 @@ As it says in the subject line, please keep your account details safe!
 
 ### What does RStudio look like?
 
-When RStudio starts, it will look something like this: ![Startup screen](files/Week_1/RStudio_starup_screen.png)
+When RStudio starts, it will look something like this: ![Startup screen](images/Wk1/RStudio_starup_screen.png)
 
 RStudio has three panels or windows: there are tabs for Console (taking up the left hand side), Environment (and History top right) , Current file (bottom right). You will also see a 4th window for a script or set of commands you develop, also (on the left hand side).
 
@@ -97,7 +108,7 @@ Click on that folder to open it
 
 Next, we've prepared some *instructions* for RStudio to use - this is called a "script". So we need to get this script into the server for you to explore and play with
 
-1.  Download the "zip" file by [clicking this link](files/Week_1/week_1.zip)
+1.  Download the "zip" file by [clicking this link](data/Week_1/week_1.zip)
 
 2.  Find the location of the file on your computer and check it is saved as a ".zip" file
 
@@ -173,7 +184,7 @@ a)  Make sure you save a copy of the script that you have been working on by the
 
 b)  End your session on the RStudio server, this logs you out of the server and stops any ongoing activities and tasks you have set up, maybe in the background.
 
-    ![](files/Week_1/power_button.png){width="2.5in"}
+    ![](images/Wk1/power_button.png){width="2.5in"}
 
     There is a red "power" button near the top right of the R studio window (do ask for help if you can't find it). It's a good habit to get into to turn the session off
 

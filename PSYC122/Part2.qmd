@@ -18,7 +18,7 @@ We will reference lectures in these other modules where you may benefit from *co
 
 In weeks 16-20, we are going to focus on working in research in context (see Figure @fig-simple).
 
-```{dot}
+```{dot fig-simple}
 //| fig-width: 5
 //| label: fig-simple
 //| fig-cap: This is a simple graphviz graph.

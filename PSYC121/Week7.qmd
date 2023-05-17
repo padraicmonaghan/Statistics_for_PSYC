@@ -1,8 +1,26 @@
 ---
 title: 7.Filtering data and testing means (one-sample t-test)
 subtitle: Written by Tom Beesley & John Towse
-order: 7
+order: 8
 ---
+
+# Lectures
+
+Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016910)
+
+Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016911)
+
+Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016912)
+
+Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016913)
+
+Download the lecture slides [here](data/Week_7/PSYC121 Week 7.pptx)
+
+## Reading
+
+[Chapter 12](https://modules.lancaster.ac.uk/mod/url/view.php?id=2017198) of Howell
+
+
 
 ```{r eval=FALSE, include=FALSE}
 library(tidyverse)
@@ -26,7 +44,7 @@ d <-
                                          str_detect(home_location_in_UK, "Wales") ~ "Wales"),
          attention_check = case_when(str_detect(attention_check, "strongly dis") ~ "strongly disagree",
                                      TRUE ~ attention_check)) %>% 
-  write_csv("files/Week_7/salary_data_wk7.csv")
+  write_csv("data/Week_7/salary_data_wk7.csv")
 
 ```
 
@@ -34,15 +52,15 @@ d <-
 
 Today we will look in a bit more detail at people's estimates of the average UK salary. We will first plot this data using `geom_histogram()` and also `geom_boxplot()`. When we do this, we'll see that there are some unusual values, and we'll need to do a bit of **data wrangling** to remove them, using the `filter()` command. We'll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we'll continue to develop our skills in **data visualisation** by exploring `geom_density()` plots.
 
-## Pre-lab work
+# Pre-lab work
 
 -   There is an [online tutorial](https://ma-rconnect.lancs.ac.uk/PSYC121_Week_7_labprep/){target="_blank"}. Please make every attempt to complete this before the lab!
 
 -   Create a folder for Week 7
 
--   Download the [Week_7.zip](files/Week_7/Week_7.zip) and upload it into this new folder in RStudio Server.
+-   Download the [Week_7.zip](data/Week_7/Week_7.zip) and upload it into this new folder in RStudio Server.
 
-## RStudio tasks
+# RStudio tasks
 
 ### Plotting and filtering
 
@@ -70,7 +88,7 @@ We now want to know if the salary estimates are different to the actual average 
 
 10. What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.
 
-![](files/Week_7/ttable.png)
+![](images/wk7/ttable.png)
 
 ### Practising filtering
 

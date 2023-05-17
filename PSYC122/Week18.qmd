@@ -18,8 +18,8 @@ library(tidyverse)
 ```{r}
 #| warning: false
 #| echo: false
-study.one <- read_csv("study-one-general-participants.csv")  
-study.two <- read_csv("study-two-general-participants.csv")
+study.one <- read_csv("data/week16/study-one-general-participants.csv")  
+study.two <- read_csv("data/week16/study-two-general-participants.csv")
 ```
 
 Welcome to your overview of the materials you will work with in **PSYC122 Week 18**.
@@ -164,7 +164,7 @@ If you do not want to complete the survey, we invite you to read the pre-registe
 
 ### Get your files ready {#sec-w18-resources}
 
-Download the [122-22-w18_for-students.zip](files/122-22-w18_for-students.zip) files you need and upload them to your RStudio Server.
+Download the [122-22-w18_for-students.zip](data/week18/122-22-w18_for-students.zip) files you need and upload them to your RStudio Server.
 
 The folder includes the data files:
 
@@ -267,7 +267,7 @@ You can see the columns:
 ### Answers
 
 ::: callout-tip
-You can now download the answers version of the activity workbook .R [here](files/2022-23-PSYC122-w18-workbook-answers.R).
+You can now download the answers version of the activity workbook .R [here](data/week18/2022-23-PSYC122-w18-workbook-answers.R).
 :::
 
 The answers version presents my answers for questions, and some extra information where that is helpful.

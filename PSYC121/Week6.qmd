@@ -1,9 +1,24 @@
 ---
 title: 6. Sampling, probability and binomial tests
 subtitle: Written by Tom Beesley & John Towse
-order: 6
+order: 7
 ---
 
+# Lectures
+
+Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012874)
+
+Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012875)
+
+Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012876)
+
+Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012877)
+
+Download the lecture slides [here](data/Week_6/PSYC121 Week 6.pptx)
+
+## Reading 
+
+[Chapter 8](https://modules.lancaster.ac.uk/mod/url/view.php?id=2017199) of Howell
 
 ## Pre-lab work
 
@@ -11,13 +26,13 @@ order: 6
 
 -   There is a learnr tutorial to complete which will help you to think about **binomial tests**. You : [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
 
--   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](files/Week_6/Week_6.zip)
+-   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](data/Week_6/Week_6.zip)
 
 -   If you create a folder and upload the file into RStudio before the lab class you'll be even more ready to follow along!
 
 ## Card sampling task
 
-![](files/Week_6/cards.jpg)
+![](images/wk6/cards.jpg)
 
 In the first task this week we will look at the sampling of events and we will apply the basic statistical test of the binomial test: `binom.test()`
 
@@ -41,7 +56,7 @@ As an experimenter we are trying to estimate what is true about the world, and i
 
 -   Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.
 
--   Mark down whether the card was red or black in [your logbook](files/Week_6/Week_6_card_logbook.docx)
+-   Mark down whether the card was red or black in [your logbook](data/Week_6/Week_6_card_logbook.docx)
 
 -   The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.
 
@@ -77,7 +92,7 @@ There are lots of ways to get a quick look at the data. Here are a few useful on
 
 Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.
 
-### Create a density plot and/or hisotgram of the phone data
+### Create a density plot and/or histogram of the phone data
 
 It's very easy to convert the boxplot code into either a density plot (`geom_density()`) or a histogram (`geom_histogram()`). Have a play around with these different types of graphs. Which one communicates the spread of the data most clearly? Is it better to plot these on the x or y axis?
 
@@ -108,7 +123,7 @@ We can customise our plot even further:
 -   try adding `colour =` within `ggplot(aes( ))` to *map* the colour to the 'UK_region' variable.
 -   you can change the colours used by ggplot by adding `+ scale_colour_brewer()` to your plot code. Within this, try setting the pallete parameter to one of these options (e.g., `scale_colour_brewer(palette = "Set3")`)
 
-![](files/Week_6/brewer_cols.png)
+![](images/wk6/brewer_cols.png)
 
 -   remember you can add labels using `+labs()`
 -   remember you can set a new theme, such as `+ theme_minimal()`

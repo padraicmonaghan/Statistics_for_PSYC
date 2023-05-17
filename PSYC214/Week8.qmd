@@ -4,6 +4,20 @@ subtitle: "Mark Hurlstone, Richard Philpot"
 order: 9
 ---
 
+
+# Lecture
+
+Watch Part 1 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2019968)
+
+Watch Part 2 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2019969)
+
+Watch Part 3 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2019970)
+
+Download the lecture slides [here](data/Wk8/Two-Factor Mixed and Within-Participants ANOVA HANDOUT.pdf), and [here](data/Wk8/Two-Factor Mixed and Within-Participants ANOVA.pdf) for a larger version.
+
+# Lab
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -44,17 +58,23 @@ Let's set our working directory:
 setwd("~/psyc214_lab_8")
 ```
 
-Now that you have created a folder for today's session, it’s time to add the Week 8 files. Head on over to the PSYC214 Moodle page, access the lab folder for Week 8, and download the files `StroopMixed.csv`, `StroopWithin.csv`, and `simple.R` to your desktop. Next, in the RStudio Server open your new psyc214_lab_8 folder. When in the new folder, select the `Upload` tab. This will present a box that will ask where the data is that you want to upload. Click on `Browse`, find the `StroopMixed.csv` file on your desktop and click `OK`, then repeat these steps for the `StroopWithin.csv` and the `simple.R` files. 
+Now that you have created a folder for today's session, it’s time to add the Week 8 files. Download the data and files needed for this lab [here](data/wk8/psyc214_Week8.zip) and save to the newly created folder `psyc214_lab_8`.
 
 Before moving on, let's load the relevant libraries/functions that we will be using in today's session.
 
-```{r, message = FALSE}
+```{r, message = FALSE, eval=FALSE}
 library("tidyverse")  # For data storage and manipulation
 library("tidyr")      # For tidy data
 library("rstatix")    # For descriptives statistics, outlier detection, running the ANOVAs etc.
 source("simple.R")    # Custom function for generating the simple main effects
 ```
 
+```{r, echo = FALSE, message=FALSE}
+library("tidyverse")  # For data storage and manipulation
+library("tidyr")      # For tidy data
+library("rstatix")    # For descriptives statistics, outlier detection, running the ANOVAs etc.
+source("data/Wk8/simple.R")    # Custom function for generating the simple main effects
+```
 **Note that the custom function `simple.R` that we use to calculate the simple main effects must be present in your directory whenever you seek to use it.**  
 
 # Today's Lab Activities
@@ -81,9 +101,15 @@ The first thing you need to do is load the data into RStudio. Make sure that you
 # *** ENTER YOUR OWN CODE HERE TO IMPORT THE DATA ***
 ```
 
+```{r, echo = FALSE, message = FALSE, eval=FALSE}
+# Import data
+stroopMixed = read_csv("StroopMixed.csv")
+(stroopMixed)
+```
+
 ```{r, echo = FALSE, message = FALSE}
 # Import data
-stroopMixed = read_csv("data/StroopMixed.csv")
+stroopMixed = read_csv("data/Wk8/StroopMixed.csv")
 (stroopMixed)
 ```
 
@@ -310,9 +336,15 @@ The data set contains seven columns:
 
 There's a bit to get through in this analysis, so I am going to supply the code for everything that follows. We begin, as always, by loading our data set:
 
-```{r, echo = TRUE, message = FALSE}
+```{r, echo = TRUE, message = FALSE, eval=FALSE}
 # Import data
-stroopWithin = read_csv("data/StroopWithin.csv")
+stroopWithin = read_csv("StroopWithin.csv")
+(stroopWithin)
+```
+
+```{r, echo = FALSE, message = FALSE}
+# Import data
+stroopWithin = read_csv("data/Wk8/StroopWithin.csv")
 (stroopWithin)
 ```
 

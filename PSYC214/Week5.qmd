@@ -4,6 +4,21 @@ subtitle: "Mark Hurlstone, Richard Philpot"
 order: 6
 ---
 
+# Lecture
+
+Watch Part 1 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2011121)
+
+Watch Part 2 - WBA1 review [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2011758)
+
+Watch Part 3 - WBA2 review [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2011760)
+
+Watch Part 4 - WBA3 review [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2011761)
+
+Download the lecture slides [here](data/Wk5/Lecture 5 - Student Slides [small].pdf), and [here](data/Wk5/Lecture 5 - Student Slides [large].pdf) for a larger version.
+
+# Lab
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -21,6 +36,8 @@ Over the past four weeks, Richard has given you a comprehensive introduction to 
 
 # Getting Started
 
+Download the files needed for this lab [here](data/Wk5/psyc214_lab_5.zip) and upload it to the R server.
+
 To get started, we first need to log into the R Studio Server.
 
 You can access Lancaster University’s RStudio Server at http://psy-rstudio.lancaster.ac.uk. At present, you will need to be on campus, or connected to the VPN to access this. **If you do not yet have Eduroam (the university wifi) available on your personal device, please follow the instructions from the PSYC214 Announcement Page https://modules.lancaster.ac.uk/mod/forum/discuss.php?d=437608**
@@ -33,7 +50,7 @@ Once you are logged into the server, create a folder for today's session. Naviga
 
 ![](images/NewFolder.png){width=75%}
 
-Now that you have created a folder for today's session, it’s time to add the Week 5 data files. Head on over to the PSYC214 Moodle page, access the lab folder for Week 5, and download the files `Grouping.csv` and `WordLength.csv` to your desktop. Next, in the RStudio Server open your new pscy214_lab_5 folder. When in the new folder, select the `Upload` tab (see figure below). This will present a box that will ask where the data is that you want to upload. Click on `Browse`, find the `Grouping.csv` file on your desktop and click `OK`. Now repeat this process, this time uploading the `WordLength.csv` file. 
+Now that you have created a folder for today's session, it’s time to add the Week 5 data files. You should have already downloaded the zip file of the data from above. Next, in the RStudio Server open your new pscy214_lab_5 folder. When in the new folder, select the `Upload` tab (see figure below). This will present a box that will ask where the data is that you want to upload. Click on `Browse`, upload the zip file and click `OK`. This will upload both files togther.
 
 ![](images/UploadData.png){width=75%}
 
@@ -78,9 +95,18 @@ The researcher has two hypotheses she wants to test. Specifically, she predicts 
 
 First things first, let's load the data set:
 
-```{r, message = FALSE}
+```{r, message = FALSE, eval=FALSE}
 # Import the data
-groupingData = read_csv("data/Grouping.csv")
+groupingData = read_csv("Grouping.csv")
+# Make sure Condition is a factor with levels ordered: ungrouped, 2-2-2, 3-3
+groupingData$Condition = factor(groupingData$Condition, levels = c("Ungrouped","2-2-2","3-3"))
+# Print the data
+(groupingData)
+```
+
+```{r, echo = FALSE, message = FALSE}
+# Import the data
+groupingData = read_csv("data/Wk5/Grouping.csv")
 # Make sure Condition is a factor with levels ordered: ungrouped, 2-2-2, 3-3
 groupingData$Condition = factor(groupingData$Condition, levels = c("Ungrouped","2-2-2","3-3"))
 # Print the data
@@ -247,7 +273,7 @@ First things first, let's load the data set:
 
 ```{r, echo = FALSE, message = FALSE}
 # Import data
-wLengthData = read_csv("data/WordLength.csv")
+wLengthData = read_csv("data/Wk5/WordLength.csv")
 ```
 
 We have four columns: Participant (the participant number ranging from 1 to 75), Short_Words (percentage of list items recalled in the correct order for the short word condition), Medium_Words (percentage of list items recalled in the correct order for the medium word condition), and Long_Words (percentage of list items recalled in the correct order for the long word condition). The data are therefore in so-called "wide format" (Richard discussed the distinction between *wide format* and *long format* in the last practical session)---each repeated measurement (short words, medium words, long words) has its own column and contains the values of the dependent variable for that measurement. Whenever we use repeated measurements, that is, when we employ a within-participants design, the resulting data is stored in wide format. 

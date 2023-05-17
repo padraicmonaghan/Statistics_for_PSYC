@@ -4,6 +4,23 @@ subtitle: Written by Tom Beesley & John Towse
 order: 9
 ---
 
+# Lectures
+
+Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023089)
+
+Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/url/view.php?id=1904989)
+
+Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023091)
+
+Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023096)
+
+Download the lecture slides [here](data/Week_9/Lecture Week 9.pptx)
+
+## Reading
+
+[Chapter 14](https://modules.lancaster.ac.uk/mod/url/view.php?id=2023094) of Howell
+
+
 ```{r eval=FALSE, include=FALSE}
 library(tidyverse)
 load("survey_raw.RData")
@@ -28,7 +45,7 @@ write_csv(data_wk9, file = "files/Week_9/data_wk9.csv")
 
 **Getting ready for the lab class**
 
-Create a folder for Week 9. and download the [week_9.zip](files/Week_9/week_9.zip) file and upload it into this new folder in RStudio Server.
+Create a folder for Week 9. and download the [week_9.zip](data/Week_9/week_9.zip) file and upload it into this new folder in RStudio Server.
 
 ## RStudio tasks
 
@@ -74,7 +91,7 @@ To what extent are people's estimations of these population parameters related? 
 
 4.  We know from our lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:
 
-![](files/Week_9/z_score_figure.png)
+![](images/wk9/z_score_figure.png)
 
 5.  Let's consider an outlier any value that has a z of 2.5 (a conventional cutoff). Plot a histogram of the *z_imm* column in order to inspect whether there are data that are above 2.5 or below -2.5.
 

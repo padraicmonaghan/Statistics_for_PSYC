@@ -1,6 +1,6 @@
 ---
 title: Statistics for Group Comparisons
-subtitle: "Course coordinators: Tom Beesley, John Towse"
+subtitle: "Course coordinators: Richard Philpot, Mark Hurlestone"
 email-obfuscation: javascript
 order: 1
 
@@ -11,6 +11,8 @@ order: 1
 ---
 
 # Welcome
+
+Watch the introduction to 214 video [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=1982172).
 
 This is filler text introducing students to the course in general. Perhaps what's expected of them, the course aims, and other information of use.
 

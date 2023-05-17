@@ -1,8 +1,19 @@
 ---
 title: 3. DVs and IVs in RStudio
 subtitle: Written by John Towse & Tom Beesley
-order: 3
+order: 4
 ---
+# Lectures
+
+Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2002079)
+
+Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2002081)
+
+Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2002082)
+
+Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2002083)
+
+Download the lecture slides [here](data/Week_3/week 3 slides2022.pptx)
 
 ## Pre-lab work
 
@@ -31,7 +42,7 @@ Step 2. Explore help() commands. R can give you more information about how it wo
 
 Step 3. Creating a project and a folder, and setting the working directory
 
-Step 4. Bring the `week3.zip` file into R Studio server. Like last week, upload the zip file, and launch the R script.[You can get the file here](files/Week_3/week_3.zip)
+Step 4. Bring the `week3.zip` file into R Studio server. Like last week, upload the zip file, and launch the R script.[You can get the file here](data/Week_3/week_3.zip)
 
 Step 5. Read or load the penelope data into R. Have a look at it using the View() command in the script
 

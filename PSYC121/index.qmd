@@ -2,6 +2,7 @@
 title: Statistics for Psychologists I
 subtitle: "Course coordinators: Tom Beesley, John Towse"
 email-obfuscation: javascript
+order: 1
 
 #listing:
 #  id: links

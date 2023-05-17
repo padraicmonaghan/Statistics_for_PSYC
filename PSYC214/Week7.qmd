@@ -3,6 +3,25 @@ title: '7. Two-Factor Between-Participants ANOVA'
 subtitle: "Mark Hurlstone, Richard Philpot"
 order: 8
 ---
+
+
+# Lecture
+
+Watch Part 1 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2017092)
+
+Watch Part 2 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2017093)
+
+Watch Part 3 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2017094)
+
+Watch Part 4 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2017245)
+
+Watch Part 5 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2017257)
+
+Download the lecture slides [here](data/Wk7/Two-Factor Between-Participants Designs HANDOUT.pdf), and [here](data/Wk7/Two-Factor Between-Participants Designs.pdf) for a larger version.
+
+# Lab
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -45,7 +64,7 @@ Let's set our working directory:
 setwd("~/psyc214_lab_7")
 ```
 
-Now that you have created a folder for today's session, it’s time to add the Week 7 data file. Head on over to the PSYC214 Moodle page, access the lab folder for Week 7, and download the file `COVID19Data.csv` to your desktop. Next, in the RStudio Server open your new pscy214_lab_7 folder. When in the new folder, select the `Upload` tab. This will present a box that will ask where the data is that you want to upload. Click on `Browse`, find the `COVID19Data.csv` file on your desktop and click `OK`. 
+Now that you have created a folder for today's session, it’s time to add the Week 7 data file. Download the data [`COVID19Data.csv`](data/wk7/COVID19Data.csv). Next, in the RStudio Server open your new pscy214_lab_7 folder. When in the new folder, select the `Upload` tab. This will present a box that will ask where the data is that you want to upload. Click on `Browse`, find the `COVID19Data.csv` file on your desktop and click `OK`. 
 
 Before moving on, let's load the relevant libraries that we will be using in today's session.
 
@@ -85,7 +104,7 @@ The first thing you need to do is load the data into RStudio. Make sure that you
 Once you have done the above, type `(covid19Data)` into the console to view the first 10 rows of the data. We want to check that the columns for `Fear` and `Efficacy` have the labels `<fct>` beneath them. This means that R has stored these variables as factors, which is necessary for us to perform the ANOVA. By default, R will import these variables as characters, in which case the variables would have the labels `<chr>` beneath them. If that is the case for your data, then you will need to modify this before proceeding further.   
 
 ```{r, echo = FALSE, message = FALSE}
-covid19Data = read_csv("data/COVID19Data.csv")
+covid19Data = read_csv("data/Wk7/COVID19Data.csv")
 # The following ensures that "No Fear Appeal" is Level 1 of the Fear factor and "No Efficacy Message" is Level 1 of the Efficacy factor
 covid19Data$Fear = factor(covid19Data$Fear, levels = c("No Fear Appeal","Fear Appeal"))
 covid19Data$Efficacy = factor(covid19Data$Efficacy, levels = c("No Efficacy Message","Efficacy Message"))

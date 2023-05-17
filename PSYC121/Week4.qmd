@@ -4,13 +4,26 @@ subtitle: Written by John Towse & Tom Beesley
 order: 4
 ---
 
+# Lectures
+
+Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2005650)
+
+Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2005651)
+
+Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2005652)
+
+Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2005653)
+
+Download the lecture slides [here](data/Week_4/week4_lecture_slides.pptx)
+
+
 ## Pre-lab work
 
 -   Complete materials from sessions in previous week (materials from week 1 /2 / 3 remain fully available for anyone who wants them). Consolidate what we have already covered.
 
 -   This week - again, there's a learnr tutorial to follow and help prep for what we are covering: [You can find it here](https://ma-rconnect.lancs.ac.uk/W4LabPrep/){target="_blank"}.
 
--   Make sure you have access to the `week4.zip` file for the RStudio server.[You can get the file here](files/Week_4/week_4.zip).
+-   Make sure you have access to the `week4.zip` file for the RStudio server.[You can get the file here](data/Week_4/week_4.zip).
 
 -   If you create a folder and upload the file into RStudio before the lab class you'll be even more ready to follow along!
 

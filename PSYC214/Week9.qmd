@@ -4,6 +4,19 @@ subtitle: "Mark Hurlstone, Richard Philpot"
 order: 10
 ---
 
+
+# Lecture
+
+Watch Part 1 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2022872)
+
+Watch Part 2 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2022874)
+
+Watch Part 3 [here](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023033)
+
+Download the lecture slides [here](data/Wk9/Three-Factor ANOVA HANDOUT.pdf), and [here](data/Wk9/Three-Factor ANOVA.pdf) for a larger version.
+
+# Lab
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -45,15 +58,22 @@ Let's set our working directory:
 setwd("~/psyc214_lab_9")
 ```
 
-Now that you have created a folder for today's session, it’s time to add the Week 9 files. Head on over to the PSYC214 Moodle page, access the lab folder for Week 9, and download the files `memoryContext.csv`, `wordPronunciation.csv`, and `simple.R` to your desktop. Next, in the RStudio Server open your new psyc214_lab_9 folder. When in the new folder, select the `Upload` tab. This will present a box that will ask where the file is that you want to upload. Click on `Browse`, find the `memoryContext.csv` file on your desktop and click `OK`, then repeat these steps for the `wordPronunciation.csv` and `simple.R` files. 
+Now that you have created a folder for today's session, it’s time to add the Week 9 files. Download the files and data needed from [here](data/wk9/psyc214_lab_9.zip) and upload to the folder `psyc214_lab_9`.
 
 Before moving on, let's load the relevant libraries that we will be using in today's session.
 
-```{r, message = FALSE}
+```{r, message = FALSE, eval=FALSE}
 library("tidyverse")  # For data storage and manipulation
 library("tidyr")      # For tidy data
-library("rstatix")    # For descriptives statistics, outlier detection etc.
+library("rstatix")    # For descriptives statistics, outlier detection, running the ANOVAs etc.
 source("simple.R")    # Custom function for generating the simple main effects
+```
+
+```{r, echo = FALSE, message=FALSE}
+library("tidyverse")  # For data storage and manipulation
+library("tidyr")      # For tidy data
+library("rstatix")    # For descriptives statistics, outlier detection, running the ANOVAs etc.
+source("data/Wk9/simple.R")    # Custom function for generating the simple main effects
 ```
 
 # Today's Lab Activities
@@ -98,9 +118,16 @@ The first thing you need to do is load the data into RStudio. Make sure that you
 # *** ENTER YOUR OWN CODE HERE TO IMPORT THE DATA ***
 ```
 
+```{r, echo = FALSE, eval = FALSE}
+# Import the data
+memoryContext = read_csv("memoryContext.csv")
+# Print the dataframe
+(memoryContext)
+```
+
 ```{r, echo = FALSE, message = FALSE}
 # Import the data
-memoryContext = read_csv("data/memoryContext.csv")
+memoryContext = read_csv("data/Wk9/memoryContext.csv")
 # Print the dataframe
 (memoryContext)
 ```
@@ -354,9 +381,15 @@ The first thing you need to do is load the data into RStudio. Make sure that you
 # *** ENTER YOUR OWN CODE HERE TO IMPORT THE DATA ***
 ```
 
-```{r, echo = FALSE, message = FALSE}
+```{r, echo = FALSE, eval = FALSE}
 # Import the data
 wordPron = read_csv("data/wordPronunciation.csv")
+(wordPron)
+```
+
+```{r, echo = FALSE, message = FALSE}
+# Import the data
+wordPron = read_csv("data/Wk9/wordPronunciation.csv")
 (wordPron)
 ```
 

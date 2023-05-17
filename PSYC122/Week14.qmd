@@ -25,9 +25,11 @@ After having watched the lectures and read the textbook chapter you'll be in a g
 
 ### Pre-lab activity 1: Calculating Chi-square by hand and interpreting the results
 
-Is there a relationship between the number of people who smoke and the number of people who drink? Please note that the question is the number of people (frequency) and not how much people drink/smoke. Alos not that these are fictitious data. You'll need a table of critical values for Chi-square. This can be found in the 'Week 14 -- resources' folder on Moodle.
+Is there a relationship between the number of people who smoke and the number of people who drink? Please note that the question is the number of people (frequency) and not how much people drink/smoke. Also not that these are fictitious data. You'll need a table of critical values for Chi-square. This can be found in the 'Week 14 -- resources' folder on Moodle.
 
-![](files/week14/chisquare_dataLabAct1.png) Pre-lab activity questions:
+![](images/wk4/chisquare_dataLabAct1.png) 
+
+Pre-lab activity questions:
 
 1.  Complete the Pearson's Chi-square test by hand using the data above and fill in the blanks:
 
@@ -47,7 +49,7 @@ If you're ready to begin, go to the tutorial linked to below. There is no need t
 
 #### Get your files ready
 
-Download the [122_week14_forStudents.zip](files/week14/122_week14_forStudents.zip) file and upload it into the new folder in RStudio Server you created.
+Download the [122_week14_forStudents.zip](data/week14/122_week14_forStudents.zip) file and upload it into the new folder in RStudio Server you created.
 
 ## Lab activities
 
@@ -96,7 +98,7 @@ Why is it recommended to opt for multiple 2 x 2 chi-squares instead of chi-squar
 
 How could you 'modify' the contingency table below for chi-square analysis to aid subsequent interpretation of the data/results?
 
-![](files/week14/122_week14_labAc1_q6.png)
+![](images/wk4/122_week14_labAc1_q6.png)
 
 ### Lab activity 2: Reminders through association
 
@@ -106,7 +108,7 @@ Although there are lots of potential reasons (e.g., some people may lack the sel
 
 In Study 1 by Rogers and colleagues, participants took part in an unrelated experiment but at the start of the task they were asked to return a small stack of paper clips to the reception of the building at the end of the study and if they did so the researchers would donate \$1 to a charity. They were then asked if they intended to do this. Those in the reminder-through-association (RTA) condition read "Thank you! To remind you to pick up a paper clip, an elephant statuette will be sitting on the counter as you collect your payment." This message was followed by a picture of the elephant statuette. Those in the control condition simply read "Thank you!".
 
-What we want to do is to run a chi-square analysis to determine whether those in the RTA condition were more likely to remember to return the paper-clips than those in the control condition. Open the [`122_wk14_labAct2.R` script](files/week14/122_wk14_labAct2.R) in RStudio and work your way through it. All instructions, hints and questions are contained in the script.
+What we want to do is to run a chi-square analysis to determine whether those in the RTA condition were more likely to remember to return the paper-clips than those in the control condition. Open the [`122_wk14_labAct2.R` script](data/week14/122_wk14_labAct2.R) in RStudio and work your way through it. All instructions, hints and questions are contained in the script.
 
 ## Answers
 
@@ -116,19 +118,36 @@ When you have completed all of the lab content, you may want to check your answe
 
 ### Lab activity 1
 
-1.  How does Pearson's Chi-square differ from Pearson's correlation? **Pearson's Chi-square assesses whether there is a relationship between categorical (or nominal) variables. Pearson's correlation assesses whether there is a relationship between continuous (or interval/ratio) variables.**
+1.  How does Pearson's Chi-square differ from Pearson's correlation? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Pearson's Chi-square assesses whether there is a relationship between categorical (or nominal) variables. Pearson's correlation assesses whether there is a relationship between continuous (or interval/ratio) variables.**
+:::
 
 2.  Chi-square test of independence would be appropriate when testing the following questions:
 
--   
+a.  What is the relationship between gender and soft drink preference? 
 
-    a.  What is the relationship between gender and soft drink preference? **True**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**True**
+:::
 
--   
+b.  How do males and females compare in terms of wanting to be a psychologist when they leave school? 
 
-    b.  How do males and females compare in terms of wanting to be a psychologist when they leave school? **True**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**True**
+:::
 
-3.  Write the chi-square formula below. ![](files/week14/122_week14_chiSquareFormula.png)
+3.  Write the chi-square formula below.
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+![](images/wk4/122_week14_chiSquareFormula.png)
+:::
+
 
 4.  What were your answers to the pre-lab activity 1 questions? Please compare them with other students at your table.
 
@@ -136,7 +155,10 @@ When you have completed all of the lab content, you may want to check your answe
 
     a.  Complete the Pearson's chi-square test by hand using the data above and fill in the blanks:
 
-![](files/week14/chisquare_dataLabAct1_answer.png)
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+![](images/wk4/chisquare_dataLabAct1_answer.png)
+
 
 **First determine expected frequencies:** **Smoke/drink: (70 x 65) / 110 = 41.36** **Smoke/don't drink (70 x 45) / 110 = 28.63** **Don't smoke/drink (40 x 65) / 110 = 23.63** **Don't smoke/don't drink (40 x 45) / 110 = 16.36**
 
@@ -144,18 +166,29 @@ When you have completed all of the lab content, you may want to check your answe
 
 $\chi 2$ (1, *N* = 110) = 12.11, *p* \< .001
 
--   
+Can you reject the null hypothesis? **Yes**
+:::
 
-    b.  Can you reject the null hypothesis? **Yes**
+5.  Why is it recommended to opt for multiple 2 x 2 chi-squares instead of chi-squares larger than 2 x 2? 
 
-5.  Why is it recommended to opt for multiple 2 x 2 chi-squares instead of chi-squares larger than 2 x 2? **It is easier to interpret and such a design requires a smaller sample size.**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**It is easier to interpret and such a design requires a smaller sample size.**
+:::
 
 6.  How could you 'modify' the contingency table below for chi-square analysis to aid subsequent interpretation of the data/results?
 
-![](files/week14/122_week14_labAc1_q6.png)
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+![](images/wk4/122_week14_labAc1_q6.png)
 
 **By combining 'interested' and 'somewhat interested' or by partitioning (doing multiple 2 x 2 chi-squares, while using Bonferroni correction to account for running multiple tests**
 
+:::
+
 ### Lab activity 2
 
-Please see the [`122_wk14_labAct2_withAnswers.R` script](files/week14/122_wk14_labAct2_withAnswers.R) for the relevant code and answers to questions.
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+Please see the [`122_wk14_labAct2_withAnswers.R` script](data/week14/122_wk14_labAct2_withAnswers.R) for the relevant code and answers to questions.
+:::

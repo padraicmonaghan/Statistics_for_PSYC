@@ -54,18 +54,18 @@ All in this is a clear example of why you should visualise your data and not to 
 
 You might want to re-visit some of the materials that John and Tom provided in PSYC121:
 
--   [Basics of working with RStudio](https://tombeesley.github.io/PSYC121_2021-22/week-2-descriptive-statistics-in-r-studio.html#pre-lab-work)
+-   [Basics of working with RStudio](../PSYC121/Week2.html#pre-lab-work)
 -   [Video on how to upload a zip file and import data (3.5 mins)](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=646a4bd4-9b2e-46a1-b2ee-adc100ce507b)
 -   [Video on basic operations in RStudio (8 mins)](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=646a4bd4-9b2e-46a1-b2ee-adc100ce507b)
 -   [Video on using scripts and using the console (3 mins)](https://web.microsoftstream.com/video/dcf3165c-86e7-4546-96d8-0ca6f56cbd7d)
 
 #### Create a folder and a Project for Week 11.
 
-[Click here for the instructions](https://tombeesley.github.io/PSYC121_2021-22/week-6-visualising-data-and-binomial-tests.html#creating_project) from Week 6 of PSYC121 if you are unsure.
+[Click here for the instructions](../PSYC121/Week6.html#creating_project) from Week 6 of PSYC121 if you are unsure.
 
 #### Get your files ready
 
-Download the [122_week11_forStudents.zip](files/week11/122_week11_forStudents.zip) file and upload it into the new folder in RStudio Server you created at the previous step. If you need them, [here are the instructions](https://tombeesley.github.io/PSYC121_2021-22/week-2-descriptive-statistics-in-r-studio.html#uploading_zip) from Week 2 of PSYC121.
+Download the [122_week11_forStudents.zip](data/week11/122_week11_forStudents.zip) file and upload it into the new folder in RStudio Server you created at the previous step. If you need them, [here are the instructions](../PSYC121/Week2.qmd#uploading_zip) from Week 2 of PSYC121.
 
 ## Lab activities
 
@@ -91,7 +91,13 @@ Below are scatterplots that show the relationship between 'how much you know abo
 -   Moderate negative correlation
 -   Null correlation
 
-**Figure A** ![](files/week11/lab_act1_a.png) **Figure B** ![](files/week11/lab_act1_b.png) **Figure C** ![](files/week11/lab_act1_c.png) **Figure D** ![](files/week11/lab_act1_d.png)
+**Figure A** ![](images/wk1/lab_act1_a.png)
+
+**Figure B** ![](images/wk1/lab_act1_b.png) 
+
+**Figure C** ![](images/wk1/lab_act1_c.png) 
+
+**Figure D** ![](images/wk1/lab_act1_d.png)
 
 #### Question 2
 
@@ -196,31 +202,41 @@ When you have completed all of the lab content, you may want to check your answe
 
 1.  Scatterplots
 
--   
+::: {.callout-warning icon=false collapse="true"}
+## Answer
 
-    a.  strong positive correlation
+a.  strong positive correlation
+b.  null correlation
+c.  moderate positive correlation
+d.  perfect negative correlation
 
--   
+:::
 
-    b.  null correlation
 
--   
+2.  
 
-    c.  moderate positive correlation
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+FALSE Explanation: The correlation coefficient is negative and therefore infers a negative correlation. As such, older people pay less for car insurance: as age increases, car insurance costs decrease.
+:::
 
--   
+3.  
 
-    d.  perfect negative correlation
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+FALSE Explanation: This is a bit of trick question as it has the sneaky 'cause' word in. The correlation coefficient is a positive number, suggesting a positive relationship between length of time in prison and aggression. However, causation cannot be inferred from correlation and therefore we cannot know whether time spent in prison CAUSES aggression, and rather we suggest a relationship between the two that as length of time in prison increases, aggression increases.
+:::
 
-2.  FALSE Explanation: The correlation coefficient is negative and therefore infers a negative correlation. As such, older people pay less for car insurance: as age increases, car insurance costs decrease.
+4.  
 
-3.  FALSE Explanation: This is a bit of trick question as it has the sneaky 'cause' word in. The correlation coefficient is a positive number, suggesting a positive relationship between length of time in prison and aggression. However, causation cannot be inferred from correlation and therefore we cannot know whether time spent in prison CAUSES aggression, and rather we suggest a relationship between the two that as length of time in prison increases, aggression increases.
-
-4.  c 49% The 'coefficient of determination' or 'R-squared' tells us the proportion or variance in one variable that can be predicted if we know the other variable. We can determine this by squaring the *r*. Therefore, .7^2^ = .49, *R^2^* = .49.
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+c 49% The 'coefficient of determination' or 'R-squared' tells us the proportion or variance in one variable that can be predicted if we know the other variable. We can determine this by squaring the *r*. Therefore, .7^2^ = .49, *R^2^* = .49.
+:::
 
 ### Lab activity 2: Constructing scatterplots and calculating correlations
 
-You can download the R-script that contains the code to complete lab activities 2 and 3 here: [122_wk11_labActivities2_3.R](files/week11/122_wk11_labActivities2_3.R).
+You can download the R-script that contains the code to complete lab activities 2 and 3 here: [122_wk11_labActivities2_3.R](data/week11/122_wk11_labActivities2_3.R).
 
 1.  *See R script*
 
@@ -228,38 +244,123 @@ You can download the R-script that contains the code to complete lab activities 
 
 3.  *See R script*
 
-4.  What can you tell from the scatterplot about the direction of the relationship? **There is a negative association between 'Home' and 'TV'. This means that the longer a child spends watching TV, the shorter they will read at home.**
+4.  What can you tell from the scatterplot about the direction of the relationship? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+There is a negative association between 'Home' and 'TV'. This means that the longer a child spends watching TV, the shorter they will read at home.
+:::
 
 5.  Conduct the correlation analysis. *See R script*
 
-6.  What is the correlation coefficient (Pearson's r)? ***r*** **= -.65**
+6.  What is the correlation coefficient (Pearson's r)? 
 
-7.  What is the p value? ***p*** **\< .001**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+***r*** **= -.65**
+:::
 
-8.  Is the correlation significant at the p \< .05 level? **Yes, because the p-value is smaller than .005**
+7.  What is the p value? 
 
-9.  What are the degrees of freedom you need to report? **23**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+***p*** **\< .001**
+:::
 
-10. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'? **42%**
+8.  Is the correlation significant at the p \< .05 level? 
 
-11. Write a few sentences in which you report this result, following APA guidelines. **Something along the lines of: A Pearson's correlation coefficient was used to assess the relationship between time spent reading at home and time spent watching TV at home. There was a significant negative correlation, *r*(23) = -.65, *p* \< .001. As time spent watching TV at home increased, time spent reading at home decreased.**
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Yes, because the p-value is smaller than .005**
+:::
+
+9.  What are the degrees of freedom you need to report? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**23**
+:::
+
+10. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**42%**
+:::
+
+11. Write a few sentences in which you report this result, following APA guidelines. 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Something along the lines of: A Pearson's correlation coefficient was used to assess the relationship between time spent reading at home and time spent watching TV at home. There was a significant negative correlation, *r*(23) = -.65, *p* \< .001. As time spent watching TV at home increased, time spent reading at home decreased.**
+:::
 
 ### Lab activity 3: More correlations
 
 1.  *See R script*
-2.  How many variables does it have? **3**
+2.  How many variables does it have? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**3**
+:::
+
 3.  *See R script*
-4.  What can you tell from the scatterplot about the direction of the relationship? **There is a positive association between 'hazardous alcohol use' and 'impulsivity'. This means that as a participant's score on 'hazardous alcohol use' goes up, their score on 'impulsivity' also goes up.**
+4.  What can you tell from the scatterplot about the direction of the relationship? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**There is a positive association between 'hazardous alcohol use' and 'impulsivity'. This means that as a participant's score on 'hazardous alcohol use' goes up, their score on 'impulsivity' also goes up.**
+:::
+
 5.  *See R script*
-6.  What is the correlation coefficient (Pearson's r)? ***r*** **= .54**
-7.  What is the p value? ***p*** **= .014**
-8.  Is the correlation significant at the p \< .05 level? **Yes**
-9.  What are the degrees of freedom you need to report? **18**
-10. How much variance in 'impulsivity' can be accounted for by 'hazardous alcohol use'? (Hint: you can use the Console in RStudio as a calculator.) **29%**
+6.  What is the correlation coefficient (Pearson's r)? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+***r*** **= .54**
+:::
+
+7.  What is the p value? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+***p*** **= .014**
+:::
+
+8.  Is the correlation significant at the p \< .05 level? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**Yes**
+:::
+
+9.  What are the degrees of freedom you need to report? 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**18**
+:::
+
+10. How much variance in 'impulsivity' can be accounted for by 'hazardous alcohol use'? (Hint: you can use the Console in RStudio as a calculator.) 
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
+**29%**
+:::
+
 11. Construct a correlation matrix to display the correlation coefficient in a table.
 
-![](files/week11/labAct3_correlationTable.png) 12. Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question ----I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn't tell us about what could be happening with the variables of interest.
+::: {.callout-warning icon=false collapse="true"}
+## Answer
 
+![](images/wk1/labAct3_correlationTable.png) 
+:::
+
+12. Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question ----I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn't tell us about what could be happening with the variables of interest.
+
+::: {.callout-warning icon=false collapse="true"}
+## Answer
 **Just really looking for reasoning here.**
 
 **Examples:**
@@ -267,3 +368,6 @@ You can download the R-script that contains the code to complete lab activities 
 -   **Being more impulsive may make people consume more alcohol.**
 -   **Consuming more alcohol may make people more impulsive.**
 -   **An outgoing personality might influence both your level of impulsivity and you are more likely to be socialising in the pub and consuming alcohol. So the same 'third factor' may influence both our variables of interest.**
+:::
+
+

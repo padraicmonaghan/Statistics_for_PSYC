@@ -177,7 +177,7 @@ Looking at the survey or at the pre-registration are entirely optional activitie
 
 ### Get your files ready {#sec-w19-resources}
 
-Download the [122-22-w19_for-students.zip](files/122-22-w19_for-students.zip) files you need and upload them to your RStudio Server.
+Download the [122-22-w19_for-students.zip](data/week19/122-22-w19_for-students.zip) files you need and upload them to your RStudio Server.
 
 The folder includes the data files:
 
@@ -293,7 +293,7 @@ You can see the columns:
 ### Answers
 
 ::: callout-tip
-You can now download the answers version of the activity workbook .R [here](files/2022-23-PSYC122-w19-workbook-answers.R).
+You can now download the answers version of the activity workbook .R [here](data/week19/2022-23-PSYC122-w19-workbook-answers.R).
 :::
 
 The answers version presents my answers for questions, and some extra information where that is helpful.

@@ -1,8 +1,24 @@
 ---
 title: 8. Related-samples t-tests, plotting means and SE bars
 subtitle: Written by Tom Beesley & John Towse
-order: 8
+order: 9
 ---
+
+# Lectures
+
+Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2020659)
+
+Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2020660)
+
+Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2020661)
+
+Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2020662)
+
+Download the lecture slides [here](data/Week_8/Lecture Week 8.pptx)
+
+## Reading
+
+[Chapter 13](https://modules.lancaster.ac.uk/mod/url/view.php?id=2020663) of Howell
 
 
 ```{r eval=FALSE, include=FALSE}
@@ -21,7 +37,7 @@ data_proc <-
   mutate(time = round(as.numeric(time),1)) %>% 
   drop_na()
 
-write_csv(data_proc, file = "files/Week_7/stroop.csv")
+write_csv(data_proc, file = "data/Week_7/stroop.csv")
 
 data_proc %>%
   group_by(condition) %>% 
@@ -41,7 +57,7 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 **Getting ready for the lab class**
 
-1.  Create a folder for Week 8 and download the [Week_8.zip](files/Week_8/Week_8_v2.zip) file and upload it into this new folder in RStudio Server.
+1.  Create a folder for Week 8 and download the [Week_8.zip](data/Week_8/Week_8_v2.zip) file and upload it into this new folder in RStudio Server.
 
 ## RStudio Tasks
 
@@ -49,7 +65,7 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 The "Stroop Effect" is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a "compatible" stimulus like [**GREEN**]{style="color:green"}, and a much more difficult task for an "incompatible" stimulus like [**BLUE**]{style="color:red"}. We can't help but read the text - it has seemingly become an automatic process.
 
-![](files/Week_8/stroop.png) In this task we will calculate the means and standard errors of the means and then we will then plot them using ggplot(). First though, we'll need to inspect the data and maybe do a bit of data wrangling by using our `filter()` command.
+![](images/wk8/stroop.png) In this task we will calculate the means and standard errors of the means and then we will then plot them using ggplot(). First though, we'll need to inspect the data and maybe do a bit of data wrangling by using our `filter()` command.
 
 1.  Open the script "Week_8\_script.R" (see prep work)
 
@@ -91,7 +107,7 @@ To do this, we will first summarise the mean time taken by each condition in the
 
 1.  In Task 2 you calculated the means for each condition in the Stroop task. We've seen in lectures that "standard error" provides an estimate of how variable that mean will be across the samples we collect. A very typical way to plot a mean value is to plot it with the standard error of the mean (SEM):
 
-![](files/Week_8/error_bars.png)
+![](images/wk8/error_bars.png)
 
 2.  The code from Task 2-Q1 will give the mean. We will now complete the second line of this code to give the standard error values. TO do this, you simply need to add the correct variable (DV) to the `sd()` command to calculate the SE values (note that you don't need to put anything in `n()`, as this simply calculates how many rows there are).
 
