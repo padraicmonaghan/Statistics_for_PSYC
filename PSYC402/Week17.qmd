@@ -730,7 +730,7 @@ If you have not completed the process of tidying the CP study data then you can 
 
 ```{r}
 #| label: read-csv
-long.all.noNAs <- read_csv("long.all.noNAs.csv", 
+long.all.noNAs <- read_csv("data/long.all.noNAs.csv", 
                   col_types = cols(
                     subjectID = col_factor(),
                     item_name = col_factor()

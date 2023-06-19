@@ -149,7 +149,7 @@ The file is located in a .zip folder called `data-01-multilevel`. The data file 
 You can read the `BAFACALO_DATASET.RData` file into the R workspace or environment using the following code.
 
 ```{r read.rdata}
-load("BAFACALO_DATASET.RData")
+load("data/BAFACALO_DATASET.RData")
 ```
 
 ### Inspect the data {#sec-multi-data-inspect}
