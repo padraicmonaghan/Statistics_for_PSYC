@@ -27,7 +27,7 @@ Alternatively, if you don't feel confident about the material, these recorded le
 An introduction to the linear model and linear regression. I follow material as discussed in Chapter 4 of Bodo Winter's book *Statistics for Linguists: An Introduction using R* (see below under 'Reading').
 
 * [**How to build a linear model in R (~30 min)**](https://estream.lancaster.ac.uk/View.aspx?id=60910~5d~uUTzHPgBLN)
-In this video I demonstrate how to build a linear model in R by talking you through a simple linear regression script (you can download it here [stats_linearModel_howTo.R](files/week11/stats_linearModel_howTo.R)). If you are unclear on what different parts of the lm() function do, or how to read the output, this video might help clarify that.
+In this video I demonstrate how to build a linear model in R by talking you through a simple linear regression script (you can download it here [stats_linearModel_howTo.R](images/stats_linearModel_howTo.R)). If you are unclear on what different parts of the lm() function do, or how to read the output, this video might help clarify that.
 
 * [**Multiple regression: theory (~35 min)**](https://estream.lancaster.ac.uk/View.aspx?id=60911~5e~WIhZrOrXiD)
 An introduction to multiple regression. I follow material as discussed in Chapter 5 of Bodo Winter's book *Statistics for Linguists: An Introduction using R* (see below under 'Reading').
@@ -90,7 +90,7 @@ Please note that there are often different ways to do the same or similar things
 * I highly recommend using R Projects to structure your workflow. You could create an R project for each week of the module. Have a look at section [**8 Workflow: projects**](https://r4ds.had.co.nz/workflow-projects.html) of **R for Data Science** by Hadley Wickam and Gareth Grolemund for an introduction.
 
 #### Get your files ready
-Download the [402_week11_forStudents.zip](files/week11/402_week11_forStudents.zip) file and upload it into a new folder in RStudio Server. 
+Download the [402_week11_forStudents.zip](images/402_week11_forStudents.zip) file and upload it into a new folder in RStudio Server. 
 
 ## Lab activities
 In this lab, you’ll gain understanding of and practice with:
@@ -106,7 +106,7 @@ Have a look at the R output below.
 
 **R Output 1**
 
-![](files/week11/w11_labAct1_output.png)
+![](images/w11_labAct1_output.png)
 
 1. What is the outcome or dependent variable?
 2. What is the predictor or independent variable?
@@ -121,15 +121,15 @@ Thinking about assumptions, what do you conlcude from the plots and output below
 
 **Scatterplot**
 
-![](files/week11/w11_labAct1_scatterplot.png)
+![](images/w11_labAct1_scatterplot.png)
 
 **QQ-plot**
 
-![](files/week11/w11_labAct1_qqplot.png)
+![](images/w11_labAct1_qqplot.png)
 
 **R Output 2**
 
-![](files/week11/w11_labAct1_output2.png)
+![](images/w11_labAct1_output2.png)
 
 ### Lab activity 2: Conducting simple and multiple regression
 
@@ -150,7 +150,7 @@ To complete this lab activity, you can use the R-script (402_wk11_labAct2.R) tha
 Before you do anything else, when starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one. 
 
 > **TASK**: Use the code snippet below to clear the environment. **TIP**: If you hover your mouse over the box that includes the code snippet, a 'copy to clipboard' icon will appear in the top right corner of the box. Click that to copy the code. Now you can easily paste it into your script.
-![](files/week11/copy.png)
+![](images/copy.png)
 
 ```{r eval=FALSE}
 rm(list=ls())                            
@@ -290,4 +290,4 @@ When you have completed all of the lab content, you may want to check your answe
 6. Do the residuals show normality and homoscedasticity? **The qq-plot suggest that the residuals are normally distributed as the dots fall close to the solid blue line and within the range of the dashed blue lines. The Shapiro-Wilk test of normality confirms this (it is not significant). Similarly, the output of the non-constant variance score tests is not significant suggesting that the residuals are homoscedastic.**
 
 ### Lab activity 2: Conducting simple and multiple regression
-You can download the R-script that includes the relevant code and answers to the questions here: [402_wk11_labAct2_withAnswers.R](files/week11/402_wk11_labAct2_withAnswers.R).
+You can download the R-script that includes the relevant code and answers to the questions here: [402_wk11_labAct2_withAnswers.R](images/402_wk11_labAct2_withAnswers.R).

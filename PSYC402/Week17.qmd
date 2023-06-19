@@ -21,7 +21,7 @@ library(tidyverse)
 
 ## Motivations: repeated measures designs and crossed random effects {#sec-intro-motivations}
 
-In @sec-intro-multilevel, we looked at a multilevel structured dataset in which there were observations about children's grades, and it became evident that those children can be grouped by or under classes. As we discussed, this kind of data structure will come from studies with a very common design in which, for example, the researcher records observations about a sample of children who are members of a sample of classes. In working with these kind of data, it is common to say that the observations of children's grades are *nested* within classes in a hierarchy.
+In [Week 16](Week16.qmd), we looked at a multilevel structured dataset in which there were observations about children's grades, and it became evident that those children can be grouped by or under classes. As we discussed, this kind of data structure will come from studies with a very common design in which, for example, the researcher records observations about a sample of children who are members of a sample of classes. In working with these kind of data, it is common to say that the observations of children's grades are *nested* within classes in a hierarchy.
 
 Many Psychologists conduct studies where observations are properly understood to be structured in groups of some form but where, nevertheless, it is inappropriate to think of the observations as being nested [@baayen2008]. We are talking, here, about **repeated-measures designs** where the experimenter presents a sample of multiple stimuli for response to each participant in a sample of multiple participants. This is another *very* common experimental design in psychological science.
 
@@ -209,10 +209,10 @@ I am going to assume you have downloaded the data files, that they are all in th
 #| label: readinall
 #| warning: false
 #| message: false
-behaviour.rt <- read_tsv("CP study word naming rt 180211.dat", na = "-999")
-behaviour.acc <- read_tsv("CP study word naming acc 180211.dat", na = "-999")
-subjects <- read_csv("all.subjects 110614-050316-290518.csv", na = "-999")
-words <- read_csv("words.items.5 120714 150916.csv", na = "-999")
+behaviour.rt <- read_tsv("data/CP study word naming rt 180211.dat", na = "-999")
+behaviour.acc <- read_tsv("data/CP study word naming acc 180211.dat", na = "-999")
+subjects <- read_csv("data/all.subjects 110614-050316-290518.csv", na = "-999")
+words <- read_csv("data/words.items.5 120714 150916.csv", na = "-999")
 ```
 
 These different versions respect the different ways in which the `.dat` and `.csv` file formats work. We need `read_tsv()` when data files consist of tab separated values. We need `read_csv()` when data files consist of comma separated values.
@@ -234,7 +234,7 @@ It will help your understanding to examine an example. Take a look at what this 
 #| eval: false
 #| warning: false
 #| message: false
-behaviour.rt <- read_tsv("CP study word naming rt 180211.dat", na = "-999")
+behaviour.rt <- read_tsv("data/CP study word naming rt 180211.dat", na = "-999")
 ```
 
 1.  We write `behaviour.rt <- read_tsv(...)` to create an object in the R environment, which we call `behaviour.rt`: the object with this name is the dataset we read into R using `read_tsv(...)`.
@@ -627,7 +627,7 @@ You can read more about using multiple arguments to filter observations [here](h
 1.  Change the threshold for including RTs from `RT >= 200` to something else
 2.  Can you assess what impact the change has? Note that you can count the number of observations (rows) in a dataset using e.g. `length(data.set.name$variable.name)`
 
-Filtering or re-coding observations is an important element of the research workflow in psychological science, as I discuss in @sec-multiversedata. How we do or do not remove observations from original data may have an impact on our results (as explored by, e.g., Steegen et al., 2014). It is important, therefore, that we learn how to do this reproducibly using R scripts that we can share with our research reports.
+Filtering or re-coding observations is an important element of the research workflow in psychological science, as I discuss [here](extra_ToBeOrganised/intro.qmd#sec-multiversedata). How we do or do not remove observations from original data may have an impact on our results (as explored by, e.g., Steegen et al., 2014). It is important, therefore, that we learn how to do this reproducibly using R scripts that we can share with our research reports.
 
 You can read further information about filtering [here](https://r4ds.had.co.nz/transform.html?q=filter#filter-rows-with-filter).
 
@@ -689,7 +689,7 @@ It is a mistake to think of data tidying or wrangling as an inconvenience or as 
 3.  The process of data tidying is frequently instructive of your data recording quality: you find things out about your field measurements or your instrument integrity or quality of your recordings, when you pay attention, when you process your data.
 :::
 
-It is wise to see data tidying or processing as a key part of the data analysis workflow because, as I discuss in @sec-multiversedata, the choices you make or the integrity or quality of the actions you take, will have consequences for your analysis results or, more generally, for the quality of the evidence you share with others.
+It is wise to see data tidying or processing as a key part of the data analysis workflow because, as I discuss [here](extra_ToBeOrganised/intro.qmd#sec-multiversedata), the choices you make or the integrity or quality of the actions you take, will have consequences for your analysis results or, more generally, for the quality of the evidence you share with others.
 
 [Here](https://counting.substack.com/p/data-cleaning-is-analysis-not-grunt) is a nice substack post that links to some scholarly writing and makes some excellent points.
 
@@ -817,7 +817,7 @@ The problem is that, as we have discussed, we assume that observations are indep
 
 We can examine that variation by estimating the intercept and the slope of the frequency effect separately using the data for each participant alone. We can start by visualizing the frequency effect for each child in a grid of plots, with each plot representing the $\text{RT} \sim \text{frequency}$ relationship for the data for a child (@fig-freqperchildtrellis).
 
-We looked at how the plotting code works in @sec-multi-plot-lattice.
+We looked at how the plotting code works in [Week 16](Week16.qmd#sec-multi-plot-lattice).
 
 ```{r}
 #| label: fig-freqperchildtrellis
@@ -975,7 +975,7 @@ Second, we have the bit that is specific to multilevel or mixed-effects models.
 
 #### Exercise {#sec-intro-mixed-exx-lmer}
 
-It will help your learning if you now go back and compare this model with the model you saw in @sec-multi-lmer.
+It will help your learning if you now go back and compare this model with the model you saw in [Week 16](Week16.qmd#sec-multi-lmer).
 
 -   Identify what is different: dataset, variable names, and model formula.
 -   Identify what stays the same: function name ... the specification of both model and random effects.
@@ -1063,7 +1063,7 @@ Further, we have not finished in our consideration of the random effects that th
 ::: callout-warning
 Why aren't there p-values?
 
-We will come back to this (@sec-dev-mixed-discussion-p-values) but note that if $t > 2$ we can suppose that an effect is significant at the $.05$ significance level.
+We will come back to this ([here](Week18.qmd#sec-dev-mixed-discussion-p-values)) but note that if $t > 2$ we can suppose that an effect is significant at the $.05$ significance level.
 :::
 
 ### What we estimate when we estimate random effects {#sec-intro-mixed-BLUPs}

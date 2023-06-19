@@ -31,7 +31,7 @@ Before the lab, make sure you have worked through the material in the week2 lear
 
 ### R Studio tasks
 
-For a reminder of how to start RStudio, [see week 1 lab sheet](Week1.html#task-3---using-rstudio){target="_blank"}
+For a reminder of how to start RStudio, [see week 1's instructions](Week1.html#getting_started){target="_blank"}
 
 (remember: off campus, you will need to be on the VPN)
 

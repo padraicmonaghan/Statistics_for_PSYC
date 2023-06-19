@@ -31,8 +31,7 @@ website:
         file: PSYC401/index.qmd
       - text: PSYC402
         file: PSYC402/index.qmd
-      - text: Previous Content
-        file: Previous_Content/index.qmd
+
   sidebar:
   
     collapse-level: 1
@@ -60,9 +59,6 @@ website:
         
   page-footer:
     left: "Website developed by Matthew Ivory"
-    center: 
-      - text: For Staff
-        href: Staff/index.qmd
     right:       
       - icon: github
         href: https://github.com/M1V0/Statistics_for_PSYC

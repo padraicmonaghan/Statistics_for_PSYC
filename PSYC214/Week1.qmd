@@ -50,15 +50,7 @@ You will recall from last year that R Studio is a free, open-source data science
 
 ![Vintage computational power and R Studio](https://images.unsplash.com/photo-1607370883617-9720ac853cc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80)
 
-To get started in R, we first need to ensure that we have R Studio accessible.
-
-You can access Lancaster University’s R Studio Server at http://psy-rstudio.lancaster.ac.uk/. At present, you will need to be on campus, or connected to the VPN to access this. If you do not yet have Eduroam (the university wifi) available on your personal device, please follow the instructions from the Psyc214 Announcement Page https://modules.lancaster.ac.uk/mod/forum/discuss.php?d=437608.
-
-![](images/Rstudio.png)
-
-
-If you are a) on Eduroam (or VPN if off campus), and b) have accessed the R Studio Server from the URL above, you will now see a login screen, a bit like the image above. Please use your normal Lancaster University username (e.g., bloggsj) and your own individual R Studio Server unique password. This was sent in an email last year, prior to your first year 1 stats lab, by Kay Rawlins - email header ‘R Studio Server login details’. Please make sure you have this.
-\
+{{< include /Includes/_login.qmd >}}
 
 ******
 ### 1.2 Creating a folder for today's session

@@ -147,10 +147,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../PSYC402/index.html" rel="" target="">
  <span class="menu-text">PSYC402</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Previous_Content/index.html" rel="" target="">
- <span class="menu-text">Previous Content</span></a>
-  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -675,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Developing linear mixed-effects models</h1>
-<p class="subtitle lead">Written by Rob Davies</p>
+<p class="subtitle lead">Written by Rob Davies AND ME!</p>
 </div>
 
 
@@ -694,7 +690,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Developing linear mixed-effects models</h1>
 <section id="sec-dev-mixed-motivations" class="level2">
 <h2 class="anchored" data-anchor-id="sec-dev-mixed-motivations">Motivations: to grow in sophistication</h2>
-<p>Linear mixed-effects models are important, interesting, and sometimes challenging. We have worked through two chapters (see <strong>?@sec-intro-multilevel</strong>, <strong>?@sec-intro-mixed</strong>) in which we have aimed to learn:</p>
+<p>Linear mixed-effects models are important, interesting, and sometimes challenging. We have worked through two chapters (see <a href="../PSYC402/Week16.html">Introduction to Multilevel</a>, <a href="../PSYC402/Week17.html">Introduction to Mixed Effects</a>) in which we have aimed to learn:</p>
 <ul>
 <li><strong>To recognize</strong> the situations where we shall see multilevel structured data and therefore where we will need to apply multilevel or mixed-effects models.</li>
 <li><strong>To understand</strong> the nature and the advantages of these models: what they are, and why they work better than other kinds of models, given multilevel data.</li>
@@ -903,7 +899,7 @@ Note
 </section>
 <section id="sec-dev-mixed-tidy" class="level2">
 <h2 class="anchored" data-anchor-id="sec-dev-mixed-tidy">Tidy the data</h2>
-<p>In <strong>?@sec-intro-mixed-tidy-data</strong>, we saw how we may need to tidy the data we collect in experimental studies: combining data about responses with data about participant attributes or stimulus properties, and restructuring the data so that they are in a tidy format. For this class, many steps in the process of data tidying were completed previously. Thus, we only need to perform steps 1, 3 and 4 of the usual <em>data tidying</em> process:</p>
+<p>In <a href="../PSYC402/Week17.html#sec-intro-mixed-tidy-data">Week 17</a>, we saw how we may need to tidy the data we collect in experimental studies: combining data about responses with data about participant attributes or stimulus properties, and restructuring the data so that they are in a tidy format. For this class, many steps in the process of data tidying were completed previously. Thus, we only need to perform steps 1, 3 and 4 of the usual <em>data tidying</em> process:</p>
 <ol type="1">
 <li>Import the data or read the data into R, see <a href="#sec-dev-mixed-import">Section&nbsp;1.6.1</a>;</li>
 <li>Restructure the data;</li>
@@ -1153,7 +1149,7 @@ not a multiple of shorter object length</code></pre>
 <li>We can see that some variables are simply listed as <code>Class: character</code>. That tells us that one or more values in the columns in the datasheet that correspond to these variables are words or strings of letters or alphanumeric characters.</li>
 <li>There is no sign of the presence of missing values in this dataset, no counts of <code>NAs</code>.</li>
 </ol>
-<p>We do not really want R to treat a coding variable like <code>item_number</code> as numeric: it functions as a categorical or nominal variable, a factor. And we want R to treat coding variables like <code>subjectID</code> as factors. In <strong>?@sec-multi-data-coerce</strong>, we saw how we can require R to handle variables exactly as we require it to using <em>coercion</em>. In <strong>?@sec-intro-mixed-data-load</strong>, we saw how we can determine how R treats variables at the read-in stage, using <code>col_types()</code> specification. We are going to do neither here because we do not have to do this work; not doing it will have no impact on our analyses at this point.</p>
+<p>We do not really want R to treat a coding variable like <code>item_number</code> as numeric: it functions as a categorical or nominal variable, a factor. And we want R to treat coding variables like <code>subjectID</code> as factors. In <a href="../PSYC402/Week16.html#sec-multi-data-coerce">Week 16</a>, we saw how we can require R to handle variables exactly as we require it to using <em>coercion</em>. In <a href="../PSYC402/Week16.html#sec-intro-mixed-data-load">this section</a>, we saw how we can determine how R treats variables at the read-in stage, using <code>col_types()</code> specification. We are going to do neither here because we do not have to do this work; not doing it will have no impact on our analyses at this point.</p>
 <p>What we <strong>do need to do</strong> is deal with a problem that is already apparent in the summary statistics – did you spot it? If we look at the summary, we can see that <code>RT</code> includes values as low as <code>-2000</code>. That cannot be right.</p>
 </section>
 <section id="sec-dev-mixed-EDA" class="level3">
@@ -1316,7 +1312,7 @@ Warning
 <li>Report analyses with and without exclusions, to indicate if their results are sensitive to their decisions.</li>
 </ul>
 <p>You can read further information about the practicalities of using R to do filtering <a href="https://r4ds.had.co.nz/transform.html?q=filter#filter-rows-with-filter">here</a>.</p>
-<p>You can read a brief discussion of the impacts of researcher choices in dataset construction in <strong>?@sec-multiversedata</strong> and in <span class="citation" data-cites="steegen2016">@steegen2016</span>.</p>
+<p>You can read a brief discussion of the impacts of researcher choices in dataset construction <a href="../PSYC402/extra_ToBeOrganised/intro.html#sec-multiversedata">here</a> and in <span class="citation" data-cites="steegen2016">@steegen2016</span>.</p>
 </section>
 </section>
 <section id="sec-dev-mixed-data-transform" class="level3">
@@ -1374,7 +1370,7 @@ Tip
 </section>
 <section id="sec-dev-mixed-crossed-random" class="level2">
 <h2 class="anchored" data-anchor-id="sec-dev-mixed-crossed-random">Repeated measures designs and crossed random effects</h2>
-<p>As we saw in <strong>?@sec-intro-mixed</strong>, many Psychologists conduct studies where it is not sensible to think of observations as being nested <span class="citation" data-cites="baayen2008">[@baayen2008]</span>. In this chapter, we turn to the ML word recognition study dataset, which has a structure similar to the CP study data that we worked with previously. Again, the core concern is that the data come from a study with a <strong>repeated-measures design</strong> where the experimenter presented multiple stimuli for response to each participant, for several participants, so that we have multiple observations for each participant and multiple observations for each stimulus. Getting practice with this kind of data will help you to easily recognize what you have got when you see it in your own work.</p>
+<p>As we saw in <a href="../PSYC402/Week17.html#sec-intro-mixed">Week17</a>, many Psychologists conduct studies where it is not sensible to think of observations as being nested <span class="citation" data-cites="baayen2008">[@baayen2008]</span>. In this chapter, we turn to the ML word recognition study dataset, which has a structure similar to the CP study data that we worked with previously. Again, the core concern is that the data come from a study with a <strong>repeated-measures design</strong> where the experimenter presented multiple stimuli for response to each participant, for several participants, so that we have multiple observations for each participant and multiple observations for each stimulus. Getting practice with this kind of data will help you to easily recognize what you have got when you see it in your own work.</p>
 <p>ML asked all participants in a sample of people to read a selection of words, a sample of words from the language.</p>
 <p>For each participant, we will have multiple observations and these observations will not be independent. One participant will tend to be slower or less accurate compared to another. Her responses may be more or less susceptible to the effects of the experimental variables. The lowest trial-level observations can be grouped with respect to participants. However, the data can also be grouped by stimuli.</p>
 <p>For each stimulus word, there are multiple observations and these observations will not be independent. One stimulus may prove to be more challenging to all participants compared to another, eliciting slower or less accurate responses on average. In addition, if there are within-items effects, we may ask if the impact of those within-items effects is more prominent, stronger, among responses to some items compared to others.</p>
@@ -1536,7 +1532,7 @@ Note
 </div>
 </div>
 <p>We model the effects of interest, using all the data (hence, <em>complete pooling</em>) but ignoring the differences between participants. This means we can see something of the ‘true’ picture of our data through the linear model results but the linear model misses important information, which the mixed-effects model will include, that would improve its performance.</p>
-<p>As we saw, in a similar analysis in <strong>?@sec-intro-mixed</strong>, we can estimate the relationship between reading reaction times (here, lexical decision RTs) and word frequency using a linear model:</p>
+<p>As we saw, in a similar analysis in <a href="../PSYC402/Week17.html#sec-intro-mixed">Week17</a>, we can estimate the relationship between reading reaction times (here, lexical decision RTs) and word frequency using a linear model:</p>
 <p><span class="math display">\[
 Y_{ij} = \beta_0 + \beta_1X_j + e_{ij}
 \]</span></p>
@@ -1707,7 +1703,7 @@ Y_{ij} = \gamma_0 + \gamma_1X_j + U_{0i}+ U_{1i}X_j + e_{ij}
 </section>
 <section id="sec-dev-mixed-variance-covariance" class="level3">
 <h3 class="anchored" data-anchor-id="sec-dev-mixed-variance-covariance">Variance and covariance</h3>
-<p>As we first saw in <strong>?@sec-intro-mixed</strong>, in conducting mixed-effects analyses, we do not aim to examine the specific deviation (here, for each participant) from the average intercept or the average effect or slope. We estimate just the spread of deviations by-participants.</p>
+<p>As we first saw in <a href="../PSYC402/Week17.html#sec-intro-mixed">Week17</a>, in conducting mixed-effects analyses, we do not aim to examine the specific deviation (here, for each participant) from the average intercept or the average effect or slope. We estimate just the spread of deviations by-participants.</p>
 <p>A mixed-effects model like our final model actually includes fixed effects corresponding to the intercept and the slope of the word frequency effect plus the variances:</p>
 <ul>
 <li><span class="math inline">\(var(U_{0i})\)</span> variance of deviations by-participants from the average intercept;</li>
@@ -1721,7 +1717,7 @@ Y_{ij} = \gamma_0 + \gamma_1X_j + U_{0i}+ U_{1i}X_j + e_{ij}
 </section>
 <section id="sec-dev-mixed-random-stimulus-effects" class="level3">
 <h3 class="anchored" data-anchor-id="sec-dev-mixed-random-stimulus-effects">Random effects of differences between stimuli</h3>
-<p>As we know, some words elicit slower and some elicit faster responses on average. As we discussed in the last chapter (<strong>?@sec-intro-mixed-fixed-effect-fallacy</strong>), if we did not take such variation into account, we might spuriously identify an experimental effect actually due just to unexplained between-items differences in intercepts <span class="citation" data-cites="clark1973 raaijmakers1999">[@clark1973; @raaijmakers1999]</span> committing an error: <em>the language as fixed effect fallacy</em>.</p>
+<p>As we know, some words elicit slower and some elicit faster responses on average. As we discussed in the last chapter <a href="../PSYC402/Week17.html#ssec-intro-mixed-fixed-effect-fallacy">Week17</a>, if we did not take such variation into account, we might spuriously identify an experimental effect actually due just to unexplained between-items differences in intercepts <span class="citation" data-cites="clark1973 raaijmakers1999">[@clark1973; @raaijmakers1999]</span> committing an error: <em>the language as fixed effect fallacy</em>.</p>
 <p>We can model the random effect of items on intercepts by modeling the intercept as two terms:</p>
 <p><span class="math display">\[
 \beta_{0j} = \gamma_0 + W_{0j}
@@ -1998,13 +1994,13 @@ Tip
 <section id="sec-dev-mixed-convergence-problems" class="level3">
 <h3 class="anchored" data-anchor-id="sec-dev-mixed-convergence-problems">Convergence problems</h3>
 <p>Mostly, our main concern, in working with mixed-effects models, is over what effects we should include, what model we should specify. But we should prepare for the fact sometimes happens that models <em>fail to converge</em>, which is to say, the model fitting algorithm fails to settle on some set of parameter estimates but has reached the limit in the number of iterations over which it has attempted to find a satisfactory set of estimates.</p>
-<p>In my experience, convergence problems do arise, typically, if one is analyzing categorical outcome data (e.g accuracy) where there may be not enough observations to distinguish satisfactory estimates given a quite complex hypothesized model. In other words, you might run into convergence problems but it will not happen often and only where you are already dealing with quite a complex situation. We take a look at this concern in more depth, in the next chapter <strong>?@sec-glmm-intro</strong>.</p>
+<p>In my experience, convergence problems do arise, typically, if one is analyzing categorical outcome data (e.g accuracy) where there may be not enough observations to distinguish satisfactory estimates given a quite complex hypothesized model. In other words, you might run into convergence problems but it will not happen often and only where you are already dealing with quite a complex situation. We take a look at this concern in more depth, in the <a href="../PSYC402/Week19.html">next chapter</a>.</p>
 </section>
 </section>
 <section id="sec-dev-mixed-evaluating" class="level2">
 <h2 class="anchored" data-anchor-id="sec-dev-mixed-evaluating">Fitting and evaluating Linear Mixed-effects models</h2>
 <p>Up to this point, we have discussed the empirical or conceptual reasons we should expect to take into account, in our model, the effects on the outcome due to systematic differences in the experimental variables, e.g., in stimulus word frequency frequency, or to random differences between participants or between stimuli. We can now think about how we should statistically evaluate the relative usefulness of these different fixed effects or random effects, where usefulness is judged in relation to our capacity to explain outcome variance, or to improve model fit to sample data. We shall take an approach that follows the approach set out by Baayen, Bates and others <span class="citation" data-cites="Baayen2008 bates2015parsimonious matuschek2017">[@Baayen2008; @bates2015parsimonious; @matuschek2017]</span>.</p>
-<p>In this approach, we shall look at the choices that psychology researchers have to make. Researchers using statistical models are always faced with choices. As we have seen, these choices begin even before we start to do analyses, as when we make decisions about dataset construction <span class="citation" data-cites="steegen2016">[@steegen2016]</span>. The need to make choices is always present for all the kinds of models we work with (as I discuss in <strong>?@sec-multiverse</strong>). This may not always be obvious because, for example, in using some data analysis software, researchers may rely on defaults with limited indication that that is what they are doing.</p>
+<p>In this approach, we shall look at the choices that psychology researchers have to make. Researchers using statistical models are always faced with choices. As we have seen, these choices begin even before we start to do analyses, as when we make decisions about dataset construction <span class="citation" data-cites="steegen2016">[@steegen2016]</span>. The need to make choices is always present for all the kinds of models we work with (as I discuss <a href="../PSYC402/extra_ToBeOrganised/intro.html#sec-multiverse">here</a>). This may not always be obvious because, for example, in using some data analysis software, researchers may rely on defaults with limited indication that that is what they are doing.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2942,11 +2938,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-footer">
     <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
     <div class="nav-footer-center">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../Staff/index.html">For Staff</a>
-  </li>  
-</ul>
+      &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

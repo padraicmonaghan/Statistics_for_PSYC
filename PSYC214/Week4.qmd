@@ -38,16 +38,7 @@ As always, myself (Richard Philpot, weeks 1-4), Mark Hurlstone (weeks 5-9) and a
 
 Here we are, ready to log back into the R Studio Server again.
 
-You can access Lancaster University's R Studio Server at ***http://psy-rstudio.lancaster.ac.uk/***
-At present, you will need to be on campus, or connected to the VPN to access this.
-**If you do not yet have Eduroam (the university wifi) available on your personal device, please follow the instructions from the psyc214 Announcement Page https://modules.lancaster.ac.uk/mod/forum/discuss.php?d=437608***
-
-![R Studio Server - Login](https://raw.githubusercontent.com/richardphilpot/LU_Stats_Y2-/main/RStudio_server.png)
-  
-If you are a) on Eduroam (or VPN if off campus) b) have accessed the R Studio Server from the URL above, you will now see a login screen, a bit like the image above.
-Please use your normal Lancaster University username (e.g., bloggsj)
-Your own individual R Studio Server password was sent in an email, prior to the first lab, by Kay Rawlins - email header 'R Studio Server login details'. Please make sure you have this.
-
+{{< include /Includes/_login.qmd >}}
 
 ******
 #### 1.2 Creating a new folder, project and script - loading the data set and dependencies

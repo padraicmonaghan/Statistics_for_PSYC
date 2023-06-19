@@ -163,10 +163,6 @@ div.csl-indent {
     <a class="nav-link" href="../PSYC402/index.html" rel="" target="">
  <span class="menu-text">PSYC402</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Previous_Content/index.html" rel="" target="">
- <span class="menu-text">Previous Content</span></a>
-  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -677,12 +673,12 @@ div.csl-indent {
 <h1>Introduction to Ordinal Models</h1>
 <section id="sec-ordinal-motivations" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ordinal-motivations">Motivations: working with ordinal outcomes</h2>
-<p>Ordinal data are very common in psychological science. Often, we will encounter ordinal data recorded as responses to Likert-style items in which the participant is asked to indicate a response on an ordered scale ranging between two end points <span class="citation" data-cites="bürkner2019 liddell2018">(<a href="#ref-bürkner2019" role="doc-biblioref">Bürkner and Vuorre 2019</a>; <a href="#ref-liddell2018" role="doc-biblioref">Liddell and Kruschke 2018</a>)</span>. An example of a Likert question item might be: <em>How well do you think you have understood this text? (Please check one response)</em> where the participant must respond by checking an option, given 5 options ranging from 1 (not well at all) to 5 (very well). The critical characteristics of such responses are that:</p>
+<p>Ordinal data are very common in psychological science. Often, we will encounter ordinal data recorded as responses to Likert-style items in which the participant is asked to indicate a response on an ordered scale ranging between two end points <span class="citation" data-cites="burkner2019 liddell2018">(<a href="#ref-burkner2019" role="doc-biblioref">Bürkner and Vuorre 2019</a>; <a href="#ref-liddell2018" role="doc-biblioref">Liddell and Kruschke 2018</a>)</span>. An example of a Likert question item might be: <em>How well do you think you have understood this text? (Please check one response)</em> where the participant must respond by checking an option, given 5 options ranging from 1 (not well at all) to 5 (very well). The critical characteristics of such responses are that:</p>
 <ul>
 <li>The responses are ordered, as indicated by the number labels;</li>
 <li>Response types are categorical or qualitative, not numeric.</li>
 </ul>
-<p>We will be working with study data in which the outcome that is the target for our analyses comprise responses to questions designed to elicit ratings. Ordinal data may, however, also derive from situations in which ordered categorical responses do not derive from ratings items <span class="citation" data-cites="bürkner2019">(we will look briefly at sequential responses, <a href="#ref-bürkner2019" role="doc-biblioref">Bürkner and Vuorre 2019</a>)</span>.</p>
+<p>We will be working with study data in which the outcome that is the target for our analyses comprise responses to questions designed to elicit ratings. Ordinal data may, however, also derive from situations in which ordered categorical responses do not derive from ratings items <span class="citation" data-cites="burkner2019">(we will look briefly at sequential responses, <a href="#ref-burkner2019" role="doc-biblioref">Bürkner and Vuorre 2019</a>)</span>.</p>
 <p>The challenge we face is that we will aim to develop skills in using <em>ordinal models</em> when, in contrast, most psychological research articles will report analyses of ordinal data using conventional methods like ANOVA or linear regression. We will work to understand why ordinal models are better. We will learn that applying conventional methods to ordinal data will, in principle, involve a poor account of the data and, in practice, will create the risk of producing misleading results. And we will learn how to work with and interpret the results from ordinal models with or without random effects.</p>
 <p>In our work in this chapter, we will rely extensively on the ideas set out by <span class="citation" data-cites="liddell2018">Liddell and Kruschke (<a href="#ref-liddell2018" role="doc-biblioref">2018</a>)</span>, see <a href="#sec-ordinal-recommended-reading">Section&nbsp;1.13</a>.</p>
 </section>
@@ -720,7 +716,7 @@ Important
 <section id="sec-ordinal-targets" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ordinal-targets">Targets</h2>
 <ol type="1">
-<li>Understand practically the reasons for using ordinal models when we analyze ordinal outcome variables, <strong>?@sec-ordinal-practical-understanding</strong>.</li>
+<li>Understand practically the reasons for using ordinal models when we analyze ordinal outcome variables.</li>
 <li>Practice running ordinal models with varying random effects structures.</li>
 <li>Practice reporting the results of ordinal models, including through the use of prediction plots.</li>
 </ol>
@@ -890,7 +886,7 @@ Tip
 </section>
 <section id="sec-ordinal-data-tidy" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ordinal-data-tidy">Tidy the data</h2>
-<p>The <strong>Clearly understood</strong> health comprehension project dataset is tidy (<strong>?@sec-intro-mixed-data-tidy</strong>):</p>
+<p>The <strong>Clearly understood</strong> health comprehension project dataset is tidy (<a href="../PSYC402/Week17.html#sec-intro-mixed-data-tidy">Week 17</a>):</p>
 <ol type="1">
 <li>Each variable has its own column.</li>
 <li>Each observation has its own row.</li>
@@ -1134,7 +1130,7 @@ Note
 <p>Second, we have the bit that is specific to <em>cumulative link</em> models fitted using the <code>clm()</code> function.</p>
 <ul>
 <li><code>Hess = TRUE</code> is required if we want to get a summary of the model fit; the default is <code>TRUE</code> but it is worth being explicit about it.</li>
-<li><code>link = "logit"</code> specifies that we want to model the ordinal responses in terms of the log odds (hence, the probability) that a response is a low or a high rating value (compare <strong>?@sec-glmm-practical-understanding</strong>).</li>
+<li><code>link = "logit"</code> specifies that we want to model the ordinal responses in terms of the log odds (hence, the probability) that a response is a low or a high rating value (compare to <a href="../PSYC402/Week19.html#sec-glmm-practical-understanding">week 19</a>).</li>
 </ul>
 <section id="sec-ordinal-results-clm" class="level3">
 <h3 class="anchored" data-anchor-id="sec-ordinal-results-clm">Read the results</h3>
@@ -1398,19 +1394,19 @@ Threshold coefficients:
 <p>As I hint, when we discuss the concept that ordinal responses may map somehow to a latent unobserved underlying continuum (see <a href="#fig-latent-normal-splits">Figure&nbsp;1</a>), there are other ways to think about ordinal data. Rather, there are other ways to think about the psychological mechanisms or the <em>data generating mechanisms</em> that give rise to the ordinal responses we analyse.</p>
 <p>In <span class="citation" data-cites="ricketts2021">Ricketts, Dawson, and Davies (<a href="#ref-ricketts2021" role="doc-biblioref">2021</a>)</span>, we explain:</p>
 <blockquote class="blockquote">
-<p>In the semantic post-test, participants worked their way through three steps, only progressing from one step to the next step if they provided an incorrect response or no response. Given the sequential nature of this task, we analysed data using sequential ratio ordinal models (Bürkner &amp; Vuorre, 2019). In sequential models, we account for variation in the probability that a response falls into one response category (out of k ordered categories), equal to the probability that it did not fall into one of the foregoing categories, given the linear sum of predictors. We estimate the k-1 thresholds and the coefficients of the predictors.</p>
+<p>In the semantic post-test, participants worked their way through three steps, only progressing from one step to the next step if they provided an incorrect response or no response. Given the sequential nature of this task, we analysed data using sequential ratio ordinal models (burkner &amp; Vuorre, 2019). In sequential models, we account for variation in the probability that a response falls into one response category (out of k ordered categories), equal to the probability that it did not fall into one of the foregoing categories, given the linear sum of predictors. We estimate the k-1 thresholds and the coefficients of the predictors.</p>
 </blockquote>
 <p>What this explanation refers to is the fact that, in our study:</p>
 <blockquote class="blockquote">
 <p>The semantic post-test assessed knowledge for the meanings of newly trained words. We took a dynamic assessment or cuing hierarchy approach (Hasson &amp; Joffe, 2007), providing children with increasing support to capture partial knowledge and the incremental nature of acquiring such knowledge (Dale, 1965). Each word was taken one at a time and children were given the op- portunity to demonstrate knowledge in three steps: definition, cued definition, recognition.</p>
 </blockquote>
-<p>We follow advice set out by <span class="citation" data-cites="bürkner2019">Bürkner and Vuorre (<a href="#ref-bürkner2019" role="doc-biblioref">2019</a>)</span> in modeling the ordered categorical (i.e.&nbsp;ordinal) responses using a sequential ratio approach.</p>
+<p>We follow advice set out by <span class="citation" data-cites="burkner2019">Bürkner and Vuorre (<a href="#ref-burkner2019" role="doc-biblioref">2019</a>)</span> in modeling the ordered categorical (i.e.&nbsp;ordinal) responses using a sequential ratio approach.</p>
 </section>
 </section>
 <section id="richly-parameterized-mixed-effects-models" class="level2">
 <h2 class="anchored" data-anchor-id="richly-parameterized-mixed-effects-models">Richly parameterized mixed-effects models</h2>
 <p>You will have noticed that the mixed-effects model coded in <a href="#sec-ordinal-working-models-clmm">Section&nbsp;1.8</a> incorporates a relatively simple random effect: a term specified to estimate the variance associated with the random effect of differences between participants in intercepts.</p>
-<p>As we we have seen, more complex random effects structures may be warranted <span class="citation" data-cites="Baayen2008">Matuschek et al. (<a href="#ref-matuschek2017" role="doc-biblioref">2017</a>)</span>. When we attempt to fit models with more complex structures, as we have discussed, for example, in <strong>?@sec-dev-mixed-convergence-problems</strong> and <strong>?@sec-glmm-bad-signs</strong>, we may run into <em>convergence</em> problems. (Such convergence problems are one reason why I tend to favour Bayesian methods; see, for exampe, the discussions in <span class="citation" data-cites="bürkner2019">Bürkner and Vuorre (<a href="#ref-bürkner2019" role="doc-biblioref">2019</a>)</span> and <span class="citation" data-cites="liddell2018">Liddell and Kruschke (<a href="#ref-liddell2018" role="doc-biblioref">2018</a>)</span>.) There are ways to resolve these problems by changing the control parameters of the <code>{ordinal}</code> functions (see e.g.&nbsp;<a href="https://stat.ethz.ch/pipermail/r-sig-mixed-models/2011q2/016165.html">this discussion</a> or see the information <a href="https://cran.r-project.org/web/packages/ordinal/ordinal.pdf">here</a>) or by simplfying the model.</p>
+<p>As we we have seen, more complex random effects structures may be warranted <span class="citation" data-cites="Baayen2008">Matuschek et al. (<a href="#ref-matuschek2017" role="doc-biblioref">2017</a>)</span>. When we attempt to fit models with more complex structures, as we have discussed, for example, in <a href="../PSYC402/Week18.html#sec-dev-mixed-convergence-problems">Week 18</a> and <a href="../PSYC402/Week19.html#sec-glmm-bad-signs">Week 19</a>, we may run into <em>convergence</em> problems. (Such convergence problems are one reason why I tend to favour Bayesian methods; see, for example, the discussions in <span class="citation" data-cites="burkner2019">Bürkner and Vuorre (<a href="#ref-burkner2019" role="doc-biblioref">2019</a>)</span> and <span class="citation" data-cites="liddell2018">Liddell and Kruschke (<a href="#ref-liddell2018" role="doc-biblioref">2018</a>)</span>.) There are ways to resolve these problems by changing the control parameters of the <code>{ordinal}</code> functions (see e.g.&nbsp;<a href="https://stat.ethz.ch/pipermail/r-sig-mixed-models/2011q2/016165.html">this discussion</a> or see the information <a href="https://cran.r-project.org/web/packages/ordinal/ordinal.pdf">here</a>) or by simplfying the model.</p>
 </section>
 <section id="sec-ordinal-summary" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ordinal-summary">Summary</h2>
@@ -1432,8 +1428,8 @@ Threshold coefficients:
 <h2 class="anchored" data-anchor-id="sec-ordinal-recommended-reading">Recommended reading</h2>
 <p>The published example studies referred to in this chapter are published in <span class="citation" data-cites="ricketts2021 rodríguez-ferreiro2020a">(<a href="#ref-ricketts2021" role="doc-biblioref">Ricketts, Dawson, and Davies 2021</a>; <a href="#ref-rodríguez-ferreiro2020a" role="doc-biblioref">Rodríguez-Ferreiro, Aguilera, and Davies 2020</a>)</span>.</p>
 <p><span class="citation" data-cites="liddell2018">Liddell and Kruschke (<a href="#ref-liddell2018" role="doc-biblioref">2018</a>)</span> present a clear account of the problems associated with treating ordinal data as metric, and explain how we can better account for ordinal data.</p>
-<p><span class="citation" data-cites="bürkner2019">Bürkner and Vuorre (<a href="#ref-bürkner2019" role="doc-biblioref">2019</a>)</span> present a clear tutorial on cumulative and sequential ratio models.</p>
-<p>Both <span class="citation" data-cites="liddell2018">Liddell and Kruschke (<a href="#ref-liddell2018" role="doc-biblioref">2018</a>)</span> and <span class="citation" data-cites="bürkner2019">Bürkner and Vuorre (<a href="#ref-bürkner2019" role="doc-biblioref">2019</a>)</span> work from a Bayesian perspective but the insights are generally applicable.</p>
+<p><span class="citation" data-cites="burkner2019">Bürkner and Vuorre (<a href="#ref-burkner2019" role="doc-biblioref">2019</a>)</span> present a clear tutorial on cumulative and sequential ratio models.</p>
+<p>Both <span class="citation" data-cites="liddell2018">Liddell and Kruschke (<a href="#ref-liddell2018" role="doc-biblioref">2018</a>)</span> and <span class="citation" data-cites="burkner2019">Bürkner and Vuorre (<a href="#ref-burkner2019" role="doc-biblioref">2019</a>)</span> work from a Bayesian perspective but the insights are generally applicable.</p>
 <p>Guides to the <code>{ordinal}</code> model functions <code>clm()</code> and <code>clmm()</code> are presented in <span class="citation" data-cites="christensen2022 christensen2015">(<a href="#ref-christensen2022" role="doc-biblioref">Rune Haubo Bojesen Christensen 2022</a>; <a href="#ref-christensen2015" role="doc-biblioref">R. H. B. Christensen 2015</a>)</span>.</p>
 
 
@@ -1451,7 +1447,7 @@ Barr, D J, R Levy, C Scheepers, and H J Tily. 2013. <span>“Random Effects Stru
 <div id="ref-bates2015parsimonious" class="csl-entry" role="listitem">
 Bates, Douglas, Reinhold Kliegl, Shravan Vasishth, and Harald Baayen. 2015. <span>“Parsimonious Mixed Models.”</span> <em>arXiv Preprint arXiv:1506.04967</em>.
 </div>
-<div id="ref-bürkner2019" class="csl-entry" role="listitem">
+<div id="ref-burkner2019" class="csl-entry" role="listitem">
 Bürkner, Paul-Christian, and Matti Vuorre. 2019. <span>“Ordinal Regression Models in Psychology: A Tutorial.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 2 (1): 77–101. <a href="https://doi.org/10.1177/2515245918823199">https://doi.org/10.1177/2515245918823199</a>.
 </div>
 <div id="ref-christensen2015" class="csl-entry" role="listitem">
@@ -1735,11 +1731,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-footer">
     <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
     <div class="nav-footer-center">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../Staff/index.html">For Staff</a>
-  </li>  
-</ul>
+      &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

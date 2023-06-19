@@ -36,13 +36,7 @@ In this week's lecture, we considered the procedures involved in performing a tw
 
 ## Getting Started
 
-To get started, we first need to log into the R Studio Server.
-
-You can access Lancaster Universities RStudio Server at http://psy-rstudio.lancaster.ac.uk. At present, you will need to be on campus, or connected to the VPN to access this. **If you do not yet have Eduroam (the university WiFi) available on your personal device, please follow the instructions from the PSYC214 Announcement Page https://modules.lancaster.ac.uk/mod/forum/discuss.php?d=388256**
-
-![](images/RStudioSignIn.png){width=75%}
-
-If you are on Eduroam (or VPN if off campus) and have accessed the RStudio Server from the URL above, you will now see a login screen (see above). Please use your normal Lancaster University username (e.g., bloggsj). Your own individual RStudio Server password was sent in an email, prior to the first lab, by Kay Rawlins: email header ‘R Studio Server login details’. Please make sure you have this.
+{{< include /Includes/_login.qmd >}}
 
 Once you are logged into the server, create a folder for today's session. Navigate to the bottom right panel and under the `Files` option select the `New Folder` option. Name the new folder `psyc214_lab_8`. **Please ensure that you spell this correctly** otherwise when you set the directory using the command given below it will return an error.   
 

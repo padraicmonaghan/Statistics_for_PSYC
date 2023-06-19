@@ -80,15 +80,7 @@ For Lancaster University Psychology Students in 2022, we will be learning about 
 
 > Here's a little secret: There are several different ways to access RStudio. For example, you can download a copy of the software onto your computer, or use a Virtual Machine set up to run a copy. There's nothing to stop you having your local copy, but please note - we can't support your own version through lab classes. We're using the web server to make sure everyone has the same, controlled experience.
 
-You will have received an email with your account information to log onto From a computer on the campus wifi, you can access R Studio at:
-
-[Lancaster Psychology R Studio Server](http://psy-rstudio.lancaster.ac.uk){target="_blank}
-
-At the login screen, use your university username (e.g., bloggsj)
-
-Your password for R Studio is: [password here]
-
-As it says in the subject line, please keep your account details safe!
+{{< include /Includes/_login.qmd >}}
 
 ### What does RStudio look like?
 

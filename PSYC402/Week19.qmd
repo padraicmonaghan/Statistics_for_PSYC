@@ -165,8 +165,28 @@ The @monaghan2015 paper can be accessed [here](https://onlinelibrary.wiley.com/d
 I am going to assume you have downloaded the data file, and that you know where it is. We use `read_csv` to read the data file into R.
 
 ```{r}
+#| label: readinallbehind
+#| message: false
+#| echo: false
+long.orth <- read_csv("data/long.orth_2020-08-11.csv", 
+                      col_types = cols(
+                        Participant = col_factor(),
+                        Time = col_factor(),
+                        Study = col_factor(),
+                        Instructions = col_factor(),
+                        Version = col_factor(),
+                        Word = col_factor(),
+                        Orthography = col_factor(),
+                        Measure = col_factor(),
+                        Spelling.transcription = col_factor()
+                      )
+                    )
+```
+
+```{r}
 #| label: readinall
 #| message: false
+#| eval: false
 long.orth <- read_csv("long.orth_2020-08-11.csv", 
                       col_types = cols(
                         Participant = col_factor(),
@@ -182,7 +202,7 @@ long.orth <- read_csv("long.orth_2020-08-11.csv",
                     )
 ```
 
-You can see, here, that within the `read_csv()` function call, I specify `col_types`, instructing R how to treat a number of different variables. Recall that in @sec-intro-mixed-data-load, we saw how we can determine how R treats variables at the read-in stage, using `col_types()` specification. You can read more about this [here](https://readr.tidyverse.org/articles/readr.html).
+You can see, here, that within the `read_csv()` function call, I specify `col_types`, instructing R how to treat a number of different variables. Recall that in [here](Week17.qmd#sec-intro-mixed-data-load), we saw how we can determine how R treats variables at the read-in stage, using `col_types()` specification. You can read more about this [here](https://readr.tidyverse.org/articles/readr.html).
 
 ### Inspect the data {#sec-glmm-data-inspect}
 
@@ -372,7 +392,7 @@ Let's imagine that we wish to estimate the effects of experimental variables lik
 # -- we can edit the plot for use
 
 # -- first, we need to calculate the proportion of responses that are correct per person for each block of (24) learning trials
-gavagai <- read_csv("noun-verb-learning-study.csv", na = "-999")
+gavagai <- read_csv("data/noun-verb-learning-study.csv", na = "-999")
 
 correct <- gavagai %>%
                       group_by(Experiment, Subjecta, block) %>%

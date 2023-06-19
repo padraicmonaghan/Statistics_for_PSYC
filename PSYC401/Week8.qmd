@@ -59,7 +59,7 @@ Data visualization is important. Building skills in visualization matters to you
 
 You have already been doing this: our cultural or visual environment is awash in visualizations, from weather maps to charts on the television news. It will empower you if you know a bit about how or why these visualizations are produced in the ways that they are produced. That is a complex development trajectory but we can get started here.
 
-In the context of the research report exercise, see @sec-pipeline, I mention data visualization in relation to stages of the data analysis **pipeline** or **workflow**. But the reality is that, most of the time, visualization is useful and used at every stage of data analysis workflow.
+In the context of the research report exercise, I mention data visualization in relation to stages of the data analysis **pipeline** or **workflow**. But the reality is that, most of the time, visualization is useful and used at every stage of data analysis workflow.
 
 ```{dot}
 //| fig-width: 5

@@ -142,10 +142,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../PSYC402/index.html" rel="" target="">
  <span class="menu-text">PSYC402</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Previous_Content/index.html" rel="" target="">
- <span class="menu-text">Previous Content</span></a>
-  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -646,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Alternatively, if you don’t feel confident about the material, these recorded lectures might help.</p>
 <ul>
 <li><p><a href="https://estream.lancaster.ac.uk/View.aspx?id=60909~5l~EskRm8Serj"><strong>The linear model: theory (~30 min)</strong></a> An introduction to the linear model and linear regression. I follow material as discussed in Chapter 4 of Bodo Winter’s book <em>Statistics for Linguists: An Introduction using R</em> (see below under ‘Reading’).</p></li>
-<li><p><a href="https://estream.lancaster.ac.uk/View.aspx?id=60910~5d~uUTzHPgBLN"><strong>How to build a linear model in R (~30 min)</strong></a> In this video I demonstrate how to build a linear model in R by talking you through a simple linear regression script (you can download it here <a href="files/week11/stats_linearModel_howTo.R">stats_linearModel_howTo.R</a>). If you are unclear on what different parts of the lm() function do, or how to read the output, this video might help clarify that.</p></li>
+<li><p><a href="https://estream.lancaster.ac.uk/View.aspx?id=60910~5d~uUTzHPgBLN"><strong>How to build a linear model in R (~30 min)</strong></a> In this video I demonstrate how to build a linear model in R by talking you through a simple linear regression script (you can download it here <a href="images/stats_linearModel_howTo.R">stats_linearModel_howTo.R</a>). If you are unclear on what different parts of the lm() function do, or how to read the output, this video might help clarify that.</p></li>
 <li><p><a href="https://estream.lancaster.ac.uk/View.aspx?id=60911~5e~WIhZrOrXiD"><strong>Multiple regression: theory (~35 min)</strong></a> An introduction to multiple regression. I follow material as discussed in Chapter 5 of Bodo Winter’s book <em>Statistics for Linguists: An Introduction using R</em> (see below under ‘Reading’).</p></li>
 <li><p><a href="https://estream.lancaster.ac.uk/View.aspx?id=60912~5f~xjxBbNDjGF"><strong>Centering and standardising (~5 min)</strong></a> Brief explanation of what centering and standardising are.</p></li>
 </ul>
@@ -704,7 +700,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="get-your-files-ready" class="level4">
 <h4 class="anchored" data-anchor-id="get-your-files-ready">Get your files ready</h4>
-<p>Download the <a href="files/week11/402_week11_forStudents.zip">402_week11_forStudents.zip</a> file and upload it into a new folder in RStudio Server.</p>
+<p>Download the <a href="images/402_week11_forStudents.zip">402_week11_forStudents.zip</a> file and upload it into a new folder in RStudio Server.</p>
 </section>
 </section>
 </section>
@@ -721,7 +717,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="lab-activity-1-interpreting-and-reporting-results">Lab activity 1: Interpreting and reporting results</h3>
 <p>Have a look at the R output below.</p>
 <p><strong>R Output 1</strong></p>
-<p><img src="files/week11/w11_labAct1_output.png" class="img-fluid"></p>
+<p><img src="images/w11_labAct1_output.png" class="img-fluid"></p>
 <ol type="1">
 <li>What is the outcome or dependent variable?</li>
 <li>What is the predictor or independent variable?</li>
@@ -734,11 +730,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Do the residuals show normality and homoscedasticity?</p></li>
 </ol>
 <p><strong>Scatterplot</strong></p>
-<p><img src="files/week11/w11_labAct1_scatterplot.png" class="img-fluid"></p>
+<p><img src="images/w11_labAct1_scatterplot.png" class="img-fluid"></p>
 <p><strong>QQ-plot</strong></p>
-<p><img src="files/week11/w11_labAct1_qqplot.png" class="img-fluid"></p>
+<p><img src="images/w11_labAct1_qqplot.png" class="img-fluid"></p>
 <p><strong>R Output 2</strong></p>
-<p><img src="files/week11/w11_labAct1_output2.png" class="img-fluid"></p>
+<p><img src="images/w11_labAct1_output2.png" class="img-fluid"></p>
 </section>
 <section id="lab-activity-2-conducting-simple-and-multiple-regression" class="level3">
 <h3 class="anchored" data-anchor-id="lab-activity-2-conducting-simple-and-multiple-regression">Lab activity 2: Conducting simple and multiple regression</h3>
@@ -757,7 +753,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="step-1-background-and-set-up">Step 1: Background and set up</h4>
 <p>Before you do anything else, when starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one.</p>
 <blockquote class="blockquote">
-<p><strong>TASK</strong>: Use the code snippet below to clear the environment. <strong>TIP</strong>: If you hover your mouse over the box that includes the code snippet, a ‘copy to clipboard’ icon will appear in the top right corner of the box. Click that to copy the code. Now you can easily paste it into your script. <img src="files/week11/copy.png" class="img-fluid"></p>
+<p><strong>TASK</strong>: Use the code snippet below to clear the environment. <strong>TIP</strong>: If you hover your mouse over the box that includes the code snippet, a ‘copy to clipboard’ icon will appear in the top right corner of the box. Click that to copy the code. Now you can easily paste it into your script. <img src="images/copy.png" class="img-fluid"></p>
 </blockquote>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())                            </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -891,7 +887,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="lab-activity-2-conducting-simple-and-multiple-regression-1" class="level3">
 <h3 class="anchored" data-anchor-id="lab-activity-2-conducting-simple-and-multiple-regression-1">Lab activity 2: Conducting simple and multiple regression</h3>
-<p>You can download the R-script that includes the relevant code and answers to the questions here: <a href="files/week11/402_wk11_labAct2_withAnswers.R">402_wk11_labAct2_withAnswers.R</a>.</p>
+<p>You can download the R-script that includes the relevant code and answers to the questions here: <a href="images/402_wk11_labAct2_withAnswers.R">402_wk11_labAct2_withAnswers.R</a>.</p>
 
 
 </section>
@@ -1148,11 +1144,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-footer">
     <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
     <div class="nav-footer-center">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../Staff/index.html">For Staff</a>
-  </li>  
-</ul>
+      &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

@@ -35,15 +35,7 @@ In your group, work through this workbook, note any problems and questions you h
 
 ## Task One: Open Rstudio
 
-You will have received an email with your account information to log onto From a computer on the campus wifi, you can access R Studio at:
-
-[Lancaster Psychology R Studio Server](http://psy-rstudio.lancaster.ac.uk){target="_blank}
-
-At the login screen, use your university username (e.g., bloggsj)
-
-Your password for R Studio is: [password here]
-
-As it says in the subject line, please keep your account details safe!
+{{< include /Includes/_login.qmd >}}
 
 ### What does RStudio look like?
 
