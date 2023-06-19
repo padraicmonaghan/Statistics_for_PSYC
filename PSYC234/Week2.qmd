@@ -100,7 +100,7 @@ $$
 The data set is retrieved from https://www.kaggle.com/mirichoi0218/insurance
 
 ```{r cars}
-d <- read_csv("data/Wk2/Week2_lecture_materials/insurance.csv")
+d <- read_csv("data/Wk2/_Week2_lecture_materials/insurance.csv")
 ```
 
 Looking at the information on reading the data in,  we have three variables that R has detected as character variables: sex, smoker and region.  Brilliant - three categorical variables.

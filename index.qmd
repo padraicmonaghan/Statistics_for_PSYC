@@ -10,7 +10,7 @@ filters: [remove_title.lua]
 ![](Images/LUPsychology.svg){fig-alt="University Logo" fig-align="center"}
 
 ::: callout-warning
-This website is under construction. Not all data is in place, and not all modules are filled out. Pages should be in place, but some are filler. If the pages have names in the sidebar, then you're able to explore these as examples.
+This website is under construction. All the content from modules and lectures has been ported over, but I am not the expert in what content you want and where.
 :::
 
 # Welcome

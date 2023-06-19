@@ -1,6 +1,6 @@
 ---
 title: Developing linear mixed-effects models
-subtitle: Written by Rob Davies AND ME!
+subtitle: Written by Rob Davies
 order: 9
 ---
 # Developing linear mixed-effects models {#sec-dev-mixed}

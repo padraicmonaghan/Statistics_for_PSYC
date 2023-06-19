@@ -203,7 +203,7 @@ d <- read_csv("KidIQ.txt", col_types = cols(mom_work = col_skip()))
 ```
 
 ```{r, echo=FALSE}
-d <- read_csv("data/Wk3/Lecture 3 Materials/KidIQ.txt", col_types = cols(mom_work = col_skip()))
+d <- read_csv("data/Wk3/_Lecture 3 Materials/KidIQ.txt", col_types = cols(mom_work = col_skip()))
 
 ```
 Notice how I have turned the `knitr::opts_chunk$set(include = TRUE)` line of code above to TRUE, this is what prints the code and output when you knit the document.  Switching TRUE to FALSE will stop the code from printing out when you knit - try it.  You can't break anything!
