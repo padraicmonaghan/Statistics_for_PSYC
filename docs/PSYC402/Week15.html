@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists - Poisson regression</title>
+<title>Statistics for Psychologists - 5. Poisson regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC402/index.html">PSYC402</a></li><li class="breadcrumb-item"><a href="../PSYC402/Week15.html">Poisson regression</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC402/index.html">PSYC402</a></li><li class="breadcrumb-item"><a href="../PSYC402/Week15.html">5. Poisson regression</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -514,61 +514,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recap of the linear model and practising data-wrangling in R</span></a>
+ <span class="menu-text">1. Recap of the linear model and practising data-wrangling in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Categorical predictors</span></a>
+ <span class="menu-text">2. Categorical predictors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">More on interactions</span></a>
+ <span class="menu-text">3. More on interactions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Logistic regression</span></a>
+ <span class="menu-text">4. Logistic regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week15.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Poisson regression</span></a>
+ <span class="menu-text">5. Poisson regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to multilevel data</span></a>
+ <span class="menu-text">6. Introduction to multilevel data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to linear mixed-effects models</span></a>
+ <span class="menu-text">7. Introduction to linear mixed-effects models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developing linear mixed-effects models</span></a>
+ <span class="menu-text">8. Developing linear mixed-effects models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Generalized Linear Mixed-effects Models</span></a>
+ <span class="menu-text">9. Introduction to Generalized Linear Mixed-effects Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Ordinal Models</span></a>
+ <span class="menu-text">10. Introduction to Ordinal Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -612,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Poisson regression</h1>
+<h1 class="title">5. Poisson regression</h1>
 <p class="subtitle lead">Written by Margriet Groen (partly adapted from Winter (2020)</p>
 </div>
 
@@ -1032,12 +1032,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../PSYC402/Week14.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Logistic regression</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4. Logistic regression</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../PSYC402/Week16.html" class="pagination-link">
-        <span class="nav-page-text">Introduction to multilevel data</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">6. Introduction to multilevel data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -27,3 +27,6 @@ This is a proof of concept that we can hide/autoshow information. It is a bit cl
 <iframe src="https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Embed.aspx?id=41497607-03c1-4e97-84f1-ae5a00fcc8f9&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ```
 
+# Testing embedded presentation
+
+<iframe class="slide-deck" src="/Users/ivorym/Documents/PhD/#1; Risk Perception/Presentation/index.html"></iframe>

@@ -1,5 +1,5 @@
 ---
-title: Developing linear mixed-effects models
+title: 8. Developing linear mixed-effects models
 subtitle: Written by Rob Davies
 order: 9
 ---

@@ -35,7 +35,7 @@ For a reminder of how to start RStudio, [see week 1's instructions](Week1.html#g
 
 (remember: off campus, you will need to be on the VPN)
 
-> A word of advice (from David Howell's statistics book: "One more word of advice "I can't resist adding what is perhaps the best advice I have. If there is something that you don't understand, just remember that "Google is your friend." She certainly is mine. (Well, maybe Google is getting a bit pushy, but there are many other search sites.) If you don't understand what Fisher's Exact Test is, or you don't like my explanation, go to Google and type in Fisher's Exact Test. I just did that and had 260,000 hits. You can't tell me that there isn't going to be something useful in there.)"
+> A word of advice (from David Howell's statistics book: One more word of advice I can't resist adding what is perhaps the best advice I have. If there is something that you don't understand, just remember that "Google is your friend." She certainly is mine. (Well, maybe Google is getting a bit pushy, but there are many other search sites.) If you don't understand what Fisher's Exact Test is, or you don't like my explanation, go to Google and type in Fisher's Exact Test. I just did that and had 260,000 hits. You can't tell me that there isn't going to be something useful in there.)
 
 ### Bringing data, scripts and files into R Studio
 
@@ -122,7 +122,7 @@ mean(cows$estimate)
 sd(cows$estimate)
 ```
 
-So from this, can you work out what you would do to get the median value (remember from last week how we got the median value?)? Part fo the command is given to you, can you change the text so that it works?
+So from this, can you work out what you would do to get the median value (remember from last week how we got the median value?)? Part of the command is given to you, can you change the text so that it works?
 
 ### Calculations from a range of columns
 

@@ -1,5 +1,5 @@
 ---
-title: Introduction to Ordinal Models
+title: 10. Introduction to Ordinal Models
 subtitle: Written by Rob Davies
 order: 11
 bibliography: references.bib

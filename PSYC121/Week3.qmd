@@ -22,7 +22,7 @@ Last week we asked you to
 -   Use a script to run instructions in RStudio
 -   Put data into RStudio form a data file and explore how to run descriptive stats
 
-This week - again, there's a learnr tutorial to follow and help prep for this week's activities [You can find it here](https://ma-rconnect.lancs.ac.uk/W3LabPrep/){target="_blank"}
+This week - again, there's a learnr tutorial to follow and help prep for this week's activities. [You can find it here](https://ma-rconnect.lancs.ac.uk/W3LabPrep/){target="_blank"}
 
 ## R Studio tasks
 
@@ -42,7 +42,7 @@ Step 2. Explore help() commands. R can give you more information about how it wo
 
 Step 3. Creating a project and a folder, and setting the working directory
 
-Step 4. Bring the `week3.zip` file into R Studio server. Like last week, upload the zip file, and launch the R script.[You can get the file here](data/Week_3/week_3.zip)
+Step 4. Bring the `week3.zip` file into R Studio server. Like last week, upload the zip file, and launch the R script. [You can get the file here](data/Week_3/week_3.zip)
 
 Step 5. Read or load the penelope data into R. Have a look at it using the View() command in the script
 

@@ -1,5 +1,5 @@
 ---
-title: Introduction to linear mixed-effects models
+title: 7. Introduction to linear mixed-effects models
 subtitle: Written by Rob Davies
 order: 8
 ---

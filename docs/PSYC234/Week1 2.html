@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists</title>
+<title>Statistics for Psychologists - 1. Review of correlation, simple regression and demonstration of multiple regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../PSYC234/Week2.html" rel="next">
+<link href="../PSYC234/index.html" rel="prev">
 <link href="../Images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Statistics for Psychologists</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC234/index.html">PSYC234</a></li><li class="breadcrumb-item"><a href="../PSYC234/Week1.html">1. Review of correlation, simple regression and demonstration of multiple regression</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -334,15 +336,21 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../PSYC234/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PSYC234</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../PSYC234/Week1.html" class="sidebar-item-text sidebar-link">
+  <a href="../PSYC234/Week1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">1. Review of correlation, simple regression and demonstration of multiple regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC234/Week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Multiple regression including categorical predictors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -478,61 +486,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recap of the linear model and practising data-wrangling in R</span></a>
+ <span class="menu-text">1. Recap of the linear model and practising data-wrangling in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Categorical predictors</span></a>
+ <span class="menu-text">2. Categorical predictors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">More on interactions</span></a>
+ <span class="menu-text">3. More on interactions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Logistic regression</span></a>
+ <span class="menu-text">4. Logistic regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Poisson regression</span></a>
+ <span class="menu-text">5. Poisson regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to multilevel data</span></a>
+ <span class="menu-text">6. Introduction to multilevel data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to linear mixed-effects models</span></a>
+ <span class="menu-text">7. Introduction to linear mixed-effects models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developing linear mixed-effects models</span></a>
+ <span class="menu-text">8. Developing linear mixed-effects models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Generalized Linear Mixed-effects Models</span></a>
+ <span class="menu-text">9. Introduction to Generalized Linear Mixed-effects Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Ordinal Models</span></a>
+ <span class="menu-text">10. Introduction to Ordinal Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -549,14 +557,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lectures" id="toc-lectures" class="nav-link active" data-scroll-target="#lectures">Lectures</a>
+  <ul class="collapse">
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  </ul></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#what-happens" id="toc-what-happens" class="nav-link" data-scroll-target="#what-happens">What happens</a></li>
+  <li><a href="#planning-data-analysis" id="toc-planning-data-analysis" class="nav-link" data-scroll-target="#planning-data-analysis">Planning Data Analysis</a></li>
+  <li><a href="#staff-role-in-labs" id="toc-staff-role-in-labs" class="nav-link" data-scroll-target="#staff-role-in-labs">Staff role in labs</a></li>
+  </ul></li>
+  <li><a href="#lab-task" id="toc-lab-task" class="nav-link" data-scroll-target="#lab-task">Lab Task</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC234/Week1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistics for Psychologists</h1>
+<h1 class="title">1. Review of correlation, simple regression and demonstration of multiple regression</h1>
+<p class="subtitle lead">Emma Mills</p>
 </div>
 
 
@@ -571,27 +596,127 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>To log in to the R server, first make sure that you have the VPN switched on, or you will need to be connected to the university network (Eduroam). To set up the VPN, follow ISS <a href="https://portal.lancaster.ac.uk/ask/digital/services/university-it-network/vpn/">instructions here</a> or connecting to Eduroam <a href="https://portal.lancaster.ac.uk/ask/digital/services/university-it-network/wi-fi/">here</a>.</p>
-<p>When you are connected, navigate to <a href="https://psy-rstudio.lancaster.ac.uk">https://psy-rstudio.lancaster.ac.uk</a>, where you will be shown a login screen that looks like the below. Click the option that says “Sign in with SAML”.</p>
-<p><img src="../Includes/1LoginSAML.png" class="img-fluid"> <!-- says no image but it's all about the include setup --></p>
-<p>This will take you through to the University login screen, where you should enter your username (e.g.&nbsp;ivorym) and then your university password. This will then redirect you to the R server where you can start using RStudio!</p>
-<p><img src="../Includes/2LoginUser.png" class="img-fluid"></p>
-<p><img src="../Includes/3LoginPass.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="lectures" class="level1">
+<h1>Lectures</h1>
+<p><a href="https://modules.lancaster.ac.uk/mod/url/view.php?id=1978183">Part 1</a></p>
+<p><a href="https://modules.lancaster.ac.uk/mod/url/view.php?id=1978184">Part 2</a></p>
+<p><a href="https://modules.lancaster.ac.uk/mod/url/view.php?id=1978185">Part 3</a></p>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<p>The lecture materials, including and and R files are downloaded from <a href="data/Week1_lecture_materials.zip">here</a> as a zip file. You can upload the zip file directly on to the R server and it will populate a new folder with the files and data files automatically.</p>
+</section>
+</section>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<section id="what-happens" class="level2">
+<h2 class="anchored" data-anchor-id="what-happens">What happens</h2>
+<ol type="1">
+<li>In each lab:</li>
+</ol>
+<ul>
+<li>Model output, or model plot with dataset</li>
+<li>In small groups, work backwards to <em>plan</em> the analysis script that produced the model output
+<ul>
+<li>Use lab time/staff to check plan</li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li>Independently of the lab:</li>
+</ol>
+<ul>
+<li>Generate the script as a group
+<ul>
+<li>Help each other</li>
+<li>Scrape code from all your statistics modules
+<ul>
+<li>The internet</li>
+<li>R books</li>
+</ul></li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>Submit for feedback (optional)</li>
+</ol>
+<ul>
+<li>Submit as group</li>
+<li>Random sample of scripts will get feedback</li>
+<li>No credit here – learning process as preparation for your own project!</li>
+<li>You can see all scripts per week <strong>if you submit a script per week</strong>
+<ul>
+<li>You only get access to view when you submit a script – <strong>to reduce freeloading behaviour</strong></li>
+<li>I will give feedback on 20% sample or maximum of 3 per lab group</li>
+<li>I will post the submitted scripts each week on moodle.</li>
+</ul></li>
+<li>Why should you contribute here?
+<ul>
+<li>You are a massive community and can support each other going forward</li>
+<li>Breaks down the idea that there is one correct way to write an analysis script</li>
+<li>Give you greater exposure to code that shares a purpose</li>
+<li>Some students have asked for this potential for feedback on scripts – not just analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="planning-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="planning-data-analysis">Planning Data Analysis</h2>
+<p>Data analysis requires the following steps</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/Wk1/Wrangle.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Analysis Workflow</figcaption>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+<p>With each step requiring its own blocks of code. Specifically, the communication sep requires us to produce plots and model summaries along wit text to help other people understand our research and what was completed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/Wk1/WrangleUpdate2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Analysis Workflow</figcaption>
+</figure>
 </div>
+<p>Model plots and summaries are the output from our statistical analyses and look similar to the example below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/Wk1/PlotSummary.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Analysis Workflow</figcaption>
+</figure>
 </div>
-<div class="callout-body-container callout-body">
-<p>If you have already logged in through the university login already, perhaps to get to the portal, then you may not see the username/password screen. When you click login, you will be redirected straight to RStudio. This is because the server shares the login information securely across the university.</p>
-</div>
-</div>
+<p>We, as communicators, need to present this information in text form too. So from the above figure and summary we can create a body of text. Text equating to a paragraph reporting model significance, then coefficients (emphasised in italics and bold below as: <em>statistics</em> + <strong>verbal description</strong>).</p>
+<p>Example of model significance: <em>The model predicting children’s test scores from mother’s graduation status, mother’s age and IQ was significant (F (3, 430) = 39.25, p &lt; .001, R2 = 0.21).</em></p>
+<p>Example text for the ‘c_mom_hs’ coefficient:</p>
+<p><em>The difference for whether the mother graduated high school or not is significant (b = 5.65, SE = 2.26, p = .013).</em> <strong>Holding all other predictors constant, the difference in scores for a child whose mother finished high school and a child whose mother did not finish high school is 5.64 test points.</strong></p>
+</section>
+<section id="staff-role-in-labs" class="level2">
+<h2 class="anchored" data-anchor-id="staff-role-in-labs">Staff role in labs</h2>
+<ul>
+<li><p>Get us to check your planning / answer your questions.</p></li>
+<li><p>We will:</p>
+<ul>
+<li>Identify gaps</li>
+<li>Tell you that there is an error somewhere with an indication of where to look more closely</li>
+<li>Give you hints</li>
+<li>Extend your thinking if you are working at your best level already….</li>
+</ul></li>
+<li><p>We won’t give you the answers straight out. Because most of your project experience is going to be about problem solving</p></li>
+</ul>
+</section>
+</section>
+<section id="lab-task" class="level1">
+<h1>Lab Task</h1>
+<ol type="1">
+<li><p>Form groups to work with for the next few weeks – three or four people</p></li>
+<li><p>In your group:</p></li>
+</ol>
+<ul>
+<li>Talk about and list the R functions that you typically use at each stage of the analysis workflow</li>
+<li>Set up a group project on the server – give access to each member in your group AND me (user = millse)</li>
+<li>Divide the sections of workflow between you into equal parts for finding examples of these code in modules 121, 122, 214</li>
+<li><em>Homework - before next week’s lab</em>: Write a “boiler plate” script that has headers for each section and some commented out functions that you might use time and time again.
+<ul>
+<li>This is also really good preparation for your Final Year Individual Project data analysis.</li>
+</ul></li>
+</ul>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -827,13 +952,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../PSYC234/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">PSYC234</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../PSYC234/Week2.html" class="pagination-link">
+        <span class="nav-page-text">2. Multiple regression including categorical predictors</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">Website developed by Matthew Ivory</div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/Includes/login.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

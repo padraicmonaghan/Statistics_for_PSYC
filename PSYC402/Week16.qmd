@@ -1,5 +1,5 @@
 ---
-title: Introduction to multilevel data
+title: 6. Introduction to multilevel data
 subtitle: Written by Rob Davies
 order: 7
 ---

@@ -514,61 +514,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recap of the linear model and practising data-wrangling in R</span></a>
+ <span class="menu-text">1. Recap of the linear model and practising data-wrangling in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Categorical predictors</span></a>
+ <span class="menu-text">2. Categorical predictors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">More on interactions</span></a>
+ <span class="menu-text">3. More on interactions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Logistic regression</span></a>
+ <span class="menu-text">4. Logistic regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Poisson regression</span></a>
+ <span class="menu-text">5. Poisson regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to multilevel data</span></a>
+ <span class="menu-text">6. Introduction to multilevel data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to linear mixed-effects models</span></a>
+ <span class="menu-text">7. Introduction to linear mixed-effects models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developing linear mixed-effects models</span></a>
+ <span class="menu-text">8. Developing linear mixed-effects models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Generalized Linear Mixed-effects Models</span></a>
+ <span class="menu-text">9. Introduction to Generalized Linear Mixed-effects Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC402/Week20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Ordinal Models</span></a>
+ <span class="menu-text">10. Introduction to Ordinal Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -690,7 +690,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>Here’s a little secret: There are several different ways to access RStudio. For example, you can download a copy of the software onto your computer, or use a Virtual Machine set up to run a copy. There’s nothing to stop you having your local copy, but please note - we can’t support your own version through lab classes. We’re using the web server to make sure everyone has the same, controlled experience.</p>
 </blockquote>
-<p>To log in to the R server, first make sure that you have the VPN switched on, or you will need to be connected to the university network (Eduroam). To set up the VPN, follow ISS’ <a href="https://portal.lancaster.ac.uk/ask/digital/services/university-it-network/vpn/">instructions here</a> or connecting to Eduroam <a href="https://portal.lancaster.ac.uk/ask/digital/services/university-it-network/wi-fi/">here</a>.</p>
+<p>To log in to the R server, first make sure that you have the VPN switched on, or you will need to be connected to the university network (Eduroam). To set up the VPN, follow ISS <a href="https://portal.lancaster.ac.uk/ask/digital/services/university-it-network/vpn/">instructions here</a> or connecting to Eduroam <a href="https://portal.lancaster.ac.uk/ask/digital/services/university-it-network/wi-fi/">here</a>.</p>
 <p>When you are connected, navigate to <a href="https://psy-rstudio.lancaster.ac.uk">https://psy-rstudio.lancaster.ac.uk</a>, where you will be shown a login screen that looks like the below. Click the option that says “Sign in with SAML”.</p>
 <p><img src="../Includes/1LoginSAML.png" class="img-fluid"> <!-- says no image but it's all about the include setup --></p>
 <p>This will take you through to the University login screen, where you should enter your username (e.g.&nbsp;ivorym) and then your university password. This will then redirect you to the R server where you can start using RStudio!</p>
@@ -730,14 +730,29 @@ Note
 <li><p>Click choose file and find the file on your computer.</p></li>
 <li><p>Select the file and click “Open”. Click “OK”</p></li>
 </ol>
-<p>You should now see the files extracted in the directory. If you receive an “unexpected server error” please try this process in a different browser. If you still have trouble, send your username to <a href="mailto:t.beesley@lancaster.ac.uk">t.beesley@lancaster.ac.uk</a> for support.</p>
+<p>You should now see the files extracted in the directory.</p>
+<p>Sometimes when uploading .zip files, you may get an “unexpected server error” which is less than helpful! The first thing to try is a different browser, but if this still happens then there is a workaround, but it requires a bit more effort. Basically, you can use code to do what the “upload” button should do.</p>
+<ol type="1">
+<li><p>Find the link to the data in the worksheet, right-click this and copy the URL, it should end in something like: <code>data/Week_1/week_1.zip</code>. The important thing to note is that it finishes in a .zip, as it will only work with zip files.</p></li>
+<li><p>Next you run three lines of code as below and replace the appropriate line with the copied web address.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"web address in here"</span>, <span class="at">destfile =</span> <span class="st">"temp"</span>) <span class="co">#download the zip</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">"temp"</span>) <span class="co">#unpack the zip folder into the directory</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"temp"</span>) <span class="co">#remove the "temp" file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Your data should have been imported and unpacked into the directory of your choosing. If you’re feeling confident, you can change the destination by altering “temp” to become a folder, e.g.&nbsp;“Folder/week1/temp”, just make sure to change this in all three lines.</li>
+</ol>
 <p>You should now have the script available in RStudio.</p>
 <p>Use “Save…As” to create a new version of the script. By doing this, you’ll be able to have a “before” and “after” version of the script and can go back over the changes</p>
 <p>In the script, select or highlight the first line of text, which is this one:</p>
 <section id="run-your-first-ever-r-instruction" class="level4">
 <h4 class="anchored" data-anchor-id="run-your-first-ever-r-instruction">Run your first ever R instruction!</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>and “run” this line. That tells RStudio to carry out the instruction.</p>
 <p>You should see that in the console tab, RStudio calculates the answer to this incredibly hard maths challenge! (amazing huh? OK, maybe not *that* amazing…).</p>
@@ -749,18 +764,18 @@ Note
 <section id="calculate-descriptive-stats-in-r-for-the-first-time" class="level4">
 <h4 class="anchored" data-anchor-id="calculate-descriptive-stats-in-r-for-the-first-time">Calculate descriptive stats in R for the first time!</h4>
 <p>In this week’s analysis lecture, we looked at measures of central tendency and how to calculate them. So let’s get R to do these calculations also!</p>
-<p>First, we tell R about the data used in the lecture. We’ve already created the instruction that will do exacly this and it is in the script, so run this line from the script</p>
+<p>First, we tell R about the data used in the lecture. We’ve already created the instruction that will do exactly this and it is in the script, so run this line from the script</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>week_1_lecture_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>week_1_lecture_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This creates an “object” called <code>week_1_lecture_data</code>. We can then perform calculations on this object. For example, we can find the mean by running the following command (use the script to do this)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(week_1_lecture_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(week_1_lecture_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Check the answer is the same we found in the lecture (it should be 6!).</p>
 <p>Next, let’s ask for the median by running this line from the script:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(week_1_lecture_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(week_1_lecture_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This also should be the answer from the lecture (7)</p>
 <p>R doesn’t have a single corresponding command for the <em>mode</em>, but we can use the block of code in the script for this that starts and ends with the “getmode” text (there are 6 lines of text)</p>
@@ -789,9 +804,9 @@ Note
 </ol>
 <p>In R, “&lt;-” is the assignment operator as in the command we used:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>PSYC121_week_1_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>PSYC121_week_1_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We create the variable label on the left (Analysis_week1_data<code>) and we give it those numbers on the right. The name</code>Analysis_week1_data` is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.</p>
+<p>We create the variable label on the left (<code>Analysis_week1_data</code>) and we give it those numbers on the right. The name<code>Analysis_week1_data</code> is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.</p>
 <hr>
 <p>Throughout this year, we’ll use the convention of the “underscore” to separate words in labels (it_makes_them_easier_to_read than ifyoudidn’thaveanyspaces)</p>
 <hr>

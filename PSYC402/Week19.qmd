@@ -1,5 +1,5 @@
 ---
-title: Introduction to Generalized Linear Mixed-effects Models
+title: 9. Introduction to Generalized Linear Mixed-effects Models
 subtitle: Written by Rob Davies
 order: 10
 ---

@@ -112,7 +112,10 @@ Next, we've prepared some *instructions* for RStudio to use - this is called a "
 
 6.  Select the file and click "Open". Click "OK"
 
-You should now see the files extracted in the directory. If you receive an "unexpected server error" please try this process in a different browser. If you still have trouble, send your username to [t.beesley\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) for support.
+You should now see the files extracted in the directory.
+
+{{< include /Includes/_servererror.qmd >}}
+
 
 You should now have the script available in RStudio.
 
@@ -138,7 +141,7 @@ Use your imagination -- add a new line to the script and ask a different simple 
 
 In this week's analysis lecture, we looked at measures of central tendency and how to calculate them. So let's get R to do these calculations also!
 
-First, we tell R about the data used in the lecture. We've already created the instruction that will do exacly this and it is in the script, so run this line from the script
+First, we tell R about the data used in the lecture. We've already created the instruction that will do exactly this and it is in the script, so run this line from the script
 
 ```{r eval=FALSE}
 week_1_lecture_data <- c(7,8,8,7,3,1,6,9,3,8)
@@ -192,7 +195,7 @@ In R, "\<-" is the assignment operator as in the command we used:
 PSYC121_week_1_data <- c(7,8,8,7,3,1,6,9,3,8)
 ```
 
-We create the variable label on the left (Analysis_week1_data`) and we give it those numbers on the right. The name`Analysis_week1_data` is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.
+We create the variable label on the left (`Analysis_week1_data`) and we give it those numbers on the right. The name`Analysis_week1_data` is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.
 
 ------------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 ---
-title: Categorical predictors
+title: 2. Categorical predictors
 subtitle: Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team a the University of Glasgow)
 order: 3
 ---

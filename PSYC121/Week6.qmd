@@ -24,7 +24,7 @@ Download the lecture slides [here](data/Week_6/PSYC121 Week 6.pptx)
 
 -   Ensure you have watched the lecture for Week 6.
 
--   There is a learnr tutorial to complete which will help you to think about **binomial tests**. You : [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
+-   There is a learnr tutorial to complete which will help you to think about **binomial tests**. [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
 
 -   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](data/Week_6/Week_6.zip)
 
