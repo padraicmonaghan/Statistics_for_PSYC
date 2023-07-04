@@ -29,4 +29,4 @@ This is a proof of concept that we can hide/autoshow information. It is a bit cl
 
 # Testing embedded presentation
 
-<iframe class="slide-deck" src="Presentation/index.html" width="75%"></iframe>
+<iframe class="slide-deck" src="Presentation/index.html" width="75%" height="700"></iframe>
