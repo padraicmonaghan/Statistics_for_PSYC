@@ -1,6 +1,6 @@
 ---
 title: Analysing and Interpreting Psychological Data I
-subtitle: "Course coordinators: Tom Beesley, John Towse"
+subtitle: "Course coordinators: Margriet Groen, Rob Davies"
 email-obfuscation: javascript
 
 #listing:
@@ -17,8 +17,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in est non nisi
 
 # Course Contacts
 
-|             | Email Address                                                  |
-|-------------|----------------------------------------------------------------|
-| Tom Beesley | [t.beesley\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) |
-| John Towse  | [j.towse\@lancaster.ac.uk](mailto:j.towse@lancaster.ac.uk)     |
+|                        | Email Address                                                                                     |
+|--------------|-----------------------------------------------------------------|
+| Margriet Groen | [m.groen\@lancaster.ac.uk](mailto:m.groen@lancaster.ac.uk)|
+| Rob Davies  | [r.davies1\@lancaster.ac.uk](mailto:r.davies1@lancaster.ac.uk)    |
 |             |                                                                |
