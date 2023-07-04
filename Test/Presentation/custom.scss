@@ -1,0 +1,49 @@
+/*-- scss:defaults --*/
+
+$body-bg: #fff;
+$body-color: #191919;
+$link-color: #b5121b;
+
+/*-- scss:rules --*/
+
+section.slide h2 {
+  color: #b5121b !important;
+  border-bottom: 3px solid #b5121b !important;
+  width: 200vw;
+  position: relative;
+  left: -20vw;
+  margin-right: 50vw;
+  top: -2.1vw;
+  padding-left: 20vw;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.reveal .slide-logo {
+  display: block;
+  position: fixed;
+  bottom: unset !important;
+  top: 20px;
+  right: 120px;
+  height: 75px !important;
+  width: unset !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+.scrolling {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.inline-fragment {
+  display: flex;
+}
+
+.inline-fragment p {
+  padding-right: 10px;
+}
+
+.width-image{
+  width: 50% !important;
+}

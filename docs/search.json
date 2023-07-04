@@ -1057,6 +1057,132 @@
     "text": "Success! It is afternoon!\nThis is hidden!"
   },
   {
+    "objectID": "Test/Presentation/index.html#introduction-1",
+    "href": "Test/Presentation/index.html#introduction-1",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Introduction #1",
+    "text": "Introduction #1\n\nSoftware development is more than just the technical implementation, it is a blend of social, cognitive, and technical mechanisms\nPsychology can offer insights into the individual differences and human behaviours within secure coding\nDespite best efforts by the software engineering community, developers still write insecure code!\nBy applying psychological perspectives to secure coding, we can better address security challenges"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#introduction-2",
+    "href": "Test/Presentation/index.html#introduction-2",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Introduction #2",
+    "text": "Introduction #2\n\nWe collected data from a sample of software engineers and examined their perceptions of risk when considering software security\nThey told us about their behaviours and perspective on security within their work, as well as completed a battery of cognitive tests\nWe applied a mixed-analysis: a thematic analysis, and a quantitative modelling process\nTwo papers, one submitted to ACM Transactions on Computer-Human Interaction and the other to APA Technology, Mind & Behaviour"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#methods",
+    "href": "Test/Presentation/index.html#methods",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Methods",
+    "text": "Methods\n\n\n\n145 participants\n\n73 professional freelancers\n72 CS students\n\n\n\n\nParticipants completed four main parts:\n\nOWASP vulnerability task\nCognitive reflection test\nGambling task\nFour qualitative rich-text questions"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#owasp-vulnerability-task-ovt",
+    "href": "Test/Presentation/index.html#owasp-vulnerability-task-ovt",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "OWASP Vulnerability Task (OVT)",
+    "text": "OWASP Vulnerability Task (OVT)\n\nA measure of optimism bias\nIndividuals often underestimate the likelihood of negative events affecting them [14, 15]\nUses OWASP 2021 top 5: Injection flaws, Broken Authentication, Sensitive Data Exposure, XML External Entity flaws and Broken Access Control\nEstimate the likelihood of a vulnerability existing in applications released by the “average developer”\nEstimate the likelihood of themselves introducing these vulnerabilities\nThe \\(\\Delta\\) of average and individual scores gives an indication of potential biased perspectives. A score of 75 for average developers and 50 for myself gives a score of 25, suggesting I expect my work to be better than the average developer."
+  },
+  {
+    "objectID": "Test/Presentation/index.html#cognitive-reflection-test-crt",
+    "href": "Test/Presentation/index.html#cognitive-reflection-test-crt",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Cognitive Reflection Test (CRT)",
+    "text": "Cognitive Reflection Test (CRT)\n\n\n\n\n\nPhotograph: Getty Images\n\n\n\n“A bat and a ball cost £1.10 in total. The bat costs £1.00 more than the ball. How much does the ball cost?”\n\n\n\n5p\n\n\n\n\nA measure of system 2 processing [5], an aspect of dual processing theory [4]\n\n\n\n\nDual Processing Theory\n\nTwo systems of cognitive processing\n\nSystem 1: intuitive and automatic\nSystem 2: reflective and deliberate"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#gambling-task",
+    "href": "Test/Presentation/index.html#gambling-task",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Gambling Task",
+    "text": "Gambling Task\n\nA measure used by [5] to assess risk aversion.\nRisk aversion can be linked to prospect theory, which suggests decisions maximise gains and minimise losses [10].\nPeople experience negativity from a loss more strongly than positivity from gains. Accordingly, people typically make choices that minimise loss over maximising gain [11].\n“Gain £1,000 for sure or a 90% chance of £5,000” - Gain frame\n“Lose £100 for sure or a 75% chance to lose £200” - Loss frame"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#qualitative-questions",
+    "href": "Test/Presentation/index.html#qualitative-questions",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Qualitative Questions",
+    "text": "Qualitative Questions\n\n\n\n\n\n\n\n\n\nNumber\nQuestion\n\n\n\n\n1\nDescribe a time when you successfully developed and released/launched a software project, either in a professional or personal capacity. This could be a recent example, or a project you were particularly proud of.\n\n\n2\nWhen considering the process of developing and launching software/web applications, what is at risk of potentially going wrong and how could these risks affect you?)\n\n\n3\nIf you were to consider software development as a series of ‘gambles’ (decisions that confer possible risk), what gambles would be considered worthwhile or worth a risk during the process of developing software? Why?\n\n\n4\nWhat approaches or considerations, do you, or your team, take when aiming to identify potential risks or security vulnerabilities when developing software? What is the reasoning behind these decisions?"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#the-roar-of-software-security",
+    "href": "Test/Presentation/index.html#the-roar-of-software-security",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "The ROAR of software security",
+    "text": "The ROAR of software security\nHow Responsibility, Optimism And Risk shape developers’ security perceptions\n\n\n\nA thematic analysis of the qualitative responses [2]\nTwo psychological theories were found which helped explain the findings:\n\nthe Social Identity Approach [1, 6].\nHeuristics and Biases [9].\n\n\n\n\n\n\nGroupings of themes and subthemes seen\n\n\n\n\n\nSocial identities are not congruent with typecasts, but are fluid, self-defined group memberships to allow individuals to associate with others who share emotionally significant norms and values\nHeuristics are cognitive “shortcuts” people rely upon during decision making. Heuristics make use of frameworks and cognitively simple processes to make intuitive, instinctive judgments"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#responsibility-and-social-identity",
+    "href": "Test/Presentation/index.html#responsibility-and-social-identity",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Responsibility and Social Identity",
+    "text": "Responsibility and Social Identity\n\n\n\nTom Gauld\n\n\n\n\nDiffusion - when individuals view themselves as parts of a chain where an assumption of responsibility is made for others\n\nDisplacement - where responsibility is passed upwards through hierarchies, such as towards team leaders or managers\n\nAcceptance - where people take responsibility for their actions, their work, and the consequences.\n\n\n\nDiffusion\n\nPushing responsibility to others deemed as outsiders\nA shared identity can invoke trust, but this can be abused by those who feel less as part of the group\nTools/software can represent other engineers, increasing people’s reliance. Official sources can be seen as an ingorup member\nAccountability can reduce diffusion, particularly towards outgroups\n\nDisplacement\n\nLanguage can indicate an ingroup/outgroup relationship\nThose in positions of management highlight their feelings of responsibility\nPeople can assume senior employees are there to double check work\nPolicies can also be used to displace\nClients and stakeholders can be assumed to have ultimate responsibility\n\nAcceptance\n\nA key factor is moral/emotional connections\nOr via social values, such as empathy\nAnd even expressing caution about using third party software or tools"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#optimism",
+    "href": "Test/Presentation/index.html#optimism",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Optimism",
+    "text": "Optimism\n\nOptimism was commonly associated with risk mitigation, representing a potentially idealistic view on resolving these issues. Unrealistic optimism biases manifest in different ways, from planning fallacies to over-optimism that security is good enough.\nOthers refuse the possibility they may be victims\nDevelopers expressing an optimism bias often spoke about security and risk in absolutes and dismissed uncertainty or insecure code as issues of other developers, but not for themselves."
+  },
+  {
+    "objectID": "Test/Presentation/index.html#risk",
+    "href": "Test/Presentation/index.html#risk",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Risk",
+    "text": "Risk\n\n\n\nAppetite - Risk appetites can be defined as passive or active. Active decisions intentionally reduce efforts in specific areas, and passive decisions increase risk through a reduction of attention\n\n Mitigation - Mitigation of risk was mainly mentioned alongside planning and testing\n\nDirection - could be directed towards or away from an individual. The direction is linked to the emotional/moral language associated\n\n\n\n\nPassive and Active risk appetites were seen\nPassive appetites are centred ons ecurity, such as delaying its inclusion\nTime constraints and technical debts alter active appetites, with greater risks being considered acceptable\n\nDirection\n\nRisks could be directed away or towards the individual\nRisk to others was typically presented without any personal emotional connection.\nExperiencing failures or having to abandon projects due to self-directed risks could challenge a developer’s perception of their competence"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#discussion",
+    "href": "Test/Presentation/index.html#discussion",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Discussion",
+    "text": "Discussion\n\n\nResponsibility can be linked to an organisation’s security culture, with managers playing a key role in motivating developers to consider the real-world implications and impact of insecure software\nGaining different perspectives on the development process may reduce biases through increased communication and reflection. For solo workers, increasing communication with clients and stake- holders may provide similar benefits.\nPassive risk appetites and poor risk mitigation strategies are likely linked with intuitive system 1 processing and less reflective thinking.\nSocial identities assumed by software developers can have a profound impact on their feelings of responsibility and motivation towards their role in the development process."
+  },
+  {
+    "objectID": "Test/Presentation/index.html#recognising-the-known-unknowns",
+    "href": "Test/Presentation/index.html#recognising-the-known-unknowns",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Recognising the known unknowns",
+    "text": "Recognising the known unknowns\nThe interaction between reflective thinking and optimism for uncertainty among software developer’s security perceptions\n\nA quantitative analysis of the cognitive battery and a content analysis of the rich-text\nWe found an interaction between cognitive reflection and optimism associated with the presence of uncertainty-related language (reflecting risk sensitivity)"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#reflection-and-optimism",
+    "href": "Test/Presentation/index.html#reflection-and-optimism",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Reflection and Optimism",
+    "text": "Reflection and Optimism\n\nOverly optimistic outlooks combined with higher cognitive reflection drives up expressions of uncertainty, while pessimistic or realistic individuals reduce uncertainty as cognitive reflection increases."
+  },
+  {
+    "objectID": "Test/Presentation/index.html#discussion-1",
+    "href": "Test/Presentation/index.html#discussion-1",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Discussion",
+    "text": "Discussion\n\nThe finding that cognitive reflection or optimism alone explain very little variance in security perceptions highlights the entangled nature of cognition in the real-world\nOverly optimistic software engineers view additional security implementation as holding minimal value, as they believe their current level of security to be sufficient. When considering security, therefore, they may require stronger cues or framing to activate system 2 when making security decisions\nOne catalyst for system 2 thinking during secure decision making might be peer communication, which allows for the balancing of perspectives and a reduction of biases.\nThe use of rewards, either intrinsic or extrinsic, for encouraging secure coding behaviours can be used to increase motivation and subsequently increase task performance.\n\n\nintrinsic rewards are those internal to the individual and are inherently found in the task itself and upon completion, and extrinsic rewards are external to the task, such as pay or recognition\nThe exact nature of verifying secure coding practices on freelance platforms is beyond the scope of this paper, but if a system can be devised that is universally trusted and easily implementable, then the use of gamification may work as a reward system."
+  },
+  {
+    "objectID": "Test/Presentation/index.html#where-am-i-going-from-here",
+    "href": "Test/Presentation/index.html#where-am-i-going-from-here",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Where am I going from here?",
+    "text": "Where am I going from here?\n\nThe next stage is to assess these measures of cognition (CRT, OVT, intuitive processing) against secure code comprehension\nUsing a paradigm designed by Oliveira et al. (2018) [12] and tested in Python and Java [3], we will see whether aspects of cognition will associate with error detection.\nOliveira and colleagues posited that code vulnerabilities occupy a cognitive blindspot [13] but haven’t applied any measures of cognition relating to heuristics/cognitive processing styles\nWe would expect greater comprehension and error detection from those who score highly on CRT, lower on optimism measures, greater rational processing styles, lower intuitive processing styles, but no difference for expertise, familiarity, or cybersecurity knowledge"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#thank-you",
+    "href": "Test/Presentation/index.html#thank-you",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "Thank You",
+    "text": "Thank You\nThank you! Any questions?\n matthew.ivory@lancaster.ac.uk\nSlides are here: https://www.lancaster.ac.uk/staff/ivorym/ROAR\nSocial Paper: https://psyarxiv.com/pexvz/ [7]\nCognitive Paper: https://psyarxiv.com/vrf97 [8]"
+  },
+  {
+    "objectID": "Test/Presentation/index.html#references",
+    "href": "Test/Presentation/index.html#references",
+    "title": "Responsibility, Reflection, and Biases in Secure Coding",
+    "section": "",
+    "text": "[1] Abrams, D. and Hogg, M. 1990. An Introduction to the Social Identity Approach. Social identity theory: Constructive and critical advances. Harvester Wheatsheaf. 1–9.\n\n\n[2] Braun, V. and Clarke, V. 2006. Using thematic analysis in psychology. Qualitative research in psychology. 3, 2 (2006), 77–101. DOI:https://doi.org/10.1191/1478088706qp063oa.\n\n\n[3] Brun, Y. et al. 2022. Blindspots in Python and Java APIs Result in Vulnerable Code. ACM Transactions on Software Engineering and Methodology. (Nov. 2022). DOI:https://doi.org/10.1145/3571850.\n\n\n[4] Evans, J.St.B.T. 2003. In two minds: dual-process accounts of reasoning. Trends in Cognitive Sciences. 7, 10 (Oct. 2003), 454–459. DOI:https://doi.org/10.1016/j.tics.2003.08.012.\n\n\n[5] Frederick, S. 2005. Cognitive reflection and decision making. Journal of Economic perspectives. 19, 4 (2005), 25–42. DOI:https://doi.org/10.1257/089533005775196732.\n\n\n[6] Haslam, A. 2012. The Social Identity Approach. Psychology in Organizations: The Social Identity Approach. SAGE Publications Ltd. 17–39.\n\n\n[7] Ivory, M. et al. 2023. Can you hear the ROAR of software security? How Responsibility, Optimism And Risk shape developers’ security perceptions. PsyArXiv.\n\n\n[8] Ivory, M. et al. 2023. Recognising the known unknowns; the interaction between reflective thinking and optimism for uncertainty among software developer’s security perceptions. PsyArXiv.\n\n\n[9] Kahneman, D. et al. eds. 1974. Judgment under uncertainty: Heuristics and biases. Cambridge University Press.\n\n\n[10] Kahneman, D. and Tversky, A. 1979. Prospect Theory: An Analysis of Decision under Risk. Econometrica. 47, 2 (1979), 263–291. DOI:https://doi.org/10.2307/1914185.\n\n\n[11] Levy, J.S. 1992. An Introduction to Prospect Theory. Political Psychology. 13, 2, (1992), 171–186.\n\n\n[12] Oliveira, D.S. et al. 2018. {API} Blindspots: Why Experienced Developers Write Vulnerable Code. (Baltimore, MD, USA, 2018), 315–328.\n\n\n[13] Oliveira, D.S. et al. 2014. It’s the psychology stupid. Proceedings of the 30th Annual Computer Security Applications Conference (New Orleans, LA, USA, 2014), 296–305.\n\n\n[14] Sharot, T. 2011. The optimism bias. Current Biology. 21, 23 (Dec. 2011), R941–R945. DOI:https://doi.org/10.1016/j.cub.2011.10.030.\n\n\n[15] Weinstein, N.D. 1980. Unrealistic optimism about future life events. Journal of Personality and Social Psychology,. 39, 5 (1980), 806–820. DOI:https://doi.org/10.1037/0022-3514.39.5.806."
+  },
+  {
     "objectID": "PSYC234/Week8.html",
     "href": "PSYC234/Week8.html",
     "title": "8. Binary logistic regression models",
