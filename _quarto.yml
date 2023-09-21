@@ -82,3 +82,5 @@ format:
       
 
 editor: source
+
+validate-yaml: false
